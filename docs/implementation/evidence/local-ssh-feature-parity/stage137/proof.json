@@ -1,0 +1,21 @@
+{
+  "source": "8bd533cf3",
+  "base": "1d91425cc",
+  "environment": "Fresh /workspace/superset-remix-parity worktree restored from pushed feature branch; old scratch and compiled127 artifacts absent. Dependencies installed from frozen lock with scripts disabled; i18n, file icons and routes generated.",
+  "tests": {
+    "pass": 75,
+    "fail": 0,
+    "assertions": 286,
+    "files": 7
+  },
+  "desktopTypesExit": 0,
+  "lint": "Shared component/move hook/original wrapper clean. Existing tests retain 3 warnings/2 infos. Grid keeps 3 inherited useExhaustiveDependencies errors; baseline file in same project has same 3 plus old import ordering error. Targeted final grid check skips only this proven inherited rule.",
+  "priorTestCorrection": "Local empty V1 workspace already uses shared window, contrary to stale test; baseline reproduced captures=1 before product edit. Updated to require one empty-layout save and zero mutation RPCs.",
+  "endToEnd": false,
+  "newDesktopBuild": false,
+  "oldNativeEvidenceRechecked": false,
+  "cliBinaryBuilt": false,
+  "installerBuilt": false,
+  "githubActionsUsed": false,
+  "remaining": "Parent paired runtime and dirty-geometry reconciliation, root activation, real local and owned SSH windows; original expansion and width persistence not implemented."
+}

@@ -424,3 +424,12 @@ namespace切换直接归档原V3目标并用同版本验证/保存，保留两�
 浏览器路径另复现两个并发窗口：保存前捕获到的右侧pin必须随中心操作保存；保存后等待异步accept时右侧结构变化必须取消请求。新可选runtime完整area捕获先经原V3三方合并后交给中心打开helper，仍固定CLI目标为中心；授权apply后重新捕获/监听两侧结构，忽略自身已应用状态的通知。这里取消不撤销已提交视图，测试明确验证不创建后台guest；不宣称跨进程提交与UI回执能原子回滚。授权替换不会取消自身请求，且无额外终端创建。
 
 新增19项；最终相关268项1225断言/27文件、桌面类型、新核心lint与插件通过。旧四文件保留17项警告，renderer仍有3项原警告。初轮Input缺新增可选runtimeAreas类型、以及默认分栏表示的真实链路失败日志均保留，修复后没有提高超时/重试。完整AST证明包含末语句变异及const/let自检：64个旧hook声明、全部effects/返回对象相同；原flush、runtime整模块、browser renderer整模块去掉明确新增可选分支/字段后相同，20个模型/IPC/存储/入口/原引擎模块逐字节保持。原2205编译文件、86个MJS、3639个CLI源码图和随包CLI哈希不变。当前Workstation/PaneGrid尚未启用双侧模式，没有新构建、实窗、安装包或Actions；下一步接原右区域呈现和单个父级runtime，检查待保存布局与权威快照同步，再做实际本地/拥有SSH验收。[阶段一百三十六证据](../implementation/evidence/local-ssh-feature-parity/stage136)。
+
+
+## 阶段一百三十七：共用右区域视图和父级控制的 PaneGrid
+
+源码8bd533cf3提取原RightPaneArea的呈现外壳为泛型RightPaneAreaView；原页面保留全部Workspace属性、通知/图标/关闭回调及原合并/展开/侧栏按钮。原usePaneAreaMoveActions仅泛化数据类型，函数主体相同，继续调用原transferPaneToNewTab。PaneGrid新增可选controlled参数，沿用父级真实store，关闭子级状态同步、保存和runtime注册，接收跨侧精确store白名单、活动侧、创建终端和共用Workspace呈现。旧默认调用参数、终端复制/粘贴、并发恢复和重试判断保持；当前根入口仍未启用双侧模式。
+
+新增回归先确认两个子grid覆盖同一个runtime的红例；修复后父级独占runtime，外部右侧标题不被重绘覆盖，切换侧只激活一个终端且不触发子级保存。旧local V1测试在未改产品时已错误要求零次保存，与现有共享窗口行为不符；基线复现后改为核对一次空布局保存及零mutation RPC。最终75项/286断言/7文件（含图片文件粘贴、文本复制和窗口恢复）、desktop类型、插件检查通过。原grid保留3条既有依赖规则错误，原文件在同项目临时静态检查复现相同3条及旧import排序错误；仅对grid的最终检查跳过该既有规则，未改全局lint配置。既有测试保留3警告/2提示。
+
+完整AST遍历含末语句和const/let变异自检：25个旧声明直接相同，7个声明仅移除明确controlled分支后相同，7条原effect保持；原移动hook主体、原右侧Workspace属性及header子元素相同，8个运行时/入口/IPC/原store模块逐字节保持。新环境从已推送136独立检出恢复，开发依赖及图标/路由/语言源码生成后验证；旧临时目录和127编译产物不在本环境，不沿用旧产物哈希复核结论。本阶段没有新桌面编译、原生实窗、CLI二进制、安装包或Actions。父级配对运行时、待保存布局与权威快照协调及根入口接线继续进行，不能以组件测试宣称完整双侧功能完成。[阶段一百三十七证据](../implementation/evidence/local-ssh-feature-parity/stage137)。
