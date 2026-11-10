@@ -231,6 +231,11 @@ export async function verifyWorkstationBrowserUi(options) {
 		assert.equal(loaded.node, "undefined");
 		assert.equal(loaded.process, "undefined");
 		report.loaded = loaded;
+        if (process.argv.includes("--pane-areas-ui")) {
+            const {verifyWorkstationPaneAreasUi}=await import("./verify-workstation-pane-areas-ui.mjs");
+            await verifyWorkstationPaneAreasUi(options,{scope,terminal,guestRead});await observeGuest();
+        }
+
 		if (process.argv.includes("--browser-read-cli")) {
 			const { verifyWorkstationBrowserReadCliUi } = await import("./verify-workstation-browser-read-cli-ui.mjs");
 			browserReadCli = await verifyWorkstationBrowserReadCliUi(options, { scope, url, marker, readView, workspace, terminalTab });
