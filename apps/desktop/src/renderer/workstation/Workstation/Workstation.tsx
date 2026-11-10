@@ -162,31 +162,37 @@ export function Workstation({
 		setProjectId(null);
 		ui.setDirectory(null);
 	};
-	const views = useWorkspaceViews(api, ui.connection, {
-		getBrowserHomepage: () => ({
-			ready:
-				!browserPreferences.available ||
-				(!!browserPreferences.snapshot &&
-					!browserPreferences.snapshot.invalid &&
-					!browserPreferences.loading),
-			url: browserPreferences.snapshot?.values.homepageUrl ?? null,
-		}),
-		onSkeleton(id) {
-			select(id);
-			setPage("workspaces");
+	const views = useWorkspaceViews(
+		api,
+		ui.connection,
+		{
+			getBrowserHomepage: () => ({
+				ready:
+					!browserPreferences.available ||
+					(!!browserPreferences.snapshot &&
+						!browserPreferences.snapshot.invalid &&
+						!browserPreferences.loading),
+				url: browserPreferences.snapshot?.values.homepageUrl ?? null,
+			}),
+			onSkeleton(id) {
+				select(id);
+				setPage("workspaces");
+			},
+			onDescriptor: ui.adoptConnection,
+			onForget() {
+				ui.clearWorkspace();
+				setPage("machines");
+			},
+			onError: ui.setError,
 		},
-		onDescriptor: ui.adoptConnection,
-		onForget() {
-			ui.clearWorkspace();
-			setPage("machines");
-		},
-		onError: ui.setError,
-	});
+		{ paneAreas: true },
+	);
 	const browserOpenDependencies = useRef({ views, ui, select });
 	browserOpenDependencies.current = { views, ui, select };
 	useEffect(() => {
 		if (!views.browserEnabled) return;
 		return startWorkstationBrowserOpenRenderer(api, () => ({
+			paneAreas: browserOpenDependencies.current.views.paneAreasEnabled,
 			flush: () => browserOpenDependencies.current.views.flush(),
 			enqueue: (action) =>
 				browserOpenDependencies.current.views.enqueueBrowserOpen(action),

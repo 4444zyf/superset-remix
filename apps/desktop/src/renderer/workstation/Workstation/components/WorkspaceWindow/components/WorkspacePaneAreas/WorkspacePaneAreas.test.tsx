@@ -7,7 +7,7 @@ import {
 	render,
 	waitFor,
 } from "@testing-library/react";
-import { StrictMode } from "react";
+import { type ReactNode, StrictMode } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import type {
@@ -70,7 +70,7 @@ function setup(save: () => Promise<unknown> = async () => ({})) {
 		workspaceId: w.workspaceId,
 		tabId: w.tabId,
 	};
-	const element = (next = w, revision = 1) => (
+	const element = (next = w, revision = 1, centerTool?: ReactNode) => (
 		<StrictMode>
 			<DndProvider backend={HTML5Backend}>
 				<TooltipProvider>
@@ -82,6 +82,7 @@ function setup(save: () => Promise<unknown> = async () => ({})) {
 						actions={actions}
 						checks={[]}
 						resourceRevision={revision}
+						centerTool={centerTool}
 						onError={() => {}}
 					/>
 				</TooltipProvider>
@@ -190,5 +191,52 @@ test("a rejected parent save releases the held authoritative snapshot without re
 		).toBe("Server title"),
 	);
 	expect(f.writes()).toBe(1);
+	view.unmount();
+});
+
+test("the original sidebar resizer changes width and resets without recreating panes or saving a layout", () => {
+	const f = setup(),
+		view = render(f.element());
+	const separator = view.getByRole("separator"),
+		initial = Number(separator.getAttribute("aria-valuenow"));
+	fireEvent.mouseDown(separator, { clientX: 500 });
+	expect(
+		document.documentElement.hasAttribute("data-pointer-passthrough"),
+	).toBe(true);
+	fireEvent.mouseMove(document, { clientX: 450 });
+	fireEvent.mouseUp(document);
+	expect(Number(separator.getAttribute("aria-valuenow"))).toBeGreaterThan(
+		initial,
+	);
+	expect(
+		document.documentElement.hasAttribute("data-pointer-passthrough"),
+	).toBe(false);
+	fireEvent.doubleClick(separator);
+	expect(Number(separator.getAttribute("aria-valuenow"))).toBe(initial);
+	expect(f.writes()).toBe(0);
+	expect(
+		view.container.querySelectorAll('[data-pane-id="browser"]'),
+	).toHaveLength(1);
+	view.unmount();
+});
+test("the center Files slot preserves the right pane and the single parent runtime", () => {
+	const f = setup(),
+		view = render(f.element()),
+		captured = required(f.capture());
+	view.rerender(f.element(f.w, 1, <div data-files-fixture>Files fixture</div>));
+	expect(view.container.querySelector("[data-files-fixture]")).not.toBeNull();
+	expect(
+		view.container.querySelectorAll('[data-pane-id="terminal"]'),
+	).toHaveLength(0);
+	expect(
+		view.container.querySelectorAll('[data-pane-id="browser"]'),
+	).toHaveLength(1);
+	expect(captured.isCurrent()).toBe(true);
+	expect(required(f.capture()).areas?.center.tabs).toHaveLength(1);
+	view.rerender(f.element());
+	expect(
+		view.container.querySelectorAll('[data-pane-id="terminal"]'),
+	).toHaveLength(1);
+	expect(f.writes()).toBe(0);
 	view.unmount();
 });

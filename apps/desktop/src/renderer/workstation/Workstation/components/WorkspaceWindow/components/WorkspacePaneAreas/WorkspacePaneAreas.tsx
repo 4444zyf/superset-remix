@@ -13,6 +13,8 @@ import {
 } from "react";
 import { RightPaneAreaView } from "renderer/components/RightPaneAreaView";
 import { RightPaneHeaderButton } from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/components/RightPaneArea/components/RightPaneHeaderButton";
+import { useShellInteractionPassthrough } from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/hooks/useShellInteractionPassthrough/useShellInteractionPassthrough";
+import { ResizablePanel } from "renderer/screens/main/components/ResizablePanel/ResizablePanel";
 import type { WorkspaceViewV3 } from "shared/workspace-view-v3";
 import { createWorkspacePaneAreaEdits } from "../../../../utils/workspace-pane-area-edits/workspace-pane-area-edits";
 import { captureWorkspacePaneAreaLayouts } from "../../../../utils/workspace-pane-areas/workspace-pane-area-layouts";
@@ -64,6 +66,28 @@ export function WorkspacePaneAreas(props: Props) {
 		owner.areas.read,
 	);
 	const [saveEpoch, settled] = useState(0);
+	const [panelWidth, setPanelWidth] = useState(() =>
+		Math.floor(window.innerWidth * 0.4),
+	);
+	const [resizing, setResizing] = useState(false);
+	const [availableWidth, setAvailableWidth] = useState(window.innerWidth);
+	const container = useRef<HTMLDivElement>(null);
+	const interaction = useShellInteractionPassthrough({
+		sidebarOpen: state.rightPaneOpen,
+	});
+	useLayoutEffect(() => {
+		const element = container.current;
+		if (!element) return;
+		const observer = new ResizeObserver((entries) => {
+			const width = entries[0]?.contentRect.width;
+			if (width && width > 0) setAvailableWidth(width);
+		});
+		observer.observe(element);
+		return () => observer.disconnect();
+	}, []);
+	const maxWidth = Math.max(1, Math.floor(availableWidth * 0.75));
+	const minWidth = Math.min(240, maxWidth);
+
 	const runtime = useRef<
 		| {
 				owner: typeof owner;
@@ -225,6 +249,7 @@ export function WorkspacePaneAreas(props: Props) {
 				linkedStores: [owner.areas[area === "center" ? "right" : "center"]],
 				area,
 				active: state.activePaneArea === area,
+				onInteractionStateChange: interaction.onWorkspaceInteractionStateChange,
 				onActivate: () => activate(area),
 				onMoved: () => activate(area === "center" ? "right" : "center"),
 				onNewTerminal: (axis, newTab) => add(area, axis, newTab),
@@ -261,7 +286,11 @@ export function WorkspacePaneAreas(props: Props) {
 		/>
 	);
 	return (
-		<div className="flex min-h-0 flex-1" data-workstation-pane-areas>
+		<div
+			ref={container}
+			className="flex min-h-0 flex-1"
+			data-workstation-pane-areas
+		>
 			<div
 				className="flex min-h-0 min-w-0 flex-1 flex-col"
 				data-pane-area="center"
@@ -276,12 +305,24 @@ export function WorkspacePaneAreas(props: Props) {
 				)}
 			</div>
 			{state.rightPaneOpen && (
-				<div
-					className="flex min-h-0 min-w-0 flex-col border-l"
-					style={{ width: "40%" }}
+				<ResizablePanel
+					width={Math.max(minWidth, Math.min(maxWidth, panelWidth))}
+					onWidthChange={setPanelWidth}
+					isResizing={resizing}
+					onResizingChange={(active) => {
+						setResizing(active);
+						interaction.onSidebarResizeDragging(active);
+					}}
+					minWidth={minWidth}
+					maxWidth={maxWidth}
+					handleSide="left"
+					onDoubleClickHandle={() =>
+						setPanelWidth(Math.floor(availableWidth * 0.4))
+					}
+					className="flex min-h-0 min-w-0 flex-col"
 				>
 					{grid("right")}
-				</div>
+				</ResizablePanel>
 			)}
 		</div>
 	);

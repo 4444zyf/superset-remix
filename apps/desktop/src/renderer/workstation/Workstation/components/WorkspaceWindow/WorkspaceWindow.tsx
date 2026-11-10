@@ -30,6 +30,7 @@ import { RemoteWorkspaceRun } from "../RemoteWorkspaceRun";
 import { RemoteWorkspaceSetup } from "../RemoteWorkspaceSetup/RemoteWorkspaceSetup";
 import { WorkspacePortControls } from "../WorkspacePortControls";
 import { WorkstationDialog } from "../WorkstationDialog/WorkstationDialog";
+import { WorkspacePaneAreas } from "./components/WorkspacePaneAreas/WorkspacePaneAreas";
 import { PaneGrid } from "./components/PaneGrid/PaneGrid";
 
 export function WorkspaceWindow({
@@ -474,7 +475,70 @@ export function WorkspaceWindow({
 							}}
 						/>
 					)}
-					{workspace.activeTool === "files" && connection ? (
+					{actions.paneAreasEnabled ? (
+						<WorkspacePaneAreas
+							onBrowserSettings={onBrowserSettings}
+							key={workspace.tabId}
+							resourceRevision={resourceRevision}
+							onError={onError}
+							scope={{
+								connectionId: target.connectionId,
+								backendId: target.backendId,
+								namespaceId: target.namespaceId,
+								serviceUid: target.serviceUid,
+								targetRevision: target.targetRevision,
+								workspaceId: workspace.workspaceId,
+								tabId: workspace.tabId,
+							}}
+							centerTool={
+								workspace.activeTool === "files" && connection ? (
+									<RemoteFiles
+										api={api}
+										connection={connection}
+										workspaceId={workspace.workspaceId}
+										onError={onError}
+										openRequest={
+											fileOpenRequest?.owner === scriptOwner
+												? fileOpenRequest
+												: undefined
+										}
+										onOpenRequestHandled={(requestId) =>
+											setFileOpenRequest((current) =>
+												current?.owner === scriptOwner &&
+												current.requestId === requestId
+													? null
+													: current,
+											)
+										}
+									/>
+								) : undefined
+							}
+							api={api}
+							connection={connection}
+							workspace={workspace}
+							checks={checks}
+							actions={actions}
+							resolveUrlAction={ports.resolveUrlAction}
+							createEmulator={createEmulator}
+							onOpenFile={(target) => {
+								if (navigationOwner.current !== scriptOwner) return;
+								setFileOpenRequest({
+									...target,
+									owner: scriptOwner,
+									requestId: crypto.randomUUID(),
+								});
+								void actions.setTool(workspace.workspaceId, "files");
+							}}
+							onOpenUrl={
+								ports.onOpenUrl
+									? (url, action) => {
+											if (navigationOwner.current !== scriptOwner) return;
+											ports.onOpenUrl?.(workspace.workspaceId, url, action);
+										}
+									: undefined
+							}
+						/>
+					) : workspace.activeTool === "files" && connection ? (
 						<RemoteFiles
 							api={api}
 							connection={connection}

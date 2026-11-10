@@ -1,0 +1,18 @@
+{
+  "base": "77cfcee9c",
+  "tests": {
+    "pass": 137,
+    "fail": 0,
+    "assertions": 4437,
+    "files": 18
+  },
+  "desktopTypesExit": 0,
+  "newFilesLint": "pass",
+  "existingLint": "3 inherited non-null assertion warnings; checked without formatter/import-order assist; no global configuration changes.",
+  "nativeAcceptance": false,
+  "newDesktopBuild": false,
+  "cliBinary": false,
+  "installer": false,
+  "githubActions": false,
+  "remaining": "Canonical browser receipt synchronization, native local/owned SSH testing including drag/drop focus, original expand and width persistence. Width is currently transient React state."
+}

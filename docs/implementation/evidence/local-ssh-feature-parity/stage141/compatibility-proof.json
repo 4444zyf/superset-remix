@@ -1,0 +1,19 @@
+{
+  "base": "77cfcee9c",
+  "fullAstTraversal": true,
+  "lastStatementMutationSmoke": true,
+  "constLetMutationSmoke": true,
+  "wholeRootEqualAfterOnlyModeFlagsRemoved": true,
+  "wholeWindowEqualAfterOnlyOptionalPairedBranchRemoved": true,
+  "byteEqual": [
+    "apps/desktop/src/renderer/workstation/Workstation/components/WorkspaceWindow/components/PaneGrid/PaneGrid.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/RemoteTerminal/RemoteTerminal.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/hooks/useWorkspaceViews/useWorkspaceViews.ts",
+    "apps/desktop/src/renderer/workstation/Workstation/hooks/useWorkstationBrowserOpen/workstation-browser-open-renderer.ts",
+    "apps/desktop/src/main/direct-app.ts",
+    "apps/desktop/src/preload/index.ts",
+    "apps/desktop/src/shared/workspace-view-v3.ts",
+    "packages/panes/src/core/store/store.ts"
+  ],
+  "scope": "Root enables V3 only with all required optional methods; legacy path retained. Source DOM/ABI checks only; no new native or built product acceptance."
+}

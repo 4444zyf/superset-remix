@@ -458,3 +458,14 @@ namespace切换直接归档原V3目标并用同版本验证/保存，保留两�
 编辑和保存中的权威workspace暂缓覆盖controller；save完成后触发同一同步effect重新应用最新props，失败也释放暂存快照，无自动重试。cleanup先交付controller微任务、派发并排空旧scope保存，再清理；controller销毁延后一轮微任务，通过lease避免React StrictMode第二次挂载复用已dispose状态。未另注册preload关闭监听。新增3项组件行为检查覆盖StrictMode/资源重挂载、未完成标题保存抵抗旧快照、失败后接受新服务端标题且不重试；首轮组件测试即通过，没有记录不存在的TDD红例。初轮lint发现ownerKey与settled依赖表达不清，owner记录key，后者用单条说明准确记录必须重试暂存快照的外部约束；未改全局规则。
 
 最终42项/184断言/11文件、desktop类型和新文件lint通过。9个旧入口/终端/IPC/模型/原store文件逐字节保持；新组件测试使用原双store/原PaneGrid但受控保存回执，不替代真实hook/SQLite/SSH或原生实窗。无新编译、CLI二进制、安装包、Actions。原宽度调整/展开、拖拽目标焦点、完整浏览器回执协调、根入口激活与本地/拥有SSH验收继续进行。[阶段一百四十证据](../implementation/evidence/local-ssh-feature-parity/stage140)。
+
+
+## 阶段一百四十一：根入口启用可协商双侧布局与原宽度控件
+
+Workstation向现有hook请求paneAreas模式，仍由完整get/saveV3及saveOpenV3三接口协商；缺失任何可选方法保持原V1/V2路径。浏览器renderer携带相同协商结果，Window按实际paneAreasEnabled挂载单父级组件，Files内容只替换中心slot；旧单区域路径逐字保留在可选分支之后。完整target UID/revision和workspace/tab交给父级，resourceRevision继续只控制子终端重新附着。
+
+右侧复用原ResizablePanel和原useShellInteractionPassthrough：左边缘拖动、原RAF节流/抬起交付、双击恢复40%、按当前容器宽度约束最小240/最大75%，分栏和侧栏拖动时嵌入页面让出指针。宽度目前只是当前挂载的React状态，尚未持久化，也未声称恢复原展开/还原中心全部标签行为。中心Files工具下保留右侧终端和完整父级runtime；切回后原中心状态仍在。
+
+新增真实根组件测试使用V3保存快照和暂停的恢复回执，V1/V2读取、保存、普通连接和创建均禁止；中心和右侧各恢复一份，旧接口测试仍通过。原宽度控件DOM鼠标序列验证增宽、双击复位、指针穿透开始/结束、无资源创建或布局保存；Files slot切换保留右侧及同一个runtime。最终相关137项/4437断言/18文件、desktop类型、新代码lint和插件检查通过；旧root/window保留3项非空警告。原无账号启动依赖审计通过，没有引入旧cloud bootstrap。根调用只规范化改动的useWorkspaceViews片段，没有批量格式化大文件。
+
+完整AST含末语句及const/let变异自检：root整模块仅移除新增两个模式参数后相同，Window整模块仅移除新增可选父级分支和import后相同；8个终端/IPC/模型/hook/原store模块逐字节保持。当前仅源码与DOM/导入审计，不宣称新编译产物或本地/SSH原生实窗通过；无CLI二进制、安装包、Actions。下一步处理完整浏览器回执同步、自身授权更新与用户编辑的区分，再冻结新源码做实际两端验证；原展开和宽度持久化继续列为待完成。[阶段一百四十一证据](../implementation/evidence/local-ssh-feature-parity/stage141)。

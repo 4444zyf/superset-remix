@@ -6,6 +6,10 @@ import {
 	screen,
 	waitFor,
 } from "@testing-library/react";
+import {
+	fixture,
+	workspace,
+} from "../../../main/lib/ssh-direct/workspace-view-area-fixtures.test-data";
 import type { DirectWorkstationApi } from "../../../shared/direct-workstation";
 import type { WorkspaceViewSnapshot } from "../../../shared/workspace-view";
 import { Workstation } from "./Workstation";
@@ -257,4 +261,72 @@ test("a newly created SSH workspace opens its saved tab before the refreshed lis
 		(await api.getWorkspaceView!()).snapshot?.targets[0]?.workspaces[0]
 			?.workspaceId,
 	).toBe("new-workspace");
+});
+
+test("the accountless root restores both V3 areas without a legacy read or starting a session", async () => {
+	const input = fixture(),
+		w = workspace(input);
+	w.rightPaneOpen = true;
+	w.panes = w.panes.map((p) =>
+		p.kind === "browser"
+			? {
+					paneId: p.paneId,
+					kind: "terminal",
+					resourceId: "right-pty",
+					executionId: "right-execution",
+				}
+			: p,
+	);
+	const snapshot = { ...input, schemaVersion: 3, revision: 1, updatedAt: 1 },
+		calls: string[] = [];
+	const forbidden = async () => {
+		throw Error("Unexpected legacy read, write or connect");
+	};
+	const api = {
+		platform: "linux",
+		list: async () => [
+			{ id: "local", kind: "local", name: "Local Device", host: "localhost" },
+		],
+		getWorkspaceView: forbidden,
+		saveWorkspaceView: forbidden,
+		getWorkspaceViewV2: forbidden,
+		saveWorkspaceViewV2: forbidden,
+		getWorkspaceViewV3: async () => ({
+			snapshot,
+			revision: 1,
+			invalid: false,
+			navigationRevision: 0,
+		}),
+		saveWorkspaceViewV3: forbidden,
+		onWorkspaceRestore: () => () => {},
+		beginWorkspaceRestore: async () => {
+			calls.push("restore");
+			return {
+				jobId: "job",
+				generation: 1,
+				sequence: 1,
+				viewRevision: 1,
+				navigationRevision: 0,
+				connectionId: "local",
+				status: "paused",
+				reason: "unavailable",
+				resources: [],
+			};
+		},
+		connect: forbidden,
+		browser: { openRequests: { saveViewV3: forbidden } },
+	} as unknown as DirectWorkstationApi;
+	const view = render(<Workstation api={api} />);
+	await waitFor(() =>
+		expect(
+			view.container.querySelector("[data-workstation-pane-areas]"),
+		).not.toBeNull(),
+	);
+	expect(
+		view.container.querySelectorAll('[data-pane-id="terminal"]'),
+	).toHaveLength(1);
+	expect(
+		view.container.querySelectorAll('[data-pane-id="browser"]'),
+	).toHaveLength(1);
+	expect(calls).toEqual(["restore"]);
 });
