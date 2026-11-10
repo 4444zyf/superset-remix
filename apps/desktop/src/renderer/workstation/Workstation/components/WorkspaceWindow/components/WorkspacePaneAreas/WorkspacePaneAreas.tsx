@@ -14,6 +14,7 @@ import {
 import { RightPaneAreaView } from "renderer/components/RightPaneAreaView";
 import { RightPaneHeaderButton } from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/components/RightPaneArea/components/RightPaneHeaderButton";
 import { useShellInteractionPassthrough } from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/hooks/useShellInteractionPassthrough/useShellInteractionPassthrough";
+import { useWindowWidth } from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/hooks/useWindowWidth";
 import { ResizablePanel } from "renderer/screens/main/components/ResizablePanel/ResizablePanel";
 import type { WorkspaceViewV3 } from "shared/workspace-view-v3";
 import { createWorkspacePaneAreaEdits } from "../../../../utils/workspace-pane-area-edits/workspace-pane-area-edits";
@@ -66,28 +67,15 @@ export function WorkspacePaneAreas(props: Props) {
 		owner.areas.read,
 	);
 	const [saveEpoch, settled] = useState(0);
-	const [panelWidth, setPanelWidth] = useState(() =>
-		Math.floor(window.innerWidth * 0.4),
-	);
+	const windowWidth = useWindowWidth();
+	const defaultPanelWidth = Math.round(windowWidth * 0.4);
+	const [panelWidth, setPanelWidth] = useState<number | undefined>();
 	const [resizing, setResizing] = useState(false);
-	const [availableWidth, setAvailableWidth] = useState(window.innerWidth);
-	const container = useRef<HTMLDivElement>(null);
 	const interaction = useShellInteractionPassthrough({
 		sidebarOpen: state.rightPaneOpen,
 	});
-	useLayoutEffect(() => {
-		const element = container.current;
-		if (!element) return;
-		const observer = new ResizeObserver((entries) => {
-			const width = entries[0]?.contentRect.width;
-			if (width && width > 0) setAvailableWidth(width);
-		});
-		observer.observe(element);
-		return () => observer.disconnect();
-	}, []);
-	const maxWidth = Math.max(1, Math.floor(availableWidth * 0.75));
-	const minWidth = Math.min(240, maxWidth);
-
+	const maxWidth = Math.round(windowWidth * 0.75);
+	const minWidth = 240;
 	const runtime = useRef<
 		| {
 				owner: typeof owner;
@@ -290,11 +278,7 @@ export function WorkspacePaneAreas(props: Props) {
 		/>
 	);
 	return (
-		<div
-			ref={container}
-			className="flex min-h-0 flex-1"
-			data-workstation-pane-areas
-		>
+		<div className="flex min-h-0 flex-1" data-workstation-pane-areas>
 			<div
 				className="flex min-h-0 min-w-0 flex-1 flex-col"
 				data-pane-area="center"
@@ -310,7 +294,10 @@ export function WorkspacePaneAreas(props: Props) {
 			</div>
 			{state.rightPaneOpen && (
 				<ResizablePanel
-					width={Math.max(minWidth, Math.min(maxWidth, panelWidth))}
+					width={Math.max(
+						minWidth,
+						Math.min(maxWidth, panelWidth ?? defaultPanelWidth),
+					)}
 					onWidthChange={setPanelWidth}
 					isResizing={resizing}
 					onResizingChange={(active) => {
@@ -320,9 +307,7 @@ export function WorkspacePaneAreas(props: Props) {
 					minWidth={minWidth}
 					maxWidth={maxWidth}
 					handleSide="left"
-					onDoubleClickHandle={() =>
-						setPanelWidth(Math.floor(availableWidth * 0.4))
-					}
+					onDoubleClickHandle={() => setPanelWidth(defaultPanelWidth)}
 					className="flex min-h-0 min-w-0 flex-col"
 				>
 					{grid("right")}

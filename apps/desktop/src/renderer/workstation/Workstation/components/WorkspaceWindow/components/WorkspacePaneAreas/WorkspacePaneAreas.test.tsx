@@ -240,3 +240,47 @@ test("the center Files slot preserves the right pane and the single parent runti
 	expect(f.writes()).toBe(0);
 	view.unmount();
 });
+
+test("original viewport defaults follow window resize until the user chooses a width", () => {
+	const originalWidth = window.innerWidth;
+	Object.defineProperty(window, "innerWidth", {
+		configurable: true,
+		value: 1200,
+	});
+	const f = setup(),
+		view = render(f.element()),
+		separator = view.getByRole("separator");
+	try {
+		expect(separator.getAttribute("aria-valuenow")).toBe("480");
+		act(() => {
+			Object.defineProperty(window, "innerWidth", {
+				configurable: true,
+				value: 1000,
+			});
+			window.dispatchEvent(new Event("resize"));
+		});
+		expect(separator.getAttribute("aria-valuemax")).toBe("750");
+		expect(separator.getAttribute("aria-valuenow")).toBe("400");
+		fireEvent.mouseDown(separator, { clientX: 500 });
+		fireEvent.mouseMove(document, { clientX: 450 });
+		fireEvent.mouseUp(document);
+		expect(separator.getAttribute("aria-valuenow")).toBe("450");
+		act(() => {
+			Object.defineProperty(window, "innerWidth", {
+				configurable: true,
+				value: 1200,
+			});
+			window.dispatchEvent(new Event("resize"));
+		});
+		expect(separator.getAttribute("aria-valuenow")).toBe("450");
+		fireEvent.doubleClick(separator);
+		expect(separator.getAttribute("aria-valuenow")).toBe("480");
+		expect(f.writes()).toBe(0);
+	} finally {
+		view.unmount();
+		Object.defineProperty(window, "innerWidth", {
+			configurable: true,
+			value: originalWidth,
+		});
+	}
+});
