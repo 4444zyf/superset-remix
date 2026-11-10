@@ -9,6 +9,11 @@ import {
 } from "@testing-library/react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import {
+	fixture as areaFixture,
+	workspace as fixtureWorkspace,
+	required,
+} from "../../../../../../../main/lib/ssh-direct/workspace-view-area-fixtures.test-data";
 import type {
 	DirectDescriptor,
 	DirectSocketEvent,
@@ -16,6 +21,8 @@ import type {
 } from "../../../../../../../shared/direct-workstation";
 import type { WorkspaceView } from "../../../../../../../shared/workspace-view";
 import type { WorkspaceViewActions } from "../../../../hooks/useWorkspaceViews/useWorkspaceViews";
+import { createWorkspacePaneAreas } from "../../../../utils/workspace-pane-areas/workspace-pane-areas";
+import { captureWorkstationPaneRuntime } from "../../../../utils/workstation-pane-runtime/workstation-pane-runtime";
 import { PaneGrid } from "./PaneGrid";
 
 afterEach(cleanup);
@@ -234,4 +241,117 @@ test("original terminal tabs switch the visible group and persist metadata witho
 		false,
 	);
 	expect(rpc).toBe(0);
+});
+
+test("controlled grids leave paired stores and runtime ownership to their parent", () => {
+	const workspace = fixtureWorkspace(areaFixture());
+	workspace.panes = workspace.panes.map((pane) =>
+		pane.paneId === "browser"
+			? {
+					paneId: pane.paneId,
+					kind: "terminal",
+					resourceId: "right-terminal",
+					executionId: "right-execution",
+					label: "Right terminal",
+					pinned: false,
+				}
+			: pane,
+	);
+	const areas = createWorkspacePaneAreas(workspace, { scheduleMicrotask() {} });
+	const api = {} as DirectWorkstationApi;
+	const connection: DirectDescriptor = {
+		connectionId: "local",
+		generation: 1,
+		backendId: "backend",
+		namespaceId: "namespace",
+		instanceId: "instance",
+		capabilities: { workspaceViewRestoreV1: true },
+	};
+	let writes = 0;
+	const actions = {
+		busy: false,
+		saveLayout() {
+			writes++;
+		},
+		savePaneState: async () => {
+			writes++;
+		},
+		focusPane: async () => {},
+		renamePane: async () => {},
+		closePane: async () => {},
+	} as unknown as WorkspaceViewActions;
+	const fixture = () => (
+		<DndProvider backend={HTML5Backend}>
+			<TooltipProvider>
+				{(["center", "right"] as const).map((area) => (
+					<PaneGrid
+						key={area}
+						api={api}
+						connection={connection}
+						workspace={structuredClone(workspace)}
+						checks={[]}
+						actions={actions}
+						controlled={{
+							store: areas[area],
+							linkedStores: [areas[area === "center" ? "right" : "center"]],
+							area,
+							active: areas.read().activePaneArea === area,
+							onActivate: () => {
+								areas.activate(area);
+							},
+						}}
+					/>
+				))}
+			</TooltipProvider>
+		</DndProvider>
+	);
+	const view = render(fixture());
+	try {
+		expect(
+			captureWorkstationPaneRuntime(
+				api,
+				connection,
+				"workspace",
+				"workspace-tab",
+			),
+		).toBeNull();
+		expect(
+			view.container.querySelectorAll('[data-pane-id="terminal"]'),
+		).toHaveLength(1);
+		expect(
+			view.container.querySelectorAll('[data-pane-id="browser"]'),
+		).toHaveLength(1);
+		act(() => {
+			areas.right.getState().setPaneTitleOverride({
+				tabId: "right-tab",
+				paneId: "browser",
+				titleOverride: "External right title",
+			});
+		});
+		view.rerender(fixture());
+		expect(
+			(
+				view.container.querySelector(
+					'[data-pane-title-id="browser"]',
+				) as HTMLInputElement
+			).value,
+		).toBe("External right title");
+		expect(writes).toBe(0);
+		const active = (id: string) =>
+			view.container
+				.querySelector(`[data-pane-id="${id}"]`)
+				?.getAttribute("data-active");
+		expect(active("terminal")).toBe("true");
+		expect(active("browser")).toBe("false");
+		fireEvent.pointerDown(
+			required(view.container.querySelector('[data-pane-id="browser"]')),
+		);
+		view.rerender(fixture());
+		expect(active("terminal")).toBe("false");
+		expect(active("browser")).toBe("true");
+		expect(writes).toBe(0);
+	} finally {
+		view.unmount();
+		areas.dispose();
+	}
 });

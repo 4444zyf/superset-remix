@@ -1,22 +1,23 @@
-import {
-	registerWorkstationPaneRuntime,
-	preserveRuntimePanePins,
-} from "../../../../utils/workstation-pane-runtime/workstation-pane-runtime";
-import type { ModifierEvent } from "renderer/lib/clickPolicy/types";
-import type { BrowserLinkAction } from "shared/workstation-browser-preferences";
 import { Trans, useLingui } from "@lingui/react/macro";
 import {
 	type ContextMenuActionConfig,
 	createWorkspaceStore,
 	type PaneRegistry,
 	Workspace,
+	type WorkspaceProps,
+	type WorkspaceStore,
 	WorkspaceTab,
 } from "@superset/panes";
 import type { RestoreResourceCheck } from "@superset/shared/workspace-restore";
 import { DropdownMenuItem } from "@superset/ui/dropdown-menu";
 import { Columns2, Globe, Rows2, X } from "lucide-react";
+import type { ReactNode } from "react";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import type { ModifierEvent } from "renderer/lib/clickPolicy/types";
+import { usePaneAreaMoveActions } from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/hooks/usePaneAreaMoveActions/usePaneAreaMoveActions";
+import type { BrowserLinkAction } from "shared/workstation-browser-preferences";
 import { useStore } from "zustand";
+import type { StoreApi } from "zustand/vanilla";
 import type {
 	DirectDescriptor,
 	DirectWorkstationApi,
@@ -31,6 +32,10 @@ import {
 	toPaneState,
 } from "../../../../utils/pane-adapter/pane-adapter";
 import { paneStateMetadataKey } from "../../../../utils/workspace-pane-state/workspace-pane-state";
+import {
+	preserveRuntimePanePins,
+	registerWorkstationPaneRuntime,
+} from "../../../../utils/workstation-pane-runtime/workstation-pane-runtime";
 import type {
 	TerminalClipboardControls,
 	TerminalEmulator,
@@ -39,6 +44,20 @@ import type { TerminalFileTarget } from "../../../RemoteTerminal/utils/terminal-
 
 import { WorkspacePaneView } from "../WorkspacePaneView/WorkspacePaneView";
 import { isCompactPaneLayout } from "./utils/isCompactPaneLayout/isCompactPaneLayout";
+
+export interface ControlledPaneGrid {
+	store: StoreApi<WorkspaceStore<WorkspacePane>>;
+	linkedStores: StoreApi<WorkspaceStore<WorkspacePane>>[];
+	area: "center" | "right";
+	active: boolean;
+	onActivate(): void;
+	onMoved?(): void;
+	onNewTerminal?(axis: "horizontal" | "vertical", newTab: boolean): void;
+	renderWorkspace?(props: WorkspaceProps<WorkspacePane>): ReactNode;
+	renderAddTabMenu?(): ReactNode;
+	renderTabBarTrailing?(): ReactNode;
+	onInteractionStateChange?: WorkspaceProps<WorkspacePane>["onInteractionStateChange"];
+}
 
 export function PaneGrid({
 	api,
@@ -51,7 +70,9 @@ export function PaneGrid({
 	onOpenFile,
 	onOpenUrl,
 	resolveUrlAction,
+	controlled,
 }: {
+	controlled?: ControlledPaneGrid;
 	api: DirectWorkstationApi;
 	connection: DirectDescriptor | null;
 	workspace: WorkspaceView;
@@ -70,7 +91,9 @@ export function PaneGrid({
 	const current = useRef({ workspace, actions, connection });
 	current.current = { workspace, actions, connection };
 	const paneScope = workspace.tabId;
+	const controlledStore = controlled?.store;
 	const store = useMemo(() => {
+		if (controlledStore) return controlledStore;
 		const store = createWorkspaceStore<WorkspacePane>({
 			initialState: toPaneState({
 				...current.current.workspace,
@@ -110,12 +133,13 @@ export function PaneGrid({
 			},
 		});
 		return store;
-	}, [paneScope]);
+	}, [paneScope, controlledStore]);
 	const tab = useStore(store, (s) =>
 		s.tabs.find((t) => t.id === s.activeTabId),
 	);
 	const syncing = useRef(false);
 	useLayoutEffect(() => {
+		if (controlledStore) return;
 		syncing.current = true;
 		store
 			.getState()
@@ -123,9 +147,9 @@ export function PaneGrid({
 				preserveRuntimePanePins(store.getState(), toPaneState(workspace)),
 			);
 		syncing.current = false;
-	}, [store, workspace]);
+	}, [store, workspace, controlledStore]);
 	useLayoutEffect(() => {
-		if (!connection) return;
+		if (controlledStore || !connection) return;
 		return registerWorkstationPaneRuntime(
 			api,
 			connection,
@@ -154,52 +178,49 @@ export function PaneGrid({
 		connection?.backendId,
 		connection?.namespaceId,
 		connection?.instanceId,
+		controlledStore,
 	]);
 
-	useEffect(
-		() =>
-			store.subscribe((state, previous) => {
-				if (syncing.current) return;
-				if (current.current.workspace.paneTabs) {
-					if (paneStateMetadataKey(state) !== paneStateMetadataKey(previous)) {
-						void current.current.actions.savePaneState(
-							current.current.workspace.workspaceId,
-							state,
-							previous,
-						);
-						return;
-					}
-					for (const next of state.tabs) {
-						if (
-							JSON.stringify(next.layout) !==
-							JSON.stringify(
-								previous.tabs.find((t) => t.id === next.id)?.layout,
-							)
-						)
-							current.current.actions.saveLayout(
-								current.current.workspace.workspaceId,
-								fromPaneLayout(next.layout),
-								false,
-								next.id,
-							);
-					}
+	useEffect(() => {
+		if (controlledStore) return;
+		return store.subscribe((state, previous) => {
+			if (syncing.current) return;
+			if (current.current.workspace.paneTabs) {
+				if (paneStateMetadataKey(state) !== paneStateMetadataKey(previous)) {
+					void current.current.actions.savePaneState(
+						current.current.workspace.workspaceId,
+						state,
+						previous,
+					);
 					return;
 				}
-				const next = state.tabs[0];
-				if (
-					!next ||
-					JSON.stringify(next.layout) ===
-						JSON.stringify(previous.tabs[0]?.layout)
-				)
-					return;
-				current.current.actions.saveLayout(
-					current.current.workspace.workspaceId,
-					fromPaneLayout(next.layout),
-					false,
-				);
-			}),
-		[store],
-	);
+				for (const next of state.tabs) {
+					if (
+						JSON.stringify(next.layout) !==
+						JSON.stringify(previous.tabs.find((t) => t.id === next.id)?.layout)
+					)
+						current.current.actions.saveLayout(
+							current.current.workspace.workspaceId,
+							fromPaneLayout(next.layout),
+							false,
+							next.id,
+						);
+				}
+				return;
+			}
+			const next = state.tabs[0];
+			if (
+				!next ||
+				JSON.stringify(next.layout) === JSON.stringify(previous.tabs[0]?.layout)
+			)
+				return;
+			current.current.actions.saveLayout(
+				current.current.workspace.workspaceId,
+				fromPaneLayout(next.layout),
+				false,
+			);
+		});
+	}, [store, controlledStore]);
 	const [width, setWidth] = useState(window.innerWidth);
 	const gridRef = useRef<HTMLDivElement>(null);
 	const [availableSize, setAvailableSize] = useState<{
@@ -240,16 +261,17 @@ export function PaneGrid({
 			window.removeEventListener("resize", resized);
 		};
 	}, []);
-	const groupPanes = workspace.paneTabs
+	const grouped = !!controlled || !!workspace.paneTabs;
+	const groupPanes = grouped
 		? workspace.panes.filter((p) => Boolean(tab?.panes[p.paneId]))
 		: workspace.panes;
-	const groupLayout = workspace.paneTabs
+	const groupLayout = grouped
 		? tab
 			? fromPaneLayout(tab.layout)
 			: null
 		: workspace.layout;
 	const groupSize =
-		workspace.paneTabs && availableSize
+		grouped && availableSize
 			? { ...availableSize, height: Math.max(0, availableSize.height - 36) }
 			: availableSize;
 	const compact = isCompactPaneLayout({
@@ -389,7 +411,7 @@ export function PaneGrid({
 				workspaceId={workspace.workspaceId}
 				pane={pane}
 				check={checkFor(id)}
-				active={tab?.activePaneId === id}
+				active={tab?.activePaneId === id && (controlled?.active ?? true)}
 				allowed={allowed.has(id)}
 				createEmulator={createEmulator}
 				onOpenFile={onOpenFile}
@@ -403,7 +425,19 @@ export function PaneGrid({
 					};
 				}}
 				onFocus={() => {
-					void actions.focusPane(workspace.workspaceId, id);
+					if (controlled) {
+						const state = store.getState(),
+							match = state.getPane(id);
+						if (
+							match &&
+							(state.activeTabId !== match.tabId ||
+								state.getTab(match.tabId)?.activePaneId !== id)
+						)
+							state.setActivePane({ tabId: match.tabId, paneId: id });
+						controlled.onActivate();
+					} else {
+						void actions.focusPane(workspace.workspaceId, id);
+					}
 				}}
 				onChat={(resourceId) => {
 					void actions.selectChat(workspace.workspaceId, id, resourceId);
@@ -429,11 +463,24 @@ export function PaneGrid({
 			: labelsForPane(pane));
 	const labelsForPane = (pane: WorkspacePane) =>
 		pane.kind === "chat" ? t({ message: "Chat" }) : t({ message: "Terminal" });
+	const newTerminal = (axis: "horizontal" | "vertical", newTab = false) => {
+		if (controlled?.onNewTerminal) controlled.onNewTerminal(axis, newTab);
+		else if (newTab)
+			void actions.newTerminal(workspace.workspaceId, axis, undefined, {
+				placement: "new-tab",
+			});
+		else void actions.newTerminal(workspace.workspaceId, axis);
+	};
+	const canDropStore = (source: unknown) =>
+		source === store ||
+		!!controlled?.linkedStores.some((link) => link === source);
 	const definition: PaneRegistry<WorkspacePane>[string] = {
-		canDrop: (item) =>
-			item.store === store &&
-			!!item.paneId &&
-			!!store.getState().getPane(item.paneId),
+		canDrop: (item) => {
+			const source = [store, ...(controlled?.linkedStores ?? [])].find(
+				(candidate) => candidate === item.store,
+			);
+			return !!item.paneId && !!source?.getState().getPane(item.paneId);
+		},
 		getTitle: (pane) => pane.titleOverride ?? titleFor(pane.data),
 		getIcon: ({ pane }) =>
 			pane.kind === "browser" ? (
@@ -479,7 +526,7 @@ export function PaneGrid({
 			tooltip: t({ message: "Split horizontally" }),
 			onClick: () => {
 				if (connection?.capabilities?.durableOperations && !actions.busy)
-					void actions.newTerminal(workspace.workspaceId, "horizontal");
+					newTerminal("horizontal");
 			},
 		},
 		{
@@ -488,7 +535,7 @@ export function PaneGrid({
 			tooltip: t({ message: "Split vertically" }),
 			onClick: () => {
 				if (connection?.capabilities?.durableOperations && !actions.busy)
-					void actions.newTerminal(workspace.workspaceId, "vertical");
+					newTerminal("vertical");
 			},
 		},
 		{
@@ -524,7 +571,7 @@ export function PaneGrid({
 			label: t({ message: "Split horizontally" }),
 			onSelect: () => {
 				if (connection?.capabilities?.durableOperations && !actions.busy)
-					void actions.newTerminal(workspace.workspaceId, "horizontal");
+					newTerminal("horizontal");
 			},
 			disabled: !connection?.capabilities?.durableOperations || actions.busy,
 		},
@@ -533,7 +580,7 @@ export function PaneGrid({
 			label: t({ message: "Split vertically" }),
 			onSelect: () => {
 				if (connection?.capabilities?.durableOperations && !actions.busy)
-					void actions.newTerminal(workspace.workspaceId, "vertical");
+					newTerminal("vertical");
 			},
 			disabled: !connection?.capabilities?.durableOperations || actions.busy,
 		},
@@ -544,6 +591,14 @@ export function PaneGrid({
 		},
 	];
 
+	const movedContextMenuActions = usePaneAreaMoveActions({
+		defaults: contextMenuActions,
+		enabled: !!controlled,
+		source: store,
+		target: controlled?.linkedStores[0] ?? store,
+		direction: controlled?.area === "right" ? "center" : "right",
+		onMoved: controlled?.onMoved,
+	});
 	const compactNavigation = compact && (
 		<nav className="ws-compact-panes">
 			{groupPanes.map((p) => (
@@ -564,67 +619,67 @@ export function PaneGrid({
 		</nav>
 	);
 
+	const workspaceProps: WorkspaceProps<WorkspacePane> = {
+		store,
+		registry: { terminal: definition, chat: definition, browser: definition },
+		canDropItem: (item) => canDropStore(item.store),
+		transformDisplayedTab: (displayed) =>
+			isCompactPaneLayout({
+				viewportWidth: width,
+				paneCount: Object.keys(displayed.panes).length,
+				layout: fromPaneLayout(displayed.layout),
+				availableSize: groupSize,
+			}) && displayed.activePaneId
+				? {
+						...displayed,
+						layout: { type: "pane", paneId: displayed.activePaneId },
+					}
+				: displayed,
+		renderBelowTabBar: () => compactNavigation,
+		renderTabIcon: (tab) =>
+			Object.values(tab.panes).every((p) => p.kind === "browser") ? (
+				<Globe size={14} />
+			) : (
+				<Columns2 size={14} />
+			),
+		renderAddTabMenu:
+			controlled?.renderAddTabMenu ??
+			(() => (
+				<DropdownMenuItem
+					disabled={
+						!connection?.capabilities?.durableOperations || actions.busy
+					}
+					onSelect={() => newTerminal("horizontal", true)}
+				>
+					<Trans>New terminal</Trans>
+				</DropdownMenuItem>
+			)),
+		renderEmptyState: () => <Trans>New terminal</Trans>,
+		renderTabBarTrailing: controlled?.renderTabBarTrailing,
+		onInteractionStateChange: controlled?.onInteractionStateChange,
+		paneActions:
+			connection?.capabilities?.durableOperations && !actions.busy
+				? paneActions
+				: paneActions.filter((a) => a.key === "close"),
+		contextMenuActions: movedContextMenuActions,
+	};
 	return (
-		<div ref={gridRef} className="ws-pane-grid">
-			{workspace.paneTabs ? (
+		<div
+			ref={gridRef}
+			className="ws-pane-grid"
+			onPointerDownCapture={controlled?.onActivate}
+			onFocusCapture={controlled?.onActivate}
+		>
+			{grouped ? (
 				<div
 					data-workstation-pane-tabs
 					className="flex min-h-0 flex-1 flex-col"
 				>
-					<Workspace
-						store={store}
-						registry={{
-							terminal: definition,
-							chat: definition,
-							browser: definition,
-						}}
-						canDropItem={(item) => item.store === store}
-						transformDisplayedTab={(displayed) =>
-							isCompactPaneLayout({
-								viewportWidth: width,
-								paneCount: Object.keys(displayed.panes).length,
-								layout: fromPaneLayout(displayed.layout),
-								availableSize: groupSize,
-							}) && displayed.activePaneId
-								? {
-										...displayed,
-										layout: { type: "pane", paneId: displayed.activePaneId },
-									}
-								: displayed
-						}
-						renderBelowTabBar={() => compactNavigation}
-						renderTabIcon={(tab) =>
-							Object.values(tab.panes).every((p) => p.kind === "browser") ? (
-								<Globe size={14} />
-							) : (
-								<Columns2 size={14} />
-							)
-						}
-						renderAddTabMenu={() => (
-							<DropdownMenuItem
-								disabled={
-									!connection?.capabilities?.durableOperations || actions.busy
-								}
-								onSelect={() =>
-									void actions.newTerminal(
-										workspace.workspaceId,
-										"horizontal",
-										undefined,
-										{ placement: "new-tab" },
-									)
-								}
-							>
-								<Trans>New terminal</Trans>
-							</DropdownMenuItem>
-						)}
-						renderEmptyState={() => <Trans>New terminal</Trans>}
-						paneActions={
-							connection?.capabilities?.durableOperations && !actions.busy
-								? paneActions
-								: paneActions.filter((a) => a.key === "close")
-						}
-						contextMenuActions={contextMenuActions}
-					/>
+					{controlled?.renderWorkspace ? (
+						controlled.renderWorkspace(workspaceProps)
+					) : (
+						<Workspace {...workspaceProps} />
+					)}
 				</div>
 			) : (
 				<>
@@ -651,7 +706,7 @@ export function PaneGrid({
 										? paneActions
 										: paneActions.filter((a) => a.key === "close")
 								}
-								contextMenuActions={contextMenuActions}
+								contextMenuActions={movedContextMenuActions}
 							/>
 						) : (
 							<div className="flex flex-1 items-center justify-center text-sm text-muted-foreground">

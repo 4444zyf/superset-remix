@@ -120,8 +120,9 @@ test("offline startup keeps all three saved panes, ratios and focus without ordi
 	expect(calls).toEqual(["existing-restore"]);
 });
 
-test("the SSH window feature leaves local workspace opening on its existing path", async () => {
-	let captures = 0;
+test("a local workspace with empty V1 storage opens the shared window without creating a session", async () => {
+	const captures: unknown[] = [];
+	const mutations: string[] = [];
 	const id = "00000000-0000-4000-8000-000000000001";
 	const api = {
 		platform: "linux",
@@ -135,7 +136,7 @@ test("the SSH window feature leaves local workspace opening on its existing path
 			navigationRevision: 0,
 		}),
 		saveWorkspaceView: async (input: { view: unknown }) => {
-			captures++;
+			captures.push(input.view);
 			return {
 				...(input.view as object),
 				schemaVersion: 1,
@@ -155,8 +156,9 @@ test("the SSH window feature leaves local workspace opening on its existing path
 			instanceId: "instance",
 			capabilities: { workspaceViewRestoreV1: true },
 		}),
-		rpc: async (request: { path: string }) =>
-			request.path === "workspace.list"
+		rpc: async (request: { path: string; type?: string }) => {
+			if (request.type === "mutation") mutations.push(request.path);
+			return request.path === "workspace.list"
 				? [
 						{
 							id: "local-workspace",
@@ -166,15 +168,26 @@ test("the SSH window feature leaves local workspace opening on its existing path
 					]
 				: request.path === "terminal.list"
 					? { sessions: [] }
-					: [],
+					: [];
+		},
 	} as unknown as DirectWorkstationApi;
-	render(<Workstation api={api} />);
+	const ui = render(<Workstation api={api} />);
 	fireEvent.click(await screen.findByRole("button", { name: "Connect" }));
 	fireEvent.click(
 		await screen.findByRole("button", { name: "Local workspace" }),
 	);
 	await screen.findByRole("heading", { name: "Local workspace" });
-	expect(captures).toBe(0);
+	expect(ui.container.querySelector(".ws-workspace-window")).not.toBeNull();
+	expect(captures).toHaveLength(1);
+	expect(captures[0]).toMatchObject({
+		targets: [
+			{
+				connectionId: id,
+				workspaces: [{ workspaceId: "local-workspace", panes: [] }],
+			},
+		],
+	});
+	expect(mutations).toEqual([]);
 });
 
 test("a newly created SSH workspace opens its saved tab before the refreshed list has rendered", async () => {

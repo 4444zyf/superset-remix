@@ -7,9 +7,8 @@ import {
 import { useMemo } from "react";
 import { LuArrowLeftToLine, LuArrowRightToLine } from "react-icons/lu";
 import type { StoreApi } from "zustand/vanilla";
-import type { PaneViewerData } from "../../types";
 
-export function usePaneAreaMoveActions({
+export function usePaneAreaMoveActions<TData>({
 	defaults,
 	enabled,
 	source,
@@ -17,13 +16,13 @@ export function usePaneAreaMoveActions({
 	direction,
 	onMoved,
 }: {
-	defaults: ContextMenuActionConfig<PaneViewerData>[];
+	defaults: ContextMenuActionConfig<TData>[];
 	enabled: boolean;
-	source: StoreApi<WorkspaceStore<PaneViewerData>>;
-	target: StoreApi<WorkspaceStore<PaneViewerData>>;
+	source: StoreApi<WorkspaceStore<TData>>;
+	target: StoreApi<WorkspaceStore<TData>>;
 	direction: "right" | "center";
 	onMoved?: () => void;
-}): ContextMenuActionConfig<PaneViewerData>[] {
+}): ContextMenuActionConfig<TData>[] {
 	const { t } = useLingui();
 	return useMemo(() => {
 		if (!enabled) return defaults;
