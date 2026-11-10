@@ -1,0 +1,21 @@
+{
+  "base": "c7b0f6e16",
+  "fullAstTraversal": true,
+  "lastStatementMutationSmoke": true,
+  "constLetMutationSmoke": true,
+  "entireHookEqualAfterOnlyAddedLayoutWriterRemoved": true,
+  "entireEditQueueEqualAfterOptionalGeometryWriterAndStatusRemoved": true,
+  "byteEqual": [
+    "apps/desktop/src/renderer/workstation/Workstation/Workstation.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/WorkspaceWindow/WorkspaceWindow.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/WorkspaceWindow/components/PaneGrid/PaneGrid.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/RemoteTerminal/RemoteTerminal.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/utils/workspace-pane-areas/workspace-pane-areas.ts",
+    "apps/desktop/src/renderer/workstation/Workstation/utils/workspace-pane-areas/workspace-pane-areas-state.ts",
+    "apps/desktop/src/main/direct-app.ts",
+    "apps/desktop/src/preload/index.ts",
+    "apps/desktop/src/shared/workspace-view-v3.ts",
+    "packages/panes/src/core/store/store.ts"
+  ],
+  "scope": "Renderer-only optional layout batch writer and optional geometry dispatch. Old saves, IPC, model, store and root activation unchanged; no native/build acceptance."
+}

@@ -433,3 +433,12 @@ namespace切换直接归档原V3目标并用同版本验证/保存，保留两�
 新增回归先确认两个子grid覆盖同一个runtime的红例；修复后父级独占runtime，外部右侧标题不被重绘覆盖，切换侧只激活一个终端且不触发子级保存。旧local V1测试在未改产品时已错误要求零次保存，与现有共享窗口行为不符；基线复现后改为核对一次空布局保存及零mutation RPC。最终75项/286断言/7文件（含图片文件粘贴、文本复制和窗口恢复）、desktop类型、插件检查通过。原grid保留3条既有依赖规则错误，原文件在同项目临时静态检查复现相同3条及旧import排序错误；仅对grid的最终检查跳过该既有规则，未改全局lint配置。既有测试保留3警告/2提示。
 
 完整AST遍历含末语句和const/let变异自检：25个旧声明直接相同，7个声明仅移除明确controlled分支后相同，7条原effect保持；原移动hook主体、原右侧Workspace属性及header子元素相同，8个运行时/入口/IPC/原store模块逐字节保持。新环境从已推送136独立检出恢复，开发依赖及图标/路由/语言源码生成后验证；旧临时目录和127编译产物不在本环境，不沿用旧产物哈希复核结论。本阶段没有新桌面编译、原生实窗、CLI二进制、安装包或Actions。父级配对运行时、待保存布局与权威快照协调及根入口接线继续进行，不能以组件测试宣称完整双侧功能完成。[阶段一百三十七证据](../implementation/evidence/local-ssh-feature-parity/stage137)。
+
+
+## 阶段一百三十八：按明确标签保存布局，保留并发新增资源
+
+源码6e0a2b5d1增加内部可选savePaneLayouts：每批仅携带实际编辑过的tab布局和原pane/kind/resource/execution身份。经过完整V3验证及准确connection/backend/namespace/UID/targetRevision/workspace/tab归属检查，从最新视图定位所属侧；只更新这些tab的几何，不回写旧资源目录、标题、选择或未编辑标签。实际成员集合和执行身份变化会拒绝，布局前置遍历仍限16层/127节点/64叶子，批次最多64标签且不允许重复；在克隆视图上全批通过最终V3校验后才提交，保留原保存队列/CAS/browser leases，无新IPC或host floor。
+
+编辑防抖器新增可选saveLayouts和hasWork/onSettled。在此明确模式下累计触及的tab，手势回到批次起点仍保存最终几何，防止更早派发或并发快照捕获的中间比例盖住最后手势；纯布局沿原250ms，metadata仍携带整份待编辑状态走原路径。旧未提供saveLayouts的取消语义保持。hasWork覆盖待派发和未完成保存，settled在成功/失败清理后通知父级，以便延后同步权威快照而不丢未保存布局。
+
+5项新增检查：先记录缺少可选writer的红日志，再验证派发后回到起点、并发新浏览器标签/右侧资源保持、旧owner/替换执行拒绝；纯函数另验证新标题/选择、全批失败不修改输入。最初新标签夹具漏更新全资源legacy布局导致整份V3验证拒绝，修正夹具后通过；没有降低验证或增加超时。最终相关181项/912断言/18文件、desktop类型、新核心lint及插件通过；旧hook保留6项非空警告和既有import排序，未改全局配置。完整AST含末语句及const/let变异自检：整个原hook仅移除新增writer后相同，整个旧编辑器移除可选几何与状态分支后相同，10个入口/IPC/模型/controller/原store模块逐字节保持。仍未启用根界面，无新桌面构建、实窗、CLI二进制、安装包或Actions；继续父级运行时与界面接线。[阶段一百三十八证据](../implementation/evidence/local-ssh-feature-parity/stage138)。

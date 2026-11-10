@@ -1,0 +1,18 @@
+{
+  "source": "6e0a2b5d1",
+  "base": "c7b0f6e16",
+  "tests": {
+    "pass": 181,
+    "fail": 0,
+    "assertions": 912,
+    "files": 18
+  },
+  "desktopTypesExit": 0,
+  "lint": "New geometry writer/queue/tests clean. Existing hook retains 6 inherited non-null warnings; final targeted lint skips only its inherited import-order assist.",
+  "nativeAcceptance": false,
+  "newBuild": false,
+  "cliBinary": false,
+  "installer": false,
+  "githubActions": false,
+  "remaining": "Parent paired runtime synchronization and actual UI activation, followed by source/native acceptance. Width persistence and original expand remain pending."
+}
