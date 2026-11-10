@@ -2,7 +2,9 @@
 
 2026-10-14。版本 1.37.7，分支 `release-local-ssh-feature-parity-1.37.7`，基于已验证 1.37.6 的 `0ad8c05dd`。目标：原有功能逐项保留、复用并验证；能够在本地或 SSH 上运行的功能补齐数据源，而不是因为原页面位于 `_authenticated` 下就排除。
 
-## 2026-10-27 当前重点状态
+## 2026-11-10 当前重点状态
+
+阶段一百四十三在恢复后的新环境重新编译362255d27源码，单父级/V3根入口已经激活。本地及拥有loopback SSH的原浏览器API/CLI回归共296次（含8项认证拒绝）、32条真实CDP命令、SSH 20次窗口恢复通过；只读SQLite确认两端实际保存schemaVersion3，编译文件/脚本/源码CLI全程不变且自有进程清理完成。右侧专属移动/合并/新建/宽度手势、原展开和宽度持久化继续；本轮没有重跑图片粘贴/滚轮，也不把原浏览器恢复回归视为所有新右侧交互已完成。见[阶段一百四十三证据](../implementation/evidence/local-ssh-feature-parity/stage143)。
 
 用户强调的滚轮/触控板输入保护和终端复制粘贴已实现。阶段八十九在5dcb36689源码编译上独立回归本地与拥有的loopback SSH：历史上下翻动、无鼠标TUI回看不注入方向键、保存的stock偏好、SGR/legacy/pixel切换、中文/Emoji复制、多行括号粘贴、图片/文件路径及重挂载后OSC52通过。两个SSH套件各含20次窗口恢复。初轮数值观测失败、截图和只读诊断已保留；最终夹具等待实际渲染并保留前后数值，不重发滚轮输入。真实供应商Agent、外部SSH和物理Mac触控板/剪贴板仍未实测。
 
@@ -480,3 +482,14 @@ Workstation向现有hook请求paneAreas模式，仍由完整get/saveV3及saveOpe
 5项新增回归覆盖规范执行号、之后用户pin取消、同步保留Files/右侧焦点且无额外读取、退役/不完整接口拒绝、双侧替换交付旧编辑但不回声。新回归对旧renderer的独立基线立即得到execution而非canonical-execution失败；临时复原旧模块后用finally恢复，没有提高超时或加入重试。其余新检查首轮通过。最终192项/4685断言/23文件、desktop类型、无账号启动审计及插件通过。旧runtime保留3项非空警告，原root/hook/renderer保留12项，未改全局lint。
 
 完整AST含末语句及const/let变异自检：原hook/runtime/controller主体仅移除明确新增可选方法后相同，原import集合保持；renderer的prepare/current/availability/event监听、ids及save原声明相同；6个IPC/模型/终端/原store文件逐字节保持。当前仍为源码/组件/协议夹具验证，未把受控guest或存储回执混称真实SQLite、原生窗口或SSH Agent。没有新桌面构建、CLI二进制、安装包或Actions；下一步冻结新源码做本地及拥有SSH实窗，原展开/宽度持久化和其他原版功能继续。[阶段一百四十二证据](../implementation/evidence/local-ssh-feature-parity/stage142)。
+
+
+## 阶段一百四十三：新环境源码编译与两端实际回归
+
+重新从362255d27做Electron源码编译，工具退出0；冻结2420个dist产物文件（main/preload/renderer共2205个，其余为复制资源）、86个MJS及3639个源码CLI/共享/语言图文件。旧127编译产物没有拿来冒充复验。Electron 41.10.7开发运行时首次下载fetch失败，使用环境继承代理支持后成功；TLS校验未关闭。补入同ABI145的better-sqlite3原生依赖，内存SQLite与node-pty实际加载通过。没有CLI二进制、密封后端归档或安装包构建，也没有Sentry上传或Actions。
+
+新环境没有旧packages/pty-daemon/dist中间产物，源码SSH夹具改为使用本次Electron编译的dist/main/pty-daemon.js并在创建服务前检查存在；0c9dbd302已提交推送。随后固定全部夹具与产品哈希，再分别运行独立新XDG资料、独占X171的本地与拥有loopback SSH实际Electron。两端均首轮退出0；原浏览器API/源码CLI共288次及8项认证拒绝、32条实际CDP命令、SSH原20次窗口恢复、后台焦点/隐藏guest/正常重开/不重放均通过。沿用原断言逐项核对状态码、去重、输入/执行失败语义、PTY/execution/cwd、剪贴板不变及无renderer错误，没有减少断言或加超时重试。实际截图中可见新根入口侧栏控制；关键四张截图已查看，并在证据中列出实际查看文件。
+
+退出后只读打开两份自有workspace-views.db，仅记录schemaVersion/计数/修订号：本地schema3/revision64，SSH schema3/revision119，两端各3个workspace均有rightPaneLayout；没有把旧V2投影当成原始存储版本。记录的应用/PTY/HTTP PID均消失，按自有XDG/SUPERSET_WORKSPACE_ID范围检查无残留进程，X171已释放。所有2420产物、86脚本和3639源码CLI图文件逐字节复核不变。证据只收批准的顶层脚本/JSON/图片/gz日志，不含资料DB、配置或密钥，私钥/token/派生CDP凭据模式扫描通过；原CLI输出凭据已遮蔽。
+
+这是Linux源码Electron与自有loopback SSH的真实原浏览器/恢复回归，不是发行物、Mac、外部SSH或真实供应商Agent认证。旧三窗格中的Claude/Codex/OMP为受控心跳任务标题，不代表启动了这些供应商服务。本轮未重跑终端图片粘贴/滚轮，仍以此前63/89等明确证据为准；也未覆盖右侧专属转移/合并/新建/宽度的完整原生旅程。下一步增加这些具体旅程、继续原展开/宽度持久化及其余功能。[阶段一百四十三证据](../implementation/evidence/local-ssh-feature-parity/stage143)。

@@ -1,0 +1,20 @@
+[
+  {
+    "case": "local-first",
+    "readOnly": true,
+    "schemaVersion": 3,
+    "revision": 64,
+    "workspaces": 3,
+    "panes": 6,
+    "workspacesWithRightLayout": 3
+  },
+  {
+    "case": "ssh-first",
+    "readOnly": true,
+    "schemaVersion": 3,
+    "revision": 119,
+    "workspaces": 3,
+    "panes": 9,
+    "workspacesWithRightLayout": 3
+  }
+]
