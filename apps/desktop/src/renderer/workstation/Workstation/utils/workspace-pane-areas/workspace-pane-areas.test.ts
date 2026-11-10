@@ -316,3 +316,25 @@ test("a listener that disposes the area during the pending edit flush prevents a
 	expect(f.areas.center.getState().tabs).toBe(current.tabs);
 	f.drain();
 });
+
+test("authorized replacement of both areas flushes prior edits and publishes canonical state without an edit echo", () => {
+	const f = runtime(),
+		next = readWorkspacePaneAreas(workspace(fixture()));
+	f.areas.right.getState().setPanePinned({ paneId: "browser", pinned: true });
+	required(next.center.tabs[0]?.panes.terminal).data.executionId =
+		"canonical-execution";
+	required(next.right.tabs[0]?.panes.browser).titleOverride = "Canonical right";
+	expect(f.areas.replaceAreasFromRuntime(next)).toBe(true);
+	expect(f.events).toHaveLength(1);
+	expect(f.events[0]?.next.right.tabs[0]?.panes.browser?.pinned).toBe(true);
+	expect(
+		f.areas.center.getState().getPane("terminal")?.pane.data.executionId,
+	).toBe("canonical-execution");
+	expect(f.areas.right.getState().getPane("browser")?.pane.titleOverride).toBe(
+		"Canonical right",
+	);
+	f.drain();
+	expect(f.events).toHaveLength(1);
+	f.areas.dispose();
+	expect(f.areas.replaceAreasFromRuntime(next)).toBe(false);
+});

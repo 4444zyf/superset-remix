@@ -1,4 +1,6 @@
 import type { DirectWorkstationApi } from "shared/direct-workstation";
+import type { WorkspaceViewSnapshotV3 } from "shared/workspace-view-v3";
+import { readWorkspacePaneAreas } from "../../utils/workspace-pane-areas/workspace-pane-areas";
 import type { WorkspaceViewSnapshotV2 } from "shared/workspace-view-v2";
 import type {
 	WorkstationBrowserOpenEvent,
@@ -15,6 +17,11 @@ import { captureWorkstationPaneRuntime } from "../../utils/workstation-pane-runt
 
 interface Dependencies {
 	paneAreas?: boolean;
+	acceptAreas?(
+		snapshot: WorkspaceViewSnapshotV3,
+		input: WorkstationBrowserOpenInput,
+		show: boolean,
+	): void;
 	flush(): Promise<void>;
 	enqueue<T>(action: () => Promise<T>): Promise<T>;
 	accept(
@@ -178,19 +185,42 @@ export function startWorkstationBrowserOpenRenderer(
 						},
 					],
 				};
-				const saved =
+				const savedAreas =
 					openedV3 && saveV3
-						? projectBrowserOpenSnapshotV2(
-								await saveV3.call(source, {
-									...identity,
-									save: { ...save, view: openedV3.view },
-								}),
-							)
-						: await source.saveView({ ...identity, save });
+						? await saveV3.call(source, {
+								...identity,
+								save: { ...save, view: openedV3.view },
+							})
+						: null;
+				const saved = savedAreas
+					? projectBrowserOpenSnapshotV2(savedAreas)
+					: await source.saveView({ ...identity, save });
 				await current();
 				stop();
 				stop = () => {};
-				runtime?.apply(opened.state, input.show);
+				const acceptAreas =
+					savedAreas && (!runtime || runtime.applyAreas)
+						? dependencies().acceptAreas
+						: undefined;
+				const canonicalWorkspace = acceptAreas
+					? savedAreas?.targets
+							.find(
+								(target) =>
+									target.connectionId === input.descriptor.connectionId,
+							)
+							?.workspaces.find(
+								(workspace) => workspace.workspaceId === input.workspaceId,
+							)
+					: undefined;
+				if (acceptAreas && savedAreas) {
+					if (!canonicalWorkspace)
+						throw Error("Browser workspace identity changed");
+					runtime?.applyAreas?.(
+						readWorkspacePaneAreas(canonicalWorkspace),
+						input.show,
+					);
+					acceptAreas(savedAreas, input, input.show);
+				} else runtime?.apply(opened.state, input.show);
 				if (areaBefore && runtime && oldWorkspace) {
 					const updated = captureWorkstationPaneRuntime(
 						api,
@@ -206,8 +236,15 @@ export function startWorkstationBrowserOpenRenderer(
 					});
 				}
 				const browsers = workstationBrowsers(api),
-					pane = opened.pane;
-				if (pane.kind !== "browser")
+					pane = canonicalWorkspace
+						? canonicalWorkspace.panes.find(
+								(pane) =>
+									pane.paneId === opened.pane.paneId &&
+									pane.kind === "browser" &&
+									pane.resourceId === opened.pane.resourceId,
+							)
+						: opened.pane;
+				if (!pane || pane.kind !== "browser")
 					throw Error("Browser pane identity changed");
 				const id = browsers.ensure(input.descriptor, input.workspaceId, pane, {
 					onPersist: (state) => {
@@ -238,7 +275,9 @@ export function startWorkstationBrowserOpenRenderer(
 					onFind() {},
 					onError() {},
 				});
-				const accepted = dependencies().accept(saved, input, input.show);
+				const accepted = acceptAreas
+					? undefined
+					: dependencies().accept(saved, input, input.show);
 				if (accepted) {
 					await accepted;
 					await current();

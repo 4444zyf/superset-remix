@@ -266,6 +266,25 @@ export function createWorkspacePaneAreas(
 			if (read() !== before) notifySnapshots();
 			return true;
 		},
+		replaceAreasFromRuntime(next: WorkspacePaneAreasState): boolean {
+			if (disposed) return false;
+			flush();
+			if (disposed) return false;
+			const before = read();
+			syncing = true;
+			try {
+				activePaneArea = next.activePaneArea;
+				rightPaneOpen = next.rightPaneOpen;
+				center.getState().replaceState(next.center);
+				right.getState().replaceState(next.right);
+				if (activePaneArea === "right" && !right.getState().activeTabId)
+					activePaneArea = "center";
+			} finally {
+				syncing = false;
+			}
+			if (read() !== before) notifySnapshots();
+			return true;
+		},
 		synchronize(next: WorkspaceViewV3): void {
 			if (disposed) return;
 			flush();

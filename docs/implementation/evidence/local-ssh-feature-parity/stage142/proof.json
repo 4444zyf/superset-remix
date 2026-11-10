@@ -1,0 +1,18 @@
+{
+  "base": "9d1b7a348",
+  "tests": {
+    "pass": 192,
+    "fail": 0,
+    "assertions": 4685,
+    "files": 23
+  },
+  "desktopTypesExit": 0,
+  "oldRendererBaseline": "Old renderer plus new regression fails immediately: execution instead of canonical-execution. No timeout/retry changed.",
+  "lint": "New methods pass. Existing runtime has 3 non-null warnings; old root/hook/renderer retain 12 non-null warnings. No global lint changes.",
+  "nativeAcceptance": false,
+  "newBuild": false,
+  "cliBinary": false,
+  "installer": false,
+  "githubActions": false,
+  "remaining": "Fresh source Electron compile/native local and owned SSH verification, adversarial drag/drop focus, original expand and persisted width."
+}

@@ -153,6 +153,10 @@ export function WorkspacePaneAreas(props: Props) {
 					{
 						read: () => owner.areas.center.getState(),
 						readAreas: owner.areas.read,
+						replaceAreas(next) {
+							if (!owner.areas.replaceAreasFromRuntime(next))
+								throw Error("Workspace pane area retired");
+						},
 						fingerprint: () =>
 							workspacePaneAreasStructureKey(owner.areas.read()),
 						subscribe: owner.areas.subscribe,

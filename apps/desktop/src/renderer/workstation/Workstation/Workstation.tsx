@@ -193,6 +193,7 @@ export function Workstation({
 		if (!views.browserEnabled) return;
 		return startWorkstationBrowserOpenRenderer(api, () => ({
 			paneAreas: browserOpenDependencies.current.views.paneAreasEnabled,
+            acceptAreas: (snapshot, input, show) => browserOpenDependencies.current.views.acceptBrowserOpenAreas(snapshot, input.descriptor.connectionId, input.workspaceId, show),
 			flush: () => browserOpenDependencies.current.views.flush(),
 			enqueue: (action) =>
 				browserOpenDependencies.current.views.enqueueBrowserOpen(action),

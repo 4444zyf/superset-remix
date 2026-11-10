@@ -22,12 +22,25 @@ import {
 } from "shared/workspace-view-v2";
 import { workstationBrowsers } from "../../providers/WorkstationBrowsers/workstation-browsers";
 import { startWorkstationBrowserOpenRenderer } from "./workstation-browser-open-renderer";
-import { validateWorkspaceViewV3, type WorkspaceViewSnapshotV3, type WorkspaceViewInputV3 } from "shared/workspace-view-v3";
+import {
+	validateWorkspaceViewV3,
+	type WorkspaceViewSnapshotV3,
+	type WorkspaceViewInputV3,
+} from "shared/workspace-view-v3";
 import { browserOpenSaveV3Schema } from "shared/workstation-browser-open";
 import { mergeLegacyWorkspaceViewAreas } from "../../../../../main/lib/ssh-direct/workspace-view-area-merge";
 import { projectBrowserOpenSnapshotV2 } from "../../utils/workspace-browser-open/workspace-browser-open-view-v3";
-import { createWorkspacePaneAreas, workspacePaneAreasStructureKey } from "../../utils/workspace-pane-areas/workspace-pane-areas";
-function fixture(blockSave = false, rotateConfirmation = false, paneAreas = false, blockAccept = false) {
+import {
+	readWorkspacePaneAreas,
+	createWorkspacePaneAreas,
+	workspacePaneAreasStructureKey,
+} from "../../utils/workspace-pane-areas/workspace-pane-areas";
+function fixture(
+	blockSave = false,
+	rotateConfirmation = false,
+	paneAreas = false,
+	blockAccept = false,
+) {
 	const a = crypto.randomUUID(),
 		b = crypto.randomUUID(),
 		workspaceId = crypto.randomUUID(),
@@ -95,22 +108,66 @@ function fixture(blockSave = false, rotateConfirmation = false, paneAreas = fals
 		activeConnectionId: a,
 		targets: [target(a), target(b)],
 	};
-	let areaSnapshot: WorkspaceViewSnapshotV3 | undefined, areaReads = 0, areaSaves = 0;
- const areaSaveSettled = Promise.withResolvers<void>();
- if (paneAreas) {
-  const { schemaVersion: _, revision, updatedAt, ...view } = snapshot;
-  const input: WorkspaceViewInputV3 = structuredClone(view);
-  const workspace = input.targets.find(t => t.connectionId === b)?.workspaces[0];
-  if (!workspace) throw Error("Missing fixture workspace");
-  workspace.panes.push({ paneId: "right-browser", kind: "browser", resourceId: "right-page", pinned: false, browser: { url: "https://right.invalid/", pageTitle: "Right", faviconUrl: null } });
-  workspace.paneTabs = [{ tabId: "center-tab", createdAt: 1, activePaneId: "terminal", layout: { type: "pane", paneId: "terminal" } }];
-  workspace.activePaneTabId = "center-tab";
-  workspace.rightPaneLayout = { version: 1, activeTabId: "right-tab", tabs: [{ tabId: "right-tab", createdAt: 2, activePaneId: "right-browser", layout: { type: "pane", paneId: "right-browser" } }] };
-  workspace.layout = { type: "split", axis: "horizontal", ratio: 0.5, first: { type: "pane", paneId: "terminal" }, second: { type: "pane", paneId: "right-browser" } };
-  workspace.rightPaneOpen = true; workspace.activePaneArea = "right"; workspace.activePaneId = "right-browser";
-  areaSnapshot = { ...validateWorkspaceViewV3(input), schemaVersion: 3, revision, updatedAt };
-  snapshot = projectBrowserOpenSnapshotV2(areaSnapshot);
- }
+	let areaSnapshot: WorkspaceViewSnapshotV3 | undefined,
+		areaReads = 0,
+		areaSaves = 0;
+	const areaSaveSettled = Promise.withResolvers<void>();
+	if (paneAreas) {
+		const { schemaVersion: _, revision, updatedAt, ...view } = snapshot;
+		const input: WorkspaceViewInputV3 = structuredClone(view);
+		const workspace = input.targets.find((t) => t.connectionId === b)
+			?.workspaces[0];
+		if (!workspace) throw Error("Missing fixture workspace");
+		workspace.panes.push({
+			paneId: "right-browser",
+			kind: "browser",
+			resourceId: "right-page",
+			pinned: false,
+			browser: {
+				url: "https://right.invalid/",
+				pageTitle: "Right",
+				faviconUrl: null,
+			},
+		});
+		workspace.paneTabs = [
+			{
+				tabId: "center-tab",
+				createdAt: 1,
+				activePaneId: "terminal",
+				layout: { type: "pane", paneId: "terminal" },
+			},
+		];
+		workspace.activePaneTabId = "center-tab";
+		workspace.rightPaneLayout = {
+			version: 1,
+			activeTabId: "right-tab",
+			tabs: [
+				{
+					tabId: "right-tab",
+					createdAt: 2,
+					activePaneId: "right-browser",
+					layout: { type: "pane", paneId: "right-browser" },
+				},
+			],
+		};
+		workspace.layout = {
+			type: "split",
+			axis: "horizontal",
+			ratio: 0.5,
+			first: { type: "pane", paneId: "terminal" },
+			second: { type: "pane", paneId: "right-browser" },
+		};
+		workspace.rightPaneOpen = true;
+		workspace.activePaneArea = "right";
+		workspace.activePaneId = "right-browser";
+		areaSnapshot = {
+			...validateWorkspaceViewV3(input),
+			schemaVersion: 3,
+			revision,
+			updatedAt,
+		};
+		snapshot = projectBrowserOpenSnapshotV2(areaSnapshot);
+	}
 	let onEvent: ((event: WorkstationBrowserOpenEvent) => void) | undefined,
 		onAvailability:
 			| ((event: WorkstationBrowserOpenAvailability) => void)
@@ -167,11 +224,21 @@ function fixture(blockSave = false, rotateConfirmation = false, paneAreas = fals
 				updatedAt: 2,
 			};
 			if (areaSnapshot) {
-    const { schemaVersion: _, revision: __, updatedAt: ___, ...previous } = areaSnapshot;
-    areaSnapshot = { ...mergeLegacyWorkspaceViewAreas(previous, view), schemaVersion: 3, revision: snapshot.revision, updatedAt: snapshot.updatedAt };
-    snapshot = projectBrowserOpenSnapshotV2(areaSnapshot);
-   }
-   saves++;
+				const {
+					schemaVersion: _,
+					revision: __,
+					updatedAt: ___,
+					...previous
+				} = areaSnapshot;
+				areaSnapshot = {
+					...mergeLegacyWorkspaceViewAreas(previous, view),
+					schemaVersion: 3,
+					revision: snapshot.revision,
+					updatedAt: snapshot.updatedAt,
+				};
+				snapshot = projectBrowserOpenSnapshotV2(areaSnapshot);
+			}
+			saves++;
 			return structuredClone(snapshot);
 		},
 		onEvent: (listener) => {
@@ -187,24 +254,43 @@ function fixture(blockSave = false, rotateConfirmation = false, paneAreas = fals
 			};
 		},
 	};
- if (paneAreas) source.saveViewV3 = async value => {
-  const parsed = browserOpenSaveV3Schema.parse(value);
-  saveStarted.resolve();
-  try {
-   await saveGate.promise;
-   if (!requests.isCurrent(1, value)) throw Error("Browser open scope changed");
-   if (!areaSnapshot) throw Error("Missing owned V3 state");
-   areaSnapshot = { ...validateWorkspaceViewV3(parsed.save.view), schemaVersion: 3, revision: areaSnapshot.revision + 1, updatedAt: 2 };
-   snapshot = projectBrowserOpenSnapshotV2(areaSnapshot); areaSaves++;
-   return structuredClone(areaSnapshot);
-  } finally { areaSaveSettled.resolve(); }
- };
+	if (paneAreas)
+		source.saveViewV3 = async (value) => {
+			const parsed = browserOpenSaveV3Schema.parse(value);
+			saveStarted.resolve();
+			try {
+				await saveGate.promise;
+				if (!requests.isCurrent(1, value))
+					throw Error("Browser open scope changed");
+				if (!areaSnapshot) throw Error("Missing owned V3 state");
+				areaSnapshot = {
+					...validateWorkspaceViewV3(parsed.save.view),
+					schemaVersion: 3,
+					revision: areaSnapshot.revision + 1,
+					updatedAt: 2,
+				};
+				snapshot = projectBrowserOpenSnapshotV2(areaSnapshot);
+				areaSaves++;
+				return structuredClone(areaSnapshot);
+			} finally {
+				areaSaveSettled.resolve();
+			}
+		};
 	const api = {
-  ...(paneAreas ? { getWorkspaceViewV3: async () => {
-   if (!areaSnapshot) throw Error("Missing owned V3 state");
-   areaReads++;
-   return { revision: areaSnapshot.revision, snapshot: structuredClone(areaSnapshot), invalid: false, navigationRevision: 0 };
-  } } : {}),
+		...(paneAreas
+			? {
+					getWorkspaceViewV3: async () => {
+						if (!areaSnapshot) throw Error("Missing owned V3 state");
+						areaReads++;
+						return {
+							revision: areaSnapshot.revision,
+							snapshot: structuredClone(areaSnapshot),
+							invalid: false,
+							navigationRevision: 0,
+						};
+					},
+				}
+			: {}),
 		getWorkspaceViewV2: async () => {
 			reads++;
 			return {
@@ -234,8 +320,10 @@ function fixture(blockSave = false, rotateConfirmation = false, paneAreas = fals
 			onEvent: () => () => {},
 		},
 	} as unknown as DirectWorkstationApi;
+	let onAcceptAreas: ((snapshot: WorkspaceViewSnapshotV3) => void) | undefined;
 	const stop = startWorkstationBrowserOpenRenderer(api, () => ({
-  paneAreas,
+		...(onAcceptAreas ? { acceptAreas: onAcceptAreas } : {}),
+		paneAreas,
 		flush: async () => {},
 		enqueue: async (action) => action(),
 		accept: () => {
@@ -250,10 +338,13 @@ function fixture(blockSave = false, rotateConfirmation = false, paneAreas = fals
 	if (!blockSave) saveGate.resolve();
 	return {
 		api,
-  areaSnapshot: () => areaSnapshot,
-  areaReads: () => areaReads,
-  areaSaves: () => areaSaves,
-  areaSaveSettled,
+		setAcceptAreas(handler: (snapshot: WorkspaceViewSnapshotV3) => void) {
+			onAcceptAreas = handler;
+		},
+		areaSnapshot: () => areaSnapshot,
+		areaReads: () => areaReads,
+		areaSaves: () => areaSaves,
+		areaSaveSettled,
 		input,
 		requests,
 		ready,
@@ -561,32 +652,53 @@ test("a structural right-side edit retires an in-flight center open before its V
 });
 
 test("an asynchronous view refresh must finish before background guest creation and acknowledgement", async () => {
- const f=fixture(false,false,true,true), guestCreated=Promise.withResolvers<Element>();
- const observer=new MutationObserver(()=>{const guest=document.querySelector("webview");if(guest)guestCreated.resolve(guest);});
- observer.observe(document.body,{childList:true,subtree:true});
- try {
- await f.ready.promise;
- const receipt=f.execute()().catch(error=>error);
- await f.accepted.promise;
- expect(document.querySelectorAll("webview")).toHaveLength(0);
- f.acceptGate.resolve();
- const guest=await guestCreated.promise;
- Object.assign(guest,{getWebContentsId:()=>42,executeJavaScript:async()=>{throw Error("No viewport stream in owned unit guest");}});
- guest.dispatchEvent(new Event("dom-ready"));
- await f.registerStarted.promise;f.registerGate.resolve();
- expect((await receipt).paneId).toBeDefined();
- } finally {observer.disconnect();f.close();}
+	const f = fixture(false, false, true, true),
+		guestCreated = Promise.withResolvers<Element>();
+	const observer = new MutationObserver(() => {
+		const guest = document.querySelector("webview");
+		if (guest) guestCreated.resolve(guest);
+	});
+	observer.observe(document.body, { childList: true, subtree: true });
+	try {
+		await f.ready.promise;
+		const receipt = f
+			.execute()()
+			.catch((error) => error);
+		await f.accepted.promise;
+		expect(document.querySelectorAll("webview")).toHaveLength(0);
+		f.acceptGate.resolve();
+		const guest = await guestCreated.promise;
+		Object.assign(guest, {
+			getWebContentsId: () => 42,
+			executeJavaScript: async () => {
+				throw Error("No viewport stream in owned unit guest");
+			},
+		});
+		guest.dispatchEvent(new Event("dom-ready"));
+		await f.registerStarted.promise;
+		f.registerGate.resolve();
+		expect((await receipt).paneId).toBeDefined();
+	} finally {
+		observer.disconnect();
+		f.close();
+	}
 });
 
-test("retiring a main request during an asynchronous view refresh prevents background creation",async()=>{
- const f=fixture(false,false,true,true);
- try {
- await f.ready.promise;const execute=f.execute(),receipt=execute().catch(error=>error);
- await f.accepted.promise;execute.release?.();
- expect((await receipt).message).toContain("released");
- f.acceptGate.resolve();await f.completed.promise;
- expect(document.querySelectorAll("webview")).toHaveLength(0);
- }finally{f.close();}
+test("retiring a main request during an asynchronous view refresh prevents background creation", async () => {
+	const f = fixture(false, false, true, true);
+	try {
+		await f.ready.promise;
+		const execute = f.execute(),
+			receipt = execute().catch((error) => error);
+		await f.accepted.promise;
+		execute.release?.();
+		expect((await receipt).message).toContain("released");
+		f.acceptGate.resolve();
+		await f.completed.promise;
+		expect(document.querySelectorAll("webview")).toHaveLength(0);
+	} finally {
+		f.close();
+	}
 });
 function pairedRuntime(f: ReturnType<typeof fixture>) {
 	const workspace = f
@@ -603,6 +715,10 @@ function pairedRuntime(f: ReturnType<typeof fixture>) {
 		{
 			read: () => areas.center.getState(),
 			readAreas: () => areas.read(),
+			replaceAreas: (next) => {
+				if (!areas.replaceAreasFromRuntime(next))
+					throw Error("Retired paired runtime");
+			},
 			replace: (state) => {
 				if (!areas.replaceFromRuntime("center", state))
 					throw Error("Retired paired runtime");
@@ -717,6 +833,87 @@ test("a right edit captured before the V3 open is saved travels with the center 
 		await f.registerStarted.promise;
 		f.registerGate.resolve();
 		expect((await receipt).paneId).toBeDefined();
+		expect(f.areaSaves()).toBe(1);
+	} finally {
+		r.off();
+		r.areas.dispose();
+		f.close();
+	}
+});
+
+test("full V3 acceptance applies canonical executions on both sides before rearming user edit cancellation", async () => {
+	const f = fixture(false, false, true),
+		r = pairedRuntime(f);
+	const source = f.api.browser?.openRequests,
+		save = source?.saveViewV3;
+	if (!source || !save) throw Error("Missing owned area save");
+	source.saveViewV3 = async (value) => {
+		const saved = await save.call(source, value),
+			workspace = saved.targets.find(
+				(t) => t.connectionId === f.input.descriptor.connectionId,
+			)?.workspaces[0];
+		if (!workspace) throw Error("Missing saved workspace");
+		const terminal = workspace.panes.find((p) => p.kind === "terminal");
+		if (!terminal) throw Error("Missing terminal");
+		terminal.executionId = "canonical-execution";
+		return saved;
+	};
+	f.setAcceptAreas((saved) => {
+		const workspace = saved.targets.find(
+			(t) => t.connectionId === f.input.descriptor.connectionId,
+		)?.workspaces[0];
+		if (!workspace) throw Error("Missing workspace");
+		r.areas.replaceAreasFromRuntime(readWorkspacePaneAreas(workspace));
+		f.accepted.resolve();
+	});
+	try {
+		await f.ready.promise;
+		const receipt = f
+			.execute()()
+			.catch((error) => error);
+		await f.accepted.promise;
+		expect(
+			r.areas.center.getState().getPane("terminal")?.pane.data.executionId,
+		).toBe("canonical-execution");
+		expect(
+			r.areas.right.getState().getPane("right-browser")?.pane.data.resourceId,
+		).toBe("right-page");
+		const guest = document.querySelector("webview");
+		if (!guest) throw Error("Missing guest");
+		Object.assign(guest, {
+			getWebContentsId: () => 42,
+			executeJavaScript: async () => {
+				throw Error("No viewport stream");
+			},
+		});
+		guest.dispatchEvent(new Event("dom-ready"));
+		await f.registerStarted.promise;
+		f.registerGate.resolve();
+		expect((await receipt).paneId).toBeDefined();
+		expect(f.terminalCalls()).toBe(0);
+	} finally {
+		r.off();
+		r.areas.dispose();
+		f.close();
+	}
+});
+test("a user pin edit after synchronous full V3 acceptance still cancels an in-flight guest", async () => {
+	const f = fixture(false, false, true),
+		r = pairedRuntime(f);
+	f.setAcceptAreas(() => {
+		f.accepted.resolve();
+	});
+	try {
+		await f.ready.promise;
+		const receipt = f
+			.execute()()
+			.catch((error) => error);
+		await f.accepted.promise;
+		r.areas.right
+			.getState()
+			.setPanePinned({ paneId: "right-browser", pinned: true });
+		r.areas.flush();
+		expect((await receipt).message).toContain("layout changed");
 		expect(f.areaSaves()).toBe(1);
 	} finally {
 		r.off();

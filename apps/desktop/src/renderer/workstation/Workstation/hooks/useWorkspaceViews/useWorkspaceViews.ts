@@ -1,3 +1,4 @@
+import { preserveBrowserOpenSelectionV3 } from "../../utils/workspace-browser-open/workspace-browser-open-selection-v3";
 import { preserveBrowserOpenSelection } from "../../utils/workspace-browser-open/workspace-browser-open-selection";
 import { useLingui } from "@lingui/react/macro";
 import type {
@@ -1562,6 +1563,29 @@ export function useWorkspaceViews(
 			});
 			queue.current = pending.catch(() => {});
 			return pending;
+		},
+		acceptBrowserOpenAreas: (
+			snapshot: WorkspaceViewSnapshotV3,
+			connectionId: string,
+			workspaceId: string,
+			show: boolean,
+		) => {
+			if (!areaStorage || !mounted.current)
+				throw Error("Browser open scope changed");
+			const current =
+				viewRef.current?.schemaVersion === 3 ? viewRef.current : null;
+			if (!current && browserOpenIntent.current !== intent.current)
+				throw Error("Browser open scope changed");
+			const merged = preserveBrowserOpenSelectionV3(
+				current,
+				snapshot,
+				connectionId,
+				workspaceId,
+				show,
+				browserOpenIntent.current !== intent.current,
+			);
+			revision.current = Math.max(revision.current, merged.revision);
+			setSaved(merged);
 		},
 		acceptBrowserOpen: (
 			saved: WorkspaceViewSnapshotV2,

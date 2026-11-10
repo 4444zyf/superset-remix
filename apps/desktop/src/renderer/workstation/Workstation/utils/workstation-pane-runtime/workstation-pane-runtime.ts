@@ -6,10 +6,12 @@ import type {
 } from "shared/direct-workstation";
 import type { WorkspacePaneV2 } from "shared/workspace-view-v2";
 import type { WorkspacePaneAreasState } from "../workspace-pane-areas/workspace-pane-areas";
+
 type State = WorkspaceState<WorkspacePaneV2>;
 interface Port {
 	read(): State;
 	readAreas?(): WorkspacePaneAreasState;
+	replaceAreas?(next: WorkspacePaneAreasState): void;
 	fingerprint?(): string;
 	flush?(): Promise<void>;
 	replace(state: State): void;
@@ -157,6 +159,38 @@ export function captureWorkstationPaneRuntime(
 				entry.listeners.delete(listener);
 			};
 		},
+		applyAreas:
+			entry.port.replaceAreas && entry.port.readAreas
+				? (next: WorkspacePaneAreasState, show = false) => {
+						if (!unchanged()) throw Error("Workspace pane layout changed");
+						const previous = entry.port.readAreas?.();
+						if (!previous || !entry.port.replaceAreas)
+							throw Error("Workspace pane area runtime is unavailable");
+						const center = show
+							? next.center
+							: preserveLocalPaneSelection(previous.center, next.center);
+						const right = show
+							? next.right
+							: preserveLocalPaneSelection(previous.right, next.right);
+						const rightPaneOpen = show
+							? next.rightPaneOpen
+							: previous.rightPaneOpen;
+						const activePaneArea =
+							(show ? next.activePaneArea : previous.activePaneArea) ===
+								"right" &&
+							rightPaneOpen &&
+							right.activeTabId
+								? "right"
+								: "center";
+						entry.port.replaceAreas({
+							...next,
+							center,
+							right,
+							rightPaneOpen,
+							activePaneArea,
+						});
+					}
+				: undefined,
 		apply(next: State, show = false) {
 			if (!unchanged()) throw Error("Workspace pane layout changed");
 			entry.port.replace(

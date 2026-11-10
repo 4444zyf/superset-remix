@@ -469,3 +469,14 @@ Workstation向现有hook请求paneAreas模式，仍由完整get/saveV3及saveOpe
 新增真实根组件测试使用V3保存快照和暂停的恢复回执，V1/V2读取、保存、普通连接和创建均禁止；中心和右侧各恢复一份，旧接口测试仍通过。原宽度控件DOM鼠标序列验证增宽、双击复位、指针穿透开始/结束、无资源创建或布局保存；Files slot切换保留右侧及同一个runtime。最终相关137项/4437断言/18文件、desktop类型、新代码lint和插件检查通过；旧root/window保留3项非空警告。原无账号启动依赖审计通过，没有引入旧cloud bootstrap。根调用只规范化改动的useWorkspaceViews片段，没有批量格式化大文件。
 
 完整AST含末语句及const/let变异自检：root整模块仅移除新增两个模式参数后相同，Window整模块仅移除新增可选父级分支和import后相同；8个终端/IPC/模型/hook/原store模块逐字节保持。当前仅源码与DOM/导入审计，不宣称新编译产物或本地/SSH原生实窗通过；无CLI二进制、安装包、Actions。下一步处理完整浏览器回执同步、自身授权更新与用户编辑的区分，再冻结新源码做实际两端验证；原展开和宽度持久化继续列为待完成。[阶段一百四十一证据](../implementation/evidence/local-ssh-feature-parity/stage141)。
+
+
+## 阶段一百四十二：完整浏览器回执与双侧授权更新
+
+新增内部可选runtime.replaceAreas/applyAreas及controller.replaceAreasFromRuntime。主进程保存V3浏览器打开后，支持该接口的父级一次接收两侧规范状态，原指纹/current归属检查仍在替换前执行；后台打开独立保留两侧最新选择和显隐，显式show采用保存选择。controller先交付已有用户编辑，再静默替换两侧并通知快照，不回声保存。旧Port或旧renderer依赖没有完整方法时保持原中心替换/异步accept路径，未改任何wire API、host floor、sender/frame或浏览器身份检查。
+
+根入口接同步acceptBrowserOpenAreas，在同一调用栈接收完整资源目录/规范执行号并保留最新Files/右侧选择，不再为这次已提交打开先投影V2再发异步刷新。renderer在停止自己的结构监听后应用完整授权状态、同步接收回执，再重新捕获/监听；浏览器ensure使用同份保存回执中的实际pane身份，随后用户pin等结构修改仍取消等待中的guest。普通页面V2回执继续走原完整V3刷新与导航守卫。与此前相同，renderer取消不会回滚已提交布局，不宣称分布式原子撤销。
+
+5项新增回归覆盖规范执行号、之后用户pin取消、同步保留Files/右侧焦点且无额外读取、退役/不完整接口拒绝、双侧替换交付旧编辑但不回声。新回归对旧renderer的独立基线立即得到execution而非canonical-execution失败；临时复原旧模块后用finally恢复，没有提高超时或加入重试。其余新检查首轮通过。最终192项/4685断言/23文件、desktop类型、无账号启动审计及插件通过。旧runtime保留3项非空警告，原root/hook/renderer保留12项，未改全局lint。
+
+完整AST含末语句及const/let变异自检：原hook/runtime/controller主体仅移除明确新增可选方法后相同，原import集合保持；renderer的prepare/current/availability/event监听、ids及save原声明相同；6个IPC/模型/终端/原store文件逐字节保持。当前仍为源码/组件/协议夹具验证，未把受控guest或存储回执混称真实SQLite、原生窗口或SSH Agent。没有新桌面构建、CLI二进制、安装包或Actions；下一步冻结新源码做本地及拥有SSH实窗，原展开/宽度持久化和其他原版功能继续。[阶段一百四十二证据](../implementation/evidence/local-ssh-feature-parity/stage142)。

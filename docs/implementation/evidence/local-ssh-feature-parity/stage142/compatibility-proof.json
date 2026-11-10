@@ -1,0 +1,25 @@
+{
+  "base": "9d1b7a348",
+  "fullAstTraversal": true,
+  "lastStatementMutationSmoke": true,
+  "constLetMutationSmoke": true,
+  "oldHookRuntimeControllerBodiesEqualAfterOnlyOptionalMethodsRemoved": true,
+  "oldImportsPreserved": true,
+  "rendererDeclarationsAstEqual": [
+    "prepare",
+    "current",
+    "offEvent",
+    "offAvailability",
+    "ids",
+    "save"
+  ],
+  "byteEqual": [
+    "apps/desktop/src/main/direct-app.ts",
+    "apps/desktop/src/preload/index.ts",
+    "apps/desktop/src/shared/workspace-view-v3.ts",
+    "apps/desktop/src/shared/workstation-browser-open.ts",
+    "apps/desktop/src/renderer/workstation/Workstation/components/RemoteTerminal/RemoteTerminal.tsx",
+    "packages/panes/src/core/store/store.ts"
+  ],
+  "scope": "Optional internal runtime full-state replacement and synchronous V3 receipt; wire APIs, old method bodies and old async acceptance remain. New regression proves canonical execution and subsequent user edit cancellation; no native/build acceptance."
+}

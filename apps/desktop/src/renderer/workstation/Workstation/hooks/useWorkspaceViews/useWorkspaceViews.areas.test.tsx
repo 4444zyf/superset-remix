@@ -981,3 +981,47 @@ test("a right-side new terminal retains its area when the original new-tab prese
 	).toEqual([expect.objectContaining({ initialCommand: "printf triggered" })]);
 	expect(f.errors).toEqual([]);
 });
+
+test("synchronous full browser acceptance keeps latest Files and right selection without a legacy refresh", async () => {
+	const f = setup();
+	await waitFor(() => expect(f.hook.result.current.view?.revision).toBe(1));
+	await act(async () => {
+		await f.hook.result.current.setTool("workspace", "files");
+		await f.hook.result.current.focusPane("workspace", "browser");
+	});
+	const saved = structuredClone(f.backing());
+	saved.revision++;
+	required(workspace(saved).panes[0]).executionId = "canonical-execution";
+	workspace(saved).activeTool = "terminal";
+	const before = f.reads3();
+	act(() => {
+		expect(
+			f.hook.result.current.acceptBrowserOpenAreas(
+				saved,
+				"local",
+				"workspace",
+				false,
+			),
+		).toBeUndefined();
+	});
+	const accepted = workspace(required(f.hook.result.current.view));
+	expect(accepted.activeTool).toBe("files");
+	expect(accepted.activePaneArea).toBe("right");
+	expect(accepted.activePaneId).toBe("browser");
+	expect(accepted.panes[0]?.executionId).toBe("canonical-execution");
+	expect(f.reads3()).toBe(before);
+	expect(f.errors).toEqual([]);
+});
+test("full browser acceptance rejects a retired hook and a hook without the negotiated interface", async () => {
+	for (const enabled of [true, false]) {
+		const f = setup(enabled);
+		await waitFor(() => expect(f.hook.result.current.view?.revision).toBe(1));
+		const accept = f.hook.result.current.acceptBrowserOpenAreas;
+		if (enabled) f.hook.unmount();
+		expect(() => accept(f.backing(), "local", "workspace", false)).toThrow(
+			"scope changed",
+		);
+		expect(f.saves3).toHaveLength(0);
+		if (!enabled) f.hook.unmount();
+	}
+});
