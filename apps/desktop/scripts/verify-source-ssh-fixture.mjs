@@ -14,6 +14,8 @@ import { LocalBackend } from "../../../packages/direct-connection/src/local.ts";
 
 export async function sourceSshFixture(root) {
 	assert.equal(process.platform, "linux");
+ const daemonPath = join(root, "apps/desktop/dist/main/pty-daemon.js");
+ assert.ok(existsSync(daemonPath), "Compile the source desktop daemon before SSH verification");
 	const fixture = await createSshFixture({ isolateHome: true });
 	const config = join(homedir(), ".ssh/config");
 	const original = existsSync(config) ? readFileSync(config, "utf8") : "";
@@ -41,10 +43,7 @@ export async function sourceSshFixture(root) {
 			GIT_CONFIG_GLOBAL: join(fixture.root, "gitconfig"),
 			PATH: process.env.PATH,
 			LANG: "en_US.UTF-8",
-			SUPERSET_PTY_DAEMON_SCRIPT_PATH: join(
-				root,
-				"packages/pty-daemon/dist/pty-daemon.js",
-			),
+			SUPERSET_PTY_DAEMON_SCRIPT_PATH: daemonPath,
 		},
 	});
 	try {
