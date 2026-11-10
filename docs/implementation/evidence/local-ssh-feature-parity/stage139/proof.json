@@ -1,0 +1,18 @@
+{
+  "base": "b4b9acaa3",
+  "sourceFile": "apps/desktop/src/renderer/workstation/Workstation/hooks/useWorkspaceViews/useWorkspaceViews.ts",
+  "sourceSha256": "cdc4a0389ab805423383e8726933132eb6c6c5f0380dab6985356beb274b61b3",
+  "tests": {
+    "pass": 108,
+    "fail": 0,
+    "assertions": 642,
+    "files": 15
+  },
+  "desktopTypesExit": 0,
+  "nativeAcceptance": false,
+  "newBuild": false,
+  "cliBinary": false,
+  "installer": false,
+  "githubActions": false,
+  "remaining": "Paired parent runtime, synchronization of authoritative snapshots during pending edits, root UI activation and native validation."
+}

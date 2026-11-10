@@ -852,3 +852,132 @@ test("explicit paired layout saving cannot target a replacement execution or old
 	});
 	expect(f.saves3).toHaveLength(0);
 });
+
+test("explicit browser and terminal creation can fill an empty right area while center Files stays selected", async () => {
+	const f = setup();
+	await waitFor(() => expect(f.hook.result.current.view?.revision).toBe(1));
+	f.descriptor.capabilities = {
+		...f.descriptor.capabilities,
+		terminals: true,
+		durableOperations: true,
+	};
+	await act(async () => {
+		await f.hook.result.current.closePane("workspace", "browser");
+		await f.hook.result.current.setTool("workspace", "files");
+		await f.hook.result.current.newBrowser(
+			"workspace",
+			"http://localhost:3012/",
+			"new-tab",
+			undefined,
+			"right",
+		);
+	});
+	const first = workspace(f.backing());
+	expect(first.rightPaneLayout?.tabs).toHaveLength(1);
+	expect(first.paneTabs).toHaveLength(1);
+	expect(first.activePaneArea).toBe("right");
+	expect(first.activeTool).toBe("files");
+	await act(async () => {
+		await f.hook.result.current.newTerminal(
+			"workspace",
+			"horizontal",
+			undefined,
+			{ placement: "new-tab", area: "center" },
+		);
+	});
+	const saved = workspace(f.backing());
+	expect(saved.paneTabs).toHaveLength(2);
+	expect(saved.rightPaneLayout?.tabs).toHaveLength(1);
+	expect(saved.activePaneArea).toBe("center");
+	expect(saved.panes[0]?.executionId).toBe("execution");
+	expect(f.errors).toEqual([]);
+});
+test("an explicit preset area creates the original command batch on the empty right side", async () => {
+	const f = setup(true, true, async (request) =>
+		request.path === "workspace.get"
+			? { projectId: "project", worktreePath: "/remote/project" }
+			: [],
+	);
+	await waitFor(() => expect(f.hook.result.current.view?.revision).toBe(1));
+	f.descriptor.capabilities = {
+		...f.descriptor.capabilities,
+		terminals: true,
+		durableOperations: true,
+		workstationTerminalScriptExecutionV1: true,
+	};
+	await act(async () => {
+		await f.hook.result.current.closePane("workspace", "browser");
+		await f.hook.result.current.launchTerminalPreset(
+			"workspace",
+			{
+				id: "preset",
+				name: "Tools",
+				commands: ["printf first", "printf second"],
+				cwd: "scripts",
+				projectIds: ["project"],
+				executionMode: "split-pane",
+				createdAt: new Date(0),
+				tabOrder: 0,
+			},
+			[],
+			{ target: "new-tab", area: "right" },
+		);
+	});
+	const saved = workspace(f.backing());
+	expect(saved.paneTabs).toHaveLength(1);
+	expect(saved.rightPaneLayout?.tabs).toHaveLength(1);
+	expect(saved.panes).toHaveLength(3);
+	expect(saved.activePaneArea).toBe("right");
+	expect(saved.panes[0]?.executionId).toBe("execution");
+	expect(f.errors).toEqual([]);
+});
+
+test("a right-side new terminal retains its area when the original new-tab preset trigger handles creation", async () => {
+	const preset = {
+		id: "trigger",
+		name: "Triggered",
+		commands: ["printf triggered"],
+		cwd: "",
+		projectIds: ["project"],
+		executionMode: "split-pane" as const,
+		createdAt: new Date(0),
+		tabOrder: 0,
+		applyOnNewTab: true,
+	};
+	const calls: DirectRpc[] = [],
+		f = setup(true, true, async (request) => {
+			calls.push(request);
+			if (request.path === "workspace.get")
+				return { projectId: "project", worktreePath: "/remote/project" };
+			if (request.path === "settings.terminalPresets.catalogWithRevisionV1")
+				return { presets: [preset], revision: 1 };
+			return [];
+		});
+	await waitFor(() => expect(f.hook.result.current.view?.revision).toBe(1));
+	f.descriptor.capabilities = {
+		...f.descriptor.capabilities,
+		terminals: true,
+		durableOperations: true,
+		workstationTerminalScriptsV1: true,
+		workstationTerminalScriptExecutionV1: true,
+	};
+	await act(async () => {
+		await f.hook.result.current.closePane("workspace", "browser");
+		await f.hook.result.current.newTerminal(
+			"workspace",
+			"horizontal",
+			undefined,
+			{ placement: "new-tab", area: "right" },
+		);
+	});
+	const saved = workspace(f.backing());
+	expect(saved.paneTabs).toHaveLength(1);
+	expect(saved.rightPaneLayout?.tabs).toHaveLength(1);
+	expect(saved.activePaneArea).toBe("right");
+	expect(
+		calls
+			.filter((call) => call.path === "terminal.createSession")
+			.map((call) => call.input),
+	).toEqual([expect.objectContaining({ initialCommand: "printf triggered" })]);
+	expect(f.errors).toEqual([]);
+});

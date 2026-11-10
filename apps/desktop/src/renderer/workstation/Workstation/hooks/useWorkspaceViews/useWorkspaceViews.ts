@@ -768,6 +768,7 @@ export function useWorkspaceViews(
 				placement?: "active" | "root";
 				newTab?: boolean;
 				replaceResourceId?: string;
+				area?: "center" | "right";
 			},
 		) => {
 			const tabId = crypto.randomUUID(),
@@ -879,6 +880,7 @@ export function useWorkspaceViews(
 				},
 				pane.kind !== "browser",
 				{
+					...(options?.area ? { area: options.area } : {}),
 					resource: {
 						kind: pane.kind,
 						resourceId: pane.resourceId,
@@ -894,7 +896,7 @@ export function useWorkspaceViews(
 			workspaceId: string,
 			axis: "horizontal" | "vertical",
 			launch?: { initialCommand: string; label: string },
-			options?: { placement: "new-tab" },
+			options?: { placement?: "new-tab"; area?: "center" | "right" },
 		) => {
 			const descriptor = connectionRef.current;
 			if (
@@ -944,9 +946,15 @@ export function useWorkspaceViews(
 							),
 						},
 						axis,
-						options?.placement === "new-tab"
-							? { connection: descriptor, newTab: true }
-							: undefined,
+						options?.area
+							? {
+									connection: descriptor,
+									newTab: options.placement === "new-tab",
+									area: options.area,
+								}
+							: options?.placement === "new-tab"
+								? { connection: descriptor, newTab: true }
+								: undefined,
 					);
 			} catch (error) {
 				if (mounted.current && captured === navigation.current)
@@ -960,7 +968,7 @@ export function useWorkspaceViews(
 			workspaceId: string,
 			preset: HostTerminalPreset,
 			agents: HostAgentConfig[],
-			options?: { target: "new-tab" },
+			options?: { target: "new-tab"; area?: "center" | "right" },
 		) => {
 			const descriptor = connectionRef.current;
 			if (
@@ -979,12 +987,19 @@ export function useWorkspaceViews(
 				captured === navigation.current &&
 				connectionRef.current === descriptor;
 			const paneAreas = areaStorage ? readWorkspacePaneAreas(workspace) : null;
-			const selectedArea = paneAreas?.activePaneArea ?? "center";
+			const selectedArea =
+				(areaStorage ? options?.area : undefined) ??
+				paneAreas?.activePaneArea ??
+				"center";
 			const state = paneAreas?.[selectedArea] ?? toPaneState(workspace),
 				activeTabId = state.activeTabId;
 			const activeTerminal = workspace.panes.find(
 				(p) =>
-					p.paneId === workspace.activePaneId &&
+					p.paneId ===
+						(options?.area && paneAreas
+							? state.tabs.find((tab) => tab.id === state.activeTabId)
+									?.activePaneId
+							: workspace.activePaneId) &&
 					p.kind === "terminal" &&
 					p.executionId,
 			);
@@ -1199,6 +1214,7 @@ export function useWorkspaceViews(
 		async (
 			workspaceId: string,
 			field: "applyOnNewTab" | "applyOnWorkspaceCreated",
+			area?: "center" | "right",
 		): Promise<"none" | "handled" | "cancelled"> => {
 			const descriptor = connectionRef.current;
 			if (
@@ -1260,6 +1276,7 @@ export function useWorkspaceViews(
 					if (
 						!(await executeTerminalPreset(workspaceId, preset, agents, {
 							target: "new-tab",
+							...(area ? { area } : {}),
 						}))
 					)
 						return "cancelled";
@@ -1280,7 +1297,11 @@ export function useWorkspaceViews(
 				if (
 					!args[2] &&
 					args[3]?.placement === "new-tab" &&
-					(await executePresetTrigger(args[0], "applyOnNewTab")) !== "none"
+					(await executePresetTrigger(
+						args[0],
+						"applyOnNewTab",
+						args[3]?.area,
+					)) !== "none"
 				)
 					return;
 				if (connectionRef.current !== owner || navigation.current !== captured)
@@ -1576,6 +1597,7 @@ export function useWorkspaceViews(
 			url?: string,
 			placement: "split" | "new-tab" = "new-tab",
 			source?: DirectDescriptor,
+			area?: "center" | "right",
 		) => {
 			const descriptor = connectionRef.current;
 			if (!browserEnabled || !descriptor?.capabilities?.workspaceViewRestoreV1)
@@ -1608,7 +1630,11 @@ export function useWorkspaceViews(
 					browser: { url: initialUrl, pageTitle: "", faviconUrl: null },
 				},
 				"horizontal",
-				{ connection: descriptor, newTab: placement === "new-tab" },
+				{
+					connection: descriptor,
+					newTab: placement === "new-tab",
+					...(area ? { area } : {}),
+				},
 			);
 		},
 		closeBrowserPane: (

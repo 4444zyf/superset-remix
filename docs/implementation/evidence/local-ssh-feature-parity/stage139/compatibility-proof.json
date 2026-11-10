@@ -1,0 +1,18 @@
+{
+  "base": "b4b9acaa3",
+  "fullAstTraversal": true,
+  "lastStatementMutationSmoke": true,
+  "constLetMutationSmoke": true,
+  "originalRpcCallAstEqual": 8,
+  "byteEqual": [
+    "apps/desktop/src/renderer/workstation/Workstation/Workstation.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/WorkspaceWindow/WorkspaceWindow.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/WorkspaceWindow/components/PaneGrid/PaneGrid.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/RemoteTerminal/RemoteTerminal.tsx",
+    "apps/desktop/src/main/direct-app.ts",
+    "apps/desktop/src/preload/index.ts",
+    "apps/desktop/src/shared/workspace-view-v3.ts",
+    "packages/panes/src/core/store/store.ts"
+  ],
+  "scope": "Optional explicit area forwarding inside the renderer; root activation and native acceptance remain pending."
+}
