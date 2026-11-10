@@ -181,6 +181,11 @@ export function WorkspacePaneAreas(props: Props) {
 	const activate = (area: WorkspacePaneArea) => {
 		owner.areas.activate(area);
 	};
+	const moved = (area: WorkspacePaneArea) => {
+		activate(area);
+		if (area === "center" && workspace.activeTool === "files")
+			void actions.setTool(workspace.workspaceId, "terminal");
+	};
 	const add = (
 		area: WorkspacePaneArea,
 		axis: "horizontal" | "vertical",
@@ -243,7 +248,7 @@ export function WorkspacePaneAreas(props: Props) {
 				active: state.activePaneArea === area,
 				onInteractionStateChange: interaction.onWorkspaceInteractionStateChange,
 				onActivate: () => activate(area),
-				onMoved: () => activate(area === "center" ? "right" : "center"),
+				onMoved: () => moved(area === "center" ? "right" : "center"),
 				onNewTerminal: (axis, newTab) => add(area, axis, newTab),
 				renderAddTabMenu: () => menu(area),
 				renderTabBarTrailing:
@@ -263,7 +268,8 @@ export function WorkspacePaneAreas(props: Props) {
 														source: owner.areas.right,
 														target: owner.areas.center,
 													});
-													activate("center");
+													owner.areas.setRightPaneOpen(false);
+													moved("center");
 												}}
 											>
 												<ArrowLeftToLine size={14} />

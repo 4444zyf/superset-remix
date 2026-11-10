@@ -49,9 +49,13 @@ function setup(save: () => Promise<unknown> = async () => ({})) {
 			capabilities: { workspaceViewRestoreV1: true },
 		};
 	let writes = 0;
+	const tools: { workspaceId: string; tool: string }[] = [];
 	const actions = {
 		busy: false,
 		browserEnabled: false,
+		async setTool(workspaceId: string, tool: string) {
+			tools.push({ workspaceId, tool });
+		},
 		async savePaneAreas() {
 			writes++;
 			return save();
@@ -91,6 +95,7 @@ function setup(save: () => Promise<unknown> = async () => ({})) {
 	);
 	return {
 		w,
+		tools,
 		element,
 		writes: () => writes,
 		capture: () =>
@@ -282,5 +287,35 @@ test("original viewport defaults follow window resize until the user chooses a w
 			configurable: true,
 			value: originalWidth,
 		});
+	}
+});
+
+test("merging the right area closes the original sidebar and reveals the merged center content", async () => {
+	const gate = Promise.withResolvers<unknown>(),
+		f = setup(() => gate.promise);
+	f.w.activeTool = "files";
+	const view = render(
+		f.element(f.w, 1, <div data-files-fixture>Files fixture</div>),
+	);
+	try {
+		fireEvent.click(view.getByRole("button", { name: "Merge into center" }));
+		await waitFor(() => expect(f.writes()).toBe(1));
+		expect(
+			Boolean(view.container.querySelector('[data-pane-area="right"]')),
+		).toBe(false);
+		expect(f.tools).toEqual([{ workspaceId: "workspace", tool: "terminal" }]);
+		const areas = required(required(f.capture()).areas);
+		expect(areas.center.tabs).toHaveLength(2);
+		expect(areas.right.tabs).toHaveLength(0);
+		expect(
+			areas.center.tabs
+				.flatMap((tab) =>
+					Object.values(tab.panes).map((pane) => pane.data.resourceId),
+				)
+				.sort(),
+		).toEqual(["pty", "right-pty"]);
+	} finally {
+		view.unmount();
+		gate.resolve({});
 	}
 });
