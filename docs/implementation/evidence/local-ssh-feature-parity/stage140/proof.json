@@ -1,0 +1,28 @@
+{
+  "base": "c34d06e36",
+  "oldFilesByteEqual": [
+    "apps/desktop/src/renderer/workstation/Workstation/Workstation.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/WorkspaceWindow/WorkspaceWindow.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/components/WorkspaceWindow/components/PaneGrid/PaneGrid.tsx",
+    "apps/desktop/src/renderer/workstation/Workstation/hooks/useWorkspaceViews/useWorkspaceViews.ts",
+    "apps/desktop/src/renderer/workstation/Workstation/components/RemoteTerminal/RemoteTerminal.tsx",
+    "apps/desktop/src/main/direct-app.ts",
+    "apps/desktop/src/preload/index.ts",
+    "apps/desktop/src/shared/workspace-view-v3.ts",
+    "packages/panes/src/core/store/store.ts"
+  ],
+  "tests": {
+    "pass": 42,
+    "fail": 0,
+    "assertions": 184,
+    "files": 11
+  },
+  "desktopTypesExit": 0,
+  "lint": "New files pass. One inline exhaustive-dependencies rationale: settled saves must retry a snapshot held while its write was pending.",
+  "nativeAcceptance": false,
+  "newBuild": false,
+  "cliBinary": false,
+  "installer": false,
+  "githubActions": false,
+  "remaining": "Not mounted from root. Original resizable width and expansion, drag/drop focus, full browser receipt synchronization and native local/owned SSH validation remain pending."
+}

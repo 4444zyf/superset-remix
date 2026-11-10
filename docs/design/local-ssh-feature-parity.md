@@ -449,3 +449,12 @@ namespace切换直接归档原V3目标并用同版本验证/保存，保留两�
 原renderer创建路径新增可选area参数，沿既有区域编辑适配器交付，不依赖右侧已有活动标签。addPane、普通终端、浏览器、终端预设及原applyOnNewTab自动触发贯通同一明确区域；多命令批次固定在捕获的区域内，显式区域的顺序预设只选择该侧活动终端。旧默认调用保留原区域选择，所有原RPC输入、能力/导航/连接守卫与资源上限保持。没有增加host方法或提高旧版本要求。
 
 3项新增先红后绿覆盖空右侧浏览器、切回中心新增普通终端、空右侧多命令及自动新标签预设。首轮漏向普通终端addPane转交area，浏览器和预设通过但普通终端仍落到当前侧；保留失败日志，补齐参数后通过。最终相关108项/642断言/15文件、desktop类型、插件通过；新测试lint清洁，旧hook保留既有非空警告和import排序，未调整全局规则。完整AST遍历含末语句及const/let自检，原RPC调用AST相同，8个入口/终端/IPC/模型/原store文件逐字节保持。当前仍是未激活的renderer接线，无新桌面编译、原生实窗、CLI二进制、安装包或Actions；继续父级配对runtime、待保存状态同步和实际双侧界面验收。[阶段一百三十九证据](../implementation/evidence/local-ssh-feature-parity/stage139)。
+
+
+## 阶段一百四十：单一父级运行时与待保存快照协调
+
+新增WorkspacePaneAreas组合两个父级控制的原PaneGrid和共用RightPaneAreaView。一个controller和一个runtime拥有两侧store，中心读取/替换与完整双侧捕获、结构指纹、flush共用归属；resourceRevision仅重挂子视图，不替换父级runtime。明确区域的新建、原移动菜单与transferAllTabs合并、侧栏显隐接入现有动作；Files可作为中心工具slot，右侧仍由同一父级保留。当前只是未挂到根入口的新组件，暂用40%宽度，没有把它宣称为原版可调整宽度/展开行为。
+
+编辑和保存中的权威workspace暂缓覆盖controller；save完成后触发同一同步effect重新应用最新props，失败也释放暂存快照，无自动重试。cleanup先交付controller微任务、派发并排空旧scope保存，再清理；controller销毁延后一轮微任务，通过lease避免React StrictMode第二次挂载复用已dispose状态。未另注册preload关闭监听。新增3项组件行为检查覆盖StrictMode/资源重挂载、未完成标题保存抵抗旧快照、失败后接受新服务端标题且不重试；首轮组件测试即通过，没有记录不存在的TDD红例。初轮lint发现ownerKey与settled依赖表达不清，owner记录key，后者用单条说明准确记录必须重试暂存快照的外部约束；未改全局规则。
+
+最终42项/184断言/11文件、desktop类型和新文件lint通过。9个旧入口/终端/IPC/模型/原store文件逐字节保持；新组件测试使用原双store/原PaneGrid但受控保存回执，不替代真实hook/SQLite/SSH或原生实窗。无新编译、CLI二进制、安装包、Actions。原宽度调整/展开、拖拽目标焦点、完整浏览器回执协调、根入口激活与本地/拥有SSH验收继续进行。[阶段一百四十证据](../implementation/evidence/local-ssh-feature-parity/stage140)。
