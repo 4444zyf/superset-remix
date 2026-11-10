@@ -20,6 +20,9 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
  };
  const geometry=()=>evaluate(`(()=>{const root=document.querySelector('[data-workstation-pane-areas]'),right=root?.children[1];if(!right)return null;return {viewport:innerWidth,root:root.getBoundingClientRect().width,right:right.getBoundingClientRect().width,passthrough:document.documentElement.hasAttribute('data-pointer-passthrough')};})()`);
  const ids=w=>w.panes.map(p=>[p.paneId,p.kind,p.resourceId,p.executionId]).sort((a,b)=>a[0].localeCompare(b[0]));
+ const installFocusTrace=()=>evaluate(`(()=>{window.__ownedAreaFocusTrace=[];window.__ownedAreaFocusListener=e=>{const t=e.target;if(window.__ownedAreaFocusTrace.length<80)window.__ownedAreaFocusTrace.push({time:performance.now(),tag:t.tagName,area:t.closest?.('[data-pane-area]')?.getAttribute('data-pane-area')??null,pane:t.closest?.('[data-pane-id]')?.getAttribute('data-pane-id')??null,label:t.getAttribute?.('aria-label')??null});};document.addEventListener('focusin',window.__ownedAreaFocusListener,true);return true;})()`);
+ const focusTrace=()=>evaluate(`({events:window.__ownedAreaFocusTrace??[],active:{tag:document.activeElement?.tagName,area:document.activeElement?.closest?.('[data-pane-area]')?.getAttribute('data-pane-area')??null,pane:document.activeElement?.closest?.('[data-pane-id]')?.getAttribute('data-pane-id')??null}})`);
+ await installFocusTrace();
  const original=await read(),browser=original.workspace.panes.find(p=>p.kind==='browser'&&p.paneId===original.workspace.activePaneId);
  assert.ok(browser);report.before=original;report.terminalBefore=await controls.inspectPresetTerminal(terminal.id);save();
  const browserSelector=`[data-pane-title-id="${browser.paneId}"]`;
@@ -38,17 +41,17 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
    await getPage().call('Input.dispatchMouseEvent',{type:'mouseReleased',x:start.x-70,y:start.y,button:'left',clickCount:1});
   } finally {await evaluate(`clearInterval(window.__ownedAreaResizeStall);delete window.__ownedAreaResizeStall;true`);}
   const resized=await until(async()=>{const g=await geometry();return !g.passthrough&&Math.abs(g.right-report.phases[0].geometry.right-70)<2?g:null;},'original RAF resizer keeps the final oscillating gesture');
-  report.phases.push({name:'resized',geometry:resized});await screenshot('pane-areas-resized');save();
+  report.phases.push({name:'resized',geometry:resized,view:await read(),focus:await focusTrace()});await screenshot('pane-areas-resized');save();
   await mouse(await point(handle),'left',2);
   await until(async()=>!(await geometry()).passthrough,'double click ends its resize gesture');
-  const reset=await geometry();report.phases.push({name:'reset',geometry:reset});await screenshot('pane-areas-reset');save();
+  const reset=await geometry();report.phases.push({name:'reset',geometry:reset,view:await read(),focus:await focusTrace()});await screenshot('pane-areas-reset');save();
   assert.ok(Math.abs(reset.right-Math.round(reset.viewport*0.4))<2,'double click restores the original viewport-based default width');
-  await toolbar('Files');
+  await toolbar('Files');report.afterFilesClick={view:await read(),focus:await focusTrace()};save();
   await until(async()=>{const r=await read();return r.workspace.activeTool==='files'&&r.workspace.activePaneArea==='right';},'Files is a center tool while the right browser stays active');
   assert.ok(await evaluate(`Boolean(document.querySelector('[data-pane-area="right"] [data-workstation-browser-pane]'))`));
   assert.ok((await guestRead('document.title')).includes('Owned browser'));
   report.phases.push({name:'files-with-right',view:await read()});await screenshot('pane-areas-files-with-right');save();
-  await closeReopen();
+  await closeReopen();await installFocusTrace();
   await until(async()=>{const r=await read();return r.workspace.activeTool==='files'&&r.workspace.rightPaneOpen&&r.workspace.rightPaneLayout?.tabs.some(t=>JSON.stringify(t.layout).includes(browser.paneId));},'both saved areas survive a normal window reopen');
   await until(async()=>String(await guestRead('document.title')).includes('Owned browser'),'original right guest restored');
   report.phases.push({name:'reopened',view:await read(),geometry:await geometry()});await screenshot('pane-areas-reopened');save();
@@ -68,6 +71,8 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
   for(const key of ['id','executionId','pid','cwd'])assert.equal(report.terminalAfter[key],report.terminalBefore[key],key);
   assert.deepEqual(getPage().errors,[]);report.completed=true;save();
  } finally {
+  report.finalView=await read();report.finalFocus=await focusTrace();
+  await evaluate(`document.removeEventListener('focusin',window.__ownedAreaFocusListener,true);delete window.__ownedAreaFocusListener;delete window.__ownedAreaFocusTrace;true`);
   const view=await read();if(view.workspace.activeTool==='files') {await toolbar('Terminal');await until(async()=>(await read()).workspace.activeTool!=='files','center terminal restored for owned HTTP cleanup');}
   save();
  }
