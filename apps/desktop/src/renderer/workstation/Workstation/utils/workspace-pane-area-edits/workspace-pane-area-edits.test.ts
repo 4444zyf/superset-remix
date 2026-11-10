@@ -176,3 +176,77 @@ test("an owned save failure is reported and flush rejects without an automatic r
 		f.dispose();
 	}
 });
+
+test("explicit geometry keeps the final baseline gesture after an earlier write was dispatched", async () => {
+	const areas = createWorkspacePaneAreas(workspace(fixture()), {
+		scheduleMicrotask() {},
+	});
+	transferPaneToSplit({
+		source: areas.right,
+		target: areas.center,
+		paneId: "browser",
+		targetPaneId: "terminal",
+		position: "right",
+	});
+	areas.center
+		.getState()
+		.resizeSplit({ tabId: "center-tab", path: [], splitPercentage: 50 });
+	areas.flush();
+	const writes: { percent: number | undefined; tabs: readonly string[] }[] = [],
+		timers = new Set<() => void>(),
+		gate = Promise.withResolvers<void>();
+	let metadataWrites = 0,
+		notifications = 0;
+	const edits = createWorkspacePaneAreaEdits({
+		async save() {
+			metadataWrites++;
+		},
+		saveLayouts(next, _before, tabIds) {
+			writes.push({ percent: percent(next), tabs: tabIds });
+			return writes.length === 1 ? gate.promise : Promise.resolve();
+		},
+		onSettled() {
+			notifications++;
+		},
+		schedule(callback) {
+			timers.add(callback);
+			return () => {
+				timers.delete(callback);
+			};
+		},
+	});
+	const off = areas.subscribeEdits((next, before) => edits.push(next, before));
+	try {
+		areas.center
+			.getState()
+			.resizeSplit({ tabId: "center-tab", path: [], splitPercentage: 60 });
+		areas.flush();
+		for (const callback of [...timers]) callback();
+		expect(writes).toEqual([{ percent: 60, tabs: ["center-tab"] }]);
+		expect(edits.hasWork()).toBe(true);
+		areas.center
+			.getState()
+			.resizeSplit({ tabId: "center-tab", path: [], splitPercentage: 70 });
+		areas.flush();
+		areas.center
+			.getState()
+			.resizeSplit({ tabId: "center-tab", path: [], splitPercentage: 60 });
+		areas.flush();
+		const pending = edits.flush();
+		expect(writes).toEqual([
+			{ percent: 60, tabs: ["center-tab"] },
+			{ percent: 60, tabs: ["center-tab"] },
+		]);
+		expect(edits.hasWork()).toBe(true);
+		gate.resolve();
+		await pending;
+		expect(edits.hasWork()).toBe(false);
+		expect(metadataWrites).toBe(0);
+		expect(notifications).toBe(2);
+	} finally {
+		gate.resolve();
+		off();
+		edits.dispose();
+		areas.dispose();
+	}
+});

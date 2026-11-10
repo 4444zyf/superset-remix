@@ -38,6 +38,10 @@ import type {
 } from "../../../../../shared/workspace-view-v3";
 import { createWorkspaceViewAreaStorage } from "./utils/workspace-view-area-storage/workspace-view-area-storage";
 import { projectBrowserOpenSnapshotV2 } from "../../utils/workspace-browser-open/workspace-browser-open-view-v3";
+import {
+	applyWorkspacePaneAreaLayouts,
+	type WorkspacePaneAreaLayoutEdit,
+} from "../../utils/workspace-pane-areas/workspace-pane-area-layouts";
 import type { WorkspacePaneAreasState } from "../../utils/workspace-pane-areas/workspace-pane-areas";
 import {
 	applyWorkspacePaneAreas,
@@ -1455,6 +1459,42 @@ export function useWorkspaceViews(
 		},
 		[areaStorage, mutate, targetId, setSaved],
 	);
+	const savePaneLayouts = useCallback(
+		async (
+			workspaceId: string,
+			edits: readonly WorkspacePaneAreaLayoutEdit[],
+			sourceScope: WorkspacePaneAreasScope,
+		) => {
+			if (
+				!areaStorage ||
+				viewRef.current?.schemaVersion !== 3 ||
+				sourceScope.workspaceId !== workspaceId ||
+				!edits.length
+			)
+				return null;
+			const scope = { ...sourceScope },
+				captured = structuredClone(edits),
+				current = viewRef.current;
+			const optimistic = applyWorkspacePaneAreaLayouts(
+				inputFor(current),
+				scope,
+				captured,
+			);
+			if (optimistic)
+				setSaved({
+					...optimistic,
+					schemaVersion: 3,
+					revision: current.revision,
+					updatedAt: current.updatedAt,
+				});
+			return mutate((input) => {
+				const merged = applyWorkspacePaneAreaLayouts(input, scope, captured);
+				if (!merged) throw Error("Workspace pane layout changed");
+				Object.assign(input, merged);
+			}, false);
+		},
+		[areaStorage, mutate, setSaved],
+	);
 	const restoreManual = useCallback(async () => {
 		navigate();
 		const target = viewRef.current?.activeConnectionId;
@@ -1646,6 +1686,7 @@ export function useWorkspaceViews(
 		saveLayout,
 		savePaneState,
 		savePaneAreas,
+		savePaneLayouts,
 		restoreManual,
 		forget,
 		refreshResources,

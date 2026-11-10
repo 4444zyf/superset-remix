@@ -25,6 +25,7 @@ import { fromPaneLayout } from "../../utils/pane-adapter/pane-adapter";
 import { buildPaneTree } from "../../utils/pane-layout/pane-layout";
 import { projectBrowserOpenSnapshotV2 } from "../../utils/workspace-browser-open/workspace-browser-open-view-v3";
 import { createWorkspacePaneAreaEdits } from "../../utils/workspace-pane-area-edits/workspace-pane-area-edits";
+import { captureWorkspacePaneAreaLayouts } from "../../utils/workspace-pane-areas/workspace-pane-area-layouts";
 import {
 	createWorkspacePaneAreas,
 	readWorkspacePaneAreas,
@@ -762,4 +763,92 @@ test("the existing hook flush drains a registered paired runtime and its pending
 		edits.dispose();
 		areas.dispose();
 	}
+});
+
+test("explicit paired layout saving retains tabs created after the gesture was captured", async () => {
+	const f = setup();
+	await waitFor(() => expect(f.hook.result.current.view?.revision).toBe(1));
+	await act(async () => {
+		await f.hook.result.current.newBrowser(
+			"workspace",
+			"http://localhost:3010/",
+			"split",
+		);
+	});
+	const target = required(f.backing().targets[0]),
+		w = workspace(f.backing()),
+		areas = readWorkspacePaneAreas(w),
+		store = createWorkspaceStore({ initialState: areas.center });
+	store
+		.getState()
+		.resizeSplit({ tabId: "center-tab", path: [], splitPercentage: 73 });
+	const edits = captureWorkspacePaneAreaLayouts(
+			{ ...areas, center: store.getState() },
+			["center-tab"],
+		),
+		scope = {
+			connectionId: target.connectionId,
+			backendId: target.backendId,
+			namespaceId: target.namespaceId,
+			serviceUid: target.serviceUid,
+			targetRevision: target.targetRevision,
+			workspaceId: w.workspaceId,
+			tabId: w.tabId,
+		};
+	await act(async () => {
+		await f.hook.result.current.newBrowser(
+			"workspace",
+			"http://localhost:3011/",
+			"new-tab",
+		);
+	});
+	const catalog = structuredClone(workspace(f.backing()).panes),
+		selected = workspace(f.backing()).activePaneId,
+		tabsBefore = workspace(f.backing()).paneTabs?.length;
+	await act(async () => {
+		await f.hook.result.current.savePaneLayouts("workspace", edits, scope);
+	});
+	expect(workspace(f.backing()).paneTabs?.[0]?.layout).toMatchObject({
+		ratio: 0.73,
+	});
+	expect(workspace(f.backing()).paneTabs).toHaveLength(required(tabsBefore));
+	expect(workspace(f.backing()).panes).toEqual(catalog);
+	expect(workspace(f.backing()).activePaneId).toBe(selected);
+	expect(workspace(f.backing()).rightPaneLayout?.tabs).toHaveLength(1);
+	expect(f.errors).toEqual([]);
+});
+test("explicit paired layout saving cannot target a replacement execution or old owner", async () => {
+	const f = setup();
+	await waitFor(() => expect(f.hook.result.current.view?.revision).toBe(1));
+	const target = required(f.backing().targets[0]),
+		w = workspace(f.backing()),
+		scope = {
+			connectionId: target.connectionId,
+			backendId: target.backendId,
+			namespaceId: target.namespaceId,
+			serviceUid: target.serviceUid,
+			targetRevision: target.targetRevision,
+			workspaceId: w.workspaceId,
+			tabId: w.tabId,
+		},
+		edits = captureWorkspacePaneAreaLayouts(readWorkspacePaneAreas(w), [
+			"center-tab",
+		]);
+	required(w.panes[0]).executionId = "replacement";
+	await act(async () => {
+		expect(
+			await f.hook.result.current.savePaneLayouts("workspace", edits, scope),
+		).toBeNull();
+	});
+	expect(f.saves3).toHaveLength(0);
+	expect(workspace(f.backing()).panes[0]?.executionId).toBe("replacement");
+	await act(async () => {
+		expect(
+			await f.hook.result.current.savePaneLayouts("workspace", edits, {
+				...scope,
+				namespaceId: "old",
+			}),
+		).toBeNull();
+	});
+	expect(f.saves3).toHaveLength(0);
 });

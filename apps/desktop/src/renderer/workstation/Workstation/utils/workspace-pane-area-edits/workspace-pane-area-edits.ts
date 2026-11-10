@@ -1,3 +1,4 @@
+import { changedWorkspacePaneAreaLayouts } from "../workspace-pane-areas/workspace-pane-area-layouts";
 import {
 	captureWorkspacePaneAreas,
 	type WorkspacePaneAreasState,
@@ -6,6 +7,7 @@ import {
 } from "../workspace-pane-areas/workspace-pane-areas";
 
 interface Edit {
+	layoutTabIds?: string[];
 	next: WorkspacePaneAreasState;
 	before: WorkspacePaneAreasState;
 }
@@ -14,6 +16,12 @@ interface Options {
 		next: WorkspacePaneAreasState,
 		before: WorkspacePaneAreasState,
 	): Promise<unknown>;
+	saveLayouts?(
+		next: WorkspacePaneAreasState,
+		before: WorkspacePaneAreasState,
+		tabIds: readonly string[],
+	): Promise<unknown>;
+	onSettled?(): void;
 	onError?(error: unknown): void;
 	schedule?(callback: () => void, delayMs: number): () => void;
 }
@@ -29,6 +37,7 @@ export function createWorkspacePaneAreaEdits(options: Options) {
 		cancel: (() => void) | undefined,
 		token: object | undefined,
 		disposed = false,
+		dispatching = false,
 		flushing: Promise<void> | undefined,
 		errors: unknown[] = [];
 	const same = (a: WorkspacePaneAreasState, b: WorkspacePaneAreasState) =>
@@ -46,8 +55,15 @@ export function createWorkspacePaneAreaEdits(options: Options) {
 		pending = undefined;
 		if (disposed || !edit) return;
 		let work: Promise<unknown>;
+		dispatching = true;
 		try {
-			work = options.save(edit.next, edit.before);
+			work =
+				options.saveLayouts &&
+				edit.layoutTabIds?.length &&
+				workspacePaneAreasMetadataKey(edit.next) ===
+					workspacePaneAreasMetadataKey(edit.before)
+					? options.saveLayouts(edit.next, edit.before, edit.layoutTabIds)
+					: options.save(edit.next, edit.before);
 		} catch (error) {
 			work = Promise.reject(error);
 		}
@@ -66,19 +82,40 @@ export function createWorkspacePaneAreaEdits(options: Options) {
 			)
 			.then(() => {
 				inFlight.delete(settled);
+				if (!disposed) {
+					try {
+						options.onSettled?.();
+					} catch (error) {
+						errors.push(error);
+					}
+				}
 			});
 		inFlight.add(settled);
+		dispatching = false;
 	};
 	return {
+		hasWork: () => !disposed && (dispatching || !!pending || inFlight.size > 0),
 		push(next: WorkspacePaneAreasState, before: WorkspacePaneAreasState): void {
 			if (disposed) return;
 			const first = pending?.before ?? captureWorkspacePaneAreas(before);
+			const layoutTabIds = options.saveLayouts
+				? [
+						...new Set([
+							...(pending?.layoutTabIds ?? []),
+							...changedWorkspacePaneAreaLayouts(next, before),
+						]),
+					]
+				: undefined;
 			cancelTimer();
-			if (same(next, first)) {
+			if (same(next, first) && !layoutTabIds?.length) {
 				pending = undefined;
 				return;
 			}
-			pending = { before: first, next: captureWorkspacePaneAreas(next) };
+			pending = {
+				before: first,
+				next: captureWorkspacePaneAreas(next),
+				...(layoutTabIds ? { layoutTabIds } : {}),
+			};
 			if (
 				workspacePaneAreasMetadataKey(next) !==
 				workspacePaneAreasMetadataKey(first)
