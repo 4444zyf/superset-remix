@@ -42,10 +42,18 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
   } finally {await evaluate(`clearInterval(window.__ownedAreaResizeStall);delete window.__ownedAreaResizeStall;true`);}
   const resized=await until(async()=>{const g=await geometry();return !g.passthrough&&Math.abs(g.right-report.phases[0].geometry.right-70)<2?g:null;},'original RAF resizer keeps the final oscillating gesture');
   report.phases.push({name:'resized',geometry:resized,view:await read(),focus:await focusTrace()});await screenshot('pane-areas-resized');save();
+  if(process.argv.includes('--pane-area-width')) {
+   report.widthPreference={resized:await until(async()=>{const p=await evaluate('window.directWorkstation.getPreferences()');return !p.invalid&&Math.abs(p.values.rightPaneAreaWidth-resized.right)<2?p:null;},'final width persisted through existing private preference CAS')};save();
+   await closeReopen();await installFocusTrace();
+   const restored=await until(async()=>{const g=await geometry();return g&&Math.abs(g.right-resized.right)<2?g:null;},'custom user width restored on a normal window reopen');
+   assert.deepEqual(ids((await read()).workspace),ids(original.workspace));
+   report.phases.push({name:'width-reopened',geometry:restored,view:await read()});await screenshot('pane-areas-width-reopened');save();
+  }
   await mouse(await point(handle),'left',2);
   await until(async()=>!(await geometry()).passthrough,'double click ends its resize gesture');
   const reset=await geometry();report.phases.push({name:'reset',geometry:reset,view:await read(),focus:await focusTrace()});await screenshot('pane-areas-reset');save();
   assert.ok(Math.abs(reset.right-Math.round(reset.viewport*0.4))<2,'double click restores the original viewport-based default width');
+  if(process.argv.includes('--pane-area-width')) {report.widthPreference.reset=await until(async()=>{const p=await evaluate('window.directWorkstation.getPreferences()');return !p.invalid&&p.values.rightPaneAreaWidth===Math.round(reset.viewport*0.4)?p:null;},'double click persists the original viewport default');save();}
   await toolbar('Files');report.afterFilesClick={view:await read(),focus:await focusTrace()};save();
   await until(async()=>{const r=await read();return r.workspace.activeTool==='files'&&r.workspace.activePaneArea==='right';},'Files is a center tool while the right browser stays active');
   assert.ok(await evaluate(`Boolean(document.querySelector('[data-pane-area="right"] [data-workstation-browser-pane]'))`));
@@ -55,6 +63,7 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
   await until(async()=>{const r=await read();return r.workspace.activeTool==='files'&&r.workspace.rightPaneOpen&&r.workspace.rightPaneLayout?.tabs.some(t=>JSON.stringify(t.layout).includes(browser.paneId));},'both saved areas survive a normal window reopen');
   await until(async()=>String(await guestRead('document.title')).includes('Owned browser'),'original right guest restored');
   report.phases.push({name:'reopened',view:await read(),geometry:await geometry()});await screenshot('pane-areas-reopened');save();
+  if(process.argv.includes('--pane-area-width')) {assert.ok(Math.abs((await geometry()).right-report.widthPreference.reset.values.rightPaneAreaWidth)<2);report.widthPreference.completed=true;save();}
   await click('[data-pane-area="right"] button[aria-label="Merge into center"]');
   await until(async()=>{const r=await read();return !r.workspace.rightPaneOpen&&r.workspace.paneTabs?.some(t=>JSON.stringify(t.layout).includes(browser.paneId));},'original merge moves all tabs and closes the sidebar');
   const merged=await read();assert.equal(merged.workspace.activeTool,'terminal','merging a right browser reveals its center content');assert.deepEqual(ids(merged.workspace),ids(original.workspace));
