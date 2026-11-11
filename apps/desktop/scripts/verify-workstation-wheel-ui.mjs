@@ -3,13 +3,14 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
 import { agentUiDriver } from "./verify-workstation-agent-ui-driver.mjs";
-export async function verifyWorkstationWheelUi({getPage, click, screenshot, output, setClipboard, pasteClipboard, readClipboardText, scope: suppliedScope}) {
+export async function verifyWorkstationWheelUi({getPage, click, screenshot, output, setClipboard, pasteClipboard, readClipboardText, scope: suppliedScope,controls}) {
  const {evaluate, until} = agentUiDriver({getPage,click,screenshot,output});
  const scope = suppliedScope ?? await evaluate(`(async()=>{const d=(await window.directWorkstation.getWorkspaceRestore()).descriptor;const {snapshot:v}=await window.directWorkstation.getWorkspaceView();const t=v.targets.find(t=>t.connectionId===d.connectionId),w=t.workspaces.find(w=>w.tabId===t.activeTabId);const row=await window.directWorkstation.rpc({connectionId:d.connectionId,generation:d.generation,path:'workspace.get',type:'query',input:{id:w.workspaceId}});return {d,w,root:row.worktreePath};})()`);
  const rpc=(path,input)=>evaluate(`window.directWorkstation.rpc(${JSON.stringify({connectionId:scope.d.connectionId,generation:scope.d.generation,path,type:'query',input:{workspaceId:scope.w.workspaceId,...input}})})`);
  await click('text:New terminal');
  const terminal=await until(()=>evaluate(`[...document.querySelectorAll('[data-terminal-id]')].map(e=>({id:e.dataset.terminalId,state:e.dataset.restoreState})).find(e=>e.state==='attached'&&!${JSON.stringify(scope.w.panes.map(p=>p.resourceId))}.includes(e.id))`),'new terminal attached');
  const selector=`[data-terminal-id="${terminal.id}"]`;
+ if(process.argv.includes('--wheel-pane-areas')) {const {verifyClipboardPaneArea}=await import('./verify-workstation-clipboard-pane-area.mjs');await verifyClipboardPaneArea({getPage,click,screenshot,output,scope,controls},terminal,'right');}
  await click(`${selector} .xterm-screen`);
  const key=async(key,code)=>{for(const type of ['keyDown','keyUp'])await getPage().call('Input.dispatchKeyEvent',{type,key,code:key,windowsVirtualKeyCode:code});};
  const text=value=>getPage().call('Input.insertText',{text:value});
@@ -35,6 +36,7 @@ export async function verifyWorkstationWheelUi({getPage, click, screenshot, outp
  writeFileSync(join(output,'wheel-viewport-diagnostics.json'),JSON.stringify({normalBefore,normalFirstAfter,normalAfter,normalDown},null,2)+'\n');
  traces.push({phase:'normal-viewport',normalBefore,normalAfter,normalDown});
  traces.push({phase:'normal',state:await state()});assert.deepEqual(traces.at(-1).state.received,[],'shell wheel never generates input');
+ if(process.argv.includes('--wheel-pane-areas')) {const {verifyClipboardPaneArea}=await import('./verify-workstation-clipboard-pane-area.mjs');await verifyClipboardPaneArea({getPage,click,screenshot,output,scope,controls},terminal,'expand');}
  await text('a');await until(async()=>(await state())?.stage==='alternate','alternate fixture');await delay(150);
  await text('n');await until(async()=>(await state())?.stage==='redraw','TUI full redraw');await delay(150);
  const before=await state();await screenshot('wheel-tui-before');await wheel(-100);
@@ -85,6 +87,7 @@ export async function verifyWorkstationWheelUi({getPage, click, screenshot, outp
  assert.match(reports,/\x1b\[<64;/);assert.match(reports,/\x1b\[<65;/);assert.doesNotMatch(reports,/\x1b(?:\[|O)[AB]/);
  await screenshot('wheel-tui-native-mouse');
  if(process.argv.includes('--wheel-mode-transitions')) {
+  if(process.argv.includes('--wheel-pane-areas')) {const before=await state();const {verifyClipboardPaneArea}=await import('./verify-workstation-clipboard-pane-area.mjs');await verifyClipboardPaneArea({getPage,click,screenshot,output,scope,controls},terminal,'center');assert.deepEqual((await state()).received,before.received,'pane transfer does not inject input into the wheel TUI');}
   const priorRemount=await state();
   await click('text:Files');await until(()=>evaluate(`Boolean(document.querySelector('[data-workspace-files]'))`),'files before wheel remount');
   await click('text:Terminal');await until(()=>evaluate(`Boolean(document.querySelector(${JSON.stringify(selector)}+'[data-restore-state="attached"] .xterm-screen'))`),'same terminal reattached');

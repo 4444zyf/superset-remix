@@ -566,7 +566,7 @@ export async function verifyWorkspaceRestoreUi({
  if (process.argv.includes("--wheel-only")) {
   await click("text:Terminal");await ready();
   const {verifyWorkstationWheelUi}=await import("./verify-workstation-wheel-ui.mjs");
-  await verifyWorkstationWheelUi({getPage,click,screenshot,output,setClipboard,pasteClipboard,readClipboardText});
+  await verifyWorkstationWheelUi({getPage,click,screenshot,output,setClipboard,pasteClipboard,readClipboardText,controls});
   writeFileSync(join(output,"workspace-restore-ui.json"),JSON.stringify({...report,wheelOnly:true},null,2)+"\n");return;
  }
  if (process.argv.includes("--pane-tabs-only")) {

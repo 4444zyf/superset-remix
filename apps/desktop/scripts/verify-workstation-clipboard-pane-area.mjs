@@ -4,7 +4,8 @@ import {join} from 'node:path';
 import {agentUiDriver} from './verify-workstation-agent-ui-driver.mjs';
 
 export async function verifyClipboardPaneArea(options,terminal,action) {
- const {getPage,click,output,scope,controls}=options,{evaluate,until,menu}=agentUiDriver(options);
+ const {getPage,click,output,scope,controls:providedControls}=options,{evaluate,until,menu}=agentUiDriver(options);
+ const controls=providedControls?.forNamespace?.(scope.d.namespaceId)??providedControls;
  const id=terminal.terminalId??terminal.id;
  const read=()=>evaluate(`(async()=>{const r=await window.directWorkstation.getWorkspaceViewV3();if(r.invalid||r.snapshot?.schemaVersion!==3)throw Error('Expected valid owned V3 view');const t=r.snapshot.targets.find(t=>t.connectionId===${JSON.stringify(scope.d.connectionId)});if(t?.backendId!==${JSON.stringify(scope.d.backendId)}||t.namespaceId!==${JSON.stringify(scope.d.namespaceId)})throw Error('Wrong clipboard target');const w=t.workspaces.find(w=>w.workspaceId===${JSON.stringify(scope.w.workspaceId)});if(!w)throw Error('Missing owned clipboard workspace');return w;})()`);
  const before=await read(),pane=before.panes.find(p=>p.resourceId===id);assert.ok(pane);
