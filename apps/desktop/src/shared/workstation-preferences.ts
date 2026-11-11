@@ -14,6 +14,7 @@ export interface WorkstationPreferenceValues {
 	fileAutoSave: FileAutoSaveMode;
 	confirmOnQuit: boolean;
 	terminalCopyOnSelect: boolean;
+	rightPaneAreaWidth?: number | null;
 }
 export type WorkstationPreferencePatch = Partial<WorkstationPreferenceValues>;
 export interface WorkstationPreferenceSnapshot {

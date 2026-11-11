@@ -30,6 +30,7 @@ const fields = {
 	fileAutoSave: z.enum(FILE_AUTO_SAVE_MODES),
 	confirmOnQuit: z.boolean(),
 	terminalCopyOnSelect: z.boolean(),
+	rightPaneAreaWidth: z.number().min(240).max(32768).nullable().optional(),
 };
 const valuesSchema = z.strictObject(fields);
 const patchSchema = valuesSchema.partial();
@@ -46,6 +47,7 @@ function defaults(): WorkstationPreferenceValues {
 		fileAutoSave: DEFAULT_FILE_AUTO_SAVE,
 		confirmOnQuit: DEFAULT_CONFIRM_ON_QUIT,
 		terminalCopyOnSelect: DEFAULT_TERMINAL_COPY_ON_SELECT,
+		rightPaneAreaWidth: null,
 	};
 }
 

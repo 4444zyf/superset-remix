@@ -39,6 +39,7 @@ import { workstationBrowsers } from "./providers/WorkstationBrowsers/workstation
 import { useWorkspaceViews } from "./hooks/useWorkspaceViews/useWorkspaceViews";
 import { useWorkstation } from "./hooks/useWorkstation/useWorkstation";
 import { useBrowserPreferences } from "./hooks/useBrowserPreferences";
+import { usePaneAreaWidthPreference } from "./hooks/usePaneAreaWidthPreference/usePaneAreaWidthPreference";
 import { useWorkstationPreferences } from "./hooks/useWorkstationPreferences";
 import { WorkstationChatDraftsContext } from "./providers/WorkstationChatDrafts/WorkstationChatDraftsContext";
 import { WorkstationChatDraftStore } from "./providers/WorkstationChatDrafts/workstation-chat-drafts";
@@ -83,6 +84,11 @@ export function Workstation({
 	const { t } = useLingui();
 	const ui = useWorkstation(api);
 	const preferences = useWorkstationPreferences(api);
+	const paneAreaWidth = usePaneAreaWidthPreference(
+		preferences,
+		Boolean(api.getPreferences && api.updatePreferences),
+		ui.setError,
+	);
 	const browserPreferences = useBrowserPreferences(api.browser?.preferences);
 	const documents = useMemo(() => new WorkstationFileDocuments(api), [api]);
 	const chatDrafts = useMemo(() => new WorkstationChatDraftStore(api), [api]);
@@ -791,6 +797,8 @@ export function Workstation({
 				>
 					{views.enabled && savedTarget?.activeTabId ? (
 						<WorkspaceWindow
+							paneAreaWidth={paneAreaWidth.width}
+							onPaneAreaWidthChange={paneAreaWidth.commit}
 							onBrowserSettings={
 								api.getPreferences &&
 								api.updatePreferences &&

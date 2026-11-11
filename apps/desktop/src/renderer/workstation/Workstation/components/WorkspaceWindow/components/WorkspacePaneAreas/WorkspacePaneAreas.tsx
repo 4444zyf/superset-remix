@@ -36,6 +36,8 @@ type Props = Omit<
 	scope: WorkspacePaneAreasScope;
 	centerTool?: ReactNode;
 	resourceRevision: number;
+	paneAreaWidth?: number | null;
+	onPaneAreaWidthChange?(width: number): void;
 	onError(message: string): void;
 };
 export function WorkspacePaneAreas(props: Props) {
@@ -71,6 +73,7 @@ export function WorkspacePaneAreas(props: Props) {
 	const defaultPanelWidth = Math.round(windowWidth * 0.4);
 	const [panelWidth, setPanelWidth] = useState<number | undefined>();
 	const [resizing, setResizing] = useState(false);
+	const pendingWidth = useRef<number | null>(null);
 	const interaction = useShellInteractionPassthrough({
 		sidebarOpen: state.rightPaneOpen,
 	});
@@ -92,6 +95,8 @@ export function WorkspacePaneAreas(props: Props) {
 		resourceRevision,
 		centerTool,
 		scope: _scope,
+		paneAreaWidth,
+		onPaneAreaWidthChange,
 		...gridProps
 	} = props;
 	useLayoutEffect(() => {
@@ -302,18 +307,35 @@ export function WorkspacePaneAreas(props: Props) {
 				<ResizablePanel
 					width={Math.max(
 						minWidth,
-						Math.min(maxWidth, panelWidth ?? defaultPanelWidth),
+						Math.min(
+							maxWidth,
+							panelWidth ?? paneAreaWidth ?? defaultPanelWidth,
+						),
 					)}
-					onWidthChange={setPanelWidth}
+					onWidthChange={(width) => {
+						pendingWidth.current = width;
+						setPanelWidth(width);
+					}}
 					isResizing={resizing}
 					onResizingChange={(active) => {
+						if (active) pendingWidth.current = null;
+						else if (pendingWidth.current !== null && onPaneAreaWidthChange) {
+							onPaneAreaWidthChange(pendingWidth.current);
+							pendingWidth.current = null;
+							setPanelWidth(undefined);
+						}
 						setResizing(active);
 						interaction.onSidebarResizeDragging(active);
 					}}
 					minWidth={minWidth}
 					maxWidth={maxWidth}
 					handleSide="left"
-					onDoubleClickHandle={() => setPanelWidth(defaultPanelWidth)}
+					onDoubleClickHandle={() => {
+						if (onPaneAreaWidthChange) {
+							onPaneAreaWidthChange(defaultPanelWidth);
+							setPanelWidth(undefined);
+						} else setPanelWidth(defaultPanelWidth);
+					}}
 					className="flex min-h-0 min-w-0 flex-col"
 				>
 					{grid("right")}

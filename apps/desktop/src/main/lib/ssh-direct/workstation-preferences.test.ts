@@ -123,3 +123,63 @@ test("unknown future settings and coercible flags cannot activate native input",
 		f.db.close();
 	}
 });
+
+test("a legacy preference row accepts a pane width without resetting other settings or later losing it", () => {
+	const f = fixture();
+	try {
+		const legacy = f.store.update({
+			expectedRevision: 0,
+			patch: { language: "zh-CN", terminalCopyOnSelect: true },
+		});
+		const values = { ...legacy.values };
+		Reflect.deleteProperty(values, "rightPaneAreaWidth");
+		f.db
+			.prepare("UPDATE workstation_preferences SET data = ? WHERE id = 1")
+			.run(JSON.stringify(values));
+		expect(f.store.read()).toMatchObject({
+			invalid: false,
+			revision: 1,
+			values: { language: "zh-CN", terminalCopyOnSelect: true },
+		});
+		f.store.update({ expectedRevision: 1, patch: { rightPaneAreaWidth: 560 } });
+		const reopened = new WorkstationPreferences(
+			f.db as unknown as SqliteDatabase,
+		);
+		const changed = reopened.update({
+			expectedRevision: 2,
+			patch: { themeId: "light" },
+		});
+		expect(changed).toMatchObject({
+			revision: 3,
+			values: {
+				rightPaneAreaWidth: 560,
+				language: "zh-CN",
+				terminalCopyOnSelect: true,
+				themeId: "light",
+			},
+		});
+	} finally {
+		f.db.close();
+	}
+});
+test("pane width preference rejects invalid dimensions without changing its saved revision", () => {
+	const f = fixture();
+	try {
+		for (const width of [-1, 0, 239, 32769, NaN, Infinity, "480"])
+			expect(() =>
+				f.store.update({
+					expectedRevision: 0,
+					patch: { rightPaneAreaWidth: width } as never,
+				}),
+			).toThrow();
+		expect(f.store.read().revision).toBe(0);
+		expect(
+			f.store.update({
+				expectedRevision: 0,
+				patch: { rightPaneAreaWidth: null },
+			}).invalid,
+		).toBe(false);
+	} finally {
+		f.db.close();
+	}
+});

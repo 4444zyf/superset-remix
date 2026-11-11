@@ -7,7 +7,7 @@ import {
 	render,
 	waitFor,
 } from "@testing-library/react";
-import { type ReactNode, StrictMode } from "react";
+import { type ComponentProps, type ReactNode, StrictMode } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import type {
@@ -74,11 +74,20 @@ function setup(save: () => Promise<unknown> = async () => ({})) {
 		workspaceId: w.workspaceId,
 		tabId: w.tabId,
 	};
-	const element = (next = w, revision = 1, centerTool?: ReactNode) => (
+	const element = (
+		next = w,
+		revision = 1,
+		centerTool?: ReactNode,
+		widthProps: Pick<
+			ComponentProps<typeof WorkspacePaneAreas>,
+			"paneAreaWidth" | "onPaneAreaWidthChange"
+		> = {},
+	) => (
 		<StrictMode>
 			<DndProvider backend={HTML5Backend}>
 				<TooltipProvider>
 					<WorkspacePaneAreas
+						{...widthProps}
 						api={api}
 						connection={descriptor}
 						workspace={next}
@@ -317,5 +326,64 @@ test("merging the right area closes the original sidebar and reveals the merged 
 	} finally {
 		view.unmount();
 		gate.resolve({});
+	}
+});
+
+test("saved user width is clamped for display and each final resize or reset commits once", () => {
+	const originalWidth = window.innerWidth;
+	Object.defineProperty(window, "innerWidth", {
+		configurable: true,
+		value: 1000,
+	});
+	const f = setup(),
+		changes: number[] = [];
+	const widthProps = {
+		paneAreaWidth: 600,
+		onPaneAreaWidthChange: (width: number) => {
+			changes.push(width);
+			widthProps.paneAreaWidth = width;
+		},
+	};
+	const view = render(f.element(f.w, 1, undefined, widthProps));
+	try {
+		const separator = view.getByRole("separator");
+		expect(separator.getAttribute("aria-valuenow")).toBe("600");
+		fireEvent.mouseDown(separator, { clientX: 500 });
+		fireEvent.mouseUp(document);
+		expect(changes).toEqual([]);
+		fireEvent.mouseDown(separator, { clientX: 500 });
+		fireEvent.mouseMove(document, { clientX: 450 });
+		fireEvent.mouseUp(document);
+		expect(changes).toEqual([650]);
+		view.rerender(f.element(f.w, 1, undefined, widthProps));
+		expect(separator.getAttribute("aria-valuenow")).toBe("650");
+		act(() => {
+			Object.defineProperty(window, "innerWidth", {
+				configurable: true,
+				value: 800,
+			});
+			window.dispatchEvent(new Event("resize"));
+		});
+		expect(separator.getAttribute("aria-valuenow")).toBe("600");
+		expect(changes).toEqual([650]);
+		act(() => {
+			Object.defineProperty(window, "innerWidth", {
+				configurable: true,
+				value: 1000,
+			});
+			window.dispatchEvent(new Event("resize"));
+		});
+		expect(separator.getAttribute("aria-valuenow")).toBe("650");
+		fireEvent.doubleClick(separator);
+		expect(changes).toEqual([650, 400]);
+		view.rerender(f.element(f.w, 1, undefined, widthProps));
+		expect(separator.getAttribute("aria-valuenow")).toBe("400");
+		expect(f.writes()).toBe(0);
+	} finally {
+		view.unmount();
+		Object.defineProperty(window, "innerWidth", {
+			configurable: true,
+			value: originalWidth,
+		});
 	}
 });

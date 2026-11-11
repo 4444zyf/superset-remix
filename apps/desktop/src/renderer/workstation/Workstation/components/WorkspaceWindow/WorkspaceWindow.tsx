@@ -51,6 +51,8 @@ export function WorkspaceWindow({
 	ports,
 	createEmulator,
 	onBrowserSettings,
+	paneAreaWidth,
+	onPaneAreaWidthChange,
 }: {
 	api: DirectWorkstationApi;
 	target: TargetView;
@@ -82,6 +84,8 @@ export function WorkspaceWindow({
 	onMachines(): void;
 	onError(message: string): void;
 	onBrowserSettings?(): void;
+	paneAreaWidth?: number | null;
+	onPaneAreaWidthChange?(width: number): void;
 	createEmulator?(element: HTMLDivElement): TerminalEmulator;
 }) {
 	const { t } = useLingui();
@@ -477,6 +481,8 @@ export function WorkspaceWindow({
 					)}
 					{actions.paneAreasEnabled ? (
 						<WorkspacePaneAreas
+							paneAreaWidth={paneAreaWidth}
+							onPaneAreaWidthChange={onPaneAreaWidthChange}
 							onBrowserSettings={onBrowserSettings}
 							key={workspace.tabId}
 							resourceRevision={resourceRevision}
