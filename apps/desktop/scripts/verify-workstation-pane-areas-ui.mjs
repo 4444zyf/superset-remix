@@ -55,6 +55,35 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
   const reset=await geometry();report.phases.push({name:'reset',geometry:reset,view:await read(),focus:await focusTrace()});await screenshot('pane-areas-reset');save();
   assert.ok(Math.abs(reset.right-Math.round(reset.viewport*0.4))<2,'double click restores the original viewport-based default width');
   if(process.argv.includes('--pane-area-width')) {report.widthPreference.reset=await until(async()=>{const p=await evaluate('window.directWorkstation.getPreferences()');return !p.invalid&&p.values.rightPaneAreaWidth===Math.round(reset.viewport*0.4)?p:null;},'double click persists the original viewport default');save();}
+  if(process.argv.includes('--pane-area-expansion')) {
+   const split=await read();
+   const expand=async name=>{
+    await click('[data-pane-area="right"] button[aria-label="Expand"]');
+    const view=await until(async()=>{const r=await read();return r.workspace.rightPaneAreaExpansion&&r.workspace.paneTabs.length===0?r:null;},'original expansion receipt and both layouts commit together');
+    assert.deepEqual(ids(view.workspace),ids(original.workspace));
+    assert.deepEqual(view.workspace.rightPaneAreaExpansion.movedTabIds,split.workspace.paneTabs.map(t=>t.tabId));
+    const g=await until(async()=>{const v=await geometry();return v&&Math.abs(v.right-v.root)<2?v:null;},'expanded right area fills the real original content container');
+    report.phases.push({name,view,geometry:g});await screenshot('pane-areas-'+name);save();
+   };
+   const restored=async()=>until(async()=>{const r=await read();return !r.workspace.rightPaneAreaExpansion&&r.workspace.paneTabs.some(t=>t.tabId===split.workspace.activePaneTabId)&&r.workspace.rightPaneLayout.activeTabId===split.workspace.rightPaneLayout.activeTabId?r:null;},'original split and selections restored without an expansion receipt');
+   await expand('expanded');
+   await click('[data-pane-area="right"] button[aria-label="Restore width"]');
+   const collapsed=await restored();assert.deepEqual(ids(collapsed.workspace),ids(original.workspace));assert.ok(Math.abs((await geometry()).right-reset.right)<2);
+   report.phases.push({name:'collapsed',view:collapsed,geometry:await geometry()});await screenshot('pane-areas-collapsed');save();
+   await expand('expanded-before-hide');
+   await click('[data-pane-area="right"] button[aria-label="Toggle sidebar"]');
+   const hidden=await until(async()=>{const r=await restored();return !r.workspace.rightPaneOpen?r:null;},'hiding expanded area restores its tabs before closing');
+   assert.deepEqual(ids(hidden.workspace),ids(original.workspace));report.phases.push({name:'hidden-restored',view:hidden});save();
+   await click('[data-pane-area="center"] button[aria-label="Toggle sidebar"]');
+   await until(()=>point(browserSelector),'original right browser header shown again');await mouse(await point(browserSelector));
+   await until(async()=>(await read()).workspace.activePaneArea==='right','explicit right header focus restored');
+   report.phases.push({name:'shown-restored',view:await read(),geometry:await geometry()});save();
+   await expand('expanded-before-reopen');
+   await closeReopen();await installFocusTrace();
+   const reopened=await restored();await until(async()=>String(await guestRead('document.title')).includes('Owned browser'),'right browser reconnects after expanded window restoration');
+   assert.deepEqual(ids(reopened.workspace),ids(original.workspace));assert.ok(Math.abs((await geometry()).right-reset.right)<2);
+   report.phases.push({name:'expansion-reopened-restored',view:reopened,geometry:await geometry()});await screenshot('pane-areas-expansion-reopened-restored');report.expansionCompleted=true;save();
+  }
   await toolbar('Files');report.afterFilesClick={view:await read(),focus:await focusTrace()};save();
   await until(async()=>{const r=await read();return r.workspace.activeTool==='files'&&r.workspace.activePaneArea==='right';},'Files is a center tool while the right browser stays active');
   assert.ok(await evaluate(`Boolean(document.querySelector('[data-pane-area="right"] [data-workstation-browser-pane]'))`));
@@ -65,9 +94,14 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
   await until(async()=>String(await guestRead('document.title')).includes('Owned browser'),'original right guest restored');
   report.phases.push({name:'reopened',view:await read(),geometry:await geometry()});await screenshot('pane-areas-reopened');save();
   if(process.argv.includes('--pane-area-width')) {assert.ok(Math.abs((await geometry()).right-report.widthPreference.reset.values.rightPaneAreaWidth)<2);report.widthPreference.completed=true;save();}
+  if(process.argv.includes('--pane-area-expansion')) {
+   await click('[data-pane-area="right"] button[aria-label="Expand"]');
+   const view=await until(async()=>{const r=await read();return r.workspace.rightPaneAreaExpansion&&r.workspace.paneTabs.length===0?r:null;},'Files expansion committed before merge');
+   assert.deepEqual(ids(view.workspace),ids(original.workspace));report.phases.push({name:'expanded-before-merge',view,geometry:await geometry()});await screenshot('pane-areas-expanded-before-merge');save();
+  }
   await click('[data-pane-area="right"] button[aria-label="Merge into center"]');
   await until(async()=>{const r=await read();return !r.workspace.rightPaneOpen&&r.workspace.paneTabs?.some(t=>JSON.stringify(t.layout).includes(browser.paneId));},'original merge moves all tabs and closes the sidebar');
-  const merged=await read();assert.equal(merged.workspace.activeTool,'terminal','merging a right browser reveals its center content');assert.deepEqual(ids(merged.workspace),ids(original.workspace));
+  const merged=await read();assert.equal(merged.workspace.activeTool,'terminal','merging a right browser reveals its center content');if(process.argv.includes('--pane-area-expansion'))assert.equal(merged.workspace.rightPaneAreaExpansion,undefined);assert.deepEqual(ids(merged.workspace),ids(original.workspace));
   report.phases.push({name:'merged-center',view:merged});await screenshot('pane-areas-merged-center');save();
   await click('[data-pane-area="center"] button[aria-label="Toggle sidebar"]');
   await until(()=>evaluate(`Boolean(document.querySelector('[data-pane-area="right"]'))`),'empty right area revealed');
