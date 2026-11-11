@@ -1,24 +1,25 @@
-import { WorkstationBrowserCookieImportError } from "./workstation-browser-cookie-imports";
+import { rawErrorMessage } from "@superset/i18n/errors";
+import {
+	type BrowserBridgePacket,
+	type BrowserBridgeReadOperation,
+	browserBridgeConsoleResultSchema,
+	browserBridgeCookieImportResultSchema,
+	browserBridgeImportSourcesResultSchema,
+	browserBridgeListResultSchema,
+	browserCapturePackets,
+	encodeBrowserBridgePacket,
+	parseBrowserBridgePacket,
+} from "@superset/shared/browser-bridge";
 import {
 	BROWSER_CDP_MAX_REQUEST_BYTES,
 	encodeBrowserCdpPacket,
 	parseBrowserCdpPacket,
 } from "@superset/shared/browser-cdp-bridge";
-import { WorkstationBrowserCdpChannel } from "./workstation-browser-cdp-channel";
-import type { PinnedWorkstationBrowserCdp } from "./workstation-browser-cdp-sessions";
-import {
-	browserBridgeCookieImportResultSchema,
-	browserBridgeImportSourcesResultSchema,
-	browserBridgeConsoleResultSchema,
-	browserBridgeListResultSchema,
-	encodeBrowserBridgePacket,
-	parseBrowserBridgePacket,
-	browserCapturePackets,
-	type BrowserBridgeReadOperation,
-	type BrowserBridgePacket,
-} from "@superset/shared/browser-bridge";
 import type { DirectDescriptor } from "../../../shared/direct-workstation";
 import type { currentWorkstationBrowserBridgePanes } from "./workstation-browser-bridge-panes";
+import { WorkstationBrowserCdpChannel } from "./workstation-browser-cdp-channel";
+import type { PinnedWorkstationBrowserCdp } from "./workstation-browser-cdp-sessions";
+import { WorkstationBrowserCookieImportError } from "./workstation-browser-cookie-imports";
 
 type OpenRequest = Extract<BrowserBridgePacket, { type: "open-request" }>;
 type OpenResult = Extract<
@@ -781,7 +782,11 @@ export class WorkstationBrowserReadChannels {
 				}
 				entry.socket.send(encodeBrowserBridgePacket(packet));
 			}
-		} catch {
+		} catch (error) {
+			console.warn(
+				"[workstation-browser-capture]",
+				rawErrorMessage(error).slice(0, 500),
+			);
 			if (!this.current(entry)) {
 				this.close(entry);
 				return;
