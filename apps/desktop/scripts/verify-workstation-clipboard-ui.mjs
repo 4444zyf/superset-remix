@@ -72,6 +72,7 @@ export async function verifyWorkstationClipboardUi({
 		);
 		return row?.state === "attached" ? row : null;
 	});
+	if(process.argv.includes('--clipboard-pane-areas')) {const {verifyClipboardPaneArea}=await import('./verify-workstation-clipboard-pane-area.mjs');await verifyClipboardPaneArea({getPage,click,screenshot,output,scope,controls},terminal,'right');}
 	const point = await until(() =>
 		evaluate(
 			`(()=>{const e=document.querySelector('[data-terminal-id="${terminal.terminalId}"] .xterm-screen');if(!e)return null;const r=e.getBoundingClientRect();let left=Math.max(r.left,0),right=Math.min(r.right,innerWidth),top=Math.max(r.top,0),bottom=Math.min(r.bottom,innerHeight);for(let p=e.parentElement;p;p=p.parentElement){const s=getComputedStyle(p),b=p.getBoundingClientRect();if(/hidden|clip|scroll|auto/.test(s.overflowX)){left=Math.max(left,b.left);right=Math.min(right,b.right);}if(/hidden|clip|scroll|auto/.test(s.overflowY)){top=Math.max(top,b.top);bottom=Math.min(bottom,b.bottom);}}if(right<=left||bottom<=top)return null;const x=(left+right)/2,y=(top+bottom)/2;return e.contains(document.elementFromPoint(x,y))?{x,y,visibleWidth:right-left,visibleHeight:bottom-top}:null;})()`,
@@ -313,8 +314,9 @@ export async function verifyWorkstationClipboardUi({
 		await screenshot("clipboard-native-file-shell-read");
 	}
 	if(process.argv.includes('--terminal-agent-clipboard')) {
+  if(process.argv.includes('--clipboard-pane-areas')) {const {verifyClipboardPaneArea}=await import('./verify-workstation-clipboard-pane-area.mjs');await verifyClipboardPaneArea({getPage,click,screenshot,output,scope,controls},terminal,'expand');}
   const {verifyWorkstationTerminalClipboardUi}=await import('./verify-workstation-terminal-clipboard-ui.mjs');
-  await verifyWorkstationTerminalClipboardUi({getPage,click,screenshot,setClipboard,pasteClipboard,readClipboardText,output,scope,terminal,query});
+  await verifyWorkstationTerminalClipboardUi({getPage,click,screenshot,setClipboard,pasteClipboard,readClipboardText,output,scope,terminal,query,controls});
  }
 	for (const type of ["mouseMoved", "mousePressed", "mouseReleased"])
 		await getPage().call("Input.dispatchMouseEvent", {

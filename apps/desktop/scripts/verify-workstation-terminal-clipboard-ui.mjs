@@ -41,6 +41,7 @@ export async function verifyWorkstationTerminalClipboardUi(options) {
  const previousImage=await state();await setClipboard({imageBase64:readFileSync(join(output,'clipboard-image-source.png')).toString('base64')});await menu();await click('menu:Paste');
  const imageInput=await until(async()=>{const s=await state();if(!s)return null;const bytes=Buffer.from(s.received.slice(previousImage.received.length).join(''),'hex').toString();return bytes.startsWith('\x1b[200~')&&bytes.endsWith('\x1b[201~')&&bytes.includes(scope.root+'/.superset/attachments/')&&{state:s,bytes};},'agent receives bracketed remote image path');
  await screenshot('agent-clipboard-remote-image');
+ if(process.argv.includes('--clipboard-pane-areas')) {const {verifyClipboardPaneArea}=await import('./verify-workstation-clipboard-pane-area.mjs');await verifyClipboardPaneArea(options,terminal,'center');}
  await click('text:Files');await until(()=>evaluate(`Boolean(document.querySelector('[data-workspace-files]'))`),'files before clipboard remount');await click('text:Terminal');
  await until(()=>evaluate(`Boolean(document.querySelector(${JSON.stringify(selector)}+'[data-restore-state="attached"] .xterm-screen'))`),'same agent terminal reattached');
  await until(()=>evaluate(`document.activeElement?.closest('[data-terminal-id]')?.dataset.terminalId===${JSON.stringify(terminal.terminalId)}`),'agent focused after remount');
