@@ -1,0 +1,24 @@
+[
+  {
+    "case": "local-expansion-unwrapped",
+    "readOnly": true,
+    "viewSchemaVersion": 3,
+    "viewRevision": 94,
+    "workspaces": 3,
+    "workspacesWithRightLayout": 3,
+    "preferenceSchemaVersion": 1,
+    "preferenceRevision": 2,
+    "rightPaneAreaWidth": 480
+  },
+  {
+    "case": "ssh-expansion-unwrapped",
+    "readOnly": true,
+    "viewSchemaVersion": 3,
+    "viewRevision": 149,
+    "workspaces": 3,
+    "workspacesWithRightLayout": 3,
+    "preferenceSchemaVersion": 1,
+    "preferenceRevision": 2,
+    "rightPaneAreaWidth": 480
+  }
+]

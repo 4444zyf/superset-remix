@@ -1,0 +1,2340 @@
+{
+  "source": "original pane engine and resizer, physical host input, real private V3 storage",
+  "phases": [
+    {
+      "name": "moved-right",
+      "view": {
+        "revision": 11,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "resized",
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 550,
+        "passthrough": false
+      },
+      "view": {
+        "revision": 11,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "focus": {
+        "events": [
+          {
+            "time": 6041.20000000298,
+            "tag": "INPUT",
+            "area": "center",
+            "pane": null,
+            "label": "Title",
+            "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+          },
+          {
+            "time": 6071.100000008941,
+            "tag": "DIV",
+            "area": null,
+            "pane": null,
+            "label": null,
+            "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33098:35\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:28179:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:31729:19\n    at commitHookEffectListMount (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:12089:26)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13239:25)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13220:9)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13233:9)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13220:9)"
+          },
+          {
+            "time": 6090,
+            "tag": "DIV",
+            "area": null,
+            "pane": null,
+            "label": null,
+            "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+          },
+          {
+            "time": 6189,
+            "tag": "DIV",
+            "area": null,
+            "pane": null,
+            "label": null,
+            "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Object.onItemLeave (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33076:33)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33298:51\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33657:53\n    at handleEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at processDispatchQueue (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14858:15)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:15234:7\n    at batchedUpdates$1 (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:7166:38)\n    at dispatchEventForPluginEventSystem (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14950:5)\n    at dispatchEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:16991:9)"
+          }
+        ],
+        "active": {
+          "tag": "BODY",
+          "area": null,
+          "pane": null
+        }
+      }
+    },
+    {
+      "name": "width-reopened",
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 550,
+        "passthrough": false
+      },
+      "view": {
+        "revision": 13,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      }
+    },
+    {
+      "name": "reset",
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      },
+      "view": {
+        "revision": 13,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "focus": {
+        "events": [],
+        "active": {
+          "tag": "BODY",
+          "area": null,
+          "pane": null
+        }
+      }
+    },
+    {
+      "name": "expanded",
+      "view": {
+        "revision": 14,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [],
+          "activePaneTabId": null,
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+                "label": "Terminal",
+                "createdAt": 1794382279258,
+                "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+                }
+              },
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right",
+          "rightPaneAreaExpansion": {
+            "movedTabIds": [
+              "5640b070-6d64-4c41-8f47-e217f5004160"
+            ],
+            "centerActiveTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+            "rightActiveTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          }
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 944,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "collapsed",
+      "view": {
+        "revision": 15,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "expanded-before-hide",
+      "view": {
+        "revision": 16,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [],
+          "activePaneTabId": null,
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+                "label": "Terminal",
+                "createdAt": 1794382279258,
+                "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+                }
+              },
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right",
+          "rightPaneAreaExpansion": {
+            "movedTabIds": [
+              "5640b070-6d64-4c41-8f47-e217f5004160"
+            ],
+            "centerActiveTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+            "rightActiveTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          }
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 944,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "hidden-restored",
+      "view": {
+        "revision": 17,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": false,
+          "activePaneArea": "center"
+        }
+      }
+    },
+    {
+      "name": "shown-restored",
+      "view": {
+        "revision": 19,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "expanded-before-reopen",
+      "view": {
+        "revision": 20,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [],
+          "activePaneTabId": null,
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+                "label": "Terminal",
+                "createdAt": 1794382279258,
+                "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+                }
+              },
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right",
+          "rightPaneAreaExpansion": {
+            "movedTabIds": [
+              "5640b070-6d64-4c41-8f47-e217f5004160"
+            ],
+            "centerActiveTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+            "rightActiveTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          }
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 944,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "expansion-reopened-restored",
+      "view": {
+        "revision": 23,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "expanded-before-api",
+      "view": {
+        "revision": 24,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [],
+          "activePaneTabId": null,
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+                "label": "Terminal",
+                "createdAt": 1794382279258,
+                "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+                }
+              },
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right",
+          "rightPaneAreaExpansion": {
+            "movedTabIds": [
+              "5640b070-6d64-4c41-8f47-e217f5004160"
+            ],
+            "centerActiveTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+            "rightActiveTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          }
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 944,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "expanded-background-open",
+      "view": {
+        "revision": 25,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            },
+            {
+              "paneId": "d962d540-da66-4edd-80ef-2914fd568cd8",
+              "kind": "browser",
+              "resourceId": "bf1448f3-a356-489a-9912-4d8adcbbd576",
+              "browser": {
+                "url": "about:blank",
+                "pageTitle": "",
+                "faviconUrl": null
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "d962d540-da66-4edd-80ef-2914fd568cd8"
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "tab-37af3673-cbf0-4126-8633-7f42d6248959",
+              "createdAt": 1794382290744,
+              "activePaneId": "d962d540-da66-4edd-80ef-2914fd568cd8",
+              "layout": {
+                "type": "pane",
+                "paneId": "d962d540-da66-4edd-80ef-2914fd568cd8"
+              }
+            }
+          ],
+          "activePaneTabId": "tab-37af3673-cbf0-4126-8633-7f42d6248959",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+                "label": "Terminal",
+                "createdAt": 1794382279258,
+                "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+                }
+              },
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right",
+          "rightPaneAreaExpansion": {
+            "movedTabIds": [
+              "5640b070-6d64-4c41-8f47-e217f5004160"
+            ],
+            "centerActiveTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+            "rightActiveTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          }
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 944,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "expanded-explicit-show",
+      "view": {
+        "revision": 26,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "f2dd708a-d5c4-4059-ba05-3f174c76a83a",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            },
+            {
+              "paneId": "d962d540-da66-4edd-80ef-2914fd568cd8",
+              "kind": "browser",
+              "resourceId": "bf1448f3-a356-489a-9912-4d8adcbbd576",
+              "browser": {
+                "url": "about:blank",
+                "pageTitle": "",
+                "faviconUrl": null
+              }
+            },
+            {
+              "paneId": "f2dd708a-d5c4-4059-ba05-3f174c76a83a",
+              "kind": "browser",
+              "resourceId": "286d3600-c897-41f6-9583-c635063652b8",
+              "browser": {
+                "url": "about:blank",
+                "pageTitle": "",
+                "faviconUrl": null
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "d962d540-da66-4edd-80ef-2914fd568cd8"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "f2dd708a-d5c4-4059-ba05-3f174c76a83a"
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "tab-37af3673-cbf0-4126-8633-7f42d6248959",
+              "createdAt": 1794382290744,
+              "activePaneId": "d962d540-da66-4edd-80ef-2914fd568cd8",
+              "layout": {
+                "type": "pane",
+                "paneId": "d962d540-da66-4edd-80ef-2914fd568cd8"
+              }
+            },
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            },
+            {
+              "tabId": "tab-856ff78a-95bb-45d8-93e2-4d7e11ca2b31",
+              "createdAt": 1794382291082,
+              "activePaneId": "f2dd708a-d5c4-4059-ba05-3f174c76a83a",
+              "layout": {
+                "type": "pane",
+                "paneId": "f2dd708a-d5c4-4059-ba05-3f174c76a83a"
+              }
+            }
+          ],
+          "activePaneTabId": "tab-856ff78a-95bb-45d8-93e2-4d7e11ca2b31",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "center"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "expanded-browser-open-cleaned",
+      "view": {
+        "revision": 30,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "files-with-right",
+      "view": {
+        "revision": 31,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "files",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      }
+    },
+    {
+      "name": "reopened",
+      "view": {
+        "revision": 33,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "files",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            }
+          ],
+          "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "expanded-before-merge",
+      "view": {
+        "revision": 34,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "files",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [],
+          "activePaneTabId": null,
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+                "label": "Terminal",
+                "createdAt": 1794382279258,
+                "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+                }
+              },
+              {
+                "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+                "createdAt": 1794382282370,
+                "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+                }
+              }
+            ],
+            "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right",
+          "rightPaneAreaExpansion": {
+            "movedTabIds": [
+              "5640b070-6d64-4c41-8f47-e217f5004160"
+            ],
+            "centerActiveTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+            "rightActiveTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+          }
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 944,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "merged-center",
+      "view": {
+        "revision": 36,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            },
+            {
+              "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+              "createdAt": 1794382282370,
+              "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "layout": {
+                "type": "pane",
+                "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+              }
+            }
+          ],
+          "activePaneTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [],
+            "activeTabId": null
+          },
+          "rightPaneOpen": false,
+          "activePaneArea": "center"
+        }
+      }
+    },
+    {
+      "name": "created-in-empty-right",
+      "view": {
+        "revision": 38,
+        "workspace": {
+          "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+          "activeTool": "terminal",
+          "activePaneId": "e4f74ef4-3380-4e20-a8c3-510d16888079",
+          "panes": [
+            {
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "kind": "terminal",
+              "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+              "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "kind": "browser",
+              "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+              "browser": {
+                "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:42827/icon.svg"
+              }
+            },
+            {
+              "paneId": "e4f74ef4-3380-4e20-a8c3-510d16888079",
+              "kind": "browser",
+              "resourceId": "a4483ec0-2797-456f-a0e4-7fa14d481adc",
+              "browser": {
+                "url": "about:blank",
+                "pageTitle": "",
+                "faviconUrl": null
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "e4f74ef4-3380-4e20-a8c3-510d16888079"
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+              "label": "Terminal",
+              "createdAt": 1794382279258,
+              "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+              "layout": {
+                "type": "pane",
+                "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+              }
+            },
+            {
+              "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+              "createdAt": 1794382282370,
+              "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "layout": {
+                "type": "pane",
+                "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+              }
+            }
+          ],
+          "activePaneTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "af6ee69d-84d1-4c96-801d-f27984084b87",
+                "createdAt": 1794382296056,
+                "activePaneId": "e4f74ef4-3380-4e20-a8c3-510d16888079",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "e4f74ef4-3380-4e20-a8c3-510d16888079"
+                }
+              }
+            ],
+            "activeTabId": "af6ee69d-84d1-4c96-801d-f27984084b87"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      }
+    }
+  ],
+  "before": {
+    "revision": 10,
+    "workspace": {
+      "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+      "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+      "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+      "activeTool": "terminal",
+      "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+      "panes": [
+        {
+          "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+          "kind": "terminal",
+          "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+          "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+          "label": "Terminal"
+        },
+        {
+          "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "kind": "browser",
+          "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+          "browser": {
+            "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+            "pageTitle": "Owned browser home 中文 🙂",
+            "faviconUrl": "http://localhost:42827/icon.svg"
+          }
+        }
+      ],
+      "layout": {
+        "type": "split",
+        "axis": "horizontal",
+        "ratio": 0.5,
+        "first": {
+          "type": "pane",
+          "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+        },
+        "second": {
+          "type": "pane",
+          "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+        }
+      },
+      "paneTabs": [
+        {
+          "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "label": "Terminal",
+          "createdAt": 1794382279258,
+          "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+          "layout": {
+            "type": "pane",
+            "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+          }
+        },
+        {
+          "tabId": "2811e185-c986-435e-a780-432f63d5fe5b",
+          "createdAt": 1794382281851,
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "layout": {
+            "type": "pane",
+            "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+          }
+        }
+      ],
+      "activePaneTabId": "2811e185-c986-435e-a780-432f63d5fe5b",
+      "rightPaneLayout": {
+        "version": 1,
+        "tabs": [],
+        "activeTabId": null
+      },
+      "rightPaneOpen": false,
+      "activePaneArea": "center"
+    }
+  },
+  "terminalBefore": {
+    "id": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+    "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+    "pid": 69807,
+    "cols": 110,
+    "rows": 30,
+    "cwd": "/workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004h\u001b]0;agent@aaaba53562f1: /workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394\u0007\u001b[01;32magent@aaaba53562f1\u001b[00m:\u001b[01;34m/workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@aaaba53562f1: /workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394\u0007\u001b[01;32magent@aaaba53562f1\u001b[00m:\u001b[01;34m/workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394\u001b[00m$ python3 -c 'import base64;exec(base64.b64decode(\"aW1wb3J0IGh0dHAuc2VydmVyLGpzb24sb3Msc2lnbmFsCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApzdGF0ZT17Im1hcmtlciI6Ik9XTkVELUJST1dTRVItMGJmZjQ3NTEtODgwZC00NTRlLTlhZjMtNjg4MjRhYjliZWJmIiwicmVxdWVzdHMiOltdLCJydW5uaW5nIjpUcnVlLCJwaWQiOm9zLmdldHBpZCgpfQpkZWYgc2F2ZSgpOiB0ZW1wPVBhdGgoJ2Jyb3dzZXItcHJvb2YudG1wJyk7dGVtcC53cml0ZV90ZXh0KGpzb24uZHVtcHMoc3RhdGUpKTt0ZW1wLnJlcGxhY2UoJ2Jyb3dzZXItcHJvb2YuanNvbicpCmNsYXNzIEhhbmRsZXIoaHR0cC5zZXJ2ZXIuQmFzZUhUVFBSZXF1ZXN0SGFuZGxlcik6CiBkZWYgZG9fR0VUKHNlbGYpOgogIHN0YXRlWydyZXF1ZXN0cyddLmFwcGVuZChzZWxmLnBhdGgpO3NhdmUoKQogIHRpdGxlPSdPd25lZCBicm93c2VyICcrKCduZXh0JyBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL25leHQnKSBlbHNlICdob21lJykrJyDkuK3mlocg8J+ZgicKICBib2R5PSgnPCFkb2N0eXBlIGh0bWw+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT4nK3RpdGxlKyc8L3RpdGxlPjxoMT4nK3N0YXRlWydtYXJrZXInXSsnPC9oMT48YSBpZD0ibmV4dCIgaHJlZj0iL25leHQ/dmFsdWU9JUU0JUI4JUFEJTIwaGVsbG8jc2VjdGlvbiI+TmV4dCBwYWdlPC9hPjxicj48YSBpZD0icG9wdXAiIHRhcmdldD0iX2JsYW5rIiBocmVmPSIvcG9wdXAiPk9wZW4gc2Vjb25kIHBhbmU8L2E+PHA+bmVlZGxlIG5lZWRsZSBuZWVkbGU8L3A+JykuZW5jb2RlKCkKICBib2R5PWJvZHkucmVwbGFjZShiJzx0aXRsZT4nLGInPGxpbmsgcmVsPSJpY29uIiBocmVmPSIvaWNvbi5zdmciPjx0aXRsZT4nKQogIGJvZHk9Ym9keStiJzxzY3JpcHQ+Y29uc29sZS53YXJuKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImgxIikudGV4dENvbnRlbnQpPC9zY3JpcHQ+JwogIHBhc3MKICBjb250ZW50X3R5cGU9J3RleHQvaHRtbDsgY2hhcnNldD11dGYtOCcKICBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL2ljb24uc3ZnJyk6IGJvZHk9KCc8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZGF0YS1vd25lZD0iJytzdGF0ZVsnbWFya2VyJ10rJyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImdyZWVuIi8+PC9zdmc+JykuZW5jb2RlKCk7Y29udGVudF90eXBlPSdpbWFnZS9zdmcreG1sJwogIGNhY2hlX2NvbnRyb2w9J25vLXN0b3JlJwogIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApO3NlbGYuc2VuZF9oZWFkZXIoJ0NvbnRlbnQtVHlwZScsY29udGVudF90eXBlKTtzZWxmLnNlbmRfaGVhZGVyKCdDYWNoZS1Db250cm9sJyxjYWNoZV9jb250cm9sKTtzZWxmLnNlbmRfaGVhZGVyKCdDb250ZW50LUxlbmd0aCcsc3RyKGxlbihib2R5KSkpO3NlbGYuZW5kX2hlYWRlcnMoKTtzZWxmLndmaWxlLndyaXRlKGJvZHkpCiBkZWYgbG9nX21lc3NhZ2Uoc2VsZiwqYXJncyk6IHBhc3MKc2VydmVyPWh0dHAuc2VydmVyLkhUVFBTZXJ2ZXIoKCcxMjcuMC4wLjEnLDApLEhhbmRsZXIpCnN0YXRlWydwb3J0J109c2VydmVyLnNlcnZlcl9wb3J0O3NhdmUoKQpwYXNzCnRyeTogc2VydmVyLnNlcnZlX2ZvcmV2ZXIoKQpleGNlcHQgS2V5Ym9hcmRJbnRlcnJ1cHQ6IHBhc3MKZmluYWxseTogc2VydmVyLnNlcnZlcl9jbG9zZSgpO3N0YXRlWydydW5uaW5nJ109RmFsc2U7c2F2ZSgp\"))'\r\n\u001b[?2004l\r"
+  },
+  "widthPreference": {
+    "resized": {
+      "revision": 1,
+      "invalid": false,
+      "values": {
+        "agentNativeInputEnabled": false,
+        "language": null,
+        "themeId": "dark",
+        "fontSettings": {},
+        "fileOpenMode": "split-pane",
+        "fileAutoSave": "off",
+        "confirmOnQuit": true,
+        "terminalCopyOnSelect": false,
+        "rightPaneAreaWidth": 550
+      }
+    },
+    "reset": {
+      "revision": 2,
+      "invalid": false,
+      "values": {
+        "agentNativeInputEnabled": false,
+        "language": null,
+        "themeId": "dark",
+        "fontSettings": {},
+        "fileOpenMode": "split-pane",
+        "fileAutoSave": "off",
+        "confirmOnQuit": true,
+        "terminalCopyOnSelect": false,
+        "rightPaneAreaWidth": 480
+      }
+    },
+    "completed": true
+  },
+  "expansionCompleted": true,
+  "expandedBrowserOpen": {
+    "calls": [
+      {
+        "input": {
+          "operationId": "ab3a4d88-afb1-48ec-8975-f93095a1c725",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "url": "about:blank",
+          "target": "new-tab",
+          "show": false
+        },
+        "status": 200,
+        "result": {
+          "operationId": "ab3a4d88-afb1-48ec-8975-f93095a1c725",
+          "procedure": "browser.openV1",
+          "status": "completed",
+          "entityIds": {
+            "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955"
+          },
+          "result": {
+            "paneId": "d962d540-da66-4edd-80ef-2914fd568cd8",
+            "url": "about:blank",
+            "title": ""
+          }
+        }
+      },
+      {
+        "input": {
+          "operationId": "56fa9d13-d836-4ec8-b1c0-65a5f16cd4a9",
+          "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+          "url": "about:blank",
+          "target": "new-tab",
+          "show": true
+        },
+        "status": 200,
+        "result": {
+          "operationId": "56fa9d13-d836-4ec8-b1c0-65a5f16cd4a9",
+          "procedure": "browser.openV1",
+          "status": "completed",
+          "entityIds": {
+            "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955"
+          },
+          "result": {
+            "paneId": "f2dd708a-d5c4-4059-ba05-3f174c76a83a",
+            "url": "about:blank",
+            "title": ""
+          }
+        }
+      }
+    ],
+    "completed": true
+  },
+  "afterFilesClick": {
+    "view": {
+      "revision": 31,
+      "workspace": {
+        "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+        "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+        "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+        "activeTool": "files",
+        "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+        "panes": [
+          {
+            "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+            "kind": "terminal",
+            "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+            "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+            "kind": "browser",
+            "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+            "browser": {
+              "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:42827/icon.svg"
+            }
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+          },
+          "second": {
+            "type": "pane",
+            "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+            "label": "Terminal",
+            "createdAt": 1794382279258,
+            "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+            "layout": {
+              "type": "pane",
+              "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+            }
+          }
+        ],
+        "activePaneTabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+              "createdAt": 1794382282370,
+              "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+              "layout": {
+                "type": "pane",
+                "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+              }
+            }
+          ],
+          "activeTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      }
+    },
+    "focus": {
+      "events": [
+        {
+          "time": 1113.2999999970198,
+          "tag": "BUTTON",
+          "area": "right",
+          "pane": null,
+          "label": "Expand",
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+        },
+        {
+          "time": 2122.5999999940395,
+          "tag": "INPUT",
+          "area": "center",
+          "pane": null,
+          "label": "Title",
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+        },
+        {
+          "time": 2161.7999999970198,
+          "tag": "DIV",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33098:35\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:28179:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:31729:19\n    at commitHookEffectListMount (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:12089:26)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13239:25)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13220:9)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13233:9)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13220:9)"
+        },
+        {
+          "time": 2178.7000000029802,
+          "tag": "DIV",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+        },
+        {
+          "time": 2269.7000000029802,
+          "tag": "DIV",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Object.onItemLeave (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33076:33)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33298:51\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33657:53\n    at handleEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at processDispatchQueue (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14858:15)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:15234:7\n    at batchedUpdates$1 (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:7166:38)\n    at dispatchEventForPluginEventSystem (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14950:5)\n    at dispatchEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:16991:9)"
+        },
+        {
+          "time": 2299.5,
+          "tag": "TEXTAREA",
+          "area": "center",
+          "pane": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+          "label": "Terminal input",
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Er.focus (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:91654:36)\n    at Ln.focus (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:92153:16)\n    at announce (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:95685:43)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:95728:15"
+        },
+        {
+          "time": 2369.5999999940395,
+          "tag": "DIV",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Object.onItemLeave (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33076:33)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33298:51\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33657:53\n    at handleEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at processDispatchQueue (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14858:15)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:15234:7\n    at batchedUpdates$1 (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:7166:38)\n    at dispatchEventForPluginEventSystem (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14950:5)\n    at dispatchEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:16991:9)"
+        },
+        {
+          "time": 2469.2000000029802,
+          "tag": "INPUT",
+          "area": "center",
+          "pane": null,
+          "label": "Title",
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+        },
+        {
+          "time": 2492.2000000029802,
+          "tag": "DIV",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+        },
+        {
+          "time": 2616.4000000059605,
+          "tag": "DIV",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Object.onItemLeave (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33076:33)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33298:51\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33657:53\n    at handleEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at processDispatchQueue (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14858:15)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:15234:7\n    at batchedUpdates$1 (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:7166:38)\n    at dispatchEventForPluginEventSystem (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14950:5)\n    at dispatchEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:16991:9)"
+        },
+        {
+          "time": 2635.2999999970198,
+          "tag": "TEXTAREA",
+          "area": "center",
+          "pane": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+          "label": "Terminal input",
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Er.focus (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:91654:36)\n    at Ln.focus (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:92153:16)\n    at announce (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:95685:43)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:95728:15"
+        },
+        {
+          "time": 2686.0999999940395,
+          "tag": "DIV",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Object.onItemLeave (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33076:33)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33298:51\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33657:53\n    at handleEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at processDispatchQueue (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14858:15)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:15234:7\n    at batchedUpdates$1 (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:7166:38)\n    at dispatchEventForPluginEventSystem (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14950:5)\n    at dispatchEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:16991:9)"
+        },
+        {
+          "time": 2695.9000000059605,
+          "tag": "INPUT",
+          "area": "right",
+          "pane": null,
+          "label": "Title",
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+        },
+        {
+          "time": 2738,
+          "tag": "BUTTON",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+        }
+      ],
+      "active": {
+        "tag": "BUTTON",
+        "area": null,
+        "pane": null
+      }
+    }
+  },
+  "terminalAfter": {
+    "id": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+    "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+    "pid": 69807,
+    "cols": 52,
+    "rows": 30,
+    "cwd": "/workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004h\u001b]0;agent@aaaba53562f1: /workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394\u0007\u001b[01;32magent@aaaba53562f1\u001b[00m:\u001b[01;34m/workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@aaaba53562f1: /workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394\u0007\u001b[01;32magent@aaaba53562f1\u001b[00m:\u001b[01;34m/workspace/scratch/parity-146/local-expansion-unwrapped/config/superset-remix-dev-6f9c34e33aee089260eb99d2821ee4659b3e742c50b01a3a84c34f0ee267112a/direct-workstation/local-backend/sessions/local-wheel-17837e14-7394\u001b[00m$ python3 -c 'import base64;exec(base64.b64decode(\"aW1wb3J0IGh0dHAuc2VydmVyLGpzb24sb3Msc2lnbmFsCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApzdGF0ZT17Im1hcmtlciI6Ik9XTkVELUJST1dTRVItMGJmZjQ3NTEtODgwZC00NTRlLTlhZjMtNjg4MjRhYjliZWJmIiwicmVxdWVzdHMiOltdLCJydW5uaW5nIjpUcnVlLCJwaWQiOm9zLmdldHBpZCgpfQpkZWYgc2F2ZSgpOiB0ZW1wPVBhdGgoJ2Jyb3dzZXItcHJvb2YudG1wJyk7dGVtcC53cml0ZV90ZXh0KGpzb24uZHVtcHMoc3RhdGUpKTt0ZW1wLnJlcGxhY2UoJ2Jyb3dzZXItcHJvb2YuanNvbicpCmNsYXNzIEhhbmRsZXIoaHR0cC5zZXJ2ZXIuQmFzZUhUVFBSZXF1ZXN0SGFuZGxlcik6CiBkZWYgZG9fR0VUKHNlbGYpOgogIHN0YXRlWydyZXF1ZXN0cyddLmFwcGVuZChzZWxmLnBhdGgpO3NhdmUoKQogIHRpdGxlPSdPd25lZCBicm93c2VyICcrKCduZXh0JyBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL25leHQnKSBlbHNlICdob21lJykrJyDkuK3mlocg8J+ZgicKICBib2R5PSgnPCFkb2N0eXBlIGh0bWw+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT4nK3RpdGxlKyc8L3RpdGxlPjxoMT4nK3N0YXRlWydtYXJrZXInXSsnPC9oMT48YSBpZD0ibmV4dCIgaHJlZj0iL25leHQ/dmFsdWU9JUU0JUI4JUFEJTIwaGVsbG8jc2VjdGlvbiI+TmV4dCBwYWdlPC9hPjxicj48YSBpZD0icG9wdXAiIHRhcmdldD0iX2JsYW5rIiBocmVmPSIvcG9wdXAiPk9wZW4gc2Vjb25kIHBhbmU8L2E+PHA+bmVlZGxlIG5lZWRsZSBuZWVkbGU8L3A+JykuZW5jb2RlKCkKICBib2R5PWJvZHkucmVwbGFjZShiJzx0aXRsZT4nLGInPGxpbmsgcmVsPSJpY29uIiBocmVmPSIvaWNvbi5zdmciPjx0aXRsZT4nKQogIGJvZHk9Ym9keStiJzxzY3JpcHQ+Y29uc29sZS53YXJuKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImgxIikudGV4dENvbnRlbnQpPC9zY3JpcHQ+JwogIHBhc3MKICBjb250ZW50X3R5cGU9J3RleHQvaHRtbDsgY2hhcnNldD11dGYtOCcKICBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL2ljb24uc3ZnJyk6IGJvZHk9KCc8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZGF0YS1vd25lZD0iJytzdGF0ZVsnbWFya2VyJ10rJyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImdyZWVuIi8+PC9zdmc+JykuZW5jb2RlKCk7Y29udGVudF90eXBlPSdpbWFnZS9zdmcreG1sJwogIGNhY2hlX2NvbnRyb2w9J25vLXN0b3JlJwogIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApO3NlbGYuc2VuZF9oZWFkZXIoJ0NvbnRlbnQtVHlwZScsY29udGVudF90eXBlKTtzZWxmLnNlbmRfaGVhZGVyKCdDYWNoZS1Db250cm9sJyxjYWNoZV9jb250cm9sKTtzZWxmLnNlbmRfaGVhZGVyKCdDb250ZW50LUxlbmd0aCcsc3RyKGxlbihib2R5KSkpO3NlbGYuZW5kX2hlYWRlcnMoKTtzZWxmLndmaWxlLndyaXRlKGJvZHkpCiBkZWYgbG9nX21lc3NhZ2Uoc2VsZiwqYXJncyk6IHBhc3MKc2VydmVyPWh0dHAuc2VydmVyLkhUVFBTZXJ2ZXIoKCcxMjcuMC4wLjEnLDApLEhhbmRsZXIpCnN0YXRlWydwb3J0J109c2VydmVyLnNlcnZlcl9wb3J0O3NhdmUoKQpwYXNzCnRyeTogc2VydmVyLnNlcnZlX2ZvcmV2ZXIoKQpleGNlcHQgS2V5Ym9hcmRJbnRlcnJ1cHQ6IHBhc3MKZmluYWxseTogc2VydmVyLnNlcnZlcl9jbG9zZSgpO3N0YXRlWydydW5uaW5nJ109RmFsc2U7c2F2ZSgp\"))'\r\n\u001b[?2004l\r"
+  },
+  "completed": true,
+  "finalView": {
+    "revision": 40,
+    "workspace": {
+      "tabId": "24c135bb-f70b-4312-9652-5a7a2ee78a98",
+      "workspaceId": "fa8a4e7c-f22a-4518-8335-236f25cd1955",
+      "label": "Local wheel 17837e14-7394-4d1c-9ffa-643508e972b6",
+      "activeTool": "terminal",
+      "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+      "panes": [
+        {
+          "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+          "kind": "terminal",
+          "resourceId": "7dbfb851-90f3-41c4-9b6c-7a5eb443ce11",
+          "executionId": "e9deb582-3f5a-4cef-904e-749f12bc917a",
+          "label": "Terminal"
+        },
+        {
+          "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "kind": "browser",
+          "resourceId": "bebffbe8-350a-49db-8a0b-c9b392a5b927",
+          "browser": {
+            "url": "http://localhost:42827/preview?first=%E4%B8%AD#initial",
+            "pageTitle": "Owned browser home 中文 🙂",
+            "faviconUrl": "http://localhost:42827/icon.svg"
+          }
+        }
+      ],
+      "layout": {
+        "type": "split",
+        "axis": "horizontal",
+        "ratio": 0.5,
+        "first": {
+          "type": "pane",
+          "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+        },
+        "second": {
+          "type": "pane",
+          "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+        }
+      },
+      "paneTabs": [
+        {
+          "tabId": "5640b070-6d64-4c41-8f47-e217f5004160",
+          "label": "Terminal",
+          "createdAt": 1794382279258,
+          "activePaneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7",
+          "layout": {
+            "type": "pane",
+            "paneId": "e6b4f540-5ebd-4823-99de-a4a4c7bc21f7"
+          }
+        },
+        {
+          "tabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+          "createdAt": 1794382282370,
+          "activePaneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4",
+          "layout": {
+            "type": "pane",
+            "paneId": "4a7f34f0-15e9-4b00-a239-86f32899aed4"
+          }
+        }
+      ],
+      "activePaneTabId": "tab-9085d450-f899-4758-8e2b-d5fee39684bd",
+      "rightPaneLayout": {
+        "version": 1,
+        "tabs": [],
+        "activeTabId": null
+      },
+      "rightPaneOpen": false,
+      "activePaneArea": "center"
+    }
+  },
+  "finalFocus": {
+    "events": [
+      {
+        "time": 1467.0999999940395,
+        "tag": "BUTTON",
+        "area": "right",
+        "pane": null,
+        "label": "Expand",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 1761.0999999940395,
+        "tag": "BUTTON",
+        "area": "right",
+        "pane": null,
+        "label": "Merge into center",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2079.7000000029802,
+        "tag": "BUTTON",
+        "area": "center",
+        "pane": null,
+        "label": "Toggle sidebar",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2147.7000000029802,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33098:35\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:28179:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:31729:19\n    at commitHookEffectListMount (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:12089:26)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13239:25)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13220:9)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13336:9)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13220:9)"
+      },
+      {
+        "time": 2164.4000000059605,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2251.5999999940395,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Object.onItemLeave (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33076:33)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33298:51\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33657:53\n    at handleEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at processDispatchQueue (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14858:15)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:15234:7\n    at batchedUpdates$1 (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:7166:38)\n    at dispatchEventForPluginEventSystem (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:14950:5)\n    at dispatchEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:16991:9)"
+      },
+      {
+        "time": 2352.2000000029802,
+        "tag": "BUTTON",
+        "area": "right",
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:34959:77\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:28179:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:31742:21"
+      },
+      {
+        "time": 2557.2999999970198,
+        "tag": "INPUT",
+        "area": "right",
+        "pane": null,
+        "label": "Title",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2592.5,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:33098:35\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:27971:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:28179:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:31729:19\n    at commitHookEffectListMount (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:12089:26)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13239:25)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13220:9)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13233:9)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-DsZrMnqu.js:13220:9)"
+      },
+      {
+        "time": 2613,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2677.0999999940395,
+        "tag": "BUTTON",
+        "area": "right",
+        "pane": null,
+        "label": "Toggle sidebar",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      }
+    ],
+    "active": {
+      "tag": "BODY",
+      "area": null,
+      "pane": null
+    }
+  }
+}

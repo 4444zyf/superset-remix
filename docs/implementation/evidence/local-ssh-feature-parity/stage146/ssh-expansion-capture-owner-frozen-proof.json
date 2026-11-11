@@ -1,0 +1,13 @@
+{
+  "case": "ssh-expansion-capture-owner",
+  "compiledSource": "66e11726ac709fa96dbbf90ff0f820f3417dea28",
+  "compiledFiles": 2420,
+  "fixtureCount": 87,
+  "sourceCliFiles": 3639,
+  "allUnchanged": true,
+  "cleanup": {
+    "ownedXorgPid": 62746,
+    "ownedXorgExit": 0,
+    "appExit": 0
+  }
+}

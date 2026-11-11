@@ -1,0 +1,70 @@
+{
+  "mode": "Original source CLI dev runner, real Electron peer and owned namespace; bundled CLI unchanged",
+  "source": "66e11726a",
+  "calls": [
+    {
+      "command": "list",
+      "flags": [],
+      "workspaceId": "0552997e-b508-4683-aa09-30220889c033",
+      "stdout": "[\n  {\n    \"paneId\": \"331423b5-9342-4a20-8416-83d265665f68\",\n    \"workspaceId\": \"0552997e-b508-4683-aa09-30220889c033\",\n    \"url\": \"http://localhost:43047/preview?first=%E4%B8%AD#initial\",\n    \"title\": \"Owned browser home 中文 🙂\",\n    \"isLoading\": false\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "331423b5-9342-4a20-8416-83d265665f68"
+      ],
+      "workspaceId": "0552997e-b508-4683-aa09-30220889c033",
+      "stdout": "[\n  {\n    \"level\": \"warn\",\n    \"message\": \"OWNED-BROWSER-b0e83e0b-a701-428e-a16c-595ac936bfa4\",\n    \"timestamp\": 1794380975539\n  },\n  {\n    \"level\": \"warn\",\n    \"message\": \"%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\\n  Policy set or a policy with \\\"unsafe-eval\\\" enabled. This exposes users of\\n  this app to unnecessary security risks.\\n\\nFor more information and help, consult\\nhttps://electronjs.org/docs/tutorial/security.\\nThis warning will not show up\\nonce the app is packaged.\",\n    \"timestamp\": 1794380975544\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "331423b5-9342-4a20-8416-83d265665f68",
+        "--max-lines",
+        "0"
+      ],
+      "workspaceId": "0552997e-b508-4683-aa09-30220889c033",
+      "stdout": "[]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "list",
+      "flags": [],
+      "workspaceId": "50b0586f-d8e8-44ea-97be-6aa2ab13c0fb",
+      "stdout": "[]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "331423b5-9342-4a20-8416-83d265665f68"
+      ],
+      "workspaceId": "a3aa3048-3667-4a57-b06a-1d6c9c87c482",
+      "stdout": "",
+      "stderr": "Error: Browser read failed or pane is no longer current\n",
+      "code": 1
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "331423b5-9342-4a20-8416-83d265665f68",
+        "--out",
+        "/workspace/scratch/parity-146/local-expansion-fixed/app/cli-browser-initial.png"
+      ],
+      "workspaceId": "0552997e-b508-4683-aa09-30220889c033",
+      "stdout": "",
+      "stderr": "Error: Browser screenshot failed or pane is no longer current\n",
+      "code": 1
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "case": "local-expansion-unwrapped",
+  "compiledSource": "1df4f741bc6b021ea95d356ac12a40314a1281cf",
+  "compiledFiles": 2420,
+  "fixtureCount": 87,
+  "sourceCliFiles": 3639,
+  "allUnchanged": true,
+  "cleanup": {
+    "ownedXorgPid": 69563,
+    "ownedXorgExit": 0,
+    "appExit": 0
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "name": "expandPaneArea",
+    "bodyUnchanged": true
+  },
+  {
+    "name": "restorePaneArea",
+    "bodyUnchanged": true
+  }
+]

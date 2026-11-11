@@ -1,0 +1,248 @@
+{
+  "mode": "Original source CLI dev runner, real Electron peer and owned namespace; bundled CLI unchanged",
+  "source": "66e11726a",
+  "calls": [
+    {
+      "command": "list",
+      "flags": [],
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "stdout": "[\n  {\n    \"paneId\": \"47421874-3f17-4a1b-af67-9915b59e5844\",\n    \"workspaceId\": \"35205c26-5749-4d0e-b134-7a72de0f83f9\",\n    \"url\": \"http://localhost:37279/preview?first=%E4%B8%AD#initial\",\n    \"title\": \"Owned browser home 中文 🙂\",\n    \"isLoading\": false\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "47421874-3f17-4a1b-af67-9915b59e5844"
+      ],
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "stdout": "[\n  {\n    \"level\": \"warn\",\n    \"message\": \"OWNED-BROWSER-cd16053b-bfeb-46ec-b4a2-ed3d160f3661\",\n    \"timestamp\": 1794381919696\n  },\n  {\n    \"level\": \"warn\",\n    \"message\": \"%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\\n  Policy set or a policy with \\\"unsafe-eval\\\" enabled. This exposes users of\\n  this app to unnecessary security risks.\\n\\nFor more information and help, consult\\nhttps://electronjs.org/docs/tutorial/security.\\nThis warning will not show up\\nonce the app is packaged.\",\n    \"timestamp\": 1794381919706\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "47421874-3f17-4a1b-af67-9915b59e5844",
+        "--max-lines",
+        "0"
+      ],
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "stdout": "[]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "list",
+      "flags": [],
+      "workspaceId": "dfaaa0d6-17d1-400a-b1f8-aca58a7625f2",
+      "stdout": "[]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "47421874-3f17-4a1b-af67-9915b59e5844"
+      ],
+      "workspaceId": "194cd7e6-fb44-456f-a21c-c74fcd90b63e",
+      "stdout": "",
+      "stderr": "Error: Browser read failed or pane is no longer current\n",
+      "code": 1
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "47421874-3f17-4a1b-af67-9915b59e5844",
+        "--out",
+        "/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-initial.png"
+      ],
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "stdout": "{\n  \"path\": \"/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-initial.png\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "47421874-3f17-4a1b-af67-9915b59e5844",
+        "--out",
+        "/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-hidden.png"
+      ],
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "stdout": "{\n  \"path\": \"/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-hidden.png\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "47421874-3f17-4a1b-af67-9915b59e5844",
+        "--out",
+        "/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-denied.png"
+      ],
+      "workspaceId": "47dac8ad-d5b1-4666-bbe6-46174851ad4c",
+      "stdout": "",
+      "stderr": "Error: Browser screenshot failed or pane is no longer current\n",
+      "code": 1
+    },
+    {
+      "command": "list",
+      "flags": [],
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "stdout": "[\n  {\n    \"paneId\": \"47421874-3f17-4a1b-af67-9915b59e5844\",\n    \"workspaceId\": \"35205c26-5749-4d0e-b134-7a72de0f83f9\",\n    \"url\": \"http://localhost:37279/next?value=%E4%B8%AD%20hello#section\",\n    \"title\": \"Owned browser next 中文 🙂\",\n    \"isLoading\": false\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "47421874-3f17-4a1b-af67-9915b59e5844"
+      ],
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "stdout": "[\n  {\n    \"level\": \"warn\",\n    \"message\": \"OWNED-BROWSER-cd16053b-bfeb-46ec-b4a2-ed3d160f3661\",\n    \"timestamp\": 1794381983790\n  },\n  {\n    \"level\": \"warn\",\n    \"message\": \"%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\\n  Policy set or a policy with \\\"unsafe-eval\\\" enabled. This exposes users of\\n  this app to unnecessary security risks.\\n\\nFor more information and help, consult\\nhttps://electronjs.org/docs/tutorial/security.\\nThis warning will not show up\\nonce the app is packaged.\",\n    \"timestamp\": 1794381983794\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "47421874-3f17-4a1b-af67-9915b59e5844",
+        "--out",
+        "/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-reopened.png"
+      ],
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "stdout": "{\n  \"path\": \"/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-reopened.png\"\n}\n",
+      "stderr": "",
+      "code": 0
+    }
+  ],
+  "captureTraceInstall": {
+    "installed": true
+  },
+  "captureTrace": [
+    {
+      "paneId": "[\"workstation\",1,\"86aeffc6-04a6-4256-b901-17cb045223e0\",\"f01e63e5-601a-40f2-8e7f-119b8a372032\",\"ddd34a03-7c67-4801-a479-67eac0bb7c40\",\"f9950d48-a01a-492b-8f36-3cdcb5e64ebc\",1,\"35205c26-5749-4d0e-b134-7a72de0f83f9\",\"47421874-3f17-4a1b-af67-9915b59e5844\",\"ab79d6cc-0f3f-46c0-a820-c8c8b09145ab\"]",
+      "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+      "guestBefore": 2,
+      "started": 1794381986322,
+      "ok": true,
+      "guestAfter": 2,
+      "guestDestroyed": false,
+      "elapsed": 21
+    }
+  ],
+  "initialCapture": {
+    "file": "/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-initial.png",
+    "bytes": 19095,
+    "sha256": "da38876682007a69c8b4bc61dc3603c3d3d5760def6580724fca7ac3671321aa",
+    "image": {
+      "size": {
+        "width": 940,
+        "height": 437
+      },
+      "pixelSha256": "3b64aa1fab3e3f7286dbd111b0b9c21bc2dacc1bf32cbead9c1cdcd6575b27ec",
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "clipboardUnchanged": true
+  },
+  "hiddenCapture": {
+    "file": "/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-hidden.png",
+    "bytes": 19095,
+    "sha256": "da38876682007a69c8b4bc61dc3603c3d3d5760def6580724fca7ac3671321aa",
+    "image": {
+      "size": {
+        "width": 940,
+        "height": 437
+      },
+      "pixelSha256": "3b64aa1fab3e3f7286dbd111b0b9c21bc2dacc1bf32cbead9c1cdcd6575b27ec",
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "clipboardUnchanged": true
+  },
+  "foreignCaptureRefused": true,
+  "initial": {
+    "paneId": "47421874-3f17-4a1b-af67-9915b59e5844",
+    "rows": [
+      {
+        "paneId": "47421874-3f17-4a1b-af67-9915b59e5844",
+        "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+        "url": "http://localhost:37279/preview?first=%E4%B8%AD#initial",
+        "title": "Owned browser home 中文 🙂",
+        "isLoading": false
+      }
+    ],
+    "consoleRows": [
+      {
+        "level": "warn",
+        "message": "OWNED-BROWSER-cd16053b-bfeb-46ec-b4a2-ed3d160f3661",
+        "timestamp": 1794381919696
+      },
+      {
+        "level": "warn",
+        "message": "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.",
+        "timestamp": 1794381919706
+      }
+    ]
+  },
+  "reopenedCapture": {
+    "file": "/workspace/scratch/parity-146/ssh-expansion-capture-owner/app/cli-browser-reopened.png",
+    "bytes": 19095,
+    "sha256": "da38876682007a69c8b4bc61dc3603c3d3d5760def6580724fca7ac3671321aa",
+    "image": {
+      "size": {
+        "width": 940,
+        "height": 437
+      },
+      "pixelSha256": "3b64aa1fab3e3f7286dbd111b0b9c21bc2dacc1bf32cbead9c1cdcd6575b27ec",
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "clipboardUnchanged": true
+  },
+  "reopened": {
+    "rows": [
+      {
+        "paneId": "47421874-3f17-4a1b-af67-9915b59e5844",
+        "workspaceId": "35205c26-5749-4d0e-b134-7a72de0f83f9",
+        "url": "http://localhost:37279/next?value=%E4%B8%AD%20hello#section",
+        "title": "Owned browser next 中文 🙂",
+        "isLoading": false
+      }
+    ],
+    "consoleRows": [
+      {
+        "level": "warn",
+        "message": "OWNED-BROWSER-cd16053b-bfeb-46ec-b4a2-ed3d160f3661",
+        "timestamp": 1794381983790
+      },
+      {
+        "level": "warn",
+        "message": "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.",
+        "timestamp": 1794381983794
+      }
+    ]
+  }
+}

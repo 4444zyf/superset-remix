@@ -1,0 +1,262 @@
+{
+  "source": "1df4f741b",
+  "mode": "Original source browser open CLI runner with explicit namespace and stable operation ID into the actual Electron guest; immutable bundled CLI unchanged",
+  "calls": [
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "ce840462-c613-43a9-8bfd-1a55970c3e33",
+        "--url",
+        "about:blank",
+        "--operation-id",
+        "e4b39d85-40a4-4969-962c-7854fb3602da"
+      ],
+      "stdout": "{\n  \"paneId\": \"3c5da307-fdec-4b37-897c-a6507e6a18e4\",\n  \"url\": \"about:blank\",\n  \"title\": \"\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "e4b39d85-40a4-4969-962c-7854fb3602da"
+      ],
+      "stdout": "{\n  \"operationId\": \"e4b39d85-40a4-4969-962c-7854fb3602da\",\n  \"procedure\": \"browser.openV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"ce840462-c613-43a9-8bfd-1a55970c3e33\"\n  },\n  \"result\": {\n    \"paneId\": \"3c5da307-fdec-4b37-897c-a6507e6a18e4\",\n    \"url\": \"about:blank\",\n    \"title\": \"\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "ce840462-c613-43a9-8bfd-1a55970c3e33",
+        "--url",
+        "about:blank",
+        "--operation-id",
+        "e4b39d85-40a4-4969-962c-7854fb3602da",
+        "--target",
+        "current-tab",
+        "--show",
+        "false"
+      ],
+      "stdout": "{\n  \"paneId\": \"3c5da307-fdec-4b37-897c-a6507e6a18e4\",\n  \"url\": \"about:blank\",\n  \"title\": \"\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "ce840462-c613-43a9-8bfd-1a55970c3e33",
+        "--url",
+        "about:blank",
+        "--operation-id",
+        "e4b39d85-40a4-4969-962c-7854fb3602da",
+        "--show",
+        "true"
+      ],
+      "stdout": "",
+      "stderr": "Error: This operation ID has already been accepted with different inputs\nHint: Inspect operation e4b39d85-40a4-4969-962c-7854fb3602da with browser operation-status before opening another browser pane.\n",
+      "code": 1
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "7580ac99-d2a8-42b4-bf54-c382a4d5bcf7",
+        "--url",
+        "about:blank",
+        "--operation-id",
+        "4a75dea9-bd7a-4371-9fab-a24947355227"
+      ],
+      "stdout": "",
+      "stderr": "Error: Workspace not found\nHint: Inspect operation 4a75dea9-bd7a-4371-9fab-a24947355227 with browser operation-status before opening another browser pane.\n",
+      "code": 1
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "ce840462-c613-43a9-8bfd-1a55970c3e33",
+        "--url",
+        "about:blank"
+      ],
+      "stdout": "",
+      "stderr": "Error: --namespace browser opening requires --operation-id\n",
+      "code": 1
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "ce840462-c613-43a9-8bfd-1a55970c3e33",
+        "--url",
+        "about:blank",
+        "--operation-id",
+        "98536b90-c8a3-45af-b1d7-0c04bbe5dacc",
+        "--target",
+        "new-tab",
+        "--show",
+        "true"
+      ],
+      "stdout": "{\n  \"paneId\": \"6e086b2b-6e86-4e27-a205-6a8ee35488f1\",\n  \"url\": \"about:blank\",\n  \"title\": \"\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "ce840462-c613-43a9-8bfd-1a55970c3e33",
+        "--url",
+        "about:blank",
+        "--operation-id",
+        "7c2f1ecf-31ae-41f4-ad8a-e1e8e8b76084"
+      ],
+      "stdout": "{\n  \"paneId\": \"755361b1-1831-46ed-87cb-6c08d66be694\",\n  \"url\": \"about:blank\",\n  \"title\": \"\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "81f174e7-73d7-4115-ab3f-1b80d3da2b49",
+        "--url",
+        "http://localhost:33731/owned-open-cli?request=3318a2b1-c319-48c0-9f0b-c74acb30f640",
+        "--operation-id",
+        "0a4d4a41-981f-42e3-904f-060057187c56",
+        "--target",
+        "new-tab",
+        "--show",
+        "false"
+      ],
+      "stdout": "{\n  \"paneId\": \"b1278338-c4a5-48e1-a8b1-3ccc7af7dad9\",\n  \"url\": \"http://localhost:33731/owned-open-cli?request=3318a2b1-c319-48c0-9f0b-c74acb30f640\",\n  \"title\": \"\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "0a4d4a41-981f-42e3-904f-060057187c56"
+      ],
+      "stdout": "{\n  \"operationId\": \"0a4d4a41-981f-42e3-904f-060057187c56\",\n  \"procedure\": \"browser.openV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"81f174e7-73d7-4115-ab3f-1b80d3da2b49\"\n  },\n  \"result\": {\n    \"paneId\": \"b1278338-c4a5-48e1-a8b1-3ccc7af7dad9\",\n    \"url\": \"http://localhost:33731/owned-open-cli?request=3318a2b1-c319-48c0-9f0b-c74acb30f640\",\n    \"title\": \"\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "e4b39d85-40a4-4969-962c-7854fb3602da"
+      ],
+      "stdout": "{\n  \"operationId\": \"e4b39d85-40a4-4969-962c-7854fb3602da\",\n  \"procedure\": \"browser.openV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"ce840462-c613-43a9-8bfd-1a55970c3e33\"\n  },\n  \"result\": {\n    \"paneId\": \"3c5da307-fdec-4b37-897c-a6507e6a18e4\",\n    \"url\": \"about:blank\",\n    \"title\": \"\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "e4b39d85-40a4-4969-962c-7854fb3602da"
+      ],
+      "stdout": "{\n  \"operationId\": \"e4b39d85-40a4-4969-962c-7854fb3602da\",\n  \"procedure\": \"browser.openV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"ce840462-c613-43a9-8bfd-1a55970c3e33\"\n  },\n  \"result\": {\n    \"paneId\": \"3c5da307-fdec-4b37-897c-a6507e6a18e4\",\n    \"url\": \"about:blank\",\n    \"title\": \"\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "ce840462-c613-43a9-8bfd-1a55970c3e33",
+        "--url",
+        "about:blank",
+        "--operation-id",
+        "e4b39d85-40a4-4969-962c-7854fb3602da"
+      ],
+      "stdout": "{\n  \"paneId\": \"3c5da307-fdec-4b37-897c-a6507e6a18e4\",\n  \"url\": \"about:blank\",\n  \"title\": \"\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "0a4d4a41-981f-42e3-904f-060057187c56"
+      ],
+      "stdout": "{\n  \"operationId\": \"0a4d4a41-981f-42e3-904f-060057187c56\",\n  \"procedure\": \"browser.openV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"81f174e7-73d7-4115-ab3f-1b80d3da2b49\"\n  },\n  \"result\": {\n    \"paneId\": \"b1278338-c4a5-48e1-a8b1-3ccc7af7dad9\",\n    \"url\": \"http://localhost:33731/owned-open-cli?request=3318a2b1-c319-48c0-9f0b-c74acb30f640\",\n    \"title\": \"\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "open",
+      "flags": [
+        "--workspace",
+        "81f174e7-73d7-4115-ab3f-1b80d3da2b49",
+        "--url",
+        "http://localhost:33731/owned-open-cli?request=3318a2b1-c319-48c0-9f0b-c74acb30f640",
+        "--operation-id",
+        "0a4d4a41-981f-42e3-904f-060057187c56",
+        "--target",
+        "new-tab",
+        "--show",
+        "false"
+      ],
+      "stdout": "{\n  \"paneId\": \"b1278338-c4a5-48e1-a8b1-3ccc7af7dad9\",\n  \"url\": \"http://localhost:33731/owned-open-cli?request=3318a2b1-c319-48c0-9f0b-c74acb30f640\",\n  \"title\": \"\"\n}\n",
+      "stderr": "",
+      "code": 0
+    }
+  ],
+  "setup": {
+    "workspaceId": "ce840462-c613-43a9-8bfd-1a55970c3e33",
+    "projectId": null,
+    "terminals": []
+  },
+  "completed": {
+    "first": {
+      "operationId": "e4b39d85-40a4-4969-962c-7854fb3602da",
+      "procedure": "browser.openV1",
+      "status": "completed",
+      "entityIds": {
+        "workspaceId": "ce840462-c613-43a9-8bfd-1a55970c3e33"
+      },
+      "result": {
+        "paneId": "3c5da307-fdec-4b37-897c-a6507e6a18e4",
+        "url": "about:blank",
+        "title": ""
+      }
+    },
+    "http": {
+      "operationId": "0a4d4a41-981f-42e3-904f-060057187c56",
+      "procedure": "browser.openV1",
+      "status": "completed",
+      "entityIds": {
+        "workspaceId": "81f174e7-73d7-4115-ab3f-1b80d3da2b49"
+      },
+      "result": {
+        "paneId": "b1278338-c4a5-48e1-a8b1-3ccc7af7dad9",
+        "url": "http://localhost:33731/owned-open-cli?request=3318a2b1-c319-48c0-9f0b-c74acb30f640",
+        "title": ""
+      }
+    },
+    "projectlessBrowserOnly": true,
+    "noTerminalCreated": true,
+    "backgroundSelectionAndFocusPreserved": true,
+    "explicitShow": true,
+    "newTabAndCurrentReplacement": true,
+    "defaultEquivalentDeduplication": true,
+    "httpRequestCount": 1,
+    "browserIds": [
+      "3c5da307-fdec-4b37-897c-a6507e6a18e4",
+      "755361b1-1831-46ed-87cb-6c08d66be694"
+    ]
+  },
+  "reopened": {
+    "rendererErrors": [],
+    "noReplayOrRecreation": true,
+    "originalReceiptForClosedPane": true,
+    "requestCount": 1
+  }
+}
