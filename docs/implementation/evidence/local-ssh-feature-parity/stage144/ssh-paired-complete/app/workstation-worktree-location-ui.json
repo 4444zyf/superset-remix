@@ -1,0 +1,29 @@
+{
+  "sourceRevision": "864887c55",
+  "physicalCreation": true,
+  "originalCheckoutPicker": true,
+  "heartbeatPtyOnly": true,
+  "vendorAgentLaunchVerified": false,
+  "worktreesRoot": "/home/agent/.superset-ssh-test-27QfuG/backend-home/Superset Remix/worktrees",
+  "worktreePath": "/home/agent/.superset-ssh-test-27QfuG/backend-home/Superset Remix/worktrees/Unified Project-d699c3e8-ada0-487d-a638-64ef9e1a7a97/restore-lifecycle",
+  "terminals": [
+    {
+      "id": "108d0aca-91ce-428f-9aa9-aec9dfd594d0",
+      "executionId": "c766b36c-12fa-48f5-8683-a9033406b37a",
+      "pid": 27885,
+      "cwd": "/home/agent/.superset-ssh-test-27QfuG/backend-home/Superset Remix/worktrees/Unified Project-d699c3e8-ada0-487d-a638-64ef9e1a7a97/restore-lifecycle"
+    },
+    {
+      "id": "1c725e3d-ae5a-4afa-a8d8-e0a928a48dfb",
+      "executionId": "fc0944a4-a02c-4ff5-83b2-baf72db4b165",
+      "pid": 27898,
+      "cwd": "/home/agent/.superset-ssh-test-27QfuG/backend-home/Superset Remix/worktrees/Unified Project-d699c3e8-ada0-487d-a638-64ef9e1a7a97/restore-lifecycle"
+    },
+    {
+      "id": "d940e43d-0207-4610-8be7-64f66cb80fd4",
+      "executionId": "3f48612c-386d-4f61-9328-d8195a496d1f",
+      "pid": 27891,
+      "cwd": "/home/agent/.superset-ssh-test-27QfuG/backend-home/Superset Remix/worktrees/Unified Project-d699c3e8-ada0-487d-a638-64ef9e1a7a97/restore-lifecycle"
+    }
+  ]
+}

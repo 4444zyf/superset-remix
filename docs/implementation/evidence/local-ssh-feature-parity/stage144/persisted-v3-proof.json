@@ -1,0 +1,20 @@
+[
+  {
+    "case": "local-paired-complete",
+    "readOnly": true,
+    "schemaVersion": 3,
+    "revision": 74,
+    "workspaces": 3,
+    "panes": 6,
+    "workspacesWithRightLayout": 3
+  },
+  {
+    "case": "ssh-paired-complete",
+    "readOnly": true,
+    "schemaVersion": 3,
+    "revision": 129,
+    "workspaces": 3,
+    "panes": 9,
+    "workspacesWithRightLayout": 3
+  }
+]

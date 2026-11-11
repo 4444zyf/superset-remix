@@ -1,0 +1,62 @@
+[
+  {
+    "text": "Move to Right Side",
+    "attempt": 0,
+    "geometry": {
+      "top": 456.1194152832031,
+      "bottom": 486.6996154785156,
+      "min": 352,
+      "max": 490.477783203125,
+      "x": 767.4585571289062,
+      "y": 421.2388916015625,
+      "menuTop": 351,
+      "menuBottom": 491.477783203125,
+      "scrollTop": 0,
+      "scrollHeight": 145,
+      "clientHeight": 145,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Browser",
+    "attempt": 0,
+    "geometry": {
+      "top": 357.1499938964844,
+      "bottom": 387.54998779296875,
+      "min": 323,
+      "max": 391.29998779296875,
+      "x": 651.6000061035156,
+      "y": 357.1499938964844,
+      "menuTop": 322,
+      "menuBottom": 392.29998779296875,
+      "scrollTop": 0,
+      "scrollHeight": 72,
+      "clientHeight": 72,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Close pane",
+    "attempt": 0,
+    "geometry": {
+      "top": 416.54998779296875,
+      "bottom": 446.95001220703125,
+      "min": 352,
+      "max": 489.6499938964844,
+      "x": 987.6433715820312,
+      "y": 420.8249969482422,
+      "menuTop": 351,
+      "menuBottom": 490.6499938964844,
+      "scrollTop": 0,
+      "scrollHeight": 145,
+      "clientHeight": 145,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  }
+]

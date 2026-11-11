@@ -1,0 +1,305 @@
+{
+  "source": "864887c55",
+  "mode": "Original source eval CLI dev runner with explicit namespace and stable operation ID, actual Electron guest; bundled CLI unchanged",
+  "calls": [
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "(()=>{const key=\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7\";globalThis[key]=(globalThis[key]??0)+1;return {count:globalThis[key],title:document.title}})()",
+        "--operation-id",
+        "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf"
+      ],
+      "stdout": "{\n  \"result\": {\n    \"count\": 1,\n    \"title\": \"Owned browser home 中文 🙂\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf"
+      ],
+      "stdout": "{\n  \"operationId\": \"f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf\",\n  \"procedure\": \"browser.evaluateV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"daa885a7-91be-4fbc-a1bd-23773e351bb8\"\n  },\n  \"result\": {\n    \"result\": {\n      \"count\": 1,\n      \"title\": \"Owned browser home 中文 🙂\"\n    }\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "(()=>{const key=\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7\";globalThis[key]=(globalThis[key]??0)+1;return {count:globalThis[key],title:document.title}})()",
+        "--operation-id",
+        "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf"
+      ],
+      "stdout": "{\n  \"result\": {\n    \"count\": 1,\n    \"title\": \"Owned browser home 中文 🙂\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "globalThis[\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7\"]++",
+        "--operation-id",
+        "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf"
+      ],
+      "stdout": "",
+      "stderr": "Error: This operation ID has already been accepted with different inputs\nHint: Inspect operation f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf with browser operation-status before issuing another evaluation.\n",
+      "code": 1
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "9393ab58-caae-4130-9db7-8bf275a41a64",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "(()=>{const key=\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7\";globalThis[key]=(globalThis[key]??0)+1;return {count:globalThis[key],title:document.title}})()",
+        "--operation-id",
+        "044c17ef-02e3-4cf4-a95a-3888e6076c42"
+      ],
+      "stdout": "",
+      "stderr": "Error: Browser evaluation failed or pane is no longer current\nHint: Inspect operation 044c17ef-02e3-4cf4-a95a-3888e6076c42 with browser operation-status before issuing another evaluation.\n",
+      "code": 1
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "0",
+        "--operation-id",
+        "80b44060-7677-4bfd-9b7c-212864b22f0f"
+      ],
+      "stdout": "{\n  \"result\": 0\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "null",
+        "--operation-id",
+        "9ad14eaa-2e8f-4efd-ad60-7dc731e28582"
+      ],
+      "stdout": "{\n  \"result\": null\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "false",
+        "--operation-id",
+        "5a5b36ad-a143-4e38-ad81-2984fef8ed31"
+      ],
+      "stdout": "{\n  \"result\": false\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "void 0",
+        "--operation-id",
+        "344b9aad-c824-4389-9455-a732d783f6e4"
+      ],
+      "stdout": "{}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "\"中文 🙂\"",
+        "--operation-id",
+        "8011f2fd-bf16-4567-883e-76aeec4df4ab"
+      ],
+      "stdout": "{\n  \"result\": \"中文 🙂\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "(()=>{globalThis[\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7_failure\"]=(globalThis[\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7_failure\"]??0)+1;throw Error('OWNED-CLI-EVAL-FAILURE')})()",
+        "--operation-id",
+        "70b0145c-5aa2-48d2-bbaf-5f9eb407ef61"
+      ],
+      "stdout": "",
+      "stderr": "Error: Browser evaluation failed or pane is no longer current\nHint: Inspect operation 70b0145c-5aa2-48d2-bbaf-5f9eb407ef61 with browser operation-status before issuing another evaluation.\n",
+      "code": 1
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "70b0145c-5aa2-48d2-bbaf-5f9eb407ef61"
+      ],
+      "stdout": "{\n  \"operationId\": \"70b0145c-5aa2-48d2-bbaf-5f9eb407ef61\",\n  \"procedure\": \"browser.evaluateV1\",\n  \"status\": \"unresolved\",\n  \"entityIds\": {\n    \"workspaceId\": \"daa885a7-91be-4fbc-a1bd-23773e351bb8\"\n  },\n  \"error\": {\n    \"code\": \"BAD_REQUEST\",\n    \"message\": \"Browser evaluation failed or pane is no longer current\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "(()=>{globalThis[\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7_failure\"]=(globalThis[\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7_failure\"]??0)+1;throw Error('OWNED-CLI-EVAL-FAILURE')})()",
+        "--operation-id",
+        "70b0145c-5aa2-48d2-bbaf-5f9eb407ef61"
+      ],
+      "stdout": "",
+      "stderr": "Error: This operation is unresolved; inspect its status and reconcile the existing remote work before creating a new operation\nHint: Inspect operation 70b0145c-5aa2-48d2-bbaf-5f9eb407ef61 with browser operation-status before issuing another evaluation.\n",
+      "code": 1
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "false",
+        "--operation-id",
+        "3f6a9667-067b-4bd6-8643-0c64f7d8c3fc"
+      ],
+      "stdout": "{\n  \"result\": false\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "0"
+      ],
+      "stdout": "",
+      "stderr": "Error: --namespace evaluation requires --operation-id\n",
+      "code": 1
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf"
+      ],
+      "stdout": "{\n  \"operationId\": \"f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf\",\n  \"procedure\": \"browser.evaluateV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"daa885a7-91be-4fbc-a1bd-23773e351bb8\"\n  },\n  \"result\": {\n    \"result\": {\n      \"count\": 1,\n      \"title\": \"Owned browser home 中文 🙂\"\n    }\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf"
+      ],
+      "stdout": "{\n  \"operationId\": \"f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf\",\n  \"procedure\": \"browser.evaluateV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"daa885a7-91be-4fbc-a1bd-23773e351bb8\"\n  },\n  \"result\": {\n    \"result\": {\n      \"count\": 1,\n      \"title\": \"Owned browser home 中文 🙂\"\n    }\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "eval",
+      "flags": [
+        "--workspace",
+        "daa885a7-91be-4fbc-a1bd-23773e351bb8",
+        "--pane",
+        "83ac1fd6-e103-4721-9286-d09b86d03a4a",
+        "--code",
+        "(()=>{const key=\"__remix_cli_eval_c50cca19fc6b4cee87624f08e72235d7\";globalThis[key]=(globalThis[key]??0)+1;return {count:globalThis[key],title:document.title}})()",
+        "--operation-id",
+        "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf"
+      ],
+      "stdout": "{\n  \"result\": {\n    \"count\": 1,\n    \"title\": \"Owned browser home 中文 🙂\"\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    }
+  ],
+  "originalUndefinedJsonOmissionPreserved": true,
+  "completed": {
+    "receipt": {
+      "operationId": "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf",
+      "procedure": "browser.evaluateV1",
+      "status": "completed",
+      "entityIds": {
+        "workspaceId": "daa885a7-91be-4fbc-a1bd-23773e351bb8"
+      },
+      "result": {
+        "result": {
+          "count": 1,
+          "title": "Owned browser home 中文 🙂"
+        }
+      }
+    },
+    "oneEvaluationForRepeatedId": true,
+    "failedEvaluationNotRetried": true,
+    "backgroundTabAndFocusPreserved": true
+  },
+  "reopened": {
+    "persisted": {
+      "operationId": "f8edf2bd-3de6-4a6b-99b5-274ce7a5f7cf",
+      "procedure": "browser.evaluateV1",
+      "status": "completed",
+      "entityIds": {
+        "workspaceId": "daa885a7-91be-4fbc-a1bd-23773e351bb8"
+      },
+      "result": {
+        "result": {
+          "count": 1,
+          "title": "Owned browser home 中文 🙂"
+        }
+      }
+    },
+    "noReplayOrRetarget": true
+  }
+}

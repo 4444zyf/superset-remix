@@ -1,0 +1,18 @@
+{
+  "compiledSource": "864887c55dcfce9bbfe32dfd6aa55a633418d580",
+  "fixtureSource": "52e01faed0e9e2424e4250f3f09a029c6faf8892",
+  "compiledFiles": 2420,
+  "allTopLevelMjs": 87,
+  "sourceCliFiles": 3639,
+  "manifestSha256": "27ad5cb0f600f939db1ae44bf9c542f4892d6aad77f59b3535fc8cf6f6873d94",
+  "preloadRequires": [
+    "electron"
+  ],
+  "newDesktopSourceBuild": true,
+  "bundledCliPresent": false,
+  "bundledCliRebuilt": false,
+  "installer": false,
+  "githubActions": false,
+  "electronVersion": "41.10.7",
+  "electronAbi": "145"
+}

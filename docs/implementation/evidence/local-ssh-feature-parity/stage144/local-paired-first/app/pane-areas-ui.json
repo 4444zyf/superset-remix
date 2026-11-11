@@ -1,0 +1,186 @@
+{
+  "source": "original pane engine and resizer, physical host input, real private V3 storage",
+  "phases": [
+    {
+      "name": "moved-right",
+      "view": {
+        "revision": 12,
+        "workspace": {
+          "tabId": "6e7150e2-a41f-4b20-b487-e47852f0ab3e",
+          "workspaceId": "19edb58c-32da-4a78-9d5d-51cb56a0c347",
+          "label": "Local wheel 00483fbf-dd40-43bf-8e66-6d5c2850e963",
+          "activeTool": "terminal",
+          "activePaneId": "f4f09af4-e91f-4f6e-b383-86f506375209",
+          "panes": [
+            {
+              "paneId": "f4f09af4-e91f-4f6e-b383-86f506375209",
+              "kind": "terminal",
+              "resourceId": "7ce8403d-db28-4826-aa25-e09db2e4f629",
+              "executionId": "3ee920e6-2b8f-42e6-b21a-eac54f34ce49",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7",
+              "kind": "browser",
+              "resourceId": "4563eeb0-f61a-4724-a9de-82af33c5e0b4",
+              "browser": {
+                "url": "http://localhost:45029/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:45029/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "f4f09af4-e91f-4f6e-b383-86f506375209"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7"
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "d99d245b-ce1a-4aba-b103-481a0fc68b2d",
+              "label": "Terminal",
+              "createdAt": 1794283378506,
+              "activePaneId": "f4f09af4-e91f-4f6e-b383-86f506375209",
+              "layout": {
+                "type": "pane",
+                "paneId": "f4f09af4-e91f-4f6e-b383-86f506375209"
+              }
+            }
+          ],
+          "activePaneTabId": "d99d245b-ce1a-4aba-b103-481a0fc68b2d",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-8a6de19a-e611-46d4-8393-3c337ff1bcb6",
+                "createdAt": 1794283381409,
+                "activePaneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7"
+                }
+              }
+            ],
+            "activeTabId": "tab-8a6de19a-e611-46d4-8393-3c337ff1bcb6"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "center"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "resized",
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 550,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "reset",
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 377,
+        "passthrough": false
+      }
+    }
+  ],
+  "before": {
+    "revision": 9,
+    "workspace": {
+      "tabId": "6e7150e2-a41f-4b20-b487-e47852f0ab3e",
+      "workspaceId": "19edb58c-32da-4a78-9d5d-51cb56a0c347",
+      "label": "Local wheel 00483fbf-dd40-43bf-8e66-6d5c2850e963",
+      "activeTool": "terminal",
+      "activePaneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7",
+      "panes": [
+        {
+          "paneId": "f4f09af4-e91f-4f6e-b383-86f506375209",
+          "kind": "terminal",
+          "resourceId": "7ce8403d-db28-4826-aa25-e09db2e4f629",
+          "executionId": "3ee920e6-2b8f-42e6-b21a-eac54f34ce49",
+          "label": "Terminal"
+        },
+        {
+          "paneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7",
+          "kind": "browser",
+          "resourceId": "4563eeb0-f61a-4724-a9de-82af33c5e0b4",
+          "browser": {
+            "url": "about:blank",
+            "pageTitle": "",
+            "faviconUrl": null
+          }
+        }
+      ],
+      "layout": {
+        "type": "split",
+        "axis": "horizontal",
+        "ratio": 0.5,
+        "first": {
+          "type": "pane",
+          "paneId": "f4f09af4-e91f-4f6e-b383-86f506375209"
+        },
+        "second": {
+          "type": "pane",
+          "paneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7"
+        }
+      },
+      "paneTabs": [
+        {
+          "tabId": "d99d245b-ce1a-4aba-b103-481a0fc68b2d",
+          "label": "Terminal",
+          "createdAt": 1794283378506,
+          "activePaneId": "f4f09af4-e91f-4f6e-b383-86f506375209",
+          "layout": {
+            "type": "pane",
+            "paneId": "f4f09af4-e91f-4f6e-b383-86f506375209"
+          }
+        },
+        {
+          "tabId": "bb75f37a-9bfb-4cce-a9c0-1182fe986a97",
+          "createdAt": 1794283381080,
+          "activePaneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7",
+          "layout": {
+            "type": "pane",
+            "paneId": "ddef2831-a4f1-4119-93d9-6d5851157ae7"
+          }
+        }
+      ],
+      "activePaneTabId": "bb75f37a-9bfb-4cce-a9c0-1182fe986a97",
+      "rightPaneLayout": {
+        "version": 1,
+        "tabs": [],
+        "activeTabId": null
+      },
+      "rightPaneOpen": false,
+      "activePaneArea": "center"
+    }
+  },
+  "terminalBefore": {
+    "id": "7ce8403d-db28-4826-aa25-e09db2e4f629",
+    "executionId": "3ee920e6-2b8f-42e6-b21a-eac54f34ce49",
+    "pid": 13522,
+    "cols": 110,
+    "rows": 30,
+    "cwd": "/workspace/scratch/parity-144/local-paired-first/config/superset-remix-dev-f8b95cf4f5efabe9b8a939f43def959f01f632d68531c201826cd180bf3b3461/direct-workstation/local-backend/sessions/local-wheel-00483fbf-dd40",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004h\u001b]0;agent@aaaba53562f1: /workspace/scratch/parity-144/local-paired-first/config/superset-remix-dev-f8b95cf4f5efabe9b8a939f43def959f01f632d68531c201826cd180bf3b3461/direct-workstation/local-backend/sessions/local-wheel-00483fbf-dd40\u0007\u001b[01;32magent@aaaba53562f1\u001b[00m:\u001b[01;34m/workspace/scratch/parity-144/local-paired-first/config/superset-remix-dev-f8b95cf4f5efabe9b8a939f43def959f01f632d68531c201826cd180bf3b3461/direct-workstation/local-backend/sessions/local-wheel-00483fbf-dd40\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@aaaba53562f1: /workspace/scratch/parity-144/local-paired-first/config/superset-remix-dev-f8b95cf4f5efabe9b8a939f43def959f01f632d68531c201826cd180bf3b3461/direct-workstation/local-backend/sessions/local-wheel-00483fbf-dd40\u0007\u001b[01;32magent@aaaba53562f1\u001b[00m:\u001b[01;34m/workspace/scratch/parity-144/local-paired-first/config/superset-remix-dev-f8b95cf4f5efabe9b8a939f43def959f01f632d68531c201826cd180bf3b3461/direct-workstation/local-backend/sessions/local-wheel-00483fbf-dd40\u001b[00m$ python3 -c 'import base64;exec(base64.b64decode(\"aW1wb3J0IGh0dHAuc2VydmVyLGpzb24sb3Msc2lnbmFsCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApzdGF0ZT17Im1hcmtlciI6Ik9XTkVELUJST1dTRVItZjM5NDQyZjMtYWIyOS00MzVkLWE2NTEtZWUxMWRkYmMzZTczIiwicmVxdWVzdHMiOltdLCJydW5uaW5nIjpUcnVlLCJwaWQiOm9zLmdldHBpZCgpfQpkZWYgc2F2ZSgpOiB0ZW1wPVBhdGgoJ2Jyb3dzZXItcHJvb2YudG1wJyk7dGVtcC53cml0ZV90ZXh0KGpzb24uZHVtcHMoc3RhdGUpKTt0ZW1wLnJlcGxhY2UoJ2Jyb3dzZXItcHJvb2YuanNvbicpCmNsYXNzIEhhbmRsZXIoaHR0cC5zZXJ2ZXIuQmFzZUhUVFBSZXF1ZXN0SGFuZGxlcik6CiBkZWYgZG9fR0VUKHNlbGYpOgogIHN0YXRlWydyZXF1ZXN0cyddLmFwcGVuZChzZWxmLnBhdGgpO3NhdmUoKQogIHRpdGxlPSdPd25lZCBicm93c2VyICcrKCduZXh0JyBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL25leHQnKSBlbHNlICdob21lJykrJyDkuK3mlocg8J+ZgicKICBib2R5PSgnPCFkb2N0eXBlIGh0bWw+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT4nK3RpdGxlKyc8L3RpdGxlPjxoMT4nK3N0YXRlWydtYXJrZXInXSsnPC9oMT48YSBpZD0ibmV4dCIgaHJlZj0iL25leHQ/dmFsdWU9JUU0JUI4JUFEJTIwaGVsbG8jc2VjdGlvbiI+TmV4dCBwYWdlPC9hPjxicj48YSBpZD0icG9wdXAiIHRhcmdldD0iX2JsYW5rIiBocmVmPSIvcG9wdXAiPk9wZW4gc2Vjb25kIHBhbmU8L2E+PHA+bmVlZGxlIG5lZWRsZSBuZWVkbGU8L3A+JykuZW5jb2RlKCkKICBib2R5PWJvZHkucmVwbGFjZShiJzx0aXRsZT4nLGInPGxpbmsgcmVsPSJpY29uIiBocmVmPSIvaWNvbi5zdmciPjx0aXRsZT4nKQogIGJvZHk9Ym9keStiJzxzY3JpcHQ+Y29uc29sZS53YXJuKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImgxIikudGV4dENvbnRlbnQpPC9zY3JpcHQ+JwogIHBhc3MKICBjb250ZW50X3R5cGU9J3RleHQvaHRtbDsgY2hhcnNldD11dGYtOCcKICBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL2ljb24uc3ZnJyk6IGJvZHk9KCc8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZGF0YS1vd25lZD0iJytzdGF0ZVsnbWFya2VyJ10rJyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImdyZWVuIi8+PC9zdmc+JykuZW5jb2RlKCk7Y29udGVudF90eXBlPSdpbWFnZS9zdmcreG1sJwogIGNhY2hlX2NvbnRyb2w9J25vLXN0b3JlJwogIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApO3NlbGYuc2VuZF9oZWFkZXIoJ0NvbnRlbnQtVHlwZScsY29udGVudF90eXBlKTtzZWxmLnNlbmRfaGVhZGVyKCdDYWNoZS1Db250cm9sJyxjYWNoZV9jb250cm9sKTtzZWxmLnNlbmRfaGVhZGVyKCdDb250ZW50LUxlbmd0aCcsc3RyKGxlbihib2R5KSkpO3NlbGYuZW5kX2hlYWRlcnMoKTtzZWxmLndmaWxlLndyaXRlKGJvZHkpCiBkZWYgbG9nX21lc3NhZ2Uoc2VsZiwqYXJncyk6IHBhc3MKc2VydmVyPWh0dHAuc2VydmVyLkhUVFBTZXJ2ZXIoKCcxMjcuMC4wLjEnLDApLEhhbmRsZXIpCnN0YXRlWydwb3J0J109c2VydmVyLnNlcnZlcl9wb3J0O3NhdmUoKQpwYXNzCnRyeTogc2VydmVyLnNlcnZlX2ZvcmV2ZXIoKQpleGNlcHQgS2V5Ym9hcmRJbnRlcnJ1cHQ6IHBhc3MKZmluYWxseTogc2VydmVyLnNlcnZlcl9jbG9zZSgpO3N0YXRlWydydW5uaW5nJ109RmFsc2U7c2F2ZSgp\"))'\r\n\u001b[?2004l\r"
+  }
+}
