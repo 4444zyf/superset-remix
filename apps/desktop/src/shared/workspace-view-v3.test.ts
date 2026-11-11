@@ -269,11 +269,9 @@ test("expansion receipts reject duplicates and unbounded or malformed metadata",
 });
 
 test("an expansion receipt requires both owned area layouts", () => {
-	const value = fixture(),
+	const value = projectWorkspaceViewV2(fixture()),
 		w = workspace(value);
-	delete w.rightPaneLayout;
-	delete w.rightPaneOpen;
-	delete w.activePaneArea;
+	expect(validateWorkspaceViewV3(value)).toEqual(value);
 	Object.assign(w, {
 		rightPaneAreaExpansion: {
 			movedTabIds: [],
