@@ -1,0 +1,99 @@
+{
+  "terminal": {
+    "terminalId": "4357baa6-7a0f-4213-b858-07e32036a144",
+    "executionId": "4a3ae6e1-5329-4c2e-9e44-f84a2f9622c3",
+    "state": "attached",
+    "paneId": "e4ba2d14-cbe5-42a0-a5ee-16ced1ebb024"
+  },
+  "selection": "COPY SSH 中文 🙂 DONE",
+  "keyboardCopy": true,
+  "menuCopy": true,
+  "copyFocus": {
+    "tag": "TEXTAREA",
+    "terminalId": "4357baa6-7a0f-4213-b858-07e32036a144"
+  },
+  "phases": [
+    {
+      "method": "keyboard",
+      "plain": "中文 prompt 🙂\nsecond line\n",
+      "expected": "\u001b[200~中文 prompt 🙂\rsecond line\r\u001b[201~",
+      "previous": {
+        "received": [],
+        "stage": "raw",
+        "cols": 109,
+        "rows": 30
+      },
+      "current": {
+        "received": [
+          "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e"
+        ],
+        "stage": "raw",
+        "cols": 109,
+        "rows": 30
+      }
+    },
+    {
+      "method": "menu",
+      "plain": "menu paste 中文\nline two\n",
+      "expected": "\u001b[200~menu paste 中文\rline two\r\u001b[201~",
+      "previous": {
+        "received": [
+          "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e"
+        ],
+        "stage": "raw",
+        "cols": 109,
+        "rows": 30
+      },
+      "current": {
+        "received": [
+          "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e",
+          "1b5b3230307e6d656e7520706173746520e4b8ade696870d6c696e652074776f0d1b5b3230317e"
+        ],
+        "stage": "raw",
+        "cols": 109,
+        "rows": 30
+      }
+    }
+  ],
+  "imageInput": {
+    "state": {
+      "received": [
+        "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e",
+        "1b5b3230307e6d656e7520706173746520e4b8ade696870d6c696e652074776f0d1b5b3230317e",
+        "1b5b3230307e2f776f726b73706163652f736372617463682f7061726974792d3134372f6c6f63616c2d636c6970626f6172642d696d6167652d726561642f636f6e6669672f73757065727365742d72656d69782d6465762d393062346564343165343935636335366665633937656562363962616238636665633131393533313337653530343937343631313436346536633363373037622f6469726563742d776f726b73746174696f6e2f6c6f63616c2d6261636b656e642f73657373696f6e732f6c6f63616c2d776865656c2d63653939386661312d343364322f2e73757065727365742f6174746163686d656e74732f696d6167655f322e706e671b5b3230317e"
+      ],
+      "stage": "raw",
+      "cols": 109,
+      "rows": 30
+    },
+    "bytes": "\u001b[200~/workspace/scratch/parity-147/local-clipboard-image-read/config/superset-remix-dev-90b4ed41e495cc56fec97eeb69bab8cfec11953137e504974611464e6c3c707b/direct-workstation/local-backend/sessions/local-wheel-ce998fa1-43d2/.superset/attachments/image_2.png\u001b[201~"
+  },
+  "imageRead": {
+    "path": "/workspace/scratch/parity-147/local-clipboard-image-read/config/superset-remix-dev-90b4ed41e495cc56fec97eeb69bab8cfec11953137e504974611464e6c3c707b/direct-workstation/local-backend/sessions/local-wheel-ce998fa1-43d2/.superset/attachments/image_2.png",
+    "bytes": 139447,
+    "sha256": "f0759894dc7756f626436ea84d7a40ec3943f33020c650dea9ecb96173cc5d9f",
+    "pixels": {
+      "size": {
+        "width": 1200,
+        "height": 872
+      },
+      "pixelSha256": "048b9da9312b2401957cb881f172170b97950c4fff099193862be4dc423fd8d4"
+    }
+  },
+  "osc52": "AGENT OSC52 中文 🙂",
+  "afterRemount": true,
+  "final": {
+    "received": [
+      "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e",
+      "1b5b3230307e6d656e7520706173746520e4b8ade696870d6c696e652074776f0d1b5b3230317e",
+      "1b5b3230307e2f776f726b73706163652f736372617463682f7061726974792d3134372f6c6f63616c2d636c6970626f6172642d696d6167652d726561642f636f6e6669672f73757065727365742d72656d69782d6465762d393062346564343165343935636335366665633937656562363962616238636665633131393533313337653530343937343631313436346536633363373037622f6469726563742d776f726b73746174696f6e2f6c6f63616c2d6261636b656e642f73657373696f6e732f6c6f63616c2d776865656c2d63653939386661312d343364322f2e73757065727365742f6174746163686d656e74732f696d6167655f322e706e671b5b3230317e",
+      "6f",
+      "71"
+    ],
+    "stage": "finished",
+    "cols": 110,
+    "rows": 30
+  },
+  "errors": [],
+  "vendorAgentVerified": false
+}

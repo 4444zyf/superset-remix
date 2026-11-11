@@ -1,0 +1,13 @@
+{
+  "case": "local-clipboard-image-read",
+  "compiledSource": "1df4f741bc6b021ea95d356ac12a40314a1281cf",
+  "compiledFiles": 2420,
+  "fixtureCount": 88,
+  "sourceCliFiles": 3639,
+  "allUnchanged": true,
+  "cleanup": {
+    "ownedXorgPid": 82687,
+    "ownedXorgExit": 0,
+    "appExit": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "sourceRevision": "1df4f741b",
+  "physicalNativePaste": true,
+  "osClipboard": true,
+  "terminal": "4357baa6-7a0f-4213-b858-07e32036a144",
+  "executionId": "4a3ae6e1-5329-4c2e-9e44-f84a2f9622c3",
+  "remoteDirectory": "/workspace/scratch/parity-147/local-clipboard-image-read/config/superset-remix-dev-90b4ed41e495cc56fec97eeb69bab8cfec11953137e504974611464e6c3c707b/direct-workstation/local-backend/sessions/local-wheel-ce998fa1-43d2/.superset/attachments",
+  "imagePixels": {
+    "size": {
+      "width": 1200,
+      "height": 872
+    },
+    "pixelSha256": "048b9da9312b2401957cb881f172170b97950c4fff099193862be4dc423fd8d4"
+  },
+  "imageEncodedSha256": "f0759894dc7756f626436ea84d7a40ec3943f33020c650dea9ecb96173cc5d9f",
+  "remoteShellRead": true,
+  "remotePid": 82927,
+  "duplicatePasteDidNotOverwrite": true,
+  "textBytes": 3474,
+  "textSha256": "c8e7925a786ecb3fe0aa82a044d156040598219e64605c91b8455ccb53edc577",
+  "textExact": true,
+  "nativeFileUriPaste": true,
+  "fileBytes": 36,
+  "fileExact": true,
+  "vendorAgentVerified": false,
+  "chatNativePasteVerified": false
+}

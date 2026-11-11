@@ -1,0 +1,141 @@
+{
+  "compiledSource": "1df4f741bc6b021ea95d356ac12a40314a1281cf",
+  "compiledFiles": 2420,
+  "fixtureCount": 88,
+  "sourceCliFiles": 3639,
+  "compiledAndSourceCliUnchanged": true,
+  "clipboardToWheelFixtureChanges": [
+    "apps/desktop/scripts/verify-workspace-restore-ui.mjs",
+    "apps/desktop/scripts/verify-workstation-clipboard-pane-area.mjs",
+    "apps/desktop/scripts/verify-workstation-wheel-ui.mjs"
+  ],
+  "native": [
+    {
+      "case": "local-clipboard-image-read",
+      "paneActions": [
+        "right",
+        "expand",
+        "center"
+      ],
+      "samePidExecutionAndCwd": true,
+      "cleanup": {
+        "ownedXorgPid": 82687,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "exactWholeAgentInput": true,
+      "noUnexpectedInput": true,
+      "liveRemoteTuiImageRead": {
+        "path": "/workspace/scratch/parity-147/local-clipboard-image-read/config/superset-remix-dev-90b4ed41e495cc56fec97eeb69bab8cfec11953137e504974611464e6c3c707b/direct-workstation/local-backend/sessions/local-wheel-ce998fa1-43d2/.superset/attachments/image_2.png",
+        "bytes": 139447,
+        "sha256": "f0759894dc7756f626436ea84d7a40ec3943f33020c650dea9ecb96173cc5d9f",
+        "pixels": {
+          "size": {
+            "width": 1200,
+            "height": 872
+          },
+          "pixelSha256": "048b9da9312b2401957cb881f172170b97950c4fff099193862be4dc423fd8d4"
+        }
+      },
+      "nativeClipboardImageAndFilePaste": true,
+      "duplicateDoesNotOverwrite": true,
+      "textExact": true,
+      "copyAndOsc52": true,
+      "realCenterRemount": true,
+      "vendorAgentVerified": false
+    },
+    {
+      "case": "ssh-clipboard-image-read",
+      "paneActions": [
+        "right",
+        "expand",
+        "center"
+      ],
+      "samePidExecutionAndCwd": true,
+      "cleanup": {
+        "ownedXorgPid": 82994,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "exactWholeAgentInput": true,
+      "noUnexpectedInput": true,
+      "liveRemoteTuiImageRead": {
+        "path": "/home/agent/.superset-ssh-test-SKiLCY/backend-home/Superset Remix/worktrees/Unified Project-a6f14a22-e537-4d10-bb84-20bba3c52562/restore-lifecycle/.superset/attachments/image_2.png",
+        "bytes": 166169,
+        "sha256": "2759cd22ccc54b73fbbdc12d5f2caeeca2c02786d3b4bcfca1e976d19fb75596",
+        "pixels": {
+          "size": {
+            "width": 1200,
+            "height": 872
+          },
+          "pixelSha256": "06551916b908bbdad5a5a9654009f2917308589ab1e7472f1f668e7ae8dc102c"
+        }
+      },
+      "nativeClipboardImageAndFilePaste": true,
+      "duplicateDoesNotOverwrite": true,
+      "textExact": true,
+      "copyAndOsc52": true,
+      "realCenterRemount": true,
+      "vendorAgentVerified": false,
+      "windowRestoreSamples": 20
+    },
+    {
+      "case": "local-wheel-right",
+      "paneActions": [
+        "right",
+        "expand",
+        "center"
+      ],
+      "samePidExecutionAndCwd": true,
+      "cleanup": {
+        "ownedXorgPid": 86638,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "normalViewportScrollsBothWays": true,
+      "historyReviewDoesNotInjectInput": true,
+      "stockPreferenceDoesNotInjectInput": true,
+      "reviewClipboardDoesNotUpload": true,
+      "sgrLegacyAndPixelTransitions": true,
+      "legacyHighCoordinatesPreservedAsBytes": true,
+      "noCursorKeys": true,
+      "realCenterRemount": true
+    },
+    {
+      "case": "ssh-wheel-right",
+      "paneActions": [
+        "right",
+        "expand",
+        "center"
+      ],
+      "samePidExecutionAndCwd": true,
+      "cleanup": {
+        "ownedXorgPid": 86937,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "normalViewportScrollsBothWays": true,
+      "historyReviewDoesNotInjectInput": true,
+      "stockPreferenceDoesNotInjectInput": true,
+      "reviewClipboardDoesNotUpload": true,
+      "sgrLegacyAndPixelTransitions": true,
+      "legacyHighCoordinatesPreservedAsBytes": true,
+      "noCursorKeys": true,
+      "realCenterRemount": true,
+      "windowRestoreSamples": 20
+    }
+  ],
+  "scopedLiveProcesses": [],
+  "x175Released": true,
+  "finalRunsPassed": true,
+  "vendorAgentVerified": false,
+  "physicalMacVerified": false,
+  "externalSshVerified": false,
+  "actualFileManagerCopyVerified": false,
+  "installer": false,
+  "githubActions": false,
+  "screenshotsActuallyViewed": [
+    "ssh-clipboard-image-read/app/clipboard-remote-image-path-before-enter.png",
+    "ssh-wheel-right/app/wheel-tui-after.png"
+  ]
+}

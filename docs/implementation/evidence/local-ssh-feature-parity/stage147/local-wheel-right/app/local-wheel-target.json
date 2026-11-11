@@ -1,0 +1,84 @@
+{
+  "profile": {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "kind": "local",
+    "name": "Local Device",
+    "host": "localhost",
+    "backendId": "f071dc41-92c1-4150-bacf-a1c2505a26be",
+    "namespaceId": "b93cc854-f8e5-4fe1-8642-aae2387a3dfc",
+    "serviceUid": 1000
+  },
+  "descriptor": {
+    "connectionId": "00000000-0000-4000-8000-000000000001",
+    "generation": 1,
+    "backendId": "f071dc41-92c1-4150-bacf-a1c2505a26be",
+    "namespaceId": "b93cc854-f8e5-4fe1-8642-aae2387a3dfc",
+    "instanceId": "ce8bd3a7-a16e-425f-82d1-76de28b21765",
+    "capabilities": {
+      "projects": true,
+      "sessions": true,
+      "terminals": true,
+      "chat": true,
+      "files": true,
+      "attachments": true,
+      "workstationChatAttachmentInputV1": true,
+      "workstationTerminalPresetsV1": true,
+      "workstationAgentSettingsV1": true,
+      "workstationAgentManagementV1": true,
+      "workstationAgentCatalogV2": true,
+      "workstationTerminalScriptsV1": true,
+      "workstationTerminalScriptExecutionV1": true,
+      "workstationAgentFeedbackV1": true,
+      "workstationAgentHooksV1": true,
+      "git": true,
+      "durableOperations": true,
+      "workspaceViewRestoreV1": true,
+      "workstationFilesV1": true,
+      "workstationFileEventsV1": true,
+      "workstationGitV1": true,
+      "workstationGitIdentityV1": true,
+      "workstationGitHistoryV1": true,
+      "workstationGitSyncV1": true,
+      "workstationManagedWorktreesV1": true,
+      "workstationProjectsV1": true,
+      "workstationProjectScriptsV1": true,
+      "workstationWorkspaceRunV1": true,
+      "workstationWorkspaceRunV2": true,
+      "workstationWorkspaceCleanupV1": true,
+      "workstationWorkspaceSetupV1": true,
+      "workstationPortsV1": true
+    },
+    "chatHarnesses": [
+      {
+        "id": "claude-code",
+        "available": false,
+        "reason": "Install claude on the remote machine and add it to the service user's login-shell PATH"
+      },
+      {
+        "id": "codex",
+        "available": true,
+        "reason": "CLI found on the remote machine; sign-in and version are checked when a chat starts. Sign in on B using CODEX_HOME=/workspace/scratch/parity-147/local-wheel-right/config/superset-remix-dev-4582db217f77465eee33ad07de5779e1c66ac439078a178bd904961f691ca9b0/direct-workstation/local-backend/providers/codex"
+      }
+    ]
+  },
+  "workspace": {
+    "id": "c1e79ce1-2748-487f-a274-ea1cbc13040a",
+    "organizationId": "b93cc854-f8e5-4fe1-8642-aae2387a3dfc",
+    "projectId": null,
+    "hostId": "22e711f093dce2fb8015f18cd5ef611d",
+    "name": "Local wheel af4993a5-c81b-4678-8a95-76c3a1dc6f45",
+    "branch": "main",
+    "type": "session",
+    "createdByUserId": null,
+    "taskId": null,
+    "createdAt": {},
+    "updatedAt": {},
+    "tags": [],
+    "worktreePath": "/workspace/scratch/parity-147/local-wheel-right/config/superset-remix-dev-4582db217f77465eee33ad07de5779e1c66ac439078a178bd904961f691ca9b0/direct-workstation/local-backend/sessions/local-wheel-af4993a5-c81b",
+    "worktreeExists": true,
+    "projectName": null,
+    "lastActivityAt": 1794383911909,
+    "archivedAt": null,
+    "archiveReason": null
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Move to Center",
+    "attempt": 0,
+    "geometry": {
+      "top": 516.2999877929688,
+      "bottom": 546.7000122070312,
+      "min": 352,
+      "max": 550.4500122070312,
+      "x": 983.6433715820312,
+      "y": 451.2250061035156,
+      "menuTop": 351,
+      "menuBottom": 551.4500122070312,
+      "scrollTop": 0,
+      "scrollHeight": 209,
+      "clientHeight": 209,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "phase": "normal-viewport",
+    "normalBefore": {
+      "top": 428,
+      "height": 52,
+      "viewport": {
+        "top": 0,
+        "height": 504,
+        "client": 504
+      },
+      "rect": {
+        "top": 802,
+        "height": 52
+      },
+      "style": "position: absolute; top: 428px; left: 0px; width: 0px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 52px;"
+    },
+    "normalAfter": {
+      "top": 423,
+      "height": 52,
+      "viewport": {
+        "top": 0,
+        "height": 504,
+        "client": 504
+      },
+      "rect": {
+        "top": 797,
+        "height": 52
+      },
+      "style": "position: absolute; top: 423px; left: 0px; width: 0px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 52px;"
+    },
+    "normalDown": {
+      "top": 428,
+      "height": 52,
+      "viewport": {
+        "top": 0,
+        "height": 504,
+        "client": 504
+      },
+      "rect": {
+        "top": 802,
+        "height": 52
+      },
+      "style": "position: absolute; top: 428px; left: 0px; width: 0px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 52px;"
+    }
+  },
+  {
+    "phase": "normal",
+    "state": {
+      "stage": "normal",
+      "received": [],
+      "offset": 100
+    }
+  },
+  {
+    "phase": "alternate",
+    "before": {
+      "stage": "redraw",
+      "received": [
+        "61",
+        "6e"
+      ],
+      "offset": 100
+    },
+    "after": {
+      "stage": "redraw",
+      "received": [
+        "61",
+        "6e"
+      ],
+      "offset": 100
+    }
+  }
+]

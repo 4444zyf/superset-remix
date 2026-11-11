@@ -1,0 +1,27 @@
+{
+  "sourceRevision": "1df4f741b",
+  "physicalNativePaste": true,
+  "osClipboard": true,
+  "terminal": "9e8c9874-1bb3-4754-8701-f79fbdbc45e1",
+  "executionId": "0f41426b-c082-4d10-a8c7-cefce9aca5eb",
+  "remoteDirectory": "/home/agent/.superset-ssh-test-SKiLCY/backend-home/Superset Remix/worktrees/Unified Project-a6f14a22-e537-4d10-bb84-20bba3c52562/restore-lifecycle/.superset/attachments",
+  "imagePixels": {
+    "size": {
+      "width": 1200,
+      "height": 872
+    },
+    "pixelSha256": "06551916b908bbdad5a5a9654009f2917308589ab1e7472f1f668e7ae8dc102c"
+  },
+  "imageEncodedSha256": "2759cd22ccc54b73fbbdc12d5f2caeeca2c02786d3b4bcfca1e976d19fb75596",
+  "remoteShellRead": true,
+  "remotePid": 86350,
+  "duplicatePasteDidNotOverwrite": true,
+  "textBytes": 3474,
+  "textSha256": "c8e7925a786ecb3fe0aa82a044d156040598219e64605c91b8455ccb53edc577",
+  "textExact": true,
+  "nativeFileUriPaste": true,
+  "fileBytes": 36,
+  "fileExact": true,
+  "vendorAgentVerified": false,
+  "chatNativePasteVerified": false
+}

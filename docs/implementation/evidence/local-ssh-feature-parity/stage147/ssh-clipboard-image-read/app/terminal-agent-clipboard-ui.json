@@ -1,0 +1,99 @@
+{
+  "terminal": {
+    "terminalId": "9e8c9874-1bb3-4754-8701-f79fbdbc45e1",
+    "executionId": "0f41426b-c082-4d10-a8c7-cefce9aca5eb",
+    "state": "attached",
+    "paneId": "e5310ff2-449d-4dfa-8b61-2268946f874c"
+  },
+  "selection": "COPY SSH 中文 🙂 DONE",
+  "keyboardCopy": true,
+  "menuCopy": true,
+  "copyFocus": {
+    "tag": "TEXTAREA",
+    "terminalId": "9e8c9874-1bb3-4754-8701-f79fbdbc45e1"
+  },
+  "phases": [
+    {
+      "method": "keyboard",
+      "plain": "中文 prompt 🙂\nsecond line\n",
+      "expected": "\u001b[200~中文 prompt 🙂\rsecond line\r\u001b[201~",
+      "previous": {
+        "received": [],
+        "stage": "raw",
+        "cols": 109,
+        "rows": 30
+      },
+      "current": {
+        "received": [
+          "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e"
+        ],
+        "stage": "raw",
+        "cols": 109,
+        "rows": 30
+      }
+    },
+    {
+      "method": "menu",
+      "plain": "menu paste 中文\nline two\n",
+      "expected": "\u001b[200~menu paste 中文\rline two\r\u001b[201~",
+      "previous": {
+        "received": [
+          "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e"
+        ],
+        "stage": "raw",
+        "cols": 109,
+        "rows": 30
+      },
+      "current": {
+        "received": [
+          "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e",
+          "1b5b3230307e6d656e7520706173746520e4b8ade696870d6c696e652074776f0d1b5b3230317e"
+        ],
+        "stage": "raw",
+        "cols": 109,
+        "rows": 30
+      }
+    }
+  ],
+  "imageInput": {
+    "state": {
+      "received": [
+        "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e",
+        "1b5b3230307e6d656e7520706173746520e4b8ade696870d6c696e652074776f0d1b5b3230317e",
+        "1b5b3230307e272f686f6d652f6167656e742f2e73757065727365742d7373682d746573742d534b694c43592f6261636b656e642d686f6d652f53757065727365742052656d69782f776f726b74726565732f556e69666965642050726f6a6563742d61366631346132322d653533372d346431302d626238342d3230626261336335323536322f726573746f72652d6c6966656379636c652f2e73757065727365742f6174746163686d656e74732f696d6167655f322e706e67271b5b3230317e"
+      ],
+      "stage": "raw",
+      "cols": 109,
+      "rows": 30
+    },
+    "bytes": "\u001b[200~'/home/agent/.superset-ssh-test-SKiLCY/backend-home/Superset Remix/worktrees/Unified Project-a6f14a22-e537-4d10-bb84-20bba3c52562/restore-lifecycle/.superset/attachments/image_2.png'\u001b[201~"
+  },
+  "imageRead": {
+    "path": "/home/agent/.superset-ssh-test-SKiLCY/backend-home/Superset Remix/worktrees/Unified Project-a6f14a22-e537-4d10-bb84-20bba3c52562/restore-lifecycle/.superset/attachments/image_2.png",
+    "bytes": 166169,
+    "sha256": "2759cd22ccc54b73fbbdc12d5f2caeeca2c02786d3b4bcfca1e976d19fb75596",
+    "pixels": {
+      "size": {
+        "width": 1200,
+        "height": 872
+      },
+      "pixelSha256": "06551916b908bbdad5a5a9654009f2917308589ab1e7472f1f668e7ae8dc102c"
+    }
+  },
+  "osc52": "AGENT OSC52 中文 🙂",
+  "afterRemount": true,
+  "final": {
+    "received": [
+      "1b5b3230307ee4b8ade696872070726f6d707420f09f99820d7365636f6e64206c696e650d1b5b3230317e",
+      "1b5b3230307e6d656e7520706173746520e4b8ade696870d6c696e652074776f0d1b5b3230317e",
+      "1b5b3230307e272f686f6d652f6167656e742f2e73757065727365742d7373682d746573742d534b694c43592f6261636b656e642d686f6d652f53757065727365742052656d69782f776f726b74726565732f556e69666965642050726f6a6563742d61366631346132322d653533372d346431302d626238342d3230626261336335323536322f726573746f72652d6c6966656379636c652f2e73757065727365742f6174746163686d656e74732f696d6167655f322e706e67271b5b3230317e",
+      "6f",
+      "71"
+    ],
+    "stage": "finished",
+    "cols": 110,
+    "rows": 30
+  },
+  "errors": [],
+  "vendorAgentVerified": false
+}

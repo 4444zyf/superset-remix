@@ -4,7 +4,9 @@
 
 ## 2026-11-11 当前重点状态
 
-阶段一百四十六接回原右侧展开/还原：标签转移和原选择快照随私有V3布局原子保存，正常重开按原规则还原，隐藏时先还原，展开后合并清快照；用户宽度不被全宽覆盖。后台browser open保留展开快照，显式show在同次候选布局内还原并显示中间新页。219项/915断言、类型/17语言检查通过；最终无诊断包裹的本地/自有SSH各20阶段、合计300项API/CLI检查、CDP32条及SSH 20次恢复通过，冻结哈希/只读SQLite/清理通过。另有一次原CLI初始截图拒绝尚未定位，后续诊断未复现；保留该失败和有界本地诊断，不把最后通过视作稳定性已证明。双侧拖拽、最新双侧终端图片粘贴/滚轮和其他原功能继续。[阶段一百四十六证据](../implementation/evidence/local-ssh-feature-parity/stage146)。
+阶段一百四十七在最新1df4f741b编译上补验用户强调的双侧终端能力：本地/自有SSH分别通过右侧图片/文件/中文粘贴、展开右侧的受控TUI复制/括号粘贴/图片实际文件像素与哈希、移回中间后的真实重挂载与OSC52；完整TUI输入流逐字匹配，无额外转移/方向键输入。另两端滚轮套件通过普通上下滚动、TUI历史回看/复制、stock偏好及SGR/legacy/pixel切换；两个独立SSH套件各20次恢复。所有转移PID/执行/cwd保持，2420产物/88脚本/3639源码CLI图与各自冻结版本一致。没有修改终端产品代码，没有Mac/外部SSH/真实供应商Agent识图或新安装包声明；双侧拖拽及原功能清单继续，阶段146的一次未定位截图拒绝仍保留。[阶段一百四十七证据](../implementation/evidence/local-ssh-feature-parity/stage147)。
+
+阶段一百四十六接回原右侧展开/还原：标签转移和原选择快照随私有V3布局原子保存，正常重开按原规则还原，隐藏时先还原，展开后合并清快照；用户宽度不被全宽覆盖。后台browser open保留展开快照，显式show在同次候选布局内还原并显示中间新页。219项/915断言、类型/17语言检查通过；最终无诊断包裹的本地/自有SSH各20阶段、合计300项API/CLI检查、CDP32条及SSH 20次恢复通过，冻结哈希/只读SQLite/清理通过。另有一次原CLI初始截图拒绝尚未定位，后续诊断未复现；保留该失败和有界本地诊断，不把最后通过视作稳定性已证明。双侧拖拽、其他原功能继续（双侧终端图片粘贴/滚轮的最新补验见阶段147）。[阶段一百四十六证据](../implementation/evidence/local-ssh-feature-parity/stage146)。
 
 阶段一百四十五补齐原用户级右侧宽度持久化：沿现有私有SQLite偏好/CAS，旧行可读、不改schema版本，不进工作区布局或localStorage；拖动结束保存最终RAF值，双击保存窗口40%值，其他设置保存期间保留最新明确宽度。旧产品原生断言失败，53项/258断言及类型检查通过；本地/自有SSH最终实窗均恢复550像素自定义宽度及480复位值，原296项API/CLI检查、CDP32条及SSH 20次恢复通过；只读SQLite偏好schema1/revision2保存480，V3布局与冻结哈希保持，进程清理完成。原展开、双侧拖拽和其他功能继续。见[阶段一百四十五证据](../implementation/evidence/local-ssh-feature-parity/stage145)。
 
@@ -539,3 +541,16 @@ ba716c4d0复用原expandPaneArea/restorePaneArea，两个运行体逐字相同�
 最终各20阶段含移右、往返缩放、550重开、480复位、展开/还原、展开后隐藏/显示、展开后正常重开自动还原、实际受保护后台/显式show各一次并只清理这两个新浏览器、Files并存/重开、展开后合并、空右侧新建/关闭。原终端ID/执行/PID/cwd保持，renderer错误为空。两端原296项API/CLI检查加4项实际展开期间browser open合计300项（含8项预期认证拒绝）、CDP32条和SSH恢复20次通过；不把重复诊断轮次累加覆盖。源码1df4f741b完整编译退出0，2420编译文件/87脚本/3639源码CLI图最终无包裹两端哈希保持，随包CLI未重建；只读SQLite布局schema3（本地revision94、SSH149），两端用户偏好仍schema1/revision2/宽度480，已无展开快照，进程与X174清理通过。
 
 实际查看的截图列于final-verification.json；选择保留前后快照/受保护接口回执/失败及诊断/有界日志和哈希，不含资料DB、配置或密钥，秘密模式扫描通过。此为Linux源码Electron、自有loopback SSH与实际正常关闭重启；没有Mac、外部SSH、真实供应商Agent、新安装包或Actions验收声明。最新终端图片粘贴/滚轮、双侧拖拽和其余原功能继续。[阶段一百四十六证据](../implementation/evidence/local-ssh-feature-parity/stage146)。
+
+
+## 阶段一百四十七：最新双侧终端图片粘贴与滚轮补验（2026-11-11）
+
+仅增加拥有实例的原生夹具，没有改终端/复制粘贴/滚轮产品代码、打包安装物或用Actions；沿用1df4f741b编译。新受控helper从原标题菜单把新终端移右、原Expand展开、还原后移回中间并关闭空侧栏，每一步读取私有V3验证目标backend/namespace/workspace、所有资源ID/执行ID及实际终端PID/cwd保持。普通图片/文件/中文粘贴在真实右侧，原受控raw TUI复制/粘贴/图片在展开后的右侧，随后移回中间，Files/Terminal切换产生真实卸载/重挂载，再验证OSC52。没有通过菜单手势给TUI额外喂键。
+
+最终local-clipboard-image-read和ssh-clipboard-image-read均退出0：OS图片粘贴上传实际目标目录，原图片像素检查/远端shell读取/重复粘贴不覆盖、3474字节中文文本精确、36字节原生text/uri-list文件精确；TUI Ctrl+Shift+C与菜单复制返回本地剪贴板、菜单关闭后焦点属于同一终端、多行括号粘贴和图片路径、中心重挂载后的OSC52通过。受控TUI最终received解码严格等于两段预期括号文本+图片括号路径+明确的o/q，没有额外方向键、转移、重挂载输入。
+
+首轮两端已通过原断言，但SSH临时home在结束时清理，不能事后读取TUI图片；因此在仍活着的会话内独立解析TUI收到的shell路径、沿原filesystem.readFile读取真实PNG，用桌面原生解码核对像素。最终两端TUI实际文件的像素和编码SHA256都与正常OS剪贴板源一致；不是仅检查路径格式，也不是在本地伪造远端文件。数据见terminal-agent-clipboard-ui.json.imageRead与workstation-clipboard-ui.json，校验脚本不要求SSH临时目录在清理后仍存在。真实文件管理器Copy动作未验证；文件URI来自受控原生剪贴板，保留actualFileManagerCopy=false。
+
+local-wheel-right和ssh-wheel-right也均退出0：普通历史在右侧实测scrollbar上下变化，Shell/无鼠标TUI回看不发游标键，展开后历史review包含Shell/FIRST/SECOND屏，回看复制/图片保护和保存的stock偏好不向TUI输入；实际SGR上下改变内容偏移。还原/移中后真实Files重挂载不喂键，legacy高坐标保持8位原字节、pixel SGR保留像素坐标；均不出现ESC[A/B或SS3方向键。每个转移实际PID/执行/cwd保持。两个独立SSH套件各含20次恢复；不把它们描述为40种不同恢复。
+
+剪贴板与滚轮分别在各自88个MJS冻结版本运行前后核对；两组之间仅helper控制器解析、wheel夹具和SSH透传controls三个脚本按意图变化，2420编译文件与3639源码CLI图逐字相同，无新桌面/随包CLI二进制。四个最终实例退出0，自有进程及X175清理通过；选择收取批准的顶层JSON/日志/截图与冻结清单，不包含profiles、DB、配置、密钥，秘密模式扫描通过。已查看SSH普通右侧图片路径与展开TUI历史截图，路径列于final-verification.json。恢复夹具Claude/Codex/OMP标签只是自有心跳任务标题；raw TUI是受控Python字节接收器，vendorAgentVerified=false，没有真实供应商Agent识图、实体Mac或外部SSH验收声明。阶段146的一次原CLI截图拒绝仍未定位，本轮没有重测该通道；双侧拖拽等继续。[阶段一百四十七证据](../implementation/evidence/local-ssh-feature-parity/stage147)。
