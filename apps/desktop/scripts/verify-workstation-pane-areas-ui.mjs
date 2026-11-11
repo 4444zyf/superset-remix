@@ -64,7 +64,7 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
   await click('[data-pane-area="right"] button[data-slot="dropdown-menu-trigger"]');await menu('Browser');
   const added=await until(async()=>{const r=await read(),pane=r.workspace.panes.find(p=>p.kind==='browser'&&!original.workspace.panes.some(old=>old.paneId===p.paneId));return pane&&r.workspace.activePaneArea==='right'?{view:r,pane}:null;},'new browser is created in the explicitly selected empty right area');
   report.phases.push({name:'created-in-empty-right',view:added.view});await screenshot('pane-areas-created-right');save();
-  await click(`[data-pane-area="right"] [data-pane-id="${added.pane.paneId}"] button[aria-label="Close pane"]`);
+  await mouse(await point(`[data-pane-title-id="${added.pane.paneId}"]`),'right');await menu('Close pane');
   await until(async()=>!(await read()).workspace.panes.some(p=>p.paneId===added.pane.paneId),'only the new right browser is closed');
   await click('[data-pane-area="right"] button[aria-label="Toggle sidebar"]');
   report.terminalAfter=await controls.inspectPresetTerminal(terminal.id);
