@@ -1,0 +1,1925 @@
+{
+  "source": "original pane engine and resizer, physical host input, real private V3 storage",
+  "phases": [
+    {
+      "name": "moved-right",
+      "view": {
+        "revision": 66,
+        "workspace": {
+          "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+          "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+          "label": "Restore lifecycle",
+          "activeTool": "terminal",
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "panes": [
+            {
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+              "kind": "terminal",
+              "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+              "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+              "label": "Claude"
+            },
+            {
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+              "kind": "terminal",
+              "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+              "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+              "label": "Codex"
+            },
+            {
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "kind": "terminal",
+              "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+              "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+              "label": "OMP"
+            },
+            {
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "kind": "terminal",
+              "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+              "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "kind": "browser",
+              "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+              "browser": {
+                "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:35781/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+              "label": "Terminal",
+              "createdAt": 1794378117132,
+              "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "layout": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.37,
+                "first": {
+                  "type": "split",
+                  "axis": "vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "type": "pane",
+                    "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                  }
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                }
+              }
+            },
+            {
+              "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+              "label": "Terminal",
+              "createdAt": 1794378167625,
+              "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "layout": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              }
+            }
+          ],
+          "activePaneTabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+                "createdAt": 1794378170103,
+                "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            ],
+            "activeTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "resized",
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 550,
+        "passthrough": false
+      },
+      "view": {
+        "revision": 66,
+        "workspace": {
+          "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+          "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+          "label": "Restore lifecycle",
+          "activeTool": "terminal",
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "panes": [
+            {
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+              "kind": "terminal",
+              "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+              "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+              "label": "Claude"
+            },
+            {
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+              "kind": "terminal",
+              "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+              "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+              "label": "Codex"
+            },
+            {
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "kind": "terminal",
+              "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+              "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+              "label": "OMP"
+            },
+            {
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "kind": "terminal",
+              "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+              "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "kind": "browser",
+              "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+              "browser": {
+                "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:35781/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+              "label": "Terminal",
+              "createdAt": 1794378117132,
+              "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "layout": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.37,
+                "first": {
+                  "type": "split",
+                  "axis": "vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "type": "pane",
+                    "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                  }
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                }
+              }
+            },
+            {
+              "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+              "label": "Terminal",
+              "createdAt": 1794378167625,
+              "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "layout": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              }
+            }
+          ],
+          "activePaneTabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+                "createdAt": 1794378170103,
+                "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            ],
+            "activeTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "focus": {
+        "events": [
+          {
+            "time": 5312,
+            "tag": "INPUT",
+            "area": "center",
+            "pane": null,
+            "label": "Title",
+            "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+          },
+          {
+            "time": 5352.29999999702,
+            "tag": "DIV",
+            "area": null,
+            "pane": null,
+            "label": null,
+            "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33084:35\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:27957:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:28165:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:31715:19\n    at commitHookEffectListMount (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:12089:26)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13239:25)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13220:9)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13233:9)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13220:9)"
+          },
+          {
+            "time": 5383.70000000298,
+            "tag": "DIV",
+            "area": null,
+            "pane": null,
+            "label": null,
+            "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+          },
+          {
+            "time": 5485.399999991059,
+            "tag": "DIV",
+            "area": null,
+            "pane": null,
+            "label": null,
+            "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Object.onItemLeave (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33062:33)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33284:51\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33643:53\n    at handleEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:27957:31)\n    at processDispatchQueue (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:14858:15)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:15234:7\n    at batchedUpdates$1 (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:7166:38)\n    at dispatchEventForPluginEventSystem (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:14950:5)\n    at dispatchEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:16991:9)"
+          }
+        ],
+        "active": {
+          "tag": "BODY",
+          "area": null,
+          "pane": null
+        }
+      }
+    },
+    {
+      "name": "width-reopened",
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 550,
+        "passthrough": false
+      },
+      "view": {
+        "revision": 68,
+        "workspace": {
+          "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+          "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+          "label": "Restore lifecycle",
+          "activeTool": "terminal",
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "panes": [
+            {
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+              "kind": "terminal",
+              "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+              "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+              "label": "Claude"
+            },
+            {
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+              "kind": "terminal",
+              "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+              "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+              "label": "Codex"
+            },
+            {
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "kind": "terminal",
+              "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+              "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+              "label": "OMP"
+            },
+            {
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "kind": "terminal",
+              "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+              "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "kind": "browser",
+              "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+              "browser": {
+                "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:35781/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+              "label": "Terminal",
+              "createdAt": 1794378117132,
+              "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "layout": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.37,
+                "first": {
+                  "type": "split",
+                  "axis": "vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "type": "pane",
+                    "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                  }
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                }
+              }
+            },
+            {
+              "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+              "label": "Terminal",
+              "createdAt": 1794378167625,
+              "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "layout": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              }
+            }
+          ],
+          "activePaneTabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+                "createdAt": 1794378170103,
+                "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            ],
+            "activeTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      }
+    },
+    {
+      "name": "reset",
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      },
+      "view": {
+        "revision": 68,
+        "workspace": {
+          "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+          "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+          "label": "Restore lifecycle",
+          "activeTool": "terminal",
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "panes": [
+            {
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+              "kind": "terminal",
+              "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+              "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+              "label": "Claude"
+            },
+            {
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+              "kind": "terminal",
+              "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+              "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+              "label": "Codex"
+            },
+            {
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "kind": "terminal",
+              "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+              "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+              "label": "OMP"
+            },
+            {
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "kind": "terminal",
+              "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+              "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "kind": "browser",
+              "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+              "browser": {
+                "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:35781/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+              "label": "Terminal",
+              "createdAt": 1794378117132,
+              "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "layout": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.37,
+                "first": {
+                  "type": "split",
+                  "axis": "vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "type": "pane",
+                    "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                  }
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                }
+              }
+            },
+            {
+              "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+              "label": "Terminal",
+              "createdAt": 1794378167625,
+              "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "layout": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              }
+            }
+          ],
+          "activePaneTabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+                "createdAt": 1794378170103,
+                "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            ],
+            "activeTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "focus": {
+        "events": [],
+        "active": {
+          "tag": "BODY",
+          "area": null,
+          "pane": null
+        }
+      }
+    },
+    {
+      "name": "files-with-right",
+      "view": {
+        "revision": 69,
+        "workspace": {
+          "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+          "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+          "label": "Restore lifecycle",
+          "activeTool": "files",
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "panes": [
+            {
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+              "kind": "terminal",
+              "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+              "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+              "label": "Claude"
+            },
+            {
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+              "kind": "terminal",
+              "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+              "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+              "label": "Codex"
+            },
+            {
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "kind": "terminal",
+              "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+              "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+              "label": "OMP"
+            },
+            {
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "kind": "terminal",
+              "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+              "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "kind": "browser",
+              "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+              "browser": {
+                "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:35781/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+              "label": "Terminal",
+              "createdAt": 1794378117132,
+              "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "layout": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.37,
+                "first": {
+                  "type": "split",
+                  "axis": "vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "type": "pane",
+                    "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                  }
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                }
+              }
+            },
+            {
+              "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+              "label": "Terminal",
+              "createdAt": 1794378167625,
+              "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "layout": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              }
+            }
+          ],
+          "activePaneTabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+                "createdAt": 1794378170103,
+                "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            ],
+            "activeTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      }
+    },
+    {
+      "name": "reopened",
+      "view": {
+        "revision": 71,
+        "workspace": {
+          "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+          "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+          "label": "Restore lifecycle",
+          "activeTool": "files",
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "panes": [
+            {
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+              "kind": "terminal",
+              "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+              "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+              "label": "Claude"
+            },
+            {
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+              "kind": "terminal",
+              "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+              "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+              "label": "Codex"
+            },
+            {
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "kind": "terminal",
+              "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+              "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+              "label": "OMP"
+            },
+            {
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "kind": "terminal",
+              "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+              "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "kind": "browser",
+              "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+              "browser": {
+                "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:35781/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+              "label": "Terminal",
+              "createdAt": 1794378117132,
+              "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "layout": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.37,
+                "first": {
+                  "type": "split",
+                  "axis": "vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "type": "pane",
+                    "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                  }
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                }
+              }
+            },
+            {
+              "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+              "label": "Terminal",
+              "createdAt": 1794378167625,
+              "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "layout": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              }
+            }
+          ],
+          "activePaneTabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+                "createdAt": 1794378170103,
+                "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            ],
+            "activeTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      },
+      "geometry": {
+        "viewport": 1200,
+        "root": 944,
+        "right": 480,
+        "passthrough": false
+      }
+    },
+    {
+      "name": "merged-center",
+      "view": {
+        "revision": 73,
+        "workspace": {
+          "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+          "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+          "label": "Restore lifecycle",
+          "activeTool": "terminal",
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "panes": [
+            {
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+              "kind": "terminal",
+              "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+              "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+              "label": "Claude"
+            },
+            {
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+              "kind": "terminal",
+              "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+              "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+              "label": "Codex"
+            },
+            {
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "kind": "terminal",
+              "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+              "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+              "label": "OMP"
+            },
+            {
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "kind": "terminal",
+              "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+              "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "kind": "browser",
+              "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+              "browser": {
+                "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:35781/icon.svg"
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                }
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+              "label": "Terminal",
+              "createdAt": 1794378117132,
+              "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "layout": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.37,
+                "first": {
+                  "type": "split",
+                  "axis": "vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "type": "pane",
+                    "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                  }
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                }
+              }
+            },
+            {
+              "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+              "label": "Terminal",
+              "createdAt": 1794378167625,
+              "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "layout": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              }
+            },
+            {
+              "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+              "createdAt": 1794378170103,
+              "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "layout": {
+                "type": "pane",
+                "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+              }
+            }
+          ],
+          "activePaneTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [],
+            "activeTabId": null
+          },
+          "rightPaneOpen": false,
+          "activePaneArea": "center"
+        }
+      }
+    },
+    {
+      "name": "created-in-empty-right",
+      "view": {
+        "revision": 75,
+        "workspace": {
+          "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+          "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+          "label": "Restore lifecycle",
+          "activeTool": "terminal",
+          "activePaneId": "017c29f6-bad8-4c42-8c82-dd976f39a1f7",
+          "panes": [
+            {
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+              "kind": "terminal",
+              "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+              "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+              "label": "Claude"
+            },
+            {
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+              "kind": "terminal",
+              "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+              "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+              "label": "Codex"
+            },
+            {
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "kind": "terminal",
+              "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+              "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+              "label": "OMP"
+            },
+            {
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "kind": "terminal",
+              "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+              "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+              "label": "Terminal"
+            },
+            {
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "kind": "browser",
+              "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+              "browser": {
+                "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+                "pageTitle": "Owned browser home 中文 🙂",
+                "faviconUrl": "http://localhost:35781/icon.svg"
+              }
+            },
+            {
+              "paneId": "017c29f6-bad8-4c42-8c82-dd976f39a1f7",
+              "kind": "browser",
+              "resourceId": "37ff6ea2-b4d8-4561-8595-f3d04dc3fc97",
+              "browser": {
+                "url": "about:blank",
+                "pageTitle": "",
+                "faviconUrl": null
+              }
+            }
+          ],
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                }
+              }
+            },
+            "second": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              },
+              "second": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "017c29f6-bad8-4c42-8c82-dd976f39a1f7"
+                }
+              }
+            }
+          },
+          "paneTabs": [
+            {
+              "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+              "label": "Terminal",
+              "createdAt": 1794378117132,
+              "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+              "layout": {
+                "type": "split",
+                "axis": "horizontal",
+                "ratio": 0.37,
+                "first": {
+                  "type": "split",
+                  "axis": "vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "type": "pane",
+                    "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                  }
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+                }
+              }
+            },
+            {
+              "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+              "label": "Terminal",
+              "createdAt": 1794378167625,
+              "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+              "layout": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              }
+            },
+            {
+              "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+              "createdAt": 1794378170103,
+              "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "layout": {
+                "type": "pane",
+                "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+              }
+            }
+          ],
+          "activePaneTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+          "rightPaneLayout": {
+            "version": 1,
+            "tabs": [
+              {
+                "tabId": "5aa63964-972b-4349-8134-9896022fc565",
+                "createdAt": 1794378178605,
+                "activePaneId": "017c29f6-bad8-4c42-8c82-dd976f39a1f7",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "017c29f6-bad8-4c42-8c82-dd976f39a1f7"
+                }
+              }
+            ],
+            "activeTabId": "5aa63964-972b-4349-8134-9896022fc565"
+          },
+          "rightPaneOpen": true,
+          "activePaneArea": "right"
+        }
+      }
+    }
+  ],
+  "before": {
+    "revision": 64,
+    "workspace": {
+      "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+      "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+      "label": "Restore lifecycle",
+      "activeTool": "terminal",
+      "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+      "panes": [
+        {
+          "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+          "kind": "terminal",
+          "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+          "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+          "label": "Claude"
+        },
+        {
+          "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+          "kind": "terminal",
+          "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+          "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+          "label": "Codex"
+        },
+        {
+          "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+          "kind": "terminal",
+          "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+          "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+          "label": "OMP"
+        },
+        {
+          "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+          "kind": "terminal",
+          "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+          "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+          "label": "Terminal"
+        },
+        {
+          "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "kind": "browser",
+          "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+          "browser": {
+            "url": "about:blank",
+            "pageTitle": "",
+            "faviconUrl": null
+          }
+        }
+      ],
+      "layout": {
+        "type": "split",
+        "axis": "horizontal",
+        "ratio": 0.5,
+        "first": {
+          "type": "split",
+          "axis": "vertical",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+          },
+          "second": {
+            "type": "pane",
+            "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+          }
+        },
+        "second": {
+          "type": "split",
+          "axis": "vertical",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+          },
+          "second": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+            }
+          }
+        }
+      },
+      "paneTabs": [
+        {
+          "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+          "label": "Terminal",
+          "createdAt": 1794378117132,
+          "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.37,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              }
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+            }
+          }
+        },
+        {
+          "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+          "label": "Terminal",
+          "createdAt": 1794378167625,
+          "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+          "layout": {
+            "type": "pane",
+            "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+          }
+        },
+        {
+          "tabId": "b05275dd-51e6-4e51-ad6a-52d49633f551",
+          "createdAt": 1794378169684,
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "layout": {
+            "type": "pane",
+            "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+          }
+        }
+      ],
+      "activePaneTabId": "b05275dd-51e6-4e51-ad6a-52d49633f551",
+      "rightPaneLayout": {
+        "version": 1,
+        "tabs": [],
+        "activeTabId": null
+      },
+      "rightPaneOpen": false,
+      "activePaneArea": "center"
+    }
+  },
+  "terminalBefore": {
+    "id": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+    "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+    "pid": 41496,
+    "cols": 110,
+    "rows": 30,
+    "cwd": "/home/agent/.superset-ssh-test-txDRA0/backend-home/Superset Remix/worktrees/Unified Project-b4d645e2-400d-486c-ba98-117e9d6592fa/restore-lifecycle",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004hagent@aaaba53562f1:~/Superset Remix/worktrees/Unified Project-b4d645e2-400d-486c-ba98-117e9d6592fa/restore-lifecycle$ \r\u001b[K\ragent@aaaba53562f1:~/Superset Remix/worktrees/Unified Project-b4d645e2-400d-486c-ba98-117e9d6592fa/restore-lifecycle$ python3 -c 'import base64;exec(base64.b64decode(\"aW1wb3J0IGh0dHAuc2VydmVyLGpzb24sb3Msc2lnbmFsCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApzdGF0ZT17Im1hcmtlciI6Ik9XTkVELUJST1dTRVItNmUyYjMxYjUtY2JlMC00NjM1LTk2YTktN2Y5ODk4YmJkMTQ2IiwicmVxdWVzdHMiOltdLCJydW5uaW5nIjpUcnVlLCJwaWQiOm9zLmdldHBpZCgpfQpkZWYgc2F2ZSgpOiB0ZW1wPVBhdGgoJ2Jyb3dzZXItcHJvb2YudG1wJyk7dGVtcC53cml0ZV90ZXh0KGpzb24uZHVtcHMoc3RhdGUpKTt0ZW1wLnJlcGxhY2UoJ2Jyb3dzZXItcHJvb2YuanNvbicpCmNsYXNzIEhhbmRsZXIoaHR0cC5zZXJ2ZXIuQmFzZUhUVFBSZXF1ZXN0SGFuZGxlcik6CiBkZWYgZG9fR0VUKHNlbGYpOgogIHN0YXRlWydyZXF1ZXN0cyddLmFwcGVuZChzZWxmLnBhdGgpO3NhdmUoKQogIHRpdGxlPSdPd25lZCBicm93c2VyICcrKCduZXh0JyBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL25leHQnKSBlbHNlICdob21lJykrJyDkuK3mlocg8J+ZgicKICBib2R5PSgnPCFkb2N0eXBlIGh0bWw+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT4nK3RpdGxlKyc8L3RpdGxlPjxoMT4nK3N0YXRlWydtYXJrZXInXSsnPC9oMT48YSBpZD0ibmV4dCIgaHJlZj0iL25leHQ/dmFsdWU9JUU0JUI4JUFEJTIwaGVsbG8jc2VjdGlvbiI+TmV4dCBwYWdlPC9hPjxicj48YSBpZD0icG9wdXAiIHRhcmdldD0iX2JsYW5rIiBocmVmPSIvcG9wdXAiPk9wZW4gc2Vjb25kIHBhbmU8L2E+PHA+bmVlZGxlIG5lZWRsZSBuZWVkbGU8L3A+JykuZW5jb2RlKCkKICBib2R5PWJvZHkucmVwbGFjZShiJzx0aXRsZT4nLGInPGxpbmsgcmVsPSJpY29uIiBocmVmPSIvaWNvbi5zdmciPjx0aXRsZT4nKQogIGJvZHk9Ym9keStiJzxzY3JpcHQ+Y29uc29sZS53YXJuKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImgxIikudGV4dENvbnRlbnQpPC9zY3JpcHQ+JwogIHBhc3MKICBjb250ZW50X3R5cGU9J3RleHQvaHRtbDsgY2hhcnNldD11dGYtOCcKICBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL2ljb24uc3ZnJyk6IGJvZHk9KCc8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZGF0YS1vd25lZD0iJytzdGF0ZVsnbWFya2VyJ10rJyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImdyZWVuIi8+PC9zdmc+JykuZW5jb2RlKCk7Y29udGVudF90eXBlPSdpbWFnZS9zdmcreG1sJwogIGNhY2hlX2NvbnRyb2w9J25vLXN0b3JlJwogIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApO3NlbGYuc2VuZF9oZWFkZXIoJ0NvbnRlbnQtVHlwZScsY29udGVudF90eXBlKTtzZWxmLnNlbmRfaGVhZGVyKCdDYWNoZS1Db250cm9sJyxjYWNoZV9jb250cm9sKTtzZWxmLnNlbmRfaGVhZGVyKCdDb250ZW50LUxlbmd0aCcsc3RyKGxlbihib2R5KSkpO3NlbGYuZW5kX2hlYWRlcnMoKTtzZWxmLndmaWxlLndyaXRlKGJvZHkpCiBkZWYgbG9nX21lc3NhZ2Uoc2VsZiwqYXJncyk6IHBhc3MKc2VydmVyPWh0dHAuc2VydmVyLkhUVFBTZXJ2ZXIoKCcxMjcuMC4wLjEnLDApLEhhbmRsZXIpCnN0YXRlWydwb3J0J109c2VydmVyLnNlcnZlcl9wb3J0O3NhdmUoKQpwYXNzCnRyeTogc2VydmVyLnNlcnZlX2ZvcmV2ZXIoKQpleGNlcHQgS2V5Ym9hcmRJbnRlcnJ1cHQ6IHBhc3MKZmluYWxseTogc2VydmVyLnNlcnZlcl9jbG9zZSgpO3N0YXRlWydydW5uaW5nJ109RmFsc2U7c2F2ZSgp\"))'\r\n\u001b[?2004l\r"
+  },
+  "widthPreference": {
+    "resized": {
+      "revision": 1,
+      "invalid": false,
+      "values": {
+        "agentNativeInputEnabled": false,
+        "language": null,
+        "themeId": "dark",
+        "fontSettings": {},
+        "fileOpenMode": "split-pane",
+        "fileAutoSave": "off",
+        "confirmOnQuit": true,
+        "terminalCopyOnSelect": false,
+        "rightPaneAreaWidth": 550
+      }
+    },
+    "reset": {
+      "revision": 2,
+      "invalid": false,
+      "values": {
+        "agentNativeInputEnabled": false,
+        "language": null,
+        "themeId": "dark",
+        "fontSettings": {},
+        "fileOpenMode": "split-pane",
+        "fileAutoSave": "off",
+        "confirmOnQuit": true,
+        "terminalCopyOnSelect": false,
+        "rightPaneAreaWidth": 480
+      }
+    },
+    "completed": true
+  },
+  "afterFilesClick": {
+    "view": {
+      "revision": 69,
+      "workspace": {
+        "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+        "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+        "label": "Restore lifecycle",
+        "activeTool": "files",
+        "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+        "panes": [
+          {
+            "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+            "kind": "terminal",
+            "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+            "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+            "label": "Claude"
+          },
+          {
+            "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+            "kind": "terminal",
+            "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+            "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+            "label": "Codex"
+          },
+          {
+            "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+            "kind": "terminal",
+            "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+            "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+            "label": "OMP"
+          },
+          {
+            "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+            "kind": "terminal",
+            "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+            "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+            "kind": "browser",
+            "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+            "browser": {
+              "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:35781/icon.svg"
+            }
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+            }
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+              }
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+            "label": "Terminal",
+            "createdAt": 1794378117132,
+            "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+            "layout": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.37,
+              "first": {
+                "type": "split",
+                "axis": "vertical",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+                }
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+              }
+            }
+          },
+          {
+            "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+            "label": "Terminal",
+            "createdAt": 1794378167625,
+            "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+            "layout": {
+              "type": "pane",
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+            }
+          }
+        ],
+        "activePaneTabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+              "createdAt": 1794378170103,
+              "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+              "layout": {
+                "type": "pane",
+                "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+              }
+            }
+          ],
+          "activeTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      }
+    },
+    "focus": {
+      "events": [
+        {
+          "time": 1268.5,
+          "tag": "BUTTON",
+          "area": null,
+          "pane": null,
+          "label": null,
+          "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+        }
+      ],
+      "active": {
+        "tag": "BUTTON",
+        "area": null,
+        "pane": null
+      }
+    }
+  },
+  "terminalAfter": {
+    "id": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+    "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+    "pid": 41496,
+    "cols": 44,
+    "rows": 30,
+    "cwd": "/home/agent/.superset-ssh-test-txDRA0/backend-home/Superset Remix/worktrees/Unified Project-b4d645e2-400d-486c-ba98-117e9d6592fa/restore-lifecycle",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004hagent@aaaba53562f1:~/Superset Remix/worktrees/Unified Project-b4d645e2-400d-486c-ba98-117e9d6592fa/restore-lifecycle$ \r\u001b[K\ragent@aaaba53562f1:~/Superset Remix/worktrees/Unified Project-b4d645e2-400d-486c-ba98-117e9d6592fa/restore-lifecycle$ python3 -c 'import base64;exec(base64.b64decode(\"aW1wb3J0IGh0dHAuc2VydmVyLGpzb24sb3Msc2lnbmFsCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApzdGF0ZT17Im1hcmtlciI6Ik9XTkVELUJST1dTRVItNmUyYjMxYjUtY2JlMC00NjM1LTk2YTktN2Y5ODk4YmJkMTQ2IiwicmVxdWVzdHMiOltdLCJydW5uaW5nIjpUcnVlLCJwaWQiOm9zLmdldHBpZCgpfQpkZWYgc2F2ZSgpOiB0ZW1wPVBhdGgoJ2Jyb3dzZXItcHJvb2YudG1wJyk7dGVtcC53cml0ZV90ZXh0KGpzb24uZHVtcHMoc3RhdGUpKTt0ZW1wLnJlcGxhY2UoJ2Jyb3dzZXItcHJvb2YuanNvbicpCmNsYXNzIEhhbmRsZXIoaHR0cC5zZXJ2ZXIuQmFzZUhUVFBSZXF1ZXN0SGFuZGxlcik6CiBkZWYgZG9fR0VUKHNlbGYpOgogIHN0YXRlWydyZXF1ZXN0cyddLmFwcGVuZChzZWxmLnBhdGgpO3NhdmUoKQogIHRpdGxlPSdPd25lZCBicm93c2VyICcrKCduZXh0JyBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL25leHQnKSBlbHNlICdob21lJykrJyDkuK3mlocg8J+ZgicKICBib2R5PSgnPCFkb2N0eXBlIGh0bWw+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT4nK3RpdGxlKyc8L3RpdGxlPjxoMT4nK3N0YXRlWydtYXJrZXInXSsnPC9oMT48YSBpZD0ibmV4dCIgaHJlZj0iL25leHQ/dmFsdWU9JUU0JUI4JUFEJTIwaGVsbG8jc2VjdGlvbiI+TmV4dCBwYWdlPC9hPjxicj48YSBpZD0icG9wdXAiIHRhcmdldD0iX2JsYW5rIiBocmVmPSIvcG9wdXAiPk9wZW4gc2Vjb25kIHBhbmU8L2E+PHA+bmVlZGxlIG5lZWRsZSBuZWVkbGU8L3A+JykuZW5jb2RlKCkKICBib2R5PWJvZHkucmVwbGFjZShiJzx0aXRsZT4nLGInPGxpbmsgcmVsPSJpY29uIiBocmVmPSIvaWNvbi5zdmciPjx0aXRsZT4nKQogIGJvZHk9Ym9keStiJzxzY3JpcHQ+Y29uc29sZS53YXJuKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImgxIikudGV4dENvbnRlbnQpPC9zY3JpcHQ+JwogIHBhc3MKICBjb250ZW50X3R5cGU9J3RleHQvaHRtbDsgY2hhcnNldD11dGYtOCcKICBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL2ljb24uc3ZnJyk6IGJvZHk9KCc8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZGF0YS1vd25lZD0iJytzdGF0ZVsnbWFya2VyJ10rJyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImdyZWVuIi8+PC9zdmc+JykuZW5jb2RlKCk7Y29udGVudF90eXBlPSdpbWFnZS9zdmcreG1sJwogIGNhY2hlX2NvbnRyb2w9J25vLXN0b3JlJwogIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApO3NlbGYuc2VuZF9oZWFkZXIoJ0NvbnRlbnQtVHlwZScsY29udGVudF90eXBlKTtzZWxmLnNlbmRfaGVhZGVyKCdDYWNoZS1Db250cm9sJyxjYWNoZV9jb250cm9sKTtzZWxmLnNlbmRfaGVhZGVyKCdDb250ZW50LUxlbmd0aCcsc3RyKGxlbihib2R5KSkpO3NlbGYuZW5kX2hlYWRlcnMoKTtzZWxmLndmaWxlLndyaXRlKGJvZHkpCiBkZWYgbG9nX21lc3NhZ2Uoc2VsZiwqYXJncyk6IHBhc3MKc2VydmVyPWh0dHAuc2VydmVyLkhUVFBTZXJ2ZXIoKCcxMjcuMC4wLjEnLDApLEhhbmRsZXIpCnN0YXRlWydwb3J0J109c2VydmVyLnNlcnZlcl9wb3J0O3NhdmUoKQpwYXNzCnRyeTogc2VydmVyLnNlcnZlX2ZvcmV2ZXIoKQpleGNlcHQgS2V5Ym9hcmRJbnRlcnJ1cHQ6IHBhc3MKZmluYWxseTogc2VydmVyLnNlcnZlcl9jbG9zZSgpO3N0YXRlWydydW5uaW5nJ109RmFsc2U7c2F2ZSgp\"))'\r\n\u001b[?2004l\r"
+  },
+  "completed": true,
+  "finalView": {
+    "revision": 77,
+    "workspace": {
+      "tabId": "bf4fb712-2024-42f4-ae95-9aae307bd15d",
+      "workspaceId": "e38a033d-5afa-497c-bf60-e594492e5af8",
+      "label": "Restore lifecycle",
+      "activeTool": "terminal",
+      "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+      "panes": [
+        {
+          "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7",
+          "kind": "terminal",
+          "resourceId": "c2e8914a-39a9-4ea7-b020-34068fbe5a91",
+          "executionId": "cee5431e-6620-4e46-b44a-acf41ab2e22e",
+          "label": "Claude"
+        },
+        {
+          "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c",
+          "kind": "terminal",
+          "resourceId": "742e6dd8-8a5a-428e-bd90-5caa7459c61d",
+          "executionId": "a2bd84a6-861f-44a7-88f8-8979d5022263",
+          "label": "Codex"
+        },
+        {
+          "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+          "kind": "terminal",
+          "resourceId": "0489e6cd-8d18-4cbb-b883-f597c187940b",
+          "executionId": "2148194d-a965-4829-a6cf-d92ccabc1c7c",
+          "label": "OMP"
+        },
+        {
+          "paneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+          "kind": "terminal",
+          "resourceId": "dcf0272b-4409-4bce-af68-f9b5f260bdc6",
+          "executionId": "43f31cfe-739b-48fc-8831-648f229787b2",
+          "label": "Terminal"
+        },
+        {
+          "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "kind": "browser",
+          "resourceId": "6e2ac758-3c19-434a-873a-d9369d5f2063",
+          "browser": {
+            "url": "http://localhost:35781/preview?first=%E4%B8%AD#initial",
+            "pageTitle": "Owned browser home 中文 🙂",
+            "faviconUrl": "http://localhost:35781/icon.svg"
+          }
+        }
+      ],
+      "layout": {
+        "type": "split",
+        "axis": "horizontal",
+        "ratio": 0.5,
+        "first": {
+          "type": "split",
+          "axis": "vertical",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+          },
+          "second": {
+            "type": "pane",
+            "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+          }
+        },
+        "second": {
+          "type": "split",
+          "axis": "vertical",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+          },
+          "second": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+            }
+          }
+        }
+      },
+      "paneTabs": [
+        {
+          "tabId": "e3b1134e-5397-407e-9d6f-66d7ce1061dd",
+          "label": "Terminal",
+          "createdAt": 1794378117132,
+          "activePaneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0",
+          "layout": {
+            "type": "split",
+            "axis": "horizontal",
+            "ratio": 0.37,
+            "first": {
+              "type": "split",
+              "axis": "vertical",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "401d8099-c964-4fe0-9e27-12c0d2a433e7"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "09ad7a66-09e9-443c-aa0b-632a1285f8f0"
+              }
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "49c2c73a-5dea-4fea-9ac6-95aa6cb0d16c"
+            }
+          }
+        },
+        {
+          "tabId": "68de743f-6651-41da-aadf-1f840bf64f74",
+          "label": "Terminal",
+          "createdAt": 1794378167625,
+          "activePaneId": "b41ac444-3398-4810-a792-9994fa6679a5",
+          "layout": {
+            "type": "pane",
+            "paneId": "b41ac444-3398-4810-a792-9994fa6679a5"
+          }
+        },
+        {
+          "tabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+          "createdAt": 1794378170103,
+          "activePaneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4",
+          "layout": {
+            "type": "pane",
+            "paneId": "8d825a65-2c44-4834-8507-dd0fba6d6cb4"
+          }
+        }
+      ],
+      "activePaneTabId": "tab-ef219afe-e730-4856-b4f8-8f5ce2e72c96",
+      "rightPaneLayout": {
+        "version": 1,
+        "tabs": [],
+        "activeTabId": null
+      },
+      "rightPaneOpen": false,
+      "activePaneArea": "center"
+    }
+  },
+  "finalFocus": {
+    "events": [
+      {
+        "time": 1905.5,
+        "tag": "BUTTON",
+        "area": "right",
+        "pane": null,
+        "label": "Merge into center",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2232.0999999940395,
+        "tag": "BUTTON",
+        "area": "center",
+        "pane": null,
+        "label": "Toggle sidebar",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2297.9000000059605,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33084:35\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:27957:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:28165:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:31715:19\n    at commitHookEffectListMount (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:12089:26)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13239:25)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13220:9)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13336:9)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13220:9)"
+      },
+      {
+        "time": 2319.5,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2399.7000000029802,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at Object.onItemLeave (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33062:33)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33284:51\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33643:53\n    at handleEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:27957:31)\n    at processDispatchQueue (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:14858:15)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:15234:7\n    at batchedUpdates$1 (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:7166:38)\n    at dispatchEventForPluginEventSystem (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:14950:5)\n    at dispatchEvent (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:16991:9)"
+      },
+      {
+        "time": 2507.5,
+        "tag": "BUTTON",
+        "area": "right",
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:34945:77\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:27957:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:28165:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:31728:21"
+      },
+      {
+        "time": 2700.4000000059605,
+        "tag": "INPUT",
+        "area": "right",
+        "pane": null,
+        "label": "Title",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2744.2999999970198,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:33084:35\n    at Object.handleEvent [as current] (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:27957:31)\n    at HTMLDivElement.<anonymous> (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:28165:71)\n    at file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:31715:19\n    at commitHookEffectListMount (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:12089:26)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13239:25)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13220:9)\n    at commitPassiveMountOnFiber (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13233:9)\n    at recursivelyTraversePassiveMountEffects (file:///workspace/superset-remix-parity/apps/desktop/dist/renderer/assets/index-D0TziSrT.js:13220:9)"
+      },
+      {
+        "time": 2762.2000000029802,
+        "tag": "DIV",
+        "area": null,
+        "pane": null,
+        "label": null,
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      },
+      {
+        "time": 2825,
+        "tag": "BUTTON",
+        "area": "right",
+        "pane": null,
+        "label": "Toggle sidebar",
+        "stack": "Error: Owned passive focus trace\n    at window.__ownedAreaFocusListener (<anonymous>:1:401)"
+      }
+    ],
+    "active": {
+      "tag": "BODY",
+      "area": null,
+      "pane": null
+    }
+  }
+}

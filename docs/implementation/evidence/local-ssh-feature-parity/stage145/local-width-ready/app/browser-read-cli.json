@@ -1,0 +1,233 @@
+{
+  "mode": "Original source CLI dev runner, real Electron peer and owned namespace; bundled CLI unchanged",
+  "source": "2f17707e5",
+  "calls": [
+    {
+      "command": "list",
+      "flags": [],
+      "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+      "stdout": "[\n  {\n    \"paneId\": \"5a88b94d-cd48-46d2-b0f4-3721f9e096ce\",\n    \"workspaceId\": \"fb219b3f-ad30-4f30-83b9-d474fb259f5b\",\n    \"url\": \"http://localhost:34829/preview?first=%E4%B8%AD#initial\",\n    \"title\": \"Owned browser home 中文 🙂\",\n    \"isLoading\": false\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "5a88b94d-cd48-46d2-b0f4-3721f9e096ce"
+      ],
+      "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+      "stdout": "[\n  {\n    \"level\": \"warn\",\n    \"message\": \"OWNED-BROWSER-cd35ef67-4e73-426a-8011-47eb13f4499e\",\n    \"timestamp\": 1794378378915\n  },\n  {\n    \"level\": \"warn\",\n    \"message\": \"%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\\n  Policy set or a policy with \\\"unsafe-eval\\\" enabled. This exposes users of\\n  this app to unnecessary security risks.\\n\\nFor more information and help, consult\\nhttps://electronjs.org/docs/tutorial/security.\\nThis warning will not show up\\nonce the app is packaged.\",\n    \"timestamp\": 1794378378920\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "5a88b94d-cd48-46d2-b0f4-3721f9e096ce",
+        "--max-lines",
+        "0"
+      ],
+      "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+      "stdout": "[]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "list",
+      "flags": [],
+      "workspaceId": "3605a234-4a1d-4fb0-b0cd-a1f8ad9e40e3",
+      "stdout": "[]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "5a88b94d-cd48-46d2-b0f4-3721f9e096ce"
+      ],
+      "workspaceId": "a873a46a-46b8-4999-bfdd-0d84c260db29",
+      "stdout": "",
+      "stderr": "Error: Browser read failed or pane is no longer current\n",
+      "code": 1
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "5a88b94d-cd48-46d2-b0f4-3721f9e096ce",
+        "--out",
+        "/workspace/scratch/parity-145/local-width-ready/app/cli-browser-initial.png"
+      ],
+      "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+      "stdout": "{\n  \"path\": \"/workspace/scratch/parity-145/local-width-ready/app/cli-browser-initial.png\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "5a88b94d-cd48-46d2-b0f4-3721f9e096ce",
+        "--out",
+        "/workspace/scratch/parity-145/local-width-ready/app/cli-browser-hidden.png"
+      ],
+      "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+      "stdout": "{\n  \"path\": \"/workspace/scratch/parity-145/local-width-ready/app/cli-browser-hidden.png\"\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "5a88b94d-cd48-46d2-b0f4-3721f9e096ce",
+        "--out",
+        "/workspace/scratch/parity-145/local-width-ready/app/cli-browser-denied.png"
+      ],
+      "workspaceId": "16e1178f-2472-4b1f-ba81-01592059f37e",
+      "stdout": "",
+      "stderr": "Error: Browser screenshot failed or pane is no longer current\n",
+      "code": 1
+    },
+    {
+      "command": "list",
+      "flags": [],
+      "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+      "stdout": "[\n  {\n    \"paneId\": \"5a88b94d-cd48-46d2-b0f4-3721f9e096ce\",\n    \"workspaceId\": \"fb219b3f-ad30-4f30-83b9-d474fb259f5b\",\n    \"url\": \"http://localhost:34829/next?value=%E4%B8%AD%20hello#section\",\n    \"title\": \"Owned browser next 中文 🙂\",\n    \"isLoading\": false\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "console",
+      "flags": [
+        "--pane",
+        "5a88b94d-cd48-46d2-b0f4-3721f9e096ce"
+      ],
+      "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+      "stdout": "[\n  {\n    \"level\": \"warn\",\n    \"message\": \"OWNED-BROWSER-cd35ef67-4e73-426a-8011-47eb13f4499e\",\n    \"timestamp\": 1794378443601\n  },\n  {\n    \"level\": \"warn\",\n    \"message\": \"%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\\n  Policy set or a policy with \\\"unsafe-eval\\\" enabled. This exposes users of\\n  this app to unnecessary security risks.\\n\\nFor more information and help, consult\\nhttps://electronjs.org/docs/tutorial/security.\\nThis warning will not show up\\nonce the app is packaged.\",\n    \"timestamp\": 1794378443609\n  }\n]\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "screenshot",
+      "flags": [
+        "--pane",
+        "5a88b94d-cd48-46d2-b0f4-3721f9e096ce",
+        "--out",
+        "/workspace/scratch/parity-145/local-width-ready/app/cli-browser-reopened.png"
+      ],
+      "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+      "stdout": "{\n  \"path\": \"/workspace/scratch/parity-145/local-width-ready/app/cli-browser-reopened.png\"\n}\n",
+      "stderr": "",
+      "code": 0
+    }
+  ],
+  "initialCapture": {
+    "file": "/workspace/scratch/parity-145/local-width-ready/app/cli-browser-initial.png",
+    "bytes": 19430,
+    "sha256": "5ed55c32da3914788d8008c83e38fb024f0c4c0142f8ff40ee94120e15367d19",
+    "image": {
+      "size": {
+        "width": 940,
+        "height": 437
+      },
+      "pixelSha256": "e2044aab8bf0ad959850bc8868e367c51db92df2406364322986b16719a99d54",
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "clipboardUnchanged": true
+  },
+  "hiddenCapture": {
+    "file": "/workspace/scratch/parity-145/local-width-ready/app/cli-browser-hidden.png",
+    "bytes": 19430,
+    "sha256": "5ed55c32da3914788d8008c83e38fb024f0c4c0142f8ff40ee94120e15367d19",
+    "image": {
+      "size": {
+        "width": 940,
+        "height": 437
+      },
+      "pixelSha256": "e2044aab8bf0ad959850bc8868e367c51db92df2406364322986b16719a99d54",
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "clipboardUnchanged": true
+  },
+  "foreignCaptureRefused": true,
+  "initial": {
+    "paneId": "5a88b94d-cd48-46d2-b0f4-3721f9e096ce",
+    "rows": [
+      {
+        "paneId": "5a88b94d-cd48-46d2-b0f4-3721f9e096ce",
+        "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+        "url": "http://localhost:34829/preview?first=%E4%B8%AD#initial",
+        "title": "Owned browser home 中文 🙂",
+        "isLoading": false
+      }
+    ],
+    "consoleRows": [
+      {
+        "level": "warn",
+        "message": "OWNED-BROWSER-cd35ef67-4e73-426a-8011-47eb13f4499e",
+        "timestamp": 1794378378915
+      },
+      {
+        "level": "warn",
+        "message": "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.",
+        "timestamp": 1794378378920
+      }
+    ]
+  },
+  "reopenedCapture": {
+    "file": "/workspace/scratch/parity-145/local-width-ready/app/cli-browser-reopened.png",
+    "bytes": 19430,
+    "sha256": "5ed55c32da3914788d8008c83e38fb024f0c4c0142f8ff40ee94120e15367d19",
+    "image": {
+      "size": {
+        "width": 940,
+        "height": 437
+      },
+      "pixelSha256": "e2044aab8bf0ad959850bc8868e367c51db92df2406364322986b16719a99d54",
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "clipboardUnchanged": true
+  },
+  "reopened": {
+    "rows": [
+      {
+        "paneId": "5a88b94d-cd48-46d2-b0f4-3721f9e096ce",
+        "workspaceId": "fb219b3f-ad30-4f30-83b9-d474fb259f5b",
+        "url": "http://localhost:34829/next?value=%E4%B8%AD%20hello#section",
+        "title": "Owned browser next 中文 🙂",
+        "isLoading": false
+      }
+    ],
+    "consoleRows": [
+      {
+        "level": "warn",
+        "message": "OWNED-BROWSER-cd35ef67-4e73-426a-8011-47eb13f4499e",
+        "timestamp": 1794378443601
+      },
+      {
+        "level": "warn",
+        "message": "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.",
+        "timestamp": 1794378443609
+      }
+    ]
+  }
+}

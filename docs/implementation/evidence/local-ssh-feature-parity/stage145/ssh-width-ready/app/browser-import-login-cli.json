@@ -1,0 +1,229 @@
+{
+  "source": "2f17707e5",
+  "mode": "Original source import-login CLI with explicit local or owned SSH namespace and no Superset account; real original Linux empty login list/rejections plus durable API receipt inspection, no positive credential or CLI mutation claim",
+  "calls": [
+    {
+      "command": "import-login",
+      "flags": [
+        "--workspace",
+        "c3864266-4512-4ee0-81b1-5df4020ce338",
+        "--pane",
+        "52576d83-3651-4894-a0d5-f2504aaa9915"
+      ],
+      "namespace": true,
+      "stdout": "",
+      "stderr": "Error: No Chromium browsers found to import from\nHint: Superset can import from Chromium-based browsers such as Chrome, Edge, Brave, Arc, Dia, Comet, Aside, Helium, Vivaldi, and Opera.\n",
+      "code": 1
+    },
+    {
+      "command": "import-login",
+      "flags": [
+        "--workspace",
+        "c3864266-4512-4ee0-81b1-5df4020ce338",
+        "--pane",
+        "52576d83-3651-4894-a0d5-f2504aaa9915",
+        "--from",
+        "Chrome",
+        "--operation-id",
+        "439dbed3-2b4f-4e18-ac30-ca5f6ac189ba"
+      ],
+      "namespace": true,
+      "stdout": "",
+      "stderr": "Error: No Chromium browsers found to import from\nHint: Superset can import from Chromium-based browsers such as Chrome, Edge, Brave, Arc, Dia, Comet, Aside, Helium, Vivaldi, and Opera.\n",
+      "code": 1
+    },
+    {
+      "command": "import-login",
+      "flags": [
+        "--workspace",
+        "c3864266-4512-4ee0-81b1-5df4020ce338",
+        "--pane",
+        "52576d83-3651-4894-a0d5-f2504aaa9915",
+        "--from",
+        "Chrome"
+      ],
+      "namespace": true,
+      "stdout": "",
+      "stderr": "Error: --namespace browser login import with --from requires --operation-id\n",
+      "code": 1
+    },
+    {
+      "command": "import-login",
+      "flags": [
+        "--workspace",
+        "c3864266-4512-4ee0-81b1-5df4020ce338",
+        "--pane",
+        "52576d83-3651-4894-a0d5-f2504aaa9915",
+        "--from",
+        "Chrome",
+        "--operation-id",
+        "not-a-uuid"
+      ],
+      "namespace": true,
+      "stdout": "",
+      "stderr": "Error: input: Invalid UUID\n",
+      "code": 1
+    },
+    {
+      "command": "import-login",
+      "flags": [
+        "--workspace",
+        "c3864266-4512-4ee0-81b1-5df4020ce338",
+        "--pane",
+        "52576d83-3651-4894-a0d5-f2504aaa9915",
+        "--host",
+        "foreign-host"
+      ],
+      "namespace": true,
+      "stdout": "",
+      "stderr": "Error: Pass either --namespace or --host, not both\n",
+      "code": 1
+    },
+    {
+      "command": "import-login",
+      "flags": [
+        "--workspace",
+        "c3864266-4512-4ee0-81b1-5df4020ce338",
+        "--pane",
+        "52576d83-3651-4894-a0d5-f2504aaa9915",
+        "--operation-id",
+        "439dbed3-2b4f-4e18-ac30-ca5f6ac189ba"
+      ],
+      "namespace": false,
+      "stdout": "",
+      "stderr": "Error: Not logged in\nHint: Run: superset auth login (or set SUPERSET_API_KEY)\n",
+      "code": 1
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "439dbed3-2b4f-4e18-ac30-ca5f6ac189ba"
+      ],
+      "namespace": true,
+      "stdout": "null\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "258c1616-a711-4a46-a4d1-bd304aa2a779"
+      ],
+      "namespace": true,
+      "stdout": "{\n  \"operationId\": \"258c1616-a711-4a46-a4d1-bd304aa2a779\",\n  \"procedure\": \"browser.importCookiesV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"c3864266-4512-4ee0-81b1-5df4020ce338\"\n  },\n  \"result\": {\n    \"imported\": 0,\n    \"skipped\": 0,\n    \"keyUnavailable\": false\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "9b73feb7-a728-495c-8293-62cc28c119f7"
+      ],
+      "namespace": true,
+      "stdout": "{\n  \"operationId\": \"9b73feb7-a728-495c-8293-62cc28c119f7\",\n  \"procedure\": \"browser.importCookiesV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"c3864266-4512-4ee0-81b1-5df4020ce338\"\n  },\n  \"result\": {\n    \"imported\": 0,\n    \"skipped\": 0,\n    \"keyUnavailable\": true\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "import-login",
+      "flags": [
+        "--workspace",
+        "c3864266-4512-4ee0-81b1-5df4020ce338",
+        "--pane",
+        "52576d83-3651-4894-a0d5-f2504aaa9915"
+      ],
+      "namespace": true,
+      "stdout": "",
+      "stderr": "Error: No Chromium browsers found to import from\nHint: Superset can import from Chromium-based browsers such as Chrome, Edge, Brave, Arc, Dia, Comet, Aside, Helium, Vivaldi, and Opera.\n",
+      "code": 1
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "258c1616-a711-4a46-a4d1-bd304aa2a779"
+      ],
+      "namespace": true,
+      "stdout": "{\n  \"operationId\": \"258c1616-a711-4a46-a4d1-bd304aa2a779\",\n  \"procedure\": \"browser.importCookiesV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"c3864266-4512-4ee0-81b1-5df4020ce338\"\n  },\n  \"result\": {\n    \"imported\": 0,\n    \"skipped\": 0,\n    \"keyUnavailable\": false\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    },
+    {
+      "command": "operation-status",
+      "flags": [
+        "--operation-id",
+        "9b73feb7-a728-495c-8293-62cc28c119f7"
+      ],
+      "namespace": true,
+      "stdout": "{\n  \"operationId\": \"9b73feb7-a728-495c-8293-62cc28c119f7\",\n  \"procedure\": \"browser.importCookiesV1\",\n  \"status\": \"completed\",\n  \"entityIds\": {\n    \"workspaceId\": \"c3864266-4512-4ee0-81b1-5df4020ce338\"\n  },\n  \"result\": {\n    \"imported\": 0,\n    \"skipped\": 0,\n    \"keyUnavailable\": true\n  }\n}\n",
+      "stderr": "",
+      "code": 0
+    }
+  ],
+  "completed": {
+    "originalLinuxEmptyLoginList": true,
+    "noAccountFallback": true,
+    "noMutationForMissingSource": true,
+    "unusedOperationId": "439dbed3-2b4f-4e18-ac30-ca5f6ac189ba",
+    "firstReceipt": {
+      "operationId": "258c1616-a711-4a46-a4d1-bd304aa2a779",
+      "procedure": "browser.importCookiesV1",
+      "status": "completed",
+      "entityIds": {
+        "workspaceId": "c3864266-4512-4ee0-81b1-5df4020ce338"
+      },
+      "result": {
+        "imported": 0,
+        "skipped": 0,
+        "keyUnavailable": false
+      }
+    },
+    "keyUnavailableReceipt": {
+      "operationId": "9b73feb7-a728-495c-8293-62cc28c119f7",
+      "procedure": "browser.importCookiesV1",
+      "status": "completed",
+      "entityIds": {
+        "workspaceId": "c3864266-4512-4ee0-81b1-5df4020ce338"
+      },
+      "result": {
+        "imported": 0,
+        "skipped": 0,
+        "keyUnavailable": true
+      }
+    },
+    "sourceFilesUnchanged": [
+      {
+        "path": "/workspace/scratch/parity-145/ssh-width-ready/config/google-chrome/Default/History",
+        "sha256": "fb8beccb1d62d94eaf85f4ab481d9ee027026648333e4481856267997548bc44"
+      },
+      {
+        "path": "/workspace/scratch/parity-145/ssh-width-ready/config/google-chrome/Local State",
+        "sha256": "41ee48c4bce1fa45f6ed4a65fe25712f78aeade2009b7deef60e0da71e0af6b9"
+      }
+    ],
+    "jarUnchanged": true,
+    "backgroundSelectionAndFocusPreserved": true,
+    "rendererErrors": []
+  },
+  "reopened": {
+    "originalLinuxEmptyLoginList": true,
+    "sameOriginalReceipts": true,
+    "noReimport": true,
+    "sourceFilesUnchanged": [
+      {
+        "path": "/workspace/scratch/parity-145/ssh-width-ready/config/google-chrome/Default/History",
+        "sha256": "fb8beccb1d62d94eaf85f4ab481d9ee027026648333e4481856267997548bc44"
+      },
+      {
+        "path": "/workspace/scratch/parity-145/ssh-width-ready/config/google-chrome/Local State",
+        "sha256": "41ee48c4bce1fa45f6ed4a65fe25712f78aeade2009b7deef60e0da71e0af6b9"
+      }
+    ],
+    "jarUnchanged": true,
+    "selectionAndFocusPreserved": true,
+    "rendererErrors": []
+  }
+}
