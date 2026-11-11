@@ -24,6 +24,16 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
  const ids=w=>w.panes.map(p=>[p.paneId,p.kind,p.resourceId,p.executionId]).sort((a,b)=>a[0].localeCompare(b[0]));
  const installFocusTrace=()=>evaluate(`(()=>{window.__ownedAreaFocusTrace=[];window.__ownedAreaFocusListener=e=>{const t=e.target;if(window.__ownedAreaFocusTrace.length<80)window.__ownedAreaFocusTrace.push({time:performance.now(),tag:t.tagName,area:t.closest?.('[data-pane-area]')?.getAttribute('data-pane-area')??null,pane:t.closest?.('[data-pane-id]')?.getAttribute('data-pane-id')??null,label:t.getAttribute?.('aria-label')??null,stack:new Error('Owned passive focus trace').stack});};document.addEventListener('focusin',window.__ownedAreaFocusListener,true);return true;})()`);
  const focusTrace=()=>evaluate(`({events:window.__ownedAreaFocusTrace??[],active:{tag:document.activeElement?.tagName,area:document.activeElement?.closest?.('[data-pane-area]')?.getAttribute('data-pane-area')??null,pane:document.activeElement?.closest?.('[data-pane-id]')?.getAttribute('data-pane-id')??null}})`);
+ if(process.argv.includes('--pane-capture-trace')) {
+  const main=options.getMain();
+  try {
+   const prototype=await main.call('Runtime.evaluate',{expression:'Object.prototype'}),objects=await main.call('Runtime.queryObjects',{prototypeObjectId:prototype.result.objectId});
+   const result=await main.call('Runtime.callFunctionOn',{objectId:objects.objects.objectId,returnByValue:true,functionDeclaration:`function(){const manager=this.find(o=>o?.constructor?.name==='BrowserManager');if(!manager)return {installed:false};globalThis.__ownedCaptureTrace=[];const original=manager.capturePng;manager.capturePng=async function(...args){const row={paneId:args[0],workspaceId:args[1],started:Date.now()};try{const result=await Reflect.apply(original,this,args);row.ok=true;return result}catch(error){row.ok=false;row.error={name:error?.name,message:String(error?.message).slice(0,500)};throw error}finally{row.elapsed=Date.now()-row.started;globalThis.__ownedCaptureTrace.push(row);if(globalThis.__ownedCaptureTrace.length>32)globalThis.__ownedCaptureTrace.shift()}};return {installed:true}}`});
+   report.captureTrace=result.result.value;
+   await main.call('Runtime.releaseObject',{objectId:objects.objects.objectId});await main.call('Runtime.releaseObject',{objectId:prototype.result.objectId});
+  } catch(error){report.captureTrace={installed:false,error:String(error)}}
+  save();
+ }
  await installFocusTrace();
  const original=await read(),browser=original.workspace.panes.find(p=>p.kind==='browser'&&p.paneId===original.workspace.activePaneId);
  assert.ok(browser);report.before=original;report.terminalBefore=await controls.inspectPresetTerminal(terminal.id);save();
