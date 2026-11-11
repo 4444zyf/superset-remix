@@ -9,6 +9,8 @@ import {
 } from "@testing-library/react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { createPortal } from "react-dom";
+import { RightPaneAreaView } from "renderer/components/RightPaneAreaView";
 import {
 	fixture as areaFixture,
 	workspace as fixtureWorkspace,
@@ -350,6 +352,71 @@ test("controlled grids leave paired stores and runtime ownership to their parent
 		expect(active("terminal")).toBe("false");
 		expect(active("browser")).toBe("true");
 		expect(writes).toBe(0);
+	} finally {
+		view.unmount();
+		areas.dispose();
+	}
+});
+
+test.each([
+	"center",
+	"right",
+] as const)("portal menu events cannot reactivate their source %s area", (area) => {
+	const workspace = fixtureWorkspace(areaFixture());
+	const areas = createWorkspacePaneAreas(workspace);
+	let activations = 0;
+	const view = render(
+		<DndProvider backend={HTML5Backend}>
+			<TooltipProvider>
+				<PaneGrid
+					api={{} as DirectWorkstationApi}
+					connection={null}
+					workspace={workspace}
+					checks={[]}
+					actions={{ busy: false } as WorkspaceViewActions}
+					controlled={{
+						store: areas[area],
+						linkedStores: [areas[area === "center" ? "right" : "center"]],
+						area,
+						active: false,
+						onActivate: () => {
+							activations++;
+						},
+						renderWorkspace: (props) => {
+							const controls = (
+								<>
+									<input aria-label="Owned pane input" />
+									{createPortal(
+										<button type="button">Owned portal menu</button>,
+										document.body,
+									)}
+								</>
+							);
+							return area === "right" ? (
+								<RightPaneAreaView
+									workspaceProps={props}
+									onActivate={() => {
+										activations++;
+									}}
+									headerControls={controls}
+								/>
+							) : (
+								controls
+							);
+						},
+					}}
+				/>
+			</TooltipProvider>
+		</DndProvider>,
+	);
+	try {
+		const menu = view.getByText("Owned portal menu");
+		fireEvent.focus(menu);
+		fireEvent.pointerDown(menu);
+		expect(activations).toBe(0);
+		fireEvent.focus(view.getByLabelText("Owned pane input"));
+		fireEvent.pointerDown(view.getByLabelText("Owned pane input"));
+		expect(activations).toBe(area === "right" ? 4 : 2);
 	} finally {
 		view.unmount();
 		areas.dispose();

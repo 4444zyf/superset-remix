@@ -14,8 +14,12 @@ export function RightPaneAreaView<TData>({
 		<div
 			className="contents"
 			data-pane-area="right"
-			onPointerDownCapture={onActivate}
-			onFocusCapture={onActivate}
+			onPointerDownCapture={(event) => {
+				if (event.currentTarget.contains(event.target as Node)) onActivate();
+			}}
+			onFocusCapture={(event) => {
+				if (event.currentTarget.contains(event.target as Node)) onActivate();
+			}}
 		>
 			<Workspace<TData>
 				{...workspaceProps}

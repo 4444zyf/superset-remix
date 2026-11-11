@@ -667,8 +667,14 @@ export function PaneGrid({
 		<div
 			ref={gridRef}
 			className="ws-pane-grid"
-			onPointerDownCapture={controlled?.onActivate}
-			onFocusCapture={controlled?.onActivate}
+			onPointerDownCapture={(event) => {
+				if (event.currentTarget.contains(event.target as Node))
+					controlled?.onActivate();
+			}}
+			onFocusCapture={(event) => {
+				if (event.currentTarget.contains(event.target as Node))
+					controlled?.onActivate();
+			}}
 		>
 			{grouped ? (
 				<div
