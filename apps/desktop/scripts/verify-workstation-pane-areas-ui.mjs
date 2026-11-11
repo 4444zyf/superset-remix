@@ -99,7 +99,7 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
    report.phases.push({name:'expanded-explicit-show',view:shownView,geometry:await geometry()});await screenshot('pane-areas-expanded-explicit-show');save();
    for(const id of [shown,background]) {
     const r=await read(),tab=r.workspace.paneTabs.find(t=>JSON.stringify(t.layout).includes(id));assert.ok(tab);
-    await click(`[data-pane-area="center"] [data-tab-id="${tab.tabId}"]`);await mouse(await point(`[data-pane-title-id="${id}"]`),'right');await menu('Close pane');
+    if(r.workspace.activePaneTabId!==tab.tabId)await click(`[data-pane-area="center"] [data-tab-id="${tab.tabId}"]`);await mouse(await point(`[data-pane-title-id="${id}"]`),'right');await menu('Close pane');
     await until(async()=>!(await read()).workspace.panes.some(p=>p.paneId===id),'only the explicitly opened browser is closed');
    }
    await mouse(await point(browserSelector));await until(async()=>(await read()).workspace.activePaneArea==='right','original browser focus restored after API journey');
