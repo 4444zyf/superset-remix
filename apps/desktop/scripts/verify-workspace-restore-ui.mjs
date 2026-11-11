@@ -42,6 +42,7 @@ export async function verifyWorkspaceRestoreUi({
  observePortBrowserCalls,
  nativeDrag,
 	getPage,
+	getMain,
 	click,
 	screenshot,
 	restart,
@@ -559,7 +560,7 @@ export async function verifyWorkspaceRestoreUi({
  if (process.argv.includes("--browser-ui-only")) {
   await click("text:Terminal");await ready();
   const {verifyWorkstationBrowserUi}=await import("./verify-workstation-browser-ui.mjs");
-  await verifyWorkstationBrowserUi({getPage,click,screenshot,output,controls,closeReopen,readClipboardText,prepareBrowserSiteCookies,readBrowserSiteCookies,readBrowserDownloadDirectory,readBrowserPicturesDirectory,readClipboardImage,inspectClipboardImage,inspectBrowserTools,inspectBrowserDevTools,captureBrowserDevTools,closeBrowserDevTools});
+  await verifyWorkstationBrowserUi({getPage,getMain,click,screenshot,output,controls,closeReopen,readClipboardText,prepareBrowserSiteCookies,readBrowserSiteCookies,readBrowserDownloadDirectory,readBrowserPicturesDirectory,readClipboardImage,inspectClipboardImage,inspectBrowserTools,inspectBrowserDevTools,captureBrowserDevTools,closeBrowserDevTools});
   writeFileSync(join(output,"workspace-restore-ui.json"),JSON.stringify({...report,browserUiOnly:true},null,2)+"\n");return;
  }
  if (process.argv.includes("--wheel-only")) {

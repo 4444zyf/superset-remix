@@ -41,9 +41,19 @@ export async function verifyWorkstationBrowserReadCliUi(options, { scope, url, m
 		const file = join(options.output, `cli-browser-${label}.png`);
 		assert.equal(existsSync(file), false);
 		const clipboardText = await options.readClipboardText(), clipboardImage = await options.readClipboardImage();
+		if(process.argv.includes('--pane-capture-trace')) {
+			try {
+				const main=options.getMain();
+				if(!await main.evaluate('Boolean(globalThis.__ownedCaptureTraceInstalled)')) {
+					const prototype=await main.call('Runtime.evaluate',{expression:'Object.prototype'}),objects=await main.call('Runtime.queryObjects',{prototypeObjectId:prototype.result.objectId});
+					const result=await main.call('Runtime.callFunctionOn',{objectId:objects.objects.objectId,returnByValue:true,functionDeclaration:`function(){const manager=this.find(o=>o?.constructor?.name==='BrowserManager');if(!manager)return {installed:false};globalThis.__ownedCaptureTrace=[];globalThis.__ownedCaptureTraceInstalled=true;const original=manager.capturePng;manager.capturePng=async function(...args){const guest=this.getWebContents(args[0],args[1]),row={paneId:args[0],workspaceId:args[1],guestBefore:guest?.id,started:Date.now()};try{const result=await Reflect.apply(original,this,args);row.ok=true;return result}catch(error){row.ok=false;row.error={name:error?.name,message:String(error?.message).slice(0,500)};throw error}finally{row.guestAfter=this.getWebContents(args[0],args[1])?.id;row.guestDestroyed=guest?.isDestroyed();row.elapsed=Date.now()-row.started;globalThis.__ownedCaptureTrace.push(row);if(globalThis.__ownedCaptureTrace.length>32)globalThis.__ownedCaptureTrace.shift()}};return {installed:true}}`});report.captureTraceInstall=result.result.value;save();
+					await main.call('Runtime.releaseObject',{objectId:objects.objects.objectId});await main.call('Runtime.releaseObject',{objectId:prototype.result.objectId});
+				}
+			} catch(error) {report.captureTraceInstall={installed:false,error:String(error)};save();}
+		}
 		try {assert.deepEqual(await run("screenshot", ["--pane", paneId, "--out", file]), { path: file });}
 		catch(error) {
-			if(process.argv.includes('--pane-area-expansion')) {
+			if(process.argv.includes('--pane-area-expansion')&&typeof options.getMain==='function') {
 				report.captureFailureDiagnostics={dom:await options.getPage().evaluate(`(()=>[...document.querySelectorAll('webview')].map(v=>{const r=v.getBoundingClientRect();let guest;try{guest=v.getWebContentsId()}catch{}return {guest,connected:v.isConnected,rect:{x:r.x,y:r.y,width:r.width,height:r.height},style:{visibility:v.style.visibility,opacity:v.style.opacity,display:v.style.display,position:v.style.position}}}))()`),main:await options.getMain().evaluate(`(async()=>{const e=process.getBuiltinModule('module').createRequire(process.cwd()+'/owned-capture-diagnostic.cjs')('electron');const rows=[];for(const wc of e.webContents.getAllWebContents()){if(wc.getType()!=='webview')continue;const row={id:wc.id,url:wc.getURL(),title:wc.getTitle(),destroyed:wc.isDestroyed(),loading:wc.isLoading()};try{row.capture=await Promise.race([wc.capturePage().then(i=>({size:i.getSize(),empty:i.isEmpty()})),new Promise(resolve=>setTimeout(()=>resolve({pending:true}),1500))])}catch(error){row.capture={error:String(error)}}rows.push(row)}return {browserManagerType:typeof browserManager,trace:globalThis.__ownedCaptureTrace??[],rows}})()`)};save();
 			}
 			throw error;

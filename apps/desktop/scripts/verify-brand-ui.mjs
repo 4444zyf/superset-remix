@@ -447,6 +447,7 @@ try {
 			: (await import("./verify-workspace-restore-ui.mjs")).verifyWorkspaceRestoreUi;
 		const verifyRestore = (controls) =>
 			verifyWorkspaceRestoreUi({
+				getMain: () => main,
 				controls,
 				pasteClipboard:
 					process.platform === "linux"
