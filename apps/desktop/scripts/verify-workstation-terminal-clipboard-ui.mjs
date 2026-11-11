@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {parse} from 'shell-quote';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {agentUiDriver} from './verify-workstation-agent-ui-driver.mjs';
@@ -41,6 +43,11 @@ export async function verifyWorkstationTerminalClipboardUi(options) {
  const previousImage=await state();await setClipboard({imageBase64:readFileSync(join(output,'clipboard-image-source.png')).toString('base64')});await menu();await click('menu:Paste');
  const imageInput=await until(async()=>{const s=await state();if(!s)return null;const bytes=Buffer.from(s.received.slice(previousImage.received.length).join(''),'hex').toString();return bytes.startsWith('\x1b[200~')&&bytes.endsWith('\x1b[201~')&&bytes.includes(scope.root+'/.superset/attachments/')&&{state:s,bytes};},'agent receives bracketed remote image path');
  await screenshot('agent-clipboard-remote-image');
+ const imagePaths=parse(imageInput.bytes.slice(6,-6));assert.equal(imagePaths.length,1);const imagePath=imagePaths[0];assert.equal(typeof imagePath,'string');assert.ok(imagePath.startsWith(scope.root+'/.superset/attachments/'));
+ const imageFile=await query('filesystem.readFile',{absolutePath:imagePath,maxBytes:1024*1024});assert.equal(imageFile.kind,'bytes');const imageBytes=Buffer.from(imageFile.content,'base64');
+ const imageRead={path:imagePath,bytes:imageBytes.length,sha256:createHash('sha256').update(imageBytes).digest('hex')};
+ if(options.inspectClipboardImage&&options.expectedImage){imageRead.pixels=await options.inspectClipboardImage(imageFile.content);assert.deepEqual(imageRead.pixels,options.expectedImage);}
+
  if(process.argv.includes('--clipboard-pane-areas')) {const {verifyClipboardPaneArea}=await import('./verify-workstation-clipboard-pane-area.mjs');await verifyClipboardPaneArea(options,terminal,'center');}
  await click('text:Files');await until(()=>evaluate(`Boolean(document.querySelector('[data-workspace-files]'))`),'files before clipboard remount');await click('text:Terminal');
  await until(()=>evaluate(`Boolean(document.querySelector(${JSON.stringify(selector)}+'[data-restore-state="attached"] .xterm-screen'))`),'same agent terminal reattached');
@@ -50,5 +57,5 @@ export async function verifyWorkstationTerminalClipboardUi(options) {
  await screenshot('agent-clipboard-osc52-after-remount');
  await getPage().call('Input.insertText',{text:'q'});await until(async()=>(await state())?.stage==='finished','agent input remains usable');
  assert.deepEqual(getPage().errors,[]);
- writeFileSync(join(output,'terminal-agent-clipboard-ui.json'),JSON.stringify({terminal,selection:copied,keyboardCopy:true,menuCopy:true,copyFocus,phases,imageInput,osc52:osc,afterRemount:true,final:await state(),errors:getPage().errors,vendorAgentVerified:false},null,2)+'\n');
+ writeFileSync(join(output,'terminal-agent-clipboard-ui.json'),JSON.stringify({terminal,selection:copied,keyboardCopy:true,menuCopy:true,copyFocus,phases,imageInput,imageRead,osc52:osc,afterRemount:true,final:await state(),errors:getPage().errors,vendorAgentVerified:false},null,2)+'\n');
 }

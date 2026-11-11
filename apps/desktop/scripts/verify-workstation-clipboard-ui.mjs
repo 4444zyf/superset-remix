@@ -316,7 +316,7 @@ export async function verifyWorkstationClipboardUi({
 	if(process.argv.includes('--terminal-agent-clipboard')) {
   if(process.argv.includes('--clipboard-pane-areas')) {const {verifyClipboardPaneArea}=await import('./verify-workstation-clipboard-pane-area.mjs');await verifyClipboardPaneArea({getPage,click,screenshot,output,scope,controls},terminal,'expand');}
   const {verifyWorkstationTerminalClipboardUi}=await import('./verify-workstation-terminal-clipboard-ui.mjs');
-  await verifyWorkstationTerminalClipboardUi({getPage,click,screenshot,setClipboard,pasteClipboard,readClipboardText,output,scope,terminal,query,controls});
+  await verifyWorkstationTerminalClipboardUi({getPage,click,screenshot,setClipboard,pasteClipboard,readClipboardText,output,scope,terminal,query,controls,inspectClipboardImage,expectedImage:expected.image});
  }
 	for (const type of ["mouseMoved", "mousePressed", "mouseReleased"])
 		await getPage().call("Input.dispatchMouseEvent", {
