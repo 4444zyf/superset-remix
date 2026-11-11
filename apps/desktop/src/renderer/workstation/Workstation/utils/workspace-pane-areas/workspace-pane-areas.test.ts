@@ -181,6 +181,28 @@ test("same-data store notifications do not publish a false edit", () => {
 		f.areas.dispose();
 	}
 });
+test("activation publishes focus ownership before deferred persistence without duplicate snapshots", () => {
+	const f = runtime();
+	const observed: string[] = [];
+	try {
+		f.areas.subscribe(() => observed.push(f.areas.read().activePaneArea));
+		f.areas.activate("right");
+		expect(observed).toEqual(["right"]);
+		expect(f.events).toHaveLength(0);
+		f.drain();
+		expect(observed).toEqual(["right"]);
+		expect(f.events).toHaveLength(1);
+		expect(f.events[0]?.before.activePaneArea).toBe("center");
+		expect(f.events[0]?.next.activePaneArea).toBe("right");
+		f.areas.setRightPaneOpen(false);
+		expect(observed).toEqual(["right", "center"]);
+		f.drain();
+		expect(observed).toEqual(["right", "center"]);
+		expect(f.events).toHaveLength(2);
+	} finally {
+		f.areas.dispose();
+	}
+});
 test("reaffirming unchanged area flags cannot create snapshot feedback", () => {
 	const f = runtime();
 	let notifications = 0;

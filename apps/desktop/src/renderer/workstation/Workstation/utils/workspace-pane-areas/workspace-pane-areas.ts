@@ -156,6 +156,7 @@ export function createWorkspacePaneAreas(
 		snapshots = new Set<{ listener(): void }>();
 	let activePaneArea = initial.activePaneArea,
 		rightPaneOpen = initial.rightPaneOpen;
+	let lastNotified: WorkspacePaneAreasState | undefined;
 	let cached: WorkspacePaneAreasState | undefined,
 		pending: WorkspacePaneAreasState | undefined,
 		token: object | undefined;
@@ -175,6 +176,9 @@ export function createWorkspacePaneAreas(
 		return cached;
 	};
 	const notifySnapshots = () => {
+		const snapshot = read();
+		if (snapshot === lastNotified) return;
+		lastNotified = snapshot;
 		for (const entry of [...snapshots]) {
 			if (disposed) break;
 			if (snapshots.has(entry)) entry.listener();
@@ -241,6 +245,7 @@ export function createWorkspacePaneAreas(
 			activePaneArea = area;
 			if (area === "right") rightPaneOpen = true;
 			queue(before);
+			if (read() !== before) notifySnapshots();
 			return true;
 		},
 		setRightPaneOpen(open: boolean): void {
@@ -249,6 +254,7 @@ export function createWorkspacePaneAreas(
 			rightPaneOpen = open;
 			if (!open && activePaneArea === "right") activePaneArea = "center";
 			queue(before);
+			if (read() !== before) notifySnapshots();
 		},
 		replaceFromRuntime(area: WorkspacePaneArea, next: State): boolean {
 			if (disposed) return false;
