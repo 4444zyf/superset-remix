@@ -41,7 +41,13 @@ export async function verifyWorkstationBrowserReadCliUi(options, { scope, url, m
 		const file = join(options.output, `cli-browser-${label}.png`);
 		assert.equal(existsSync(file), false);
 		const clipboardText = await options.readClipboardText(), clipboardImage = await options.readClipboardImage();
-		assert.deepEqual(await run("screenshot", ["--pane", paneId, "--out", file]), { path: file });
+		try {assert.deepEqual(await run("screenshot", ["--pane", paneId, "--out", file]), { path: file });}
+		catch(error) {
+			if(process.argv.includes('--pane-area-expansion')) {
+				report.captureFailureDiagnostics={dom:await options.getPage().evaluate(`(()=>[...document.querySelectorAll('webview')].map(v=>{const r=v.getBoundingClientRect();let guest;try{guest=v.getWebContentsId()}catch{}return {guest,connected:v.isConnected,rect:{x:r.x,y:r.y,width:r.width,height:r.height},style:{visibility:v.style.visibility,opacity:v.style.opacity,display:v.style.display,position:v.style.position}}}))()`),main:await options.getMain().evaluate(`(async()=>{const e=process.getBuiltinModule('module').createRequire(process.cwd()+'/owned-capture-diagnostic.cjs')('electron');const rows=[];for(const wc of e.webContents.getAllWebContents()){if(wc.getType()!=='webview')continue;const row={id:wc.id,url:wc.getURL(),title:wc.getTitle(),destroyed:wc.isDestroyed(),loading:wc.isLoading()};try{row.capture=await Promise.race([wc.capturePage().then(i=>({size:i.getSize(),empty:i.isEmpty()})),new Promise(resolve=>setTimeout(()=>resolve({pending:true}),1500))])}catch(error){row.capture={error:String(error)}}rows.push(row)}return {browserManagerType:typeof browserManager,rows}})()`)};save();
+			}
+			throw error;
+		}
 		const png = readFileSync(file);
 		assert.deepEqual(png.subarray(0, 8), Buffer.from("89504e470d0a1a0a", "hex"));
 		const image = await options.inspectClipboardImage(png.toString("base64"));
