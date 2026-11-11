@@ -45,6 +45,7 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
   if(process.argv.includes('--pane-area-width')) {
    report.widthPreference={resized:await until(async()=>{const p=await evaluate('window.directWorkstation.getPreferences()');return !p.invalid&&Math.abs(p.values.rightPaneAreaWidth-resized.right)<2?p:null;},'final width persisted through existing private preference CAS')};save();
    await closeReopen();await installFocusTrace();
+   await until(async()=>String(await guestRead('document.title')).includes('Owned browser'),'original right guest reconnects before observing saved user width');
    const restored=await until(async()=>{const g=await geometry();return g&&Math.abs(g.right-resized.right)<2?g:null;},'custom user width restored on a normal window reopen');
    assert.deepEqual(ids((await read()).workspace),ids(original.workspace));
    report.phases.push({name:'width-reopened',geometry:restored,view:await read()});await screenshot('pane-areas-width-reopened');save();
