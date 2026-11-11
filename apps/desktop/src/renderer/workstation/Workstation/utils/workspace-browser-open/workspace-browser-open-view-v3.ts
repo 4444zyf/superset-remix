@@ -8,6 +8,7 @@ import {
 import { fromPaneLayout } from "../pane-adapter/pane-adapter";
 import { buildPaneTree } from "../pane-layout/pane-layout";
 import {
+	createWorkspacePaneAreas,
 	readWorkspacePaneAreas,
 	type WorkspacePaneAreasState,
 } from "../workspace-pane-areas/workspace-pane-areas";
@@ -75,6 +76,43 @@ export function openWorkstationBrowserViewV3({
 		);
 		if (!merged) throw Error("Workspace pane layout changed");
 		view = merged;
+	}
+	if (args.input.show) {
+		const target = view.targets.find(
+			(t) => t.connectionId === args.input.descriptor.connectionId,
+		);
+		const workspace = target?.workspaces.find(
+			(w) => w.workspaceId === args.input.workspaceId,
+		);
+		if (target && workspace?.rightPaneAreaExpansion) {
+			const restored = createWorkspacePaneAreas(workspace, {
+				scheduleMicrotask() {},
+			});
+			try {
+				const before = restored.read();
+				restored.restoreRightPaneArea();
+				const next = restored.read();
+				const merged = applyWorkspacePaneAreas(
+					view,
+					{
+						connectionId: target.connectionId,
+						backendId: target.backendId,
+						namespaceId: target.namespaceId,
+						serviceUid: target.serviceUid,
+						targetRevision: target.targetRevision,
+						workspaceId: workspace.workspaceId,
+						tabId: workspace.tabId,
+					},
+					next,
+					before,
+				);
+				if (!merged) throw Error("Workspace pane layout changed");
+				view = merged;
+				args.runtimeState = next.center;
+			} finally {
+				restored.dispose();
+			}
+		}
 	}
 	const originalTarget = view.targets.find(
 		(t) => t.connectionId === args.input.descriptor.connectionId,
@@ -181,6 +219,13 @@ export function openWorkstationBrowserViewV3({
 		panes,
 		layout: buildPaneTree(panes.map((pane) => pane.paneId)),
 		rightPaneLayout: right,
+		...(original?.rightPaneAreaExpansion
+			? {
+					rightPaneAreaExpansion: structuredClone(
+						original.rightPaneAreaExpansion,
+					),
+				}
+			: {}),
 		rightPaneOpen: original?.rightPaneOpen ?? false,
 		activePaneArea: active,
 		activePaneId: focused?.activePaneId ?? null,

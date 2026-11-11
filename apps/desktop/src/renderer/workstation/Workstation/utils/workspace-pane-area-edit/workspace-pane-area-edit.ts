@@ -64,6 +64,7 @@ export function projectWorkspacePaneArea(
 		rightPaneLayout: _,
 		rightPaneOpen: __,
 		activePaneArea: ___,
+		rightPaneAreaExpansion: ____,
 		...legacy
 	} = structuredClone(workspace);
 	return {

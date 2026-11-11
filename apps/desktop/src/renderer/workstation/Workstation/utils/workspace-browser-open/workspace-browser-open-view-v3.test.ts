@@ -235,3 +235,57 @@ test("another target's complete V3 state remains untouched", () => {
 	expect(opened.view.activeConnectionId).toBe("other");
 	expect(opened.view.targets[1]).toEqual(other);
 });
+
+function expandedSource() {
+	const f = source(),
+		w = workspace(f.snapshot);
+	w.rightPaneAreaExpansion = {
+		movedTabIds: ["center-tab"],
+		centerActiveTabId: "center-tab",
+		rightActiveTabId: "right-tab",
+	};
+	required(w.rightPaneLayout).tabs.unshift(...required(w.paneTabs));
+	w.paneTabs = [];
+	w.activePaneTabId = null;
+	w.rightPaneOpen = true;
+	w.activePaneArea = "right";
+	w.activePaneId = "browser";
+	return f;
+}
+test("a background browser open retains an expanded window's restore receipt and right selection", () => {
+	const f = expandedSource(),
+		original = structuredClone(workspace(f.snapshot));
+	const opened = f.open({ runtimeAreas: readWorkspacePaneAreas(original) }),
+		saved = workspace(opened.view);
+	expect(saved.rightPaneAreaExpansion).toEqual(original.rightPaneAreaExpansion);
+	expect(saved.rightPaneLayout).toEqual(original.rightPaneLayout);
+	expect(saved.activePaneArea).toBe("right");
+	expect(saved.activePaneId).toBe("browser");
+	expect(saved.panes.map((p) => p.paneId).sort()).toEqual([
+		"browser",
+		"new-browser",
+		"terminal",
+	]);
+});
+test("explicit show restores expanded center tabs in the same browser open view mutation", () => {
+	const f = expandedSource(),
+		original = workspace(f.snapshot);
+	const opened = f.open({
+			input: { ...f.input, target: "new-tab", show: true },
+			runtimeAreas: readWorkspacePaneAreas(original),
+		}),
+		saved = workspace(opened.view);
+	expect(saved.rightPaneAreaExpansion).toBeUndefined();
+	expect(saved.activePaneArea).toBe("center");
+	expect(saved.activePaneId).toBe("new-browser");
+	expect(saved.paneTabs).toHaveLength(2);
+	expect(saved.paneTabs?.some((t) => t.tabId === "center-tab")).toBe(true);
+	expect(saved.rightPaneLayout?.tabs.map((t) => t.tabId)).toEqual([
+		"right-tab",
+	]);
+	expect(saved.panes.map((p) => p.paneId).sort()).toEqual([
+		"browser",
+		"new-browser",
+		"terminal",
+	]);
+});

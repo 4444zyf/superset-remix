@@ -7,7 +7,10 @@ import {
 } from "../../../../../main/lib/ssh-direct/workspace-view-area-fixtures.test-data";
 import { toPaneState } from "../pane-adapter/pane-adapter";
 import { applyWorkspacePaneState } from "../workspace-pane-state/workspace-pane-state";
-import { editWorkspacePaneArea } from "./workspace-pane-area-edit";
+import {
+	editWorkspacePaneArea,
+	projectWorkspacePaneArea,
+} from "./workspace-pane-area-edit";
 
 const scope = (view: ReturnType<typeof fixture>) => ({
 	...required(view.targets[0]),
@@ -191,4 +194,25 @@ test("the original 64-pane limit counts the untouched right resource as well as 
 	expect(add(63)).toBeNull();
 	expect(accepted).toEqual([true, true]);
 	expect(workspace(view).panes).toHaveLength(2);
+});
+
+test("single-area projection excludes expansion metadata while whole edits preserve it", () => {
+	const view = fixture(),
+		w = workspace(view);
+	w.rightPaneAreaExpansion = {
+		movedTabIds: ["closed-tab"],
+		centerActiveTabId: "closed-tab",
+		rightActiveTabId: "right-tab",
+	};
+	expect(
+		projectWorkspacePaneArea(w, "right").rightPaneAreaExpansion,
+	).toBeUndefined();
+	const saved = required(
+		editWorkspacePaneArea(view, scope(view), { area: "right" }, (p) => {
+			p.label = "Right edit";
+		}),
+	);
+	expect(workspace(saved).rightPaneAreaExpansion).toEqual(
+		w.rightPaneAreaExpansion,
+	);
 });

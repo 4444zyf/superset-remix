@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import {randomUUID} from 'node:crypto';
+import {resolveDirectNamespace} from '../../../packages/cli/src/lib/direct-namespace/resolveDirectNamespace.ts';
 import {writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {setTimeout as delay} from 'node:timers/promises';
@@ -83,6 +85,27 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
    const reopened=await restored();await until(async()=>String(await guestRead('document.title')).includes('Owned browser'),'right browser reconnects after expanded window restoration');
    assert.deepEqual(ids(reopened.workspace),ids(original.workspace));assert.ok(Math.abs((await geometry()).right-reset.right)<2);
    report.phases.push({name:'expansion-reopened-restored',view:reopened,geometry:await geometry()});await screenshot('pane-areas-expansion-reopened-restored');report.expansionCompleted=true;save();
+   await expand('expanded-before-api');
+   const namespaceControls=controls.forNamespace?.(scope.d.namespaceId)??controls;
+   await until(async()=>{const d=(await resolveDirectNamespace(namespaceControls.browserNamespaceHome())).description;assert.equal(d.namespaceId,scope.d.namespaceId);return d.capabilities.workstationBrowserOpenV1===true;},'protected browser open renderer ready after expansion restore');
+   report.expandedBrowserOpen={calls:[]};
+   const open=async show=>{const input={operationId:randomUUID(),workspaceId:scope.w.workspaceId,url:'about:blank',target:'new-tab',show};const result=await namespaceControls.browserOpenRequest('direct.browserOpenV1',input);report.expandedBrowserOpen.calls.push({input,...result});save();assert.equal(result.status,200);assert.equal(result.result.status,'completed');return result.result.result.paneId;};
+   const background=await open(false),backgroundView=await read();
+   assert.ok(backgroundView.workspace.rightPaneAreaExpansion);assert.equal(backgroundView.workspace.activePaneArea,'right');assert.equal(backgroundView.workspace.activePaneId,browser.paneId);assert.ok(Math.abs((await geometry()).right-(await geometry()).root)<2);
+   report.phases.push({name:'expanded-background-open',view:backgroundView,geometry:await geometry()});await screenshot('pane-areas-expanded-background-open');save();
+   const shown=await open(true),shownView=await read();assert.equal(shownView.workspace.rightPaneAreaExpansion,undefined);assert.equal(shownView.workspace.activePaneArea,'center');assert.equal(shownView.workspace.activePaneId,shown);
+   assert.ok(shownView.workspace.paneTabs.some(t=>t.tabId===split.workspace.activePaneTabId));assert.equal(shownView.workspace.rightPaneLayout.tabs.length,split.workspace.rightPaneLayout.tabs.length);
+   await until(async()=>{const p=await point(`[data-pane-title-id="${shown}"]`);return p?.hit?p:null;},'explicit browser show restores visible center content');assert.ok(Math.abs((await geometry()).right-reset.right)<2);
+   report.phases.push({name:'expanded-explicit-show',view:shownView,geometry:await geometry()});await screenshot('pane-areas-expanded-explicit-show');save();
+   for(const id of [shown,background]) {
+    const r=await read(),tab=r.workspace.paneTabs.find(t=>JSON.stringify(t.layout).includes(id));assert.ok(tab);
+    await click(`[data-pane-area="center"] [data-tab-id="${tab.tabId}"]`);await mouse(await point(`[data-pane-title-id="${id}"]`),'right');await menu('Close pane');
+    await until(async()=>!(await read()).workspace.panes.some(p=>p.paneId===id),'only the explicitly opened browser is closed');
+   }
+   await mouse(await point(browserSelector));await until(async()=>(await read()).workspace.activePaneArea==='right','original browser focus restored after API journey');
+   const cleaned=await read();assert.deepEqual(ids(cleaned.workspace),ids(original.workspace));assert.equal(cleaned.workspace.rightPaneAreaExpansion,undefined);report.expandedBrowserOpen.completed=true;
+   report.phases.push({name:'expanded-browser-open-cleaned',view:cleaned,geometry:await geometry()});save();
+
   }
   await toolbar('Files');report.afterFilesClick={view:await read(),focus:await focusTrace()};save();
   await until(async()=>{const r=await read();return r.workspace.activeTool==='files'&&r.workspace.activePaneArea==='right';},'Files is a center tool while the right browser stays active');
