@@ -360,3 +360,98 @@ test("authorized replacement of both areas flushes prior edits and publishes can
 	f.areas.dispose();
 	expect(f.areas.replaceAreasFromRuntime(next)).toBe(false);
 });
+
+test("original expansion and restoration save each whole transfer once without changing resources", () => {
+	const f = runtime();
+	try {
+		const before = f.areas.read();
+		expect(f.areas.expandRightPaneArea()).toBe(true);
+		expect(f.areas.isExpandedInWindow()).toBe(true);
+		expect(f.areas.read().center.tabs).toHaveLength(0);
+		expect(f.areas.read().right.tabs.map((t) => t.id)).toEqual([
+			"center-tab",
+			"right-tab",
+		]);
+		expect(f.events).toHaveLength(0);
+		f.drain();
+		expect(f.events).toHaveLength(1);
+		expect(f.events[0]?.before).toEqual(before);
+		expect(f.events[0]?.next.rightPaneAreaExpansion).toEqual({
+			movedTabIds: ["center-tab"],
+			centerActiveTabId: "center-tab",
+			rightActiveTabId: "right-tab",
+		});
+		expect(resources(f.areas.read()).sort()).toEqual(resources(before).sort());
+		expect(f.areas.restoreRightPaneArea()).toBe(true);
+		f.drain();
+		expect(f.events).toHaveLength(2);
+		expect(f.areas.isExpandedInWindow()).toBe(false);
+		expect(f.areas.read().rightPaneAreaExpansion).toBeUndefined();
+		expect(f.areas.read().center).toEqual(before.center);
+		expect(f.areas.read().right).toEqual(before.right);
+	} finally {
+		f.areas.dispose();
+	}
+});
+test("hiding an expanded area restores surviving tabs and never recreates a closed pane", () => {
+	const f = runtime();
+	try {
+		f.areas.expandRightPaneArea();
+		f.drain();
+		f.areas.right
+			.getState()
+			.closePane({ tabId: "center-tab", paneId: "terminal" });
+		f.drain();
+		f.areas.setRightPaneOpen(false);
+		f.drain();
+		expect(f.areas.read().rightPaneAreaExpansion).toBeUndefined();
+		expect(f.areas.read().rightPaneOpen).toBe(false);
+		expect(f.areas.read().activePaneArea).toBe("center");
+		expect(f.areas.read().center.tabs).toHaveLength(0);
+		expect(resources(f.areas.read())).toEqual([
+			["browser", "browser-resource", undefined],
+		]);
+	} finally {
+		f.areas.dispose();
+	}
+});
+test("merging an expanded area discards its restore receipt and keeps every surviving tab in center", () => {
+	const f = runtime();
+	try {
+		f.areas.expandRightPaneArea();
+		f.drain();
+		f.areas.mergeRightPaneArea();
+		f.drain();
+		expect(f.events).toHaveLength(2);
+		expect(f.areas.read().center.tabs).toHaveLength(2);
+		expect(f.areas.read().right.tabs).toHaveLength(0);
+		expect(f.areas.read().rightPaneAreaExpansion).toBeUndefined();
+		expect(f.areas.read().rightPaneOpen).toBe(false);
+		expect(f.areas.isExpandedInWindow()).toBe(false);
+	} finally {
+		f.areas.dispose();
+	}
+});
+
+test("a different authoritative expansion receipt cannot inherit this window's expanded mode", () => {
+	const f = runtime();
+	try {
+		f.areas.expandRightPaneArea();
+		f.drain();
+		const canonical = workspace(fixture());
+		canonical.rightPaneAreaExpansion = {
+			movedTabIds: [],
+			centerActiveTabId: null,
+			rightActiveTabId: "right-tab",
+		};
+		f.areas.synchronize(canonical);
+		expect(f.areas.isExpandedInWindow()).toBe(false);
+		expect(f.areas.read().center.tabs).toHaveLength(1);
+		expect(f.areas.read().rightPaneAreaExpansion).toEqual(
+			canonical.rightPaneAreaExpansion,
+		);
+		expect(f.events).toHaveLength(1);
+	} finally {
+		f.areas.dispose();
+	}
+});

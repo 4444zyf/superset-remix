@@ -387,3 +387,73 @@ test("saved user width is clamped for display and each final resize or reset com
 		});
 	}
 });
+
+test("original expand and restore controls transfer both stores and preserve the chosen user width", async () => {
+	const gate = Promise.withResolvers<unknown>(),
+		f = setup(() => gate.promise);
+	const view = render(f.element(f.w, 1, undefined, { paneAreaWidth: 500 }));
+	try {
+		fireEvent.click(view.getByRole("button", { name: "Expand" }));
+		await waitFor(() => expect(f.writes()).toBe(1));
+		const expanded = required(required(f.capture()).areas);
+		expect(expanded.center.tabs).toHaveLength(0);
+		expect(expanded.right.tabs).toHaveLength(2);
+		expect(expanded.rightPaneAreaExpansion?.movedTabIds).toEqual([
+			"center-tab",
+		]);
+		expect(view.queryByRole("separator")).toBeNull();
+		expect(
+			required(
+				view.container.querySelector<HTMLElement>('[data-pane-area="center"]'),
+			).style.display,
+		).toBe("none");
+		fireEvent.click(view.getByRole("button", { name: "Restore width" }));
+		await waitFor(() => expect(f.writes()).toBe(2));
+		const restored = required(required(f.capture()).areas);
+		expect(restored.center.tabs).toHaveLength(1);
+		expect(restored.right.tabs).toHaveLength(1);
+		expect(restored.rightPaneAreaExpansion).toBeUndefined();
+		expect(view.getByRole("separator").getAttribute("aria-valuenow")).toBe(
+			"500",
+		);
+	} finally {
+		view.unmount();
+		gate.resolve({});
+	}
+});
+test("StrictMode restores a saved expansion once and clears its durable receipt after acceptance", async () => {
+	const gate = Promise.withResolvers<unknown>(),
+		f = setup(() => gate.promise);
+	f.w.activePaneArea = "right";
+	f.w.activePaneId = "browser";
+	const collapsed = structuredClone(f.w);
+	f.w.rightPaneAreaExpansion = {
+		movedTabIds: ["center-tab"],
+		centerActiveTabId: "center-tab",
+		rightActiveTabId: "right-tab",
+	};
+	required(f.w.rightPaneLayout).tabs.unshift(...required(f.w.paneTabs));
+	f.w.paneTabs = [];
+	f.w.activePaneTabId = null;
+	const view = render(f.element());
+	try {
+		await waitFor(() => expect(f.writes()).toBe(1));
+		const restored = required(required(f.capture()).areas);
+		expect(restored.center.tabs).toHaveLength(1);
+		expect(restored.right.tabs).toHaveLength(1);
+		expect(restored.rightPaneAreaExpansion).toBeUndefined();
+		expect(view.getByRole("button", { name: "Expand" })).toBeDefined();
+		view.rerender(f.element(collapsed));
+		await act(async () => {
+			gate.resolve({});
+			await gate.promise;
+		});
+		expect(f.writes()).toBe(1);
+		expect(
+			required(required(f.capture()).areas).rightPaneAreaExpansion,
+		).toBeUndefined();
+	} finally {
+		view.unmount();
+		gate.resolve({});
+	}
+});

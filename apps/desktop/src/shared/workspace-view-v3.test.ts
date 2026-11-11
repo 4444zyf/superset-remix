@@ -230,3 +230,56 @@ test("raw size and combined area capacity retain the existing limits", () => {
 	}));
 	expect(() => validateWorkspaceViewV3(crowded)).toThrow();
 });
+
+test("a bounded expansion receipt round-trips privately and stays out of legacy projections", () => {
+	const value = fixture();
+	const w = workspace(value);
+	const snapshot = {
+		movedTabIds: ["center-tab"],
+		centerActiveTabId: "center-tab",
+		rightActiveTabId: "right-tab",
+	};
+	Object.assign(w, { rightPaneAreaExpansion: snapshot });
+	const before = structuredClone(value);
+	expect(validateWorkspaceViewV3(value)).toEqual(before);
+	expect(value).toEqual(before);
+	expect(
+		Reflect.has(
+			workspace(projectWorkspaceViewV2(value)),
+			"rightPaneAreaExpansion",
+		),
+	).toBe(false);
+});
+test("expansion receipts reject duplicates and unbounded or malformed metadata", () => {
+	const base = {
+		movedTabIds: ["center-tab"],
+		centerActiveTabId: "center-tab",
+		rightActiveTabId: "right-tab",
+	};
+	for (const snapshot of [
+		{ ...base, movedTabIds: ["same", "same"] },
+		{ ...base, movedTabIds: Array.from({ length: 65 }, (_, i) => String(i)) },
+		{ ...base, centerActiveTabId: "x".repeat(129) },
+		{ ...base, extra: true },
+	]) {
+		const value = fixture();
+		Object.assign(workspace(value), { rightPaneAreaExpansion: snapshot });
+		expect(() => validateWorkspaceViewV3(value)).toThrow();
+	}
+});
+
+test("an expansion receipt requires both owned area layouts", () => {
+	const value = fixture(),
+		w = workspace(value);
+	delete w.rightPaneLayout;
+	delete w.rightPaneOpen;
+	delete w.activePaneArea;
+	Object.assign(w, {
+		rightPaneAreaExpansion: {
+			movedTabIds: [],
+			centerActiveTabId: null,
+			rightActiveTabId: null,
+		},
+	});
+	expect(() => validateWorkspaceViewV3(value)).toThrow();
+});

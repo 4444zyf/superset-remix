@@ -50,6 +50,7 @@ export interface ControlledPaneGrid {
 	linkedStores: StoreApi<WorkspaceStore<WorkspacePane>>[];
 	area: "center" | "right";
 	active: boolean;
+	allowAreaMoves?: boolean;
 	onActivate(): void;
 	onMoved?(): void;
 	onNewTerminal?(axis: "horizontal" | "vertical", newTab: boolean): void;
@@ -593,7 +594,7 @@ export function PaneGrid({
 
 	const movedContextMenuActions = usePaneAreaMoveActions({
 		defaults: contextMenuActions,
-		enabled: !!controlled,
+		enabled: !!controlled && controlled.allowAreaMoves !== false,
 		source: store,
 		target: controlled?.linkedStores[0] ?? store,
 		direction: controlled?.area === "right" ? "center" : "right",

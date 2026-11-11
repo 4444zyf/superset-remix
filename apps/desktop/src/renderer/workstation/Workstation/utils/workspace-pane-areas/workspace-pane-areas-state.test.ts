@@ -469,3 +469,48 @@ test("an invalid deep runtime layout has a bounded fingerprint and cannot be per
 		areas.dispose();
 	}
 });
+
+test("expansion and startup restoration merge the receipt atomically with both original layouts", () => {
+	const f = edit((a) => {
+		a.expandRightPaneArea();
+	});
+	const expanded = required(
+		applyWorkspacePaneAreas(f.source, f.scope, f.next, f.before),
+	);
+	const w = workspace(expanded);
+	expect(w.paneTabs).toHaveLength(0);
+	expect(w.rightPaneLayout?.tabs).toHaveLength(2);
+	expect(w.rightPaneAreaExpansion?.movedTabIds).toEqual(["center-tab"]);
+	expect(w.panes).toEqual(workspace(f.source).panes);
+	const restored = createWorkspacePaneAreas(w, { scheduleMicrotask() {} });
+	try {
+		expect(restored.isExpandedInWindow()).toBe(false);
+		const before = restored.read();
+		expect(restored.restoreRightPaneArea()).toBe(true);
+		const saved = workspace(
+			required(
+				applyWorkspacePaneAreas(expanded, f.scope, restored.read(), before),
+			),
+		);
+		expect(saved.rightPaneAreaExpansion).toBeUndefined();
+		expect(saved.paneTabs).toEqual(workspace(f.source).paneTabs);
+		expect(saved.rightPaneLayout).toEqual(workspace(f.source).rightPaneLayout);
+		expect(saved.panes).toEqual(workspace(f.source).panes);
+	} finally {
+		restored.dispose();
+	}
+});
+test("a competing expansion receipt cannot be overwritten by a stale expansion edit", () => {
+	const f = edit((a) => {
+		a.expandRightPaneArea();
+	});
+	const current = structuredClone(f.source);
+	workspace(current).rightPaneAreaExpansion = {
+		movedTabIds: [],
+		centerActiveTabId: null,
+		rightActiveTabId: "right-tab",
+	};
+	expect(
+		applyWorkspacePaneAreas(current, f.scope, f.next, f.before),
+	).toBeNull();
+});

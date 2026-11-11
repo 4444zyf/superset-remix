@@ -1,4 +1,12 @@
-import { createWorkspaceStore, type WorkspaceState } from "@superset/panes";
+import {
+	createWorkspaceStore,
+	transferAllTabs,
+	type WorkspaceState,
+} from "@superset/panes";
+import {
+	expandPaneArea,
+	restorePaneArea,
+} from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/utils/expandPaneArea";
 import type { WorkspaceViewV3 } from "../../../../../shared/workspace-view-v3";
 import { toPaneState } from "../pane-adapter/pane-adapter";
 import { paneStateMetadataKey } from "../workspace-pane-state/workspace-pane-state";
@@ -14,6 +22,7 @@ export interface WorkspacePaneAreasState {
 	right: State;
 	activePaneArea: WorkspacePaneArea;
 	rightPaneOpen: boolean;
+	rightPaneAreaExpansion?: WorkspaceViewV3["rightPaneAreaExpansion"];
 }
 export function captureWorkspacePaneAreas(
 	state: WorkspacePaneAreasState,
@@ -26,6 +35,11 @@ export function captureWorkspacePaneAreas(
 	return {
 		activePaneArea: state.activePaneArea,
 		rightPaneOpen: state.rightPaneOpen,
+		...(state.rightPaneAreaExpansion
+			? {
+					rightPaneAreaExpansion: structuredClone(state.rightPaneAreaExpansion),
+				}
+			: {}),
 		center: area(state.center),
 		right: area(state.right),
 	};
@@ -97,6 +111,13 @@ export function readWorkspacePaneAreas(
 			: { version: 1, tabs: [], activeTabId: null },
 		activePaneArea: workspace.activePaneArea ?? "center",
 		rightPaneOpen: workspace.rightPaneOpen ?? false,
+		...(workspace.rightPaneAreaExpansion
+			? {
+					rightPaneAreaExpansion: structuredClone(
+						workspace.rightPaneAreaExpansion,
+					),
+				}
+			: {}),
 	};
 }
 export function workspacePaneAreasMetadataKey(
@@ -116,6 +137,7 @@ export function workspacePaneAreasMetadataKey(
 		right: area(state.right),
 		activePaneArea: state.activePaneArea,
 		rightPaneOpen: state.rightPaneOpen,
+		rightPaneAreaExpansion: state.rightPaneAreaExpansion,
 	});
 }
 export function workspacePaneAreasStructureKey(
@@ -127,6 +149,7 @@ export function workspacePaneAreasStructureKey(
 				canonicalWorkspacePaneState(state.center),
 			),
 			workstationPaneRuntimeStructure(canonicalWorkspacePaneState(state.right)),
+			...(state.rightPaneAreaExpansion ? [state.rightPaneAreaExpansion] : []),
 		]);
 	} catch {
 		return "invalid-pane-area-layout";
@@ -155,7 +178,9 @@ export function createWorkspacePaneAreas(
 	const edits = new Set<{ listener: EditListener }>(),
 		snapshots = new Set<{ listener(): void }>();
 	let activePaneArea = initial.activePaneArea,
-		rightPaneOpen = initial.rightPaneOpen;
+		rightPaneOpen = initial.rightPaneOpen,
+		expansion = initial.rightPaneAreaExpansion;
+	let expandedInWindow = false;
 	let lastNotified: WorkspacePaneAreasState | undefined;
 	let cached: WorkspacePaneAreasState | undefined,
 		pending: WorkspacePaneAreasState | undefined,
@@ -169,10 +194,17 @@ export function createWorkspacePaneAreas(
 			cached?.center === c &&
 			cached.right === r &&
 			cached.activePaneArea === activePaneArea &&
-			cached.rightPaneOpen === rightPaneOpen
+			cached.rightPaneOpen === rightPaneOpen &&
+			cached.rightPaneAreaExpansion === expansion
 		)
 			return cached;
-		cached = { center: c, right: r, activePaneArea, rightPaneOpen };
+		cached = {
+			center: c,
+			right: r,
+			activePaneArea,
+			rightPaneOpen,
+			...(expansion ? { rightPaneAreaExpansion: expansion } : {}),
+		};
 		return cached;
 	};
 	const notifySnapshots = () => {
@@ -218,6 +250,17 @@ export function createWorkspacePaneAreas(
 			activePaneArea = "center";
 		queue(before);
 	};
+	const restoreExpansion = () => {
+		if (disposed || !expansion) return false;
+		const before = read();
+		queue(before);
+		restorePaneArea({ center, right, snapshot: expansion });
+		expansion = undefined;
+		expandedInWindow = false;
+		if (activePaneArea === "right" && !right.getState().activeTabId)
+			activePaneArea = "center";
+		return true;
+	};
 	const offCenter = center.subscribe((_state, previous) =>
 		changed("center", previous),
 	);
@@ -236,6 +279,35 @@ export function createWorkspacePaneAreas(
 		right,
 		read,
 		flush,
+		isExpandedInWindow: () => expandedInWindow && !!expansion,
+		expandRightPaneArea(): boolean {
+			if (disposed || expansion) return false;
+			const before = read();
+			queue(before);
+			expansion = expandPaneArea({ center, right });
+			expandedInWindow = true;
+			rightPaneOpen = true;
+			activePaneArea = right.getState().activeTabId ? "right" : "center";
+			notifySnapshots();
+			return true;
+		},
+		restoreRightPaneArea(): boolean {
+			if (!restoreExpansion()) return false;
+			notifySnapshots();
+			return true;
+		},
+		mergeRightPaneArea(): boolean {
+			if (disposed) return false;
+			const before = read();
+			queue(before);
+			expansion = undefined;
+			expandedInWindow = false;
+			transferAllTabs({ source: right, target: center });
+			rightPaneOpen = false;
+			activePaneArea = "center";
+			if (read() !== before) notifySnapshots();
+			return true;
+		},
 		subscribe: (listener: () => void) => listen(snapshots, listener),
 		subscribeEdits: (listener: EditListener) => listen(edits, listener),
 		activate(area: WorkspacePaneArea): boolean {
@@ -251,6 +323,7 @@ export function createWorkspacePaneAreas(
 		setRightPaneOpen(open: boolean): void {
 			if (disposed) return;
 			const before = read();
+			if (!open) restoreExpansion();
 			rightPaneOpen = open;
 			if (!open && activePaneArea === "right") activePaneArea = "center";
 			queue(before);
@@ -281,6 +354,15 @@ export function createWorkspacePaneAreas(
 			try {
 				activePaneArea = next.activePaneArea;
 				rightPaneOpen = next.rightPaneOpen;
+				if (
+					JSON.stringify(expansion) !==
+					JSON.stringify(next.rightPaneAreaExpansion)
+				)
+					expandedInWindow = false;
+				expansion = next.rightPaneAreaExpansion
+					? structuredClone(next.rightPaneAreaExpansion)
+					: undefined;
+				if (!expansion) expandedInWindow = false;
 				center.getState().replaceState(next.center);
 				right.getState().replaceState(next.right);
 				if (activePaneArea === "right" && !right.getState().activeTabId)
@@ -301,6 +383,13 @@ export function createWorkspacePaneAreas(
 			try {
 				activePaneArea = state.activePaneArea;
 				rightPaneOpen = state.rightPaneOpen;
+				if (
+					JSON.stringify(expansion) !==
+					JSON.stringify(state.rightPaneAreaExpansion)
+				)
+					expandedInWindow = false;
+				expansion = state.rightPaneAreaExpansion;
+				if (!expansion) expandedInWindow = false;
 				center.getState().replaceState(state.center);
 				right.getState().replaceState(state.right);
 			} finally {

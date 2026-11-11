@@ -290,3 +290,29 @@ test("unextended legacy data retains the original physical format until explicit
 		store.close();
 	}
 });
+
+test("V1 and V2 saves preserve the bounded private expansion receipt", () => {
+	const { store } = database();
+	try {
+		const view = fixture();
+		const receipt = {
+			movedTabIds: ["closed-center-tab"],
+			centerActiveTabId: "closed-center-tab",
+			rightActiveTabId: "right-tab",
+		};
+		Object.assign(workspace(view), { rightPaneAreaExpansion: receipt });
+		store.saveV3({ owner: "owner", expectedRevision: 0, view });
+		const v2 = input(required(store.readV2().snapshot));
+		store.saveV2({ owner: "owner", expectedRevision: 1, view: v2 });
+		expect(workspace(input(required(store.readV3().snapshot)))).toMatchObject({
+			rightPaneAreaExpansion: receipt,
+		});
+		const v1 = input(required(store.read().snapshot));
+		store.save({ owner: "owner", expectedRevision: 2, view: v1 });
+		expect(workspace(input(required(store.readV3().snapshot)))).toMatchObject({
+			rightPaneAreaExpansion: receipt,
+		});
+	} finally {
+		store.close();
+	}
+});

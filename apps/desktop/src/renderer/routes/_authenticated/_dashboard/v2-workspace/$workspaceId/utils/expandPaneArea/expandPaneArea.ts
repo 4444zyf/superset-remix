@@ -1,8 +1,7 @@
 import { transferTabToIndex, type WorkspaceStore } from "@superset/panes";
 import type { StoreApi } from "zustand/vanilla";
-import type { PaneViewerData } from "../../types";
 
-type Store = StoreApi<WorkspaceStore<PaneViewerData>>;
+type Store<TData> = StoreApi<WorkspaceStore<TData>>;
 
 export interface ExpandedPaneAreaSnapshot {
 	movedTabIds: string[];
@@ -10,12 +9,12 @@ export interface ExpandedPaneAreaSnapshot {
 	rightActiveTabId: string | null;
 }
 
-export function expandPaneArea({
+export function expandPaneArea<TData>({
 	center,
 	right,
 }: {
-	center: Store;
-	right: Store;
+	center: Store<TData>;
+	right: Store<TData>;
 }): ExpandedPaneAreaSnapshot {
 	const { tabs, activeTabId: centerActiveTabId } = center.getState();
 	const rightActiveTabId = right.getState().activeTabId;
@@ -33,13 +32,13 @@ export function expandPaneArea({
 	return { movedTabIds, centerActiveTabId, rightActiveTabId };
 }
 
-export function restorePaneArea({
+export function restorePaneArea<TData>({
 	center,
 	right,
 	snapshot,
 }: {
-	center: Store;
-	right: Store;
+	center: Store<TData>;
+	right: Store<TData>;
 	snapshot: ExpandedPaneAreaSnapshot;
 }): void {
 	for (const tabId of snapshot.movedTabIds) {

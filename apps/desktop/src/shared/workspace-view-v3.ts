@@ -10,6 +10,15 @@ const targetV2 = workspaceViewInputV2Schema.shape.targets.element;
 const workspaceV2 = targetV2.shape.workspaces.element;
 const panesV2 = workspaceV2.shape.panes.element.options;
 const pinned = { pinned: z.boolean().optional() };
+const expansionTabId = z.string().min(1).max(128);
+const paneAreaExpansionSchema = z.strictObject({
+	movedTabIds: z
+		.array(expansionTabId)
+		.max(64)
+		.refine((ids) => new Set(ids).size === ids.length),
+	centerActiveTabId: expansionTabId.nullable(),
+	rightActiveTabId: expansionTabId.nullable(),
+});
 const workspaceV3 = workspaceV2.extend({
 	panes: z
 		.array(
@@ -25,6 +34,7 @@ const workspaceV3 = workspaceV2.extend({
 		.optional(),
 	rightPaneOpen: z.boolean().optional(),
 	activePaneArea: z.enum(["center", "right"]).optional(),
+	rightPaneAreaExpansion: paneAreaExpansionSchema.optional(),
 });
 export const workspaceViewInputV3Schema = workspaceViewInputV2Schema.extend({
 	targets: z
@@ -70,6 +80,7 @@ function flattenWorkspace(value: unknown): unknown {
 		rightPaneLayout,
 		rightPaneOpen: _,
 		activePaneArea,
+		rightPaneAreaExpansion: __,
 		...workspace
 	} = value;
 	if (Array.isArray(workspace.panes)) {
@@ -134,7 +145,8 @@ function parseAndProject(value: unknown): {
 			if (!right) {
 				if (
 					workspace.rightPaneOpen !== undefined ||
-					workspace.activePaneArea !== undefined
+					workspace.activePaneArea !== undefined ||
+					workspace.rightPaneAreaExpansion !== undefined
 				)
 					throw new Error("Pane area metadata requires a right layout");
 				continue;

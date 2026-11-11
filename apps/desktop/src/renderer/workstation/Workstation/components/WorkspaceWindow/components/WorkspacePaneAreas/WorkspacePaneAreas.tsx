@@ -1,7 +1,11 @@
 import { Trans, useLingui } from "@lingui/react/macro";
-import { transferAllTabs } from "@superset/panes";
 import { DropdownMenuItem } from "@superset/ui/dropdown-menu";
-import { ArrowLeftToLine, PanelRight } from "lucide-react";
+import {
+	ArrowLeftToLine,
+	Maximize2,
+	Minimize2,
+	PanelRight,
+} from "lucide-react";
 import {
 	type ComponentProps,
 	type ReactNode,
@@ -68,6 +72,7 @@ export function WorkspacePaneAreas(props: Props) {
 		owner.areas.read,
 		owner.areas.read,
 	);
+	const expanded = owner.areas.isExpandedInWindow();
 	const [saveEpoch, settled] = useState(0);
 	const windowWidth = useWindowWidth();
 	const defaultPanelWidth = Math.round(windowWidth * 0.4);
@@ -181,7 +186,17 @@ export function WorkspacePaneAreas(props: Props) {
 	useLayoutEffect(() => {
 		if (runtime.current?.owner !== owner) return;
 		owner.areas.flush();
-		if (!runtime.current.edits.hasWork()) owner.areas.synchronize(workspace);
+		if (!runtime.current.edits.hasWork()) {
+			owner.areas.synchronize(workspace);
+			const lease = owner.lease;
+			if (
+				!owner.areas.isExpandedInWindow() &&
+				owner.areas.read().rightPaneAreaExpansion
+			)
+				queueMicrotask(() => {
+					if (owner.lease === lease) owner.areas.restoreRightPaneArea();
+				});
+		}
 	}, [owner, workspace, saveEpoch]);
 	const activate = (area: WorkspacePaneArea) => {
 		owner.areas.activate(area);
@@ -251,6 +266,7 @@ export function WorkspacePaneAreas(props: Props) {
 				linkedStores: [owner.areas[area === "center" ? "right" : "center"]],
 				area,
 				active: state.activePaneArea === area,
+				allowAreaMoves: !expanded,
 				onInteractionStateChange: interaction.onWorkspaceInteractionStateChange,
 				onActivate: () => activate(area),
 				onMoved: () => moved(area === "center" ? "right" : "center"),
@@ -269,15 +285,28 @@ export function WorkspacePaneAreas(props: Props) {
 											<RightPaneHeaderButton
 												label={t({ message: "Merge into center" })}
 												onClick={() => {
-													transferAllTabs({
-														source: owner.areas.right,
-														target: owner.areas.center,
-													});
-													owner.areas.setRightPaneOpen(false);
+													owner.areas.mergeRightPaneArea();
 													moved("center");
 												}}
 											>
 												<ArrowLeftToLine size={14} />
+											</RightPaneHeaderButton>
+											<RightPaneHeaderButton
+												label={
+													expanded
+														? t({ message: "Restore width" })
+														: t({ message: "Expand" })
+												}
+												onClick={() => {
+													if (expanded) owner.areas.restoreRightPaneArea();
+													else owner.areas.expandRightPaneArea();
+												}}
+											>
+												{expanded ? (
+													<Minimize2 size={14} />
+												) : (
+													<Maximize2 size={14} />
+												)}
 											</RightPaneHeaderButton>
 											{sidebarButton}
 										</>
@@ -293,6 +322,7 @@ export function WorkspacePaneAreas(props: Props) {
 			<div
 				className="flex min-h-0 min-w-0 flex-1 flex-col"
 				data-pane-area="center"
+				style={expanded ? { display: "none" } : undefined}
 			>
 				{centerTool ? (
 					<>
@@ -305,6 +335,7 @@ export function WorkspacePaneAreas(props: Props) {
 			</div>
 			{state.rightPaneOpen && (
 				<ResizablePanel
+					disabled={expanded}
 					width={Math.max(
 						minWidth,
 						Math.min(

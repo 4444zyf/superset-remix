@@ -62,6 +62,11 @@ export function mergePaneAreaSelections(
 		rightPaneLayout: { version: 1, tabs: rightTabs, activeTabId: rightId },
 		rightPaneOpen: open,
 		activePaneArea: active,
+		rightPaneAreaExpansion: mergePaneAreaValue(
+			current.rightPaneAreaExpansion,
+			before.rightPaneAreaExpansion,
+			next.rightPaneAreaExpansion,
+		),
 		activePaneId: focused?.activePaneId ?? null,
 		activeTool:
 			active === "center" && centerFocusChanged && pane

@@ -108,6 +108,9 @@ function mergeWorkspace(
 			? { activePaneArea: inRight ? "right" : "center" }
 			: {}),
 		activePaneId: (inRight ? rightTab : centerTab)?.activePaneId ?? null,
+		...(previous.rightPaneAreaExpansion
+			? { rightPaneAreaExpansion: previous.rightPaneAreaExpansion }
+			: {}),
 	};
 }
 
