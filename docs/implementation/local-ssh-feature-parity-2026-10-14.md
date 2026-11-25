@@ -1845,3 +1845,20 @@ CLI 仍为控制机原源码 dev runner，针对本次拥有的同机 namespace�
 实际 in-memory host SQLite 完整迁移与原 Drizzle/getLocalWorkspace、原 full direct caller/auth 参与测试；101 项 host/495 断言/13 文件、33 项 desktop/139 断言/2 文件、8 项 shared/42 断言/3 文件、6 项真实鉴权 Node WebSocket 通过，四处类型、定向 lint 与插件通过。先保留缺能力 red；额外 release red 发现关闭 channel 尚未释放新 renderer 预留，现于明确关闭/实际 socket close/finally 精确释放一次，原 closing-owner 队列和读取行为回归通过。新增真实 WS 通过原只读往返作为 availability 已按序处理的屏障，无轮询睡眠或增加超时。
 
 五份现有模块收回新增项后 AST 相同；main/preload/原 browser API/实际 renderer、认证/journal/CLI 字节保持。无实际 renderer 接线/后台创建/持久化调用方，原主进程不声明 openV1；这是协议/RPC 核心，不是 open 功能恢复完成。未新构建/实窗，复核原 58b1082e7 的 2205 文件/79 脚本/CLI 哈希不变。下一步绑定真实视图范围/renderer 和原后台 runtime，再验收 API 与 CLI，整体继续。[阶段一百一十二证据](evidence/local-ssh-feature-parity/stage112)。
+
+
+## 阶段一百五十一：复用鉴权事件通道实时更新Agent状态（2026-11-25）
+
+原版useTerminalAgentBindings由agent:lifecycle、agent:bindings-changed及terminal:lifecycle触发快照失效；当前工作站此前只每两秒查询。新增两项回归在旧实现上4通过/2失败，确认没有/events订阅。最终实现复用已存在的WorkstationEventSocket和原eventBusCore，通过shared getter将文件监听与Agent状态放进同一传输池。键包含API对象身份、connectionId、backendId、namespaceId、generation和instanceId；两个消费者释放其中一个不会关闭另一个，全部释放后关闭，旧句柄可重新保留。没有新host接口、能力最低版本、账号依赖或存储迁移。
+
+仅当既有AgentFeedbackV1及FileEventsV1均可用时订阅事件。健康连接跳过原两秒轮询；连接断开/尚未建立或旧能力组合继续原轮询，focus/visibility仍可刷新。连接重新打开补读快照；单次查询中收到多次失效只合并成一次后续读取。严格核对事件workspaceId及现有terminal资源，bindings-changed按当前工作区刷新；事件中的状态与时间一律不用于显示或确认已查看，只采用验证后的RPC binding快照。原owner/service UID隔离、关闭后的迟到回复保护、原状态推导与已查看CAS保持。
+
+相关6文件17项/136断言全部通过，覆盖共享/释放/重新保留传输、API/namespace/generation/instance隔离、健康连接停止轮询、断线回退、无workspace/外部资源事件拒绝、事件伪造时间不进入已查看记录、突发失效串行合并、旧host与原文件事件/编辑器旅程。桌面类型和新改动针对性Biome通过，无新增用户文案或翻译目录变更。源码1a77a5cd8完整electron-vite编译工具确认退出0；未生成CLI二进制、安装包或后端封装。
+
+首轮local-events在移右侧菜单处失败，尚未启动本轮Agent。实际查看截图，原菜单仍打开；原几何记录显示打开动画中菜单项位置移动。夹具仅增加等待原菜单data-state=open且动画结束后再读取点击位置，未改变产品、期限、状态数据或布局断言。失败截图、CDP记录与原夹具冻结清单保留。菜单夹具更新后，同一1a77a5cd8编译的local-events-ready和ssh-events-ready均退出0。
+
+两端各完成working、permission、unread、unread-reopened、seen、seen-reopened、failed、failed-center、second-unread、second-seen十阶段。通过原窗口真实输入和loopback鉴权hook产生事件；新增只读onSocket旁观器在实际窗口重开后重新注册，按自有workspace/terminal过滤，仅保存有界事件类型/时间等元数据，不创建socket、不注入事件、不记录hook地址或预览正文。最终两端均观测实际Start和Stop，窄窗格原状态指示、真实关闭重开和跨侧移动通过。轮询被健康连接跳过及事件突发合并由确定性hook测试证明，不用小于两秒的易抖动实窗期限冒充证明。
+
+原shell/Python PID、执行ID和cwd保持；SSH还含原20次恢复。退出后只读SQLite两端偏好schema1/revision2、恰好1个已查看键与最后Stop时间一致，重开没有增加确认写入；V3布局版本保持3，文件0600。2420编译文件、91脚本及3639源码CLI图每轮运行后立即校验，最终scoped进程为空、自有X179清理。实际查看首轮菜单失败、本地working、SSH permission及second-seen截图，其余仅称捕获。证据85文件，秘密模式扫描和SHA256清单通过，不含配置/数据库/密钥。
+
+此为Linux源码Electron、自有loopback SSH和受控TUI的真实后端hook/事件验证，不是物理Mac、外部SSH或供应商Agent认证/识图。本轮未重跑终端图片粘贴和滚轮，不覆盖此前证据；原CLI截图偶发拒绝仍未定位。全部工作区/侧栏状态、系统通知、多窗口同步及其余原版功能继续，整体未完成；未使用GitHub Actions。[阶段一百五十一原始证据](evidence/local-ssh-feature-parity/stage151)。

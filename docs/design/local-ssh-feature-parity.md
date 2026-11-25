@@ -4,6 +4,8 @@
 
 ## 2026-11-11 当前重点状态
 
+阶段一百五十一将当前工作区Agent状态接回既有鉴权/events：与文件监听共享按API实例、连接、backend/namespace、generation及instance隔离的传输，事件只触发binding快照刷新，不采用事件状态或时间。连接健康时停止两秒查询，断线/旧能力回退轮询，突发事件串行合并；原状态语义、已查看键和偏好CAS不变。旧实现新增两项红例，最终17项/136断言、桌面类型、针对性lint及源码编译通过。1a77a5cd8本地/自有SSH各十阶段通过并旁观到真实Start/Stop事件，SSH含20次恢复，SQL/冻结/进程清理通过。首轮菜单动画点击失败保留，只修正夹具就绪判断。全部工作区/侧栏、系统通知、多窗口同步与其他原功能继续，未宣称整体完成。[阶段一百五十一证据](../implementation/evidence/local-ssh-feature-parity/stage151)。
+
 阶段一百五十接回当前工作区窗格/标签的原Agent状态与私有已读：复用StatusIndicator、原事件状态推导/优先级，经已有AgentFeedback能力查询真实host binding；旧host不查询。活动侧可见终端按host时间确认，backend/namespace/service UID/workspace/terminal的SHA256键与256条有界SQLite缓存隔离，沿原偏好CAS串行写入，无账号或新localStorage。旧版实窗已有Start但无指示；最终f0d6fb0a3本地/自有SSH各十阶段通过，SSH含20次恢复。63项/381断言、类型/17语言及源码编译通过；只读SQL两端恰好2次确认、重开无重复写、0600及PID/执行/cwd/冻结/清理通过。首轮证明读取、SSH恢复空状态及窄标签重复点击的夹具失败均保留。侧栏/系统通知/多窗口同步和其余原功能继续。[阶段一百五十证据](../implementation/evidence/local-ssh-feature-parity/stage150)。
 
 阶段一百四十九修复原窗格分屏落点遗漏整个标签的接收条件：同侧/关联侧现有标签可交给原transferTabToSplit，无关store及失效对象仍拒绝。旧1df实窗原生拖动不转移；1c7b73fa8本地与自有SSH通过整标签入分屏、菜单提取、单窗格跨侧往返和真实重开。42项/248断言、类型/针对性lint及源码编译通过，SSH含20次恢复，冻结校验/进程清理通过。脚本命中缩放把手、越界激活及旧标签清理问题已分别诊断修正，失败记录保留。其他原功能与阶段146截图拒绝继续，不宣称整体完成。[阶段一百四十九证据](../implementation/evidence/local-ssh-feature-parity/stage149)。

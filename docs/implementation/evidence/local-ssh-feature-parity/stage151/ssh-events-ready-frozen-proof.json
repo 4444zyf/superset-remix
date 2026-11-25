@@ -1,0 +1,13 @@
+{
+  "case": "ssh-events-ready",
+  "compiledSource": "1a77a5cd8d16f4392bd48704ee9fe892ff9172ae",
+  "compiledFiles": 2420,
+  "fixtureCount": 91,
+  "sourceCliFiles": 3639,
+  "allUnchanged": true,
+  "cleanup": {
+    "ownedXorgPid": 36426,
+    "ownedXorgExit": 0,
+    "appExit": 0
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "compiledSource": "1a77a5cd8d16f4392bd48704ee9fe892ff9172ae",
+  "compiledFiles": 2420,
+  "fixtureCount": 91,
+  "sourceCliFiles": 3639,
+  "native": [
+    {
+      "case": "local-events-ready",
+      "actualBackendHooks": true,
+      "actualAuthenticatedLifecycleEvents": true,
+      "tenPhases": true,
+      "sameShellAndPythonPid": true,
+      "sameExecutionAndCwd": true,
+      "twoRealReopens": true,
+      "seenUsesExactHostClock": true,
+      "serviceUidScopedKey": true,
+      "cleanup": {
+        "ownedXorgPid": 35815,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      }
+    },
+    {
+      "case": "ssh-events-ready",
+      "actualBackendHooks": true,
+      "actualAuthenticatedLifecycleEvents": true,
+      "tenPhases": true,
+      "sameShellAndPythonPid": true,
+      "sameExecutionAndCwd": true,
+      "twoRealReopens": true,
+      "seenUsesExactHostClock": true,
+      "serviceUidScopedKey": true,
+      "cleanup": {
+        "ownedXorgPid": 36426,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "windowRestoreSamples": 20
+    }
+  ],
+  "readOnlySqlite": [
+    {
+      "case": "local-events-ready",
+      "readOnly": true,
+      "preferenceSchemaVersion": 1,
+      "preferenceRevision": 2,
+      "seenCount": 1,
+      "seenKey": "db72cfad6de386035c17f3fe6dbba99034c1c965c064554146dab57ccd442e74",
+      "seenAt": 1795593628060,
+      "viewSchemaVersion": 3,
+      "viewRevision": 33,
+      "mode": "0600"
+    },
+    {
+      "case": "ssh-events-ready",
+      "readOnly": true,
+      "preferenceSchemaVersion": 1,
+      "preferenceRevision": 2,
+      "seenCount": 1,
+      "seenKey": "cd834b7045e97f00df88a83d1e70767bbd7c2b1c38576effd3346ac87bd6de6b",
+      "seenAt": 1795593730698,
+      "viewSchemaVersion": 3,
+      "viewRevision": 88,
+      "mode": "0600"
+    }
+  ],
+  "finalRunsPassed": true,
+  "unitTests": 17,
+  "unitAssertions": 136,
+  "typeCheckPassed": true,
+  "scopedLiveProcesses": [],
+  "overallParityComplete": false,
+  "screenshotStabilityUnresolved": true,
+  "workspaceWideAndOsNotificationsPending": true,
+  "physicalMacVerified": false,
+  "externalSshVerified": false,
+  "vendorAgentVerified": false,
+  "installer": false,
+  "githubActions": false,
+  "screenshotsActuallyViewed": [
+    "local-events/app/agent-management-failure.png",
+    "local-events-ready/app/agent-status-working.png",
+    "ssh-events-ready/app/agent-status-permission.png",
+    "ssh-events-ready/app/agent-status-second-seen.png"
+  ]
+}
