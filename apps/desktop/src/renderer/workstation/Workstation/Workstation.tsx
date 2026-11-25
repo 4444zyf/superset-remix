@@ -33,7 +33,7 @@ import { WorkstationChatDraftManager } from "./components/WorkstationChatDraftMa
 import { WorkstationCloseGuard } from "./components/WorkstationCloseGuard";
 import { WorkstationDialog } from "./components/WorkstationDialog/WorkstationDialog";
 import { WorkstationShell } from "./components/WorkstationShell/WorkstationShell";
-import { useAgentSeenPreference } from "./hooks/useAgentSeenPreference/useAgentSeenPreference";
+import { useAgentSeenPreference } from "./hooks/useAgentSeenPreference";
 import { useBrowserPreferences } from "./hooks/useBrowserPreferences";
 import { usePaneAreaWidthPreference } from "./hooks/usePaneAreaWidthPreference/usePaneAreaWidthPreference";
 import { useWorkspaceViews } from "./hooks/useWorkspaceViews/useWorkspaceViews";

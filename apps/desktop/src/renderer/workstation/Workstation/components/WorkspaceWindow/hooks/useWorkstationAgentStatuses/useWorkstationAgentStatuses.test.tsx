@@ -78,6 +78,7 @@ test("binding statuses come from the selected workspace resources and original l
 	const view = renderHook(
 		() =>
 			useWorkstationAgentStatuses({
+				serviceUid: 1000,
 				api,
 				connection,
 				workspace,
@@ -116,6 +117,7 @@ test("late replies from an old namespace never appear under a new owner", async 
 	const view = renderHook(
 		({ target }) =>
 			useWorkstationAgentStatuses({
+				serviceUid: 1000,
 				api,
 				connection: target,
 				workspace,
@@ -153,6 +155,7 @@ test("old backends make no status queries and disabled or malformed responses cl
 	const view = renderHook(
 		({ enabled }) =>
 			useWorkstationAgentStatuses({
+				serviceUid: 1000,
 				api,
 				connection: {
 					...connection,
@@ -186,6 +189,7 @@ test("only visible active terminal reviews acknowledge the host event clock", as
 	} as unknown as DirectWorkstationApi;
 	const key = await workstationAgentSeenKey({
 		backendId: connection.backendId,
+		serviceUid: 1000,
 		namespaceId: connection.namespaceId,
 		workspaceId: workspace.workspaceId,
 		terminalId: "terminal",
@@ -194,6 +198,7 @@ test("only visible active terminal reviews acknowledge the host event clock", as
 	const view = renderHook(
 		({ selected, marks }) =>
 			useWorkstationAgentStatuses({
+				serviceUid: 1000,
 				api,
 				connection,
 				workspace: selected,

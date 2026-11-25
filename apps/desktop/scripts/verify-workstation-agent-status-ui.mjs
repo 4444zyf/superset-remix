@@ -53,7 +53,8 @@ export async function verifyWorkstationAgentStatusUi(options,{scope}) {
  const selector=`[data-terminal-id="${agent.resourceId}"]`;
  await until(()=>evaluate(`Boolean(document.querySelector(${JSON.stringify(selector)}+'[data-restore-state="attached"] .xterm-screen'))`),'owned hook terminal attached');
  const execution=await controls.inspectPresetTerminal(agent.resourceId);report.agent=agent;report.execution=execution;
- const seenKey=createHash('sha256').update(JSON.stringify(['workstation-agent-seen-v1',scope.d.backendId,scope.d.namespaceId,scope.w.workspaceId,agent.resourceId])).digest('hex');report.seenKey=seenKey;
+ const serviceUid=await evaluate(`(async()=>{const r=await window.directWorkstation.getWorkspaceViewV3();return r.snapshot.targets.find(t=>t.connectionId===${JSON.stringify(scope.d.connectionId)}).serviceUid;})()`);assert.ok(Number.isSafeInteger(serviceUid)&&serviceUid>0);report.serviceUid=serviceUid;
+ const seenKey=createHash('sha256').update(JSON.stringify(['workstation-agent-seen-v1',scope.d.backendId,scope.d.namespaceId,serviceUid,scope.w.workspaceId,agent.resourceId])).digest('hex');report.seenKey=seenKey;
  const proof=async()=>{try{const f=await query('filesystem.readFile',{workspaceId:scope.w.workspaceId,absolutePath:scope.root+'/.superset/owned-agent-status.json',maxBytes:65536});return JSON.parse(f.kind==='text'?f.content:Buffer.from(f.content,'base64').toString());}catch{return null;}};
  const binding=async()=>{const rows=await query('terminalAgents.listByWorkspace',{workspaceId:scope.w.workspaceId});return rows.find(row=>row.terminalId===agent.resourceId);};
  const mark=async()=>{const p=await evaluate('window.directWorkstation.getPreferences()');assert.equal(p.invalid,false);return {revision:p.revision,mark:p.values.agentSeenMarks?.find(m=>m.key===seenKey)??null};};

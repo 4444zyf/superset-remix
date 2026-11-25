@@ -5,9 +5,10 @@ import {
 	workstationAgentSeenKey,
 } from "./workstation-agent-seen";
 
-test("agent seen keys isolate backend, namespace, workspace and terminal without using renderer clocks", async () => {
+test("agent seen keys isolate backend, namespace, service UID, workspace and terminal without using renderer clocks", async () => {
 	const scope = {
 			backendId: "backend",
+			serviceUid: 1000,
 			namespaceId: "namespace",
 			workspaceId: "workspace",
 			terminalId: "terminal",
@@ -15,6 +16,9 @@ test("agent seen keys isolate backend, namespace, workspace and terminal without
 		key = await workstationAgentSeenKey(scope);
 	expect(key).toMatch(/^[a-f0-9]{64}$/);
 	expect(await workstationAgentSeenKey({ ...scope })).toBe(key);
+	expect(
+		await workstationAgentSeenKey({ ...scope, serviceUid: 2000 }),
+	).not.toBe(key);
 	for (const field of [
 		"backendId",
 		"namespaceId",

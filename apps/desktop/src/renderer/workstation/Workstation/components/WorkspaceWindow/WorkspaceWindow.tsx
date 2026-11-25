@@ -33,7 +33,7 @@ import { WorkspacePortControls } from "../WorkspacePortControls";
 import { WorkstationDialog } from "../WorkstationDialog/WorkstationDialog";
 import { PaneGrid } from "./components/PaneGrid/PaneGrid";
 import { WorkspacePaneAreas } from "./components/WorkspacePaneAreas/WorkspacePaneAreas";
-import { useWorkstationAgentStatuses } from "./hooks/useWorkstationAgentStatuses/useWorkstationAgentStatuses";
+import { useWorkstationAgentStatuses } from "./hooks/useWorkstationAgentStatuses";
 
 export function WorkspaceWindow({
 	api,
@@ -136,6 +136,7 @@ export function WorkspaceWindow({
 		(w) => w.tabId === target.activeTabId,
 	);
 	const agentStatuses = useWorkstationAgentStatuses({
+		serviceUid: target.serviceUid,
 		api,
 		connection,
 		workspace,

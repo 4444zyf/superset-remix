@@ -26,6 +26,7 @@ const schedulePoll = (callback: () => void) => {
 export function useWorkstationAgentStatuses({
 	api,
 	connection,
+	serviceUid,
 	workspace,
 	seenMarks,
 	onSeen,
@@ -34,6 +35,7 @@ export function useWorkstationAgentStatuses({
 }: {
 	api: DirectWorkstationApi;
 	connection: DirectDescriptor | null;
+	serviceUid: number;
 	workspace: WorkspaceViewV3 | undefined;
 	seenMarks: readonly WorkstationAgentSeenMark[];
 	onSeen?: (mark: WorkstationAgentSeenMark) => void;
@@ -46,6 +48,7 @@ export function useWorkstationAgentStatuses({
 		connection?.generation,
 		connection?.backendId,
 		connection?.namespaceId,
+		serviceUid,
 		connection?.instanceId,
 		workspace?.workspaceId,
 	]);
@@ -107,6 +110,7 @@ export function useWorkstationAgentStatuses({
 										key: await workstationAgentSeenKey({
 											backendId: connection.backendId,
 											namespaceId: connection.namespaceId,
+											serviceUid,
 											workspaceId,
 											terminalId: id,
 										}),
@@ -133,7 +137,7 @@ export function useWorkstationAgentStatuses({
 			window.removeEventListener("focus", focus);
 			document.removeEventListener("visibilitychange", focus);
 		};
-	}, [api, connection, owner, terminalIds, schedule, workspaceId]);
+	}, [api, connection, serviceUid, owner, terminalIds, schedule, workspaceId]);
 	const entries =
 		state.owner === owner &&
 		connection?.capabilities?.workstationAgentFeedbackV1 === true

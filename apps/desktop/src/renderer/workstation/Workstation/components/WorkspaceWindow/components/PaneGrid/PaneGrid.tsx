@@ -44,7 +44,7 @@ import type {
 } from "../../../RemoteTerminal/RemoteTerminal";
 import type { TerminalFileTarget } from "../../../RemoteTerminal/utils/terminal-file-links/terminal-file-links";
 import { WorkspacePaneView } from "../WorkspacePaneView/WorkspacePaneView";
-import { WorkstationAgentStatus } from "../WorkstationAgentStatus/WorkstationAgentStatus";
+import { WorkstationAgentStatus } from "../WorkstationAgentStatus";
 import { canDropWorkspaceItem } from "./utils/canDropWorkspaceItem/canDropWorkspaceItem";
 import { isCompactPaneLayout } from "./utils/isCompactPaneLayout/isCompactPaneLayout";
 

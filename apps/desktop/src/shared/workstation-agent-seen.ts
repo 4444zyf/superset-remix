@@ -7,6 +7,7 @@ export interface WorkstationAgentSeenMark {
 
 export async function workstationAgentSeenKey(scope: {
 	backendId: string;
+	serviceUid: number;
 	namespaceId: string;
 	workspaceId: string;
 	terminalId: string;
@@ -16,6 +17,7 @@ export async function workstationAgentSeenKey(scope: {
 			"workstation-agent-seen-v1",
 			scope.backendId,
 			scope.namespaceId,
+			scope.serviceUid,
 			scope.workspaceId,
 			scope.terminalId,
 		]),
