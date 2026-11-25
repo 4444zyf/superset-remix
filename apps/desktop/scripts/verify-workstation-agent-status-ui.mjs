@@ -27,6 +27,12 @@ try:
   data=os.read(fd,4096)
   if not data or b'q' in data or b'\x03' in data:break
   for char in data:
+   if char==98:
+    ready=root/'.superset/owned-agent-background-ready';deadline=time.monotonic()+8
+    state['awaitingBackground']=True;save()
+    while not ready.exists() and time.monotonic()<deadline:time.sleep(.02)
+    assert ready.is_file(),'Owned background shell did not signal readiness'
+    state['awaitingBackground']=False;notify('Stop');continue
    event={119:'Start',112:'PermissionRequest',115:'Stop',102:'Failed'}.get(char)
    if event:
     if event=='Stop':time.sleep(.4)
@@ -81,6 +87,7 @@ export async function verifyWorkstationAgentStatusUi(options,{scope}) {
   if(workspaceTabsEnabled){
    await click('.ws-workspace-tabs [data-slot="dropdown-menu-trigger"]');await menu('New session');await click('[role=dialog] input');await getPage().call('Input.insertText',{text:'Owned background status workspace'});await click('[role=dialog] button[type=submit]');
    const other=await until(()=>evaluate(`(async()=>{const r=await window.directWorkstation.getWorkspaceViewV3(),t=r.snapshot.targets.find(t=>t.connectionId===${JSON.stringify(scope.d.connectionId)});return t.activeTabId!==${JSON.stringify(before.tabId)}&&t.workspaces.find(w=>w.tabId===t.activeTabId);})()`),'new workspace selected through original add menu');report.otherWorkspace=other;
+   await click('text:New terminal');const otherTerminal=await until(()=>evaluate(`(()=>{const e=document.querySelector('[data-terminal-id][data-restore-state="attached"]');return e?.dataset.terminalId;})()`),'owned background handshake terminal attached');report.otherTerminalId=otherTerminal;report.otherExecution=await controls.inspectPresetTerminal(otherTerminal);
    assert.ok(((await mark()).mark?.at??-1)<stopped.lastEventAt);await capture('workspace-background-unread');await selectWorkspace(before.tabId);
   }
 
@@ -88,7 +95,7 @@ export async function verifyWorkstationAgentStatusUi(options,{scope}) {
   await closeReopen();await observeEvents();await waitRestored(true);await until(async()=>(await mark()).mark?.at===stopped.lastEventAt,'seen timestamp persists across real reopen');await until(async()=>!(await badge('review')),'persisted seen timestamp prevents old review');await capture('seen-reopened');
   await selectAgent();await send('f');await until(()=>badge('failed','header'),'failed indicator is never seen-gated');assert.equal((await mark()).mark.at,stopped.lastEventAt);await capture('failed');
   await rightClick(agent.paneId);await menu('Move to Center');await until(async()=>{const w=await read();return w.activePaneArea==='center'&&w.paneTabs.some(t=>JSON.stringify(t.layout).includes(agent.paneId));},'same agent moved to center through original menu');await until(()=>badge('failed','header'),'failure indicator follows same resource between areas');await capture('failed-center');
-  await send('w');await until(()=>badge('working'),'same hook session starts another turn');await send('s');if(workspaceTabsEnabled)await selectWorkspace(report.otherWorkspace.tabId);else await browserTab();const second=await until(async()=>{const b=await binding();return b?.lastEventType==='Stop'&&b.lastEventAt>stopped.lastEventAt&&b;},'new host-clock Stop');if(workspaceTabsEnabled)await until(async()=>(await workspaceBadge())==='review','background workspace completion is unread');else await until(()=>badge('review'),'inactive center terminal remains unread while right browser active');assert.equal((await mark()).mark.at,stopped.lastEventAt);await capture('second-unread');
+  await send('w');await until(()=>badge('working'),'same hook session starts another turn');if(workspaceTabsEnabled){await send('b');await until(async()=>(await proof())?.awaitingBackground===true,'host waits for actual background workspace shell');await selectWorkspace(report.otherWorkspace.tabId);await click(`[data-terminal-id="${report.otherTerminalId}"] .xterm-screen`);await getPage().call('Input.insertText',{text:`printf ready > ${quote(scope.root+'/.superset/owned-agent-background-ready')}; exit`});for(const type of ['keyDown','keyUp'])await getPage().call('Input.dispatchKeyEvent',{type,key:'Enter',code:'Enter',windowsVirtualKeyCode:13});}else{await send('s');await browserTab();}const second=await until(async()=>{const b=await binding();return b?.lastEventType==='Stop'&&b.lastEventAt>stopped.lastEventAt&&b;},'new host-clock Stop');if(workspaceTabsEnabled)await until(async()=>(await workspaceBadge())==='review','background workspace completion is unread');else await until(()=>badge('review'),'inactive center terminal remains unread while right browser active');assert.equal((await mark()).mark.at,stopped.lastEventAt);await capture('second-unread');
   if(workspaceTabsEnabled){await closeReopen();await observeEvents();await waitRestored(false);assert.equal((await mark()).mark.at,stopped.lastEventAt);await capture('workspace-background-unread-reopened');await selectWorkspace(before.tabId);}
 
   await selectAgent();await until(async()=>(await mark()).mark?.at===second.lastEventAt,'selecting center terminal acknowledges newer host event');await capture('second-seen');
