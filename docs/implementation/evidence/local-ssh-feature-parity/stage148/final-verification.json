@@ -1,0 +1,50 @@
+{
+  "compiledSource": "1df4f741bc6b021ea95d356ac12a40314a1281cf",
+  "compiledFiles": 2420,
+  "fixtureCount": 89,
+  "sourceCliFiles": 3639,
+  "native": [
+    {
+      "case": "local-tab-drag-position",
+      "wholeTabTransfers": 2,
+      "originalLayoutsRestored": true,
+      "nativeXTest": true,
+      "samePidExecutionAndCwd": true,
+      "reopened": true,
+      "cleanup": {
+        "ownedXorgPid": 5247,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      }
+    },
+    {
+      "case": "ssh-tab-drag-position",
+      "wholeTabTransfers": 2,
+      "originalLayoutsRestored": true,
+      "nativeXTest": true,
+      "samePidExecutionAndCwd": true,
+      "reopened": true,
+      "cleanup": {
+        "ownedXorgPid": 5916,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "windowRestoreSamples": 20
+    }
+  ],
+  "finalRunsPassed": true,
+  "overallParityComplete": false,
+  "singlePaneAndTabToSplitPending": true,
+  "screenshotStabilityUnresolved": true,
+  "physicalMacVerified": false,
+  "externalSshVerified": false,
+  "vendorAgentVerified": false,
+  "newDesktopSourceBuild": false,
+  "installer": false,
+  "githubActions": false,
+  "screenshotsActuallyViewed": [
+    "local-tab-drag/app/pane-area-drag-center-to-right.png",
+    "ssh-tab-drag/app/pane-area-drag-center-to-right.png"
+  ],
+  "scopedLiveProcesses": []
+}

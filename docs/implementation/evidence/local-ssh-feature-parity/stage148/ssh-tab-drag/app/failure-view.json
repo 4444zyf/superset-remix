@@ -1,0 +1,141 @@
+{
+  "revision": 71,
+  "snapshot": {
+    "restoreOnLaunch": true,
+    "activeConnectionId": "17b536a6-aac9-4244-8d58-6a8dc244e2b7",
+    "targets": [
+      {
+        "connectionId": "17b536a6-aac9-4244-8d58-6a8dc244e2b7",
+        "targetRevision": 1,
+        "backendId": "6d88bf01-3f8d-49ec-98ab-10f5d01d4697",
+        "namespaceId": "3bb68618-dbf5-4c04-8803-24d3cc794a7a",
+        "serviceUid": 1000,
+        "autoConnect": true,
+        "activeTabId": "9dc968ef-ba87-4c51-a540-16dc48a9d311",
+        "workspaces": [
+          {
+            "tabId": "9dc968ef-ba87-4c51-a540-16dc48a9d311",
+            "workspaceId": "64e90dca-d75c-4baf-8806-a47a1bd7426f",
+            "label": "Restore lifecycle",
+            "activeTool": "terminal",
+            "activePaneId": "8fa0a30d-43e5-4a02-9b2a-ab5e43e6db43",
+            "panes": [
+              {
+                "paneId": "f7b20ce2-0604-4189-92a3-83906d8aa472",
+                "kind": "terminal",
+                "resourceId": "272f8f55-f7e1-4371-9e39-e55a7ba1c124",
+                "executionId": "8288736d-f0ca-4abb-9b62-f2dfc44cf1c0",
+                "label": "Claude"
+              },
+              {
+                "paneId": "a868c08d-93fa-4af3-a6ad-813681f91e34",
+                "kind": "terminal",
+                "resourceId": "5a7de65c-2f2a-4a7b-8f65-f0c2240d34f0",
+                "executionId": "4cb2656d-5a1f-4462-8fd8-07f24e385c09",
+                "label": "Codex"
+              },
+              {
+                "paneId": "353a792c-0aad-43c1-ab1d-c939292285a1",
+                "kind": "terminal",
+                "resourceId": "1dd34b02-66ac-455d-be5c-7c38b7fcc8a7",
+                "executionId": "60f9a001-fb71-4a75-8bca-e47c6e5a9107",
+                "label": "OMP"
+              },
+              {
+                "paneId": "8fa0a30d-43e5-4a02-9b2a-ab5e43e6db43",
+                "kind": "terminal",
+                "resourceId": "ccd1da5f-29d9-4a72-b699-7cc51cb64184",
+                "executionId": "6bccc73d-9682-4911-a21a-a68e8040dfdc",
+                "label": "Terminal"
+              }
+            ],
+            "layout": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "split",
+                "axis": "vertical",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "f7b20ce2-0604-4189-92a3-83906d8aa472"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "a868c08d-93fa-4af3-a6ad-813681f91e34"
+                }
+              },
+              "second": {
+                "type": "split",
+                "axis": "vertical",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "353a792c-0aad-43c1-ab1d-c939292285a1"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "8fa0a30d-43e5-4a02-9b2a-ab5e43e6db43"
+                }
+              }
+            },
+            "paneTabs": [
+              {
+                "tabId": "691c7af1-72ad-468c-8442-966b67ff3f19",
+                "label": "Terminal",
+                "createdAt": 1795587157166,
+                "activePaneId": "8fa0a30d-43e5-4a02-9b2a-ab5e43e6db43",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "8fa0a30d-43e5-4a02-9b2a-ab5e43e6db43"
+                }
+              },
+              {
+                "tabId": "c0259709-e194-4208-82a7-910ce6a75c9d",
+                "label": "Terminal",
+                "createdAt": 1795587104062,
+                "activePaneId": "353a792c-0aad-43c1-ab1d-c939292285a1",
+                "layout": {
+                  "type": "split",
+                  "axis": "horizontal",
+                  "ratio": 0.37,
+                  "first": {
+                    "type": "split",
+                    "axis": "vertical",
+                    "ratio": 0.5,
+                    "first": {
+                      "type": "pane",
+                      "paneId": "f7b20ce2-0604-4189-92a3-83906d8aa472"
+                    },
+                    "second": {
+                      "type": "pane",
+                      "paneId": "353a792c-0aad-43c1-ab1d-c939292285a1"
+                    }
+                  },
+                  "second": {
+                    "type": "pane",
+                    "paneId": "a868c08d-93fa-4af3-a6ad-813681f91e34"
+                  }
+                }
+              }
+            ],
+            "activePaneTabId": "691c7af1-72ad-468c-8442-966b67ff3f19"
+          }
+        ]
+      }
+    ],
+    "window": {
+      "x": 0,
+      "y": 87,
+      "width": 1200,
+      "height": 900,
+      "maximized": false
+    },
+    "schemaVersion": 1,
+    "revision": 71,
+    "updatedAt": 1795587165665
+  },
+  "invalid": false,
+  "navigationRevision": 0
+}

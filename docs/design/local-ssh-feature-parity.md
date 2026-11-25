@@ -4,6 +4,8 @@
 
 ## 2026-11-11 当前重点状态
 
+阶段一百四十八补验原生标签组跨侧拖拽：本地与自有SSH通过中心→右侧→原位置返回、边界往返/停留/主线程干扰及实际关闭重开；资源、终端PID/执行/cwd保持。初轮SSH夹具落回第一位导致顺序断言失败，修正落点后同一完整断言通过，失败记录保留。2420编译文件/89脚本/3639源码CLI图冻结不变，SSH含20次恢复。单窗格和标签拖入分屏仍待核对，不把标签栏成功扩称完整拖拽验收。[阶段一百四十八证据](../implementation/evidence/local-ssh-feature-parity/stage148)。
+
 阶段一百四十七在最新1df4f741b编译上补验用户强调的双侧终端能力：本地/自有SSH分别通过右侧图片/文件/中文粘贴、展开右侧的受控TUI复制/括号粘贴/图片实际文件像素与哈希、移回中间后的真实重挂载与OSC52；完整TUI输入流逐字匹配，无额外转移/方向键输入。另两端滚轮套件通过普通上下滚动、TUI历史回看/复制、stock偏好及SGR/legacy/pixel切换；两个独立SSH套件各20次恢复。所有转移PID/执行/cwd保持，2420产物/88脚本/3639源码CLI图与各自冻结版本一致。没有修改终端产品代码，没有Mac/外部SSH/真实供应商Agent识图或新安装包声明；双侧拖拽及原功能清单继续，阶段146的一次未定位截图拒绝仍保留。[阶段一百四十七证据](../implementation/evidence/local-ssh-feature-parity/stage147)。
 
 阶段一百四十六接回原右侧展开/还原：标签转移和原选择快照随私有V3布局原子保存，正常重开按原规则还原，隐藏时先还原，展开后合并清快照；用户宽度不被全宽覆盖。后台browser open保留展开快照，显式show在同次候选布局内还原并显示中间新页。219项/915断言、类型/17语言检查通过；最终无诊断包裹的本地/自有SSH各20阶段、合计300项API/CLI检查、CDP32条及SSH 20次恢复通过，冻结哈希/只读SQLite/清理通过。另有一次原CLI初始截图拒绝尚未定位，后续诊断未复现；保留该失败和有界本地诊断，不把最后通过视作稳定性已证明。双侧拖拽、其他原功能继续（双侧终端图片粘贴/滚轮的最新补验见阶段147）。[阶段一百四十六证据](../implementation/evidence/local-ssh-feature-parity/stage146)。
@@ -554,3 +556,11 @@ ba716c4d0复用原expandPaneArea/restorePaneArea，两个运行体逐字相同�
 local-wheel-right和ssh-wheel-right也均退出0：普通历史在右侧实测scrollbar上下变化，Shell/无鼠标TUI回看不发游标键，展开后历史review包含Shell/FIRST/SECOND屏，回看复制/图片保护和保存的stock偏好不向TUI输入；实际SGR上下改变内容偏移。还原/移中后真实Files重挂载不喂键，legacy高坐标保持8位原字节、pixel SGR保留像素坐标；均不出现ESC[A/B或SS3方向键。每个转移实际PID/执行/cwd保持。两个独立SSH套件各含20次恢复；不把它们描述为40种不同恢复。
 
 剪贴板与滚轮分别在各自88个MJS冻结版本运行前后核对；两组之间仅helper控制器解析、wheel夹具和SSH透传controls三个脚本按意图变化，2420编译文件与3639源码CLI图逐字相同，无新桌面/随包CLI二进制。四个最终实例退出0，自有进程及X175清理通过；选择收取批准的顶层JSON/日志/截图与冻结清单，不包含profiles、DB、配置、密钥，秘密模式扫描通过。已查看SSH普通右侧图片路径与展开TUI历史截图，路径列于final-verification.json。恢复夹具Claude/Codex/OMP标签只是自有心跳任务标题；raw TUI是受控Python字节接收器，vendorAgentVerified=false，没有真实供应商Agent识图、实体Mac或外部SSH验收声明。阶段146的一次原CLI截图拒绝仍未定位，本轮没有重测该通道；双侧拖拽等继续。[阶段一百四十七证据](../implementation/evidence/local-ssh-feature-parity/stage147)。
+
+## 阶段一百四十八：原生标签组跨侧拖拽（2026-11-25）
+
+复用原HTML5 DND与拥有X11窗口的XTest鼠标输入，不注入DataTransfer或手动改布局。原1200窗口/944内容容器/480右侧宽度下，从当前中心标签拖到右侧标签栏，途中边界往返，最终落点停留500ms，并用120ms/400ms主线程干扰检验事件批处理；再拖回原可见位置，比较完整双侧标签/布局，实际关闭重开后继续比较。实际终端资源ID/执行ID/PID/cwd保持，当前renderer console.errors为空。
+
+初轮本地完整通过；初轮SSH两次移动均发生，但夹具把原第二位标签拖回第一位，完整顺序断言失败。仅修正拖回可见落点至原前驱标签右半侧，没有改产品或削弱断言。最终local-tab-drag-position、ssh-tab-drag-position均退出0，SSH既有20次恢复通过。初轮与最终冻结清单/原日志/截图均保留；最终2420编译文件与上一阶段完全一致、89顶层MJS及3639源码CLI图运行前后不变。自有进程及X176清理通过，秘密模式扫描通过。
+
+只证明整个标签组拖到标签栏，单窗格/标签拖入分屏继续核对。阶段146一次原CLI截图拒绝仍未定位，本轮不含该通道。没有新源码编译/随包CLI/安装包，没有Actions、实体Mac、外部SSH或真实供应商Agent验收。实际查看的初轮两端移右截图列于final-verification.json；SSH侧Claude/Codex/OMP仍为受控心跳任务。[本阶段证据](../implementation/evidence/local-ssh-feature-parity/stage148)。
