@@ -1,0 +1,96 @@
+{
+  "compiledSource": "c37278b527844bb87a23ca7b405aeb97a7649009",
+  "compiledFiles": 2420,
+  "fixtureCount": 91,
+  "sourceCliFiles": 3639,
+  "native": [
+    {
+      "case": "local-overview-sorted",
+      "actualBackendHooks": true,
+      "actualAuthenticatedLifecycleEvents": true,
+      "fourteenPhases": true,
+      "catalogUnreadSurvivesReopen": true,
+      "verifiedDescriptorUid": true,
+      "backgroundWorkspaceUnreadSurvivesReopen": true,
+      "originalPriorityAndSeenRules": true,
+      "sameShellAndPythonPid": true,
+      "sameExecutionAndCwd": true,
+      "fourRealReopens": true,
+      "seenUsesExactHostClock": true,
+      "serviceUidScopedKey": true,
+      "cleanup": {
+        "ownedXorgPid": 55458,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      }
+    },
+    {
+      "case": "ssh-overview-sorted",
+      "actualBackendHooks": true,
+      "actualAuthenticatedLifecycleEvents": true,
+      "fourteenPhases": true,
+      "catalogUnreadSurvivesReopen": true,
+      "verifiedDescriptorUid": true,
+      "backgroundWorkspaceUnreadSurvivesReopen": true,
+      "originalPriorityAndSeenRules": true,
+      "sameShellAndPythonPid": true,
+      "sameExecutionAndCwd": true,
+      "fourRealReopens": true,
+      "seenUsesExactHostClock": true,
+      "serviceUidScopedKey": true,
+      "cleanup": {
+        "ownedXorgPid": 56238,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "windowRestoreSamples": 20
+    }
+  ],
+  "readOnlySqlite": [
+    {
+      "case": "local-overview-sorted",
+      "readOnly": true,
+      "preferenceSchemaVersion": 1,
+      "preferenceRevision": 2,
+      "seenCount": 1,
+      "seenKey": "86bd86fd9d8c76c143fff26bacb915c301f669091b9f968bf55aaeca6b30db7e",
+      "seenAt": 1795595683921,
+      "viewSchemaVersion": 3,
+      "viewRevision": 43,
+      "mode": "0600"
+    },
+    {
+      "case": "ssh-overview-sorted",
+      "readOnly": true,
+      "preferenceSchemaVersion": 1,
+      "preferenceRevision": 2,
+      "seenCount": 1,
+      "seenKey": "c75b9427024163e929792246e8887c3e2417bcaad9c08420b53998ed0cec952a",
+      "seenAt": 1795595786003,
+      "viewSchemaVersion": 3,
+      "viewRevision": 98,
+      "mode": "0600"
+    }
+  ],
+  "finalRunsPassed": true,
+  "unitTests": 88,
+  "unitAssertions": 427,
+  "typeCheckPassed": true,
+  "scopedLiveProcesses": [],
+  "overallParityComplete": false,
+  "screenshotStabilityUnresolved": true,
+  "workspaceWideAndOsNotificationsPending": true,
+  "physicalMacVerified": false,
+  "externalSshVerified": false,
+  "vendorAgentVerified": false,
+  "installer": false,
+  "githubActions": false,
+  "screenshotsActuallyViewed": [
+    "local-overview-baseline/app/agent-management-failure.png",
+    "local-overview/app/agent-status-workspace-overview-unread.png",
+    "local-overview/app/agent-status-workspace-overview-unread-reopened.png",
+    "local-overview-sorted/app/agent-status-workspace-overview-unread-reopened.png",
+    "ssh-overview-sorted/app/agent-status-workspace-overview-unread.png",
+    "ssh-overview-sorted/app/agent-status-workspace-overview-unread-reopened.png"
+  ]
+}

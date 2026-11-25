@@ -1,0 +1,13 @@
+{
+  "case": "local-overview-sorted",
+  "compiledSource": "c37278b527844bb87a23ca7b405aeb97a7649009",
+  "compiledFiles": 2420,
+  "fixtureCount": 91,
+  "sourceCliFiles": 3639,
+  "allUnchanged": true,
+  "cleanup": {
+    "ownedXorgPid": 55458,
+    "ownedXorgExit": 0,
+    "appExit": 0
+  }
+}

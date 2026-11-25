@@ -1,0 +1,102 @@
+[
+  {
+    "text": "Move to Right Side",
+    "attempt": 0,
+    "geometry": {
+      "top": 461,
+      "bottom": 493,
+      "min": 352,
+      "max": 497,
+      "x": 778.390625,
+      "y": 424.5,
+      "menuTop": 351,
+      "menuBottom": 498,
+      "scrollTop": 0,
+      "scrollHeight": 145,
+      "clientHeight": 145,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "New session",
+    "attempt": 0,
+    "geometry": {
+      "top": 168,
+      "bottom": 200,
+      "min": 164,
+      "max": 236,
+      "x": 341,
+      "y": 200,
+      "menuTop": 163,
+      "menuBottom": 237,
+      "scrollTop": 0,
+      "scrollHeight": 72,
+      "clientHeight": 72,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Move to Center",
+    "attempt": 0,
+    "geometry": {
+      "top": 525,
+      "bottom": 557,
+      "min": 352,
+      "max": 561,
+      "x": 991.4140625,
+      "y": 456.5,
+      "menuTop": 351,
+      "menuBottom": 562,
+      "scrollTop": 0,
+      "scrollHeight": 209,
+      "clientHeight": 209,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Close pane",
+    "attempt": 0,
+    "geometry": {
+      "top": 484,
+      "bottom": 516,
+      "min": 352,
+      "max": 561,
+      "x": 534.390625,
+      "y": 456.5,
+      "menuTop": 351,
+      "menuBottom": 562,
+      "scrollTop": 0,
+      "scrollHeight": 209,
+      "clientHeight": 209,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Move to Center",
+    "attempt": 0,
+    "geometry": {
+      "top": 461,
+      "bottom": 493,
+      "min": 352,
+      "max": 497,
+      "x": 999.4140625,
+      "y": 424.5,
+      "menuTop": 351,
+      "menuBottom": 498,
+      "scrollTop": 0,
+      "scrollHeight": 145,
+      "clientHeight": 145,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  }
+]

@@ -1881,3 +1881,20 @@ CLI 仍为控制机原源码 dev runner，针对本次拥有的同机 namespace�
 退出后只读SQLite两端均schema1/revision2、一个已查看键等于第二个Stop，重开未重复写入，文件0600；V3布局仍schema3。2420编译文件、91脚本及3639源码CLI图每轮结束立即验证相应冻结版本，全部自有记录PID/cwd及scoped进程检查通过，X180释放。离线核验脚本更新上一阶段的right浏览器断言为本轮中心Agent保存状态，并修正阶段循环变量，未修改原始回执。证据125文件，批准白名单、秘密模式扫描和SHA256清单通过，不含配置、数据库或密钥。实际查看基线缺失、本地首轮清理失败、本地后台重开、SSH permission及后台重开截图，其余仅称捕获。
 
 这是Linux源码桌面、自有loopback SSH和受控TUI真实hook/事件验证，不宣称物理Mac、外部SSH或供应商Agent识图。本轮没有重跑剪贴板/滚轮；原CLI截图的一次未定位拒绝仍待跟进。顶部已打开工作区标签已补，项目侧栏/未打开工作区汇总、系统通知、多窗口同步及其余功能继续，整体对齐未完成；未使用GitHub Actions。[阶段一百五十二证据](evidence/local-ssh-feature-parity/stage152)。
+
+
+## 阶段一百五十三：工作区列表的Agent状态与已验证服务身份（2026-11-25）
+
+原侧栏状态按workspaceId查询terminalAgents.listByWorkspace，不依赖已打开窗格；工作站的列表卡片此前只显示Connected。新增主进程身份与无窗格目录回归在旧实现65通过/2失败，之后旧编译0f349196e的真实Linux基线在original workspace overview unread处失败：后台第二次Stop已记录，已查看仍为第一次Stop，但列表没有状态。截图已实际查看，原产物/夹具冻结和错误回执保留。
+
+主进程WorkstationController.describe增加可选serviceUid，只来自已有getVerifiedDescription，并要求backendId、namespaceId、instanceId均与live lease一致且UID为正安全整数。凭据、地址等仍不返回；旧manager或缺失/错误身份省略字段。没有新后端接口、能力/最低版本或发行归档。WorkstationWorkspaceAgentStatus仅在该身份存在且已连接时查询目录工作区，复用原状态推导、优先级和UID已查看键，不接收确认回调；旧描述保持原列表，不能用缓存profile或猜测UID匹配已查看记录。
+
+共享状态hook与展示组件按实际复用提升到Workstation根hooks/components。hook增加只读workspaceId入口：没有workspace/panes时读取该工作区绑定，严格过滤工作区、terminalId类型/长度及事件时间，并将目录模式每次绑定条数限制为4096，拒绝异常超量；原窗格模式仍只认已拥有资源。目录也订阅现有鉴权事件池，新的terminal绑定无需先打开窗格即可刷新；没有新持久键/表或已查看写入。
+
+相关9文件88项/427断言、桌面类型检查通过，包含主进程完整身份匹配/错误UID及端点过滤、无V3/窗格的完整Workstation目录、旧UID描述不查询、目录事件发现新terminal、无效/超量绑定、背景不确认及已有终端/事件池/文件编辑器回归。针对性Biome通过；Root旧有3个非空断言及测试旧有1个警告保留，PaneGrid原有exhaustive-deps只在该目标检查中跳过，没有修改全局规则。初轮11394687f编译和两端十四阶段均通过，但发现提升组件后遗漏PaneGrid导入排序。仅排序的c37278b52重新完整编译工具退出0，并重新执行两端全部原生流程，未将前一产物当成最终源码验证。
+
+最终local-overview-sorted、ssh-overview-sorted均退出0。沿阶段152的十二阶段增加workspace-overview-unread、workspace-overview-unread-reopened：真实后台完成后点击原Workspaces返回列表，卡片显示未读，第四次真实窗口重开后仍在，返回原终端后才确认第二次Stop。读取实际主进程描述的UID与V3已验证身份一致；原shell/Python PID、执行ID及cwd始终保持，真实Start/Stop事件旁观保留，SSH含原20次窗口恢复。组件测试验证完全没有已保存窗格时的目录读取；本轮实窗覆盖既有工作区返回目录与重开，没有把它称为实际关闭工作区标签后的完整旅程。
+
+只读SQLite两端偏好schema1/revision2、恰好1个已查看键等于第二次host Stop，目录观察和重开没有额外确认，文件0600，V3仍schema3。每轮运行结束立即复核相应2420编译文件、91脚本和3639源码CLI图；最终自有记录PID/cwd、scoped进程及X181释放检查通过。基线、初轮和最终产物分别归档，170文件经白名单收集与秘密模式扫描，SHA256清单保留，不含配置/数据库/密钥。实际查看基线列表缺失、首轮本地两张列表图、最终本地重开和最终SSH两张列表图，其余仅称捕获。
+
+此为Linux源码Electron、自有loopback SSH和受控TUI的真实hook/事件验证，不是物理Mac、外部SSH或真实供应商Agent认证/识图。本轮未重跑终端图片粘贴和滚轮；原CLI截图的一次未定位拒绝仍待处理。项目侧栏汇总、系统通知、多窗口同步及其余原功能继续，整体未完成。没有CLI二进制/安装包/封装后端构建或GitHub Actions。[阶段一百五十三证据](evidence/local-ssh-feature-parity/stage153)。
