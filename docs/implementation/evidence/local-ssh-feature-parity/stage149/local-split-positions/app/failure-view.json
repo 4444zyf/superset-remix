@@ -1,0 +1,64 @@
+{
+  "revision": 16,
+  "snapshot": {
+    "restoreOnLaunch": true,
+    "activeConnectionId": "00000000-0000-4000-8000-000000000001",
+    "targets": [
+      {
+        "connectionId": "00000000-0000-4000-8000-000000000001",
+        "targetRevision": 1,
+        "backendId": "7cff709b-c2af-4998-88bb-2a8d422be05a",
+        "namespaceId": "529356d2-afd3-4db9-80e9-8e5e24d4b412",
+        "serviceUid": 1000,
+        "autoConnect": true,
+        "activeTabId": "e966a360-3e12-4480-9aa5-791ba522bc4e",
+        "workspaces": [
+          {
+            "tabId": "e966a360-3e12-4480-9aa5-791ba522bc4e",
+            "workspaceId": "e00d1248-58bf-4fec-b78e-be718c284906",
+            "label": "Local wheel 0fe2dc48-812f-44ab-8e14-ca773a5279c9",
+            "activeTool": "terminal",
+            "activePaneId": "734085f0-175e-44ba-994a-d410b90f70a9",
+            "panes": [
+              {
+                "paneId": "734085f0-175e-44ba-994a-d410b90f70a9",
+                "kind": "terminal",
+                "resourceId": "1ced47ec-725b-44bf-890c-287d550d5b02",
+                "executionId": "0a767218-a835-44af-bdd1-9a76d4ed60a2",
+                "label": "Terminal"
+              }
+            ],
+            "layout": {
+              "type": "pane",
+              "paneId": "734085f0-175e-44ba-994a-d410b90f70a9"
+            },
+            "paneTabs": [
+              {
+                "tabId": "tab-054cffe3-d432-4f63-bed3-37deb58b034e",
+                "createdAt": 1795587873388,
+                "activePaneId": "734085f0-175e-44ba-994a-d410b90f70a9",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "734085f0-175e-44ba-994a-d410b90f70a9"
+                }
+              }
+            ],
+            "activePaneTabId": "tab-054cffe3-d432-4f63-bed3-37deb58b034e"
+          }
+        ]
+      }
+    ],
+    "window": {
+      "x": 0,
+      "y": 87,
+      "width": 1200,
+      "height": 900,
+      "maximized": false
+    },
+    "schemaVersion": 1,
+    "revision": 16,
+    "updatedAt": 1795587873478
+  },
+  "invalid": false,
+  "navigationRevision": 1
+}

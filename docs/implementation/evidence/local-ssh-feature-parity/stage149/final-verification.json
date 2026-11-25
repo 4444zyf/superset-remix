@@ -1,0 +1,51 @@
+{
+  "compiledSource": "1c7b73fa802902c5083ada15e4197af83c9b0340",
+  "compiledFiles": 2420,
+  "fixtureCount": 90,
+  "sourceCliFiles": 3639,
+  "native": [
+    {
+      "case": "local-split-bounded",
+      "nativeGestures": 3,
+      "sixPhases": true,
+      "sameResourcesAndPidExecutionCwd": true,
+      "realReopen": true,
+      "cleanup": {
+        "ownedXorgPid": 12596,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      }
+    },
+    {
+      "case": "ssh-split-bounded",
+      "nativeGestures": 3,
+      "sixPhases": true,
+      "sameResourcesAndPidExecutionCwd": true,
+      "realReopen": true,
+      "cleanup": {
+        "ownedXorgPid": 13271,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "windowRestoreSamples": 20
+    }
+  ],
+  "finalRunsPassed": true,
+  "unitTests": 42,
+  "unitAssertions": 248,
+  "typeCheckPassed": true,
+  "scopedLiveProcesses": [],
+  "overallParityComplete": false,
+  "screenshotStabilityUnresolved": true,
+  "physicalMacVerified": false,
+  "externalSshVerified": false,
+  "vendorAgentVerified": false,
+  "installer": false,
+  "githubActions": false,
+  "screenshotsActuallyViewed": [
+    "local-split-baseline/app/agent-management-failure.png",
+    "local-split-fixed/app/pane-area-split-drag-tab-into-split.png",
+    "local-split-fixed/app/pane-area-split-drag-pane-to-right.png",
+    "ssh-split-bounded/app/pane-area-split-drag-tab-into-split.png"
+  ]
+}

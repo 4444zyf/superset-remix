@@ -1,0 +1,13 @@
+{
+  "case": "local-split-fixed",
+  "compiledSource": "1c7b73fa802902c5083ada15e4197af83c9b0340",
+  "compiledFiles": 2420,
+  "fixtureCount": 90,
+  "sourceCliFiles": 3639,
+  "allUnchanged": true,
+  "cleanup": {
+    "ownedXorgPid": 11340,
+    "ownedXorgExit": 0,
+    "appExit": 1
+  }
+}
