@@ -57,6 +57,10 @@ export async function verifyWorkstationPaneAreasUi(options, {scope, terminal, gu
   const reset=await geometry();report.phases.push({name:'reset',geometry:reset,view:await read(),focus:await focusTrace()});await screenshot('pane-areas-reset');save();
   assert.ok(Math.abs(reset.right-Math.round(reset.viewport*0.4))<2,'double click restores the original viewport-based default width');
   if(process.argv.includes('--pane-area-width')) {report.widthPreference.reset=await until(async()=>{const p=await evaluate('window.directWorkstation.getPreferences()');return !p.invalid&&p.values.rightPaneAreaWidth===Math.round(reset.viewport*0.4)?p:null;},'double click persists the original viewport default');save();}
+  if(process.argv.includes('--pane-area-split-drag')) {
+   const {verifyWorkstationPaneAreaSplitDrag}=await import('./verify-workstation-pane-area-split-drag.mjs');
+   await verifyWorkstationPaneAreaSplitDrag(options,{read,terminal,browser});
+  }
   if(process.argv.includes('--pane-area-drag')) {
    const {verifyWorkstationPaneAreaDrag}=await import('./verify-workstation-pane-area-drag.mjs');
    await verifyWorkstationPaneAreaDrag(options,{read,terminal,browser});
