@@ -43,8 +43,8 @@ import type {
 	TerminalEmulator,
 } from "../../../RemoteTerminal/RemoteTerminal";
 import type { TerminalFileTarget } from "../../../RemoteTerminal/utils/terminal-file-links/terminal-file-links";
-import { WorkspacePaneView } from "../WorkspacePaneView/WorkspacePaneView";
 import { WorkstationAgentStatus } from "../../../WorkstationAgentStatus";
+import { WorkspacePaneView } from "../WorkspacePaneView/WorkspacePaneView";
 import { canDropWorkspaceItem } from "./utils/canDropWorkspaceItem/canDropWorkspaceItem";
 import { isCompactPaneLayout } from "./utils/isCompactPaneLayout/isCompactPaneLayout";
 
