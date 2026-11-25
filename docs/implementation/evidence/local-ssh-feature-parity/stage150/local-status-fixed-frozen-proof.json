@@ -1,0 +1,13 @@
+{
+  "case": "local-status-fixed",
+  "compiledSource": "f0d6fb0a394307de0906849a7c379fac95221102",
+  "compiledFiles": 2420,
+  "fixtureCount": 91,
+  "sourceCliFiles": 3639,
+  "allUnchanged": true,
+  "cleanup": {
+    "ownedXorgPid": 19925,
+    "ownedXorgExit": 0,
+    "appExit": 0
+  }
+}

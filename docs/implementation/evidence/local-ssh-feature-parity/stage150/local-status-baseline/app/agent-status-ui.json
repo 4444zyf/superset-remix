@@ -1,0 +1,208 @@
+{
+  "before": {
+    "tabId": "e0ad5465-18eb-407c-bf02-c3edf8b77a1c",
+    "workspaceId": "5f0a22cb-9ad8-4b66-886e-161a2a81acba",
+    "label": "Local wheel 0203c238-6ea1-4f78-bdc1-59e0854157c8",
+    "activeTool": "terminal",
+    "activePaneId": "8077b15c-a309-4a47-8af8-e23dff28dad1",
+    "panes": [
+      {
+        "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb",
+        "kind": "terminal",
+        "resourceId": "9b059ee3-2d5e-48df-b794-223edbbcec29",
+        "executionId": "b3a963e5-6f6a-4d2e-bf55-8bce1c8e3b66",
+        "label": "Terminal"
+      },
+      {
+        "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1",
+        "kind": "browser",
+        "resourceId": "27ba815e-d2b8-4b6a-86cf-73d47c5b8330",
+        "browser": {
+          "url": "about:blank",
+          "pageTitle": "",
+          "faviconUrl": null
+        }
+      }
+    ],
+    "layout": {
+      "type": "split",
+      "axis": "horizontal",
+      "ratio": 0.5,
+      "first": {
+        "type": "pane",
+        "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb"
+      },
+      "second": {
+        "type": "pane",
+        "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1"
+      }
+    },
+    "paneTabs": [
+      {
+        "tabId": "ba4ff27b-604c-4b02-813b-36f9da5ce809",
+        "label": "Terminal",
+        "createdAt": 1795589649160,
+        "activePaneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb",
+        "layout": {
+          "type": "pane",
+          "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb"
+        }
+      },
+      {
+        "tabId": "3c565ce9-54a5-44c9-8e45-b1b6302eef6f",
+        "createdAt": 1795589651723,
+        "activePaneId": "8077b15c-a309-4a47-8af8-e23dff28dad1",
+        "layout": {
+          "type": "pane",
+          "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1"
+        }
+      }
+    ],
+    "activePaneTabId": "3c565ce9-54a5-44c9-8e45-b1b6302eef6f",
+    "rightPaneLayout": {
+      "version": 1,
+      "tabs": [],
+      "activeTabId": null
+    },
+    "rightPaneOpen": false,
+    "activePaneArea": "center"
+  },
+  "vendorAgentVerified": false,
+  "actualBackendHooks": true,
+  "phases": [],
+  "agent": {
+    "paneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35",
+    "kind": "terminal",
+    "resourceId": "1994810f-10ea-4351-b8af-522f88c1b59d",
+    "executionId": "1114000e-1902-4ef7-9beb-3982a54398fd",
+    "label": "Terminal"
+  },
+  "execution": {
+    "id": "1994810f-10ea-4351-b8af-522f88c1b59d",
+    "executionId": "1114000e-1902-4ef7-9beb-3982a54398fd",
+    "pid": 19083,
+    "cols": 54,
+    "rows": 30,
+    "cwd": "/workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1\u001b[00m$ "
+  },
+  "seenKey": "328f0dd12e27f7298cbdab0065ab5c32ca16aa2920706ff23b8610d65e94c0cd",
+  "error": {
+    "message": "Agent management condition failed: actual scoped agent hook starts",
+    "stack": "Error: Agent management condition failed: actual scoped agent hook starts\n    at until (file:///workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-agent-ui-driver.mjs:7:172)\n    at async verifyWorkstationAgentStatusUi (file:///workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-agent-status-ui.mjs:68:3)\n    at async verifyWorkstationBrowserUi (/workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-browser-ui.mjs:236:10)\n    at async verifyWorkstationLocalWheelUi (/workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-local-wheel-ui.mjs:68:3)\n    at async <anonymous> (/workspace/superset-remix-parity/apps/desktop/scripts/verify-brand-ui.mjs:587:4)"
+  },
+  "failedObservation": {
+    "binding": {
+      "terminalId": "1994810f-10ea-4351-b8af-522f88c1b59d",
+      "workspaceId": "5f0a22cb-9ad8-4b66-886e-161a2a81acba",
+      "agentId": "claude",
+      "agentSessionId": "owned-bb3fa124-62c0-4776-9b29-28fabc030639",
+      "startedAt": 1795589652646,
+      "lastEventAt": 1795589652650,
+      "lastEventType": "Start",
+      "launchId": "owned-821e3c15-26b2-4c96-aea7-9474a5ec4cb8"
+    },
+    "proof": null,
+    "view": {
+      "tabId": "e0ad5465-18eb-407c-bf02-c3edf8b77a1c",
+      "workspaceId": "5f0a22cb-9ad8-4b66-886e-161a2a81acba",
+      "label": "Local wheel 0203c238-6ea1-4f78-bdc1-59e0854157c8",
+      "activeTool": "terminal",
+      "activePaneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35",
+      "panes": [
+        {
+          "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb",
+          "kind": "terminal",
+          "resourceId": "9b059ee3-2d5e-48df-b794-223edbbcec29",
+          "executionId": "b3a963e5-6f6a-4d2e-bf55-8bce1c8e3b66",
+          "label": "Terminal"
+        },
+        {
+          "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1",
+          "kind": "browser",
+          "resourceId": "27ba815e-d2b8-4b6a-86cf-73d47c5b8330",
+          "browser": {
+            "url": "http://localhost:44655/preview?first=%E4%B8%AD#initial",
+            "pageTitle": "Owned browser home 中文 🙂",
+            "faviconUrl": "http://localhost:44655/icon.svg"
+          }
+        },
+        {
+          "paneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35",
+          "kind": "terminal",
+          "resourceId": "1994810f-10ea-4351-b8af-522f88c1b59d",
+          "executionId": "1114000e-1902-4ef7-9beb-3982a54398fd",
+          "label": "Terminal"
+        }
+      ],
+      "layout": {
+        "type": "split",
+        "axis": "horizontal",
+        "ratio": 0.5,
+        "first": {
+          "type": "pane",
+          "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb"
+        },
+        "second": {
+          "type": "split",
+          "axis": "vertical",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1"
+          },
+          "second": {
+            "type": "pane",
+            "paneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35"
+          }
+        }
+      },
+      "paneTabs": [
+        {
+          "tabId": "ba4ff27b-604c-4b02-813b-36f9da5ce809",
+          "label": "Terminal",
+          "createdAt": 1795589649160,
+          "activePaneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb",
+          "layout": {
+            "type": "pane",
+            "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb"
+          }
+        }
+      ],
+      "activePaneTabId": "ba4ff27b-604c-4b02-813b-36f9da5ce809",
+      "rightPaneLayout": {
+        "version": 1,
+        "tabs": [
+          {
+            "tabId": "tab-895dd2e9-4e98-4e79-9f7b-8acb20641028",
+            "createdAt": 1795589652011,
+            "activePaneId": "8077b15c-a309-4a47-8af8-e23dff28dad1",
+            "layout": {
+              "type": "pane",
+              "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1"
+            }
+          },
+          {
+            "tabId": "928f12b5-4489-4989-bacc-9a02d439e8c7",
+            "label": "Terminal",
+            "createdAt": 1795589652333,
+            "activePaneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35",
+            "layout": {
+              "type": "pane",
+              "paneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35"
+            }
+          }
+        ],
+        "activeTabId": "928f12b5-4489-4989-bacc-9a02d439e8c7"
+      },
+      "rightPaneOpen": true,
+      "activePaneArea": "right"
+    },
+    "seen": {
+      "revision": 0,
+      "mark": null
+    }
+  }
+}

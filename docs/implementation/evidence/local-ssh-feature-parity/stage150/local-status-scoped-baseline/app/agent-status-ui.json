@@ -1,0 +1,217 @@
+{
+  "before": {
+    "tabId": "5c221618-8eb1-4076-bee1-c36009952342",
+    "workspaceId": "f10cd8cf-b5da-4c06-ab6a-74484f0a0695",
+    "label": "Local wheel f76a84b5-d2c9-4901-ae50-a2646733ffc1",
+    "activeTool": "terminal",
+    "activePaneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9",
+    "panes": [
+      {
+        "paneId": "cf9c969b-7f81-4bfd-8bf9-e747cccddffa",
+        "kind": "terminal",
+        "resourceId": "7f652982-4238-4539-aed4-6e1d93d81b76",
+        "executionId": "6deb3e06-2ffe-481e-9f13-c67eb2567348",
+        "label": "Terminal"
+      },
+      {
+        "paneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9",
+        "kind": "browser",
+        "resourceId": "465d0f00-e3a0-4f45-b959-4c3f839118d2",
+        "browser": {
+          "url": "about:blank",
+          "pageTitle": "",
+          "faviconUrl": null
+        }
+      }
+    ],
+    "layout": {
+      "type": "split",
+      "axis": "horizontal",
+      "ratio": 0.5,
+      "first": {
+        "type": "pane",
+        "paneId": "cf9c969b-7f81-4bfd-8bf9-e747cccddffa"
+      },
+      "second": {
+        "type": "pane",
+        "paneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9"
+      }
+    },
+    "paneTabs": [
+      {
+        "tabId": "7afabdba-0694-431b-a69a-ef0170ffb40f",
+        "label": "Terminal",
+        "createdAt": 1795589803620,
+        "activePaneId": "cf9c969b-7f81-4bfd-8bf9-e747cccddffa",
+        "layout": {
+          "type": "pane",
+          "paneId": "cf9c969b-7f81-4bfd-8bf9-e747cccddffa"
+        }
+      },
+      {
+        "tabId": "ff311cee-d43d-4290-a590-7e57419193fd",
+        "createdAt": 1795589806183,
+        "activePaneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9",
+        "layout": {
+          "type": "pane",
+          "paneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9"
+        }
+      }
+    ],
+    "activePaneTabId": "ff311cee-d43d-4290-a590-7e57419193fd",
+    "rightPaneLayout": {
+      "version": 1,
+      "tabs": [],
+      "activeTabId": null
+    },
+    "rightPaneOpen": false,
+    "activePaneArea": "center"
+  },
+  "vendorAgentVerified": false,
+  "actualBackendHooks": true,
+  "phases": [],
+  "agent": {
+    "paneId": "7169d3c0-bffe-449c-8b94-63a9a7037a1f",
+    "kind": "terminal",
+    "resourceId": "47ddfaf3-83f0-4063-b239-9fd3ee6183c6",
+    "executionId": "7e75f14e-7f52-44f9-8430-ef819f947a1f",
+    "label": "Terminal"
+  },
+  "execution": {
+    "id": "47ddfaf3-83f0-4063-b239-9fd3ee6183c6",
+    "executionId": "7e75f14e-7f52-44f9-8430-ef819f947a1f",
+    "pid": 19509,
+    "cols": 54,
+    "rows": 30,
+    "cwd": "/workspace/scratch/parity-150/local-status-scoped-baseline/config/superset-remix-dev-efbf509d8b532beba6dd1c6ba78ce474f2621ddccca39ee2062135426c2190a6/direct-workstation/local-backend/sessions/local-wheel-f76a84b5-d2c9",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-scoped-baseline/config/superset-remix-dev-efbf509d8b532beba6dd1c6ba78ce474f2621ddccca39ee2062135426c2190a6/direct-workstation/local-backend/sessions/local-wheel-f76a84b5-d2c9\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-scoped-baseline/config/superset-remix-dev-efbf509d8b532beba6dd1c6ba78ce474f2621ddccca39ee2062135426c2190a6/direct-workstation/local-backend/sessions/local-wheel-f76a84b5-d2c9\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-scoped-baseline/config/superset-remix-dev-efbf509d8b532beba6dd1c6ba78ce474f2621ddccca39ee2062135426c2190a6/direct-workstation/local-backend/sessions/local-wheel-f76a84b5-d2c9\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-scoped-baseline/config/superset-remix-dev-efbf509d8b532beba6dd1c6ba78ce474f2621ddccca39ee2062135426c2190a6/direct-workstation/local-backend/sessions/local-wheel-f76a84b5-d2c9\u001b[00m$ "
+  },
+  "seenKey": "ecfaaa60333f317906b67209f452af21476f39d1e52614ea921994609096f97b",
+  "error": {
+    "message": "Agent management condition failed: original working indicator on visible terminal header",
+    "stack": "Error: Agent management condition failed: original working indicator on visible terminal header\n    at until (file:///workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-agent-ui-driver.mjs:7:172)\n    at async verifyWorkstationAgentStatusUi (file:///workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-agent-status-ui.mjs:69:3)\n    at async verifyWorkstationBrowserUi (/workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-browser-ui.mjs:236:10)\n    at async verifyWorkstationLocalWheelUi (/workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-local-wheel-ui.mjs:68:3)\n    at async <anonymous> (/workspace/superset-remix-parity/apps/desktop/scripts/verify-brand-ui.mjs:587:4)"
+  },
+  "failedObservation": {
+    "binding": {
+      "terminalId": "47ddfaf3-83f0-4063-b239-9fd3ee6183c6",
+      "workspaceId": "f10cd8cf-b5da-4c06-ab6a-74484f0a0695",
+      "agentId": "claude",
+      "agentSessionId": "owned-1fdc9927-7cee-43de-8804-9b5f7acb8169",
+      "startedAt": 1795589807148,
+      "lastEventAt": 1795589807152,
+      "lastEventType": "Start",
+      "launchId": "owned-29b0fcf9-9235-47ca-9579-8ad3f54c052d"
+    },
+    "proof": {
+      "terminalId": "47ddfaf3-83f0-4063-b239-9fd3ee6183c6",
+      "pid": 19516,
+      "cwd": "/workspace/scratch/parity-150/local-status-scoped-baseline/config/superset-remix-dev-efbf509d8b532beba6dd1c6ba78ce474f2621ddccca39ee2062135426c2190a6/direct-workstation/local-backend/sessions/local-wheel-f76a84b5-d2c9",
+      "events": [
+        "Attached",
+        "Start"
+      ],
+      "running": true
+    },
+    "view": {
+      "tabId": "5c221618-8eb1-4076-bee1-c36009952342",
+      "workspaceId": "f10cd8cf-b5da-4c06-ab6a-74484f0a0695",
+      "label": "Local wheel f76a84b5-d2c9-4901-ae50-a2646733ffc1",
+      "activeTool": "terminal",
+      "activePaneId": "7169d3c0-bffe-449c-8b94-63a9a7037a1f",
+      "panes": [
+        {
+          "paneId": "cf9c969b-7f81-4bfd-8bf9-e747cccddffa",
+          "kind": "terminal",
+          "resourceId": "7f652982-4238-4539-aed4-6e1d93d81b76",
+          "executionId": "6deb3e06-2ffe-481e-9f13-c67eb2567348",
+          "label": "Terminal"
+        },
+        {
+          "paneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9",
+          "kind": "browser",
+          "resourceId": "465d0f00-e3a0-4f45-b959-4c3f839118d2",
+          "browser": {
+            "url": "http://localhost:33179/preview?first=%E4%B8%AD#initial",
+            "pageTitle": "Owned browser home 中文 🙂",
+            "faviconUrl": "http://localhost:33179/icon.svg"
+          }
+        },
+        {
+          "paneId": "7169d3c0-bffe-449c-8b94-63a9a7037a1f",
+          "kind": "terminal",
+          "resourceId": "47ddfaf3-83f0-4063-b239-9fd3ee6183c6",
+          "executionId": "7e75f14e-7f52-44f9-8430-ef819f947a1f",
+          "label": "Terminal"
+        }
+      ],
+      "layout": {
+        "type": "split",
+        "axis": "horizontal",
+        "ratio": 0.5,
+        "first": {
+          "type": "pane",
+          "paneId": "cf9c969b-7f81-4bfd-8bf9-e747cccddffa"
+        },
+        "second": {
+          "type": "split",
+          "axis": "vertical",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9"
+          },
+          "second": {
+            "type": "pane",
+            "paneId": "7169d3c0-bffe-449c-8b94-63a9a7037a1f"
+          }
+        }
+      },
+      "paneTabs": [
+        {
+          "tabId": "7afabdba-0694-431b-a69a-ef0170ffb40f",
+          "label": "Terminal",
+          "createdAt": 1795589803620,
+          "activePaneId": "cf9c969b-7f81-4bfd-8bf9-e747cccddffa",
+          "layout": {
+            "type": "pane",
+            "paneId": "cf9c969b-7f81-4bfd-8bf9-e747cccddffa"
+          }
+        }
+      ],
+      "activePaneTabId": "7afabdba-0694-431b-a69a-ef0170ffb40f",
+      "rightPaneLayout": {
+        "version": 1,
+        "tabs": [
+          {
+            "tabId": "tab-bf2ad2de-d063-4483-aab9-a34757a9884e",
+            "createdAt": 1795589806473,
+            "activePaneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9",
+            "layout": {
+              "type": "pane",
+              "paneId": "d35469d0-d538-4fd0-a115-fc97fb990ee9"
+            }
+          },
+          {
+            "tabId": "6870da16-b276-46e3-b003-1c520861da87",
+            "label": "Terminal",
+            "createdAt": 1795589806780,
+            "activePaneId": "7169d3c0-bffe-449c-8b94-63a9a7037a1f",
+            "layout": {
+              "type": "pane",
+              "paneId": "7169d3c0-bffe-449c-8b94-63a9a7037a1f"
+            }
+          }
+        ],
+        "activeTabId": "6870da16-b276-46e3-b003-1c520861da87"
+      },
+      "rightPaneOpen": true,
+      "activePaneArea": "right"
+    },
+    "seen": {
+      "revision": 0,
+      "mark": null
+    }
+  }
+}

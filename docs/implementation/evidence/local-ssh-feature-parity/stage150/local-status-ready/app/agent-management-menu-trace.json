@@ -1,0 +1,82 @@
+[
+  {
+    "text": "Move to Right Side",
+    "attempt": 0,
+    "geometry": {
+      "top": 455.5,
+      "bottom": 485.8999938964844,
+      "min": 352,
+      "max": 489.6499938964844,
+      "x": 766.0711059570312,
+      "y": 420.8249969482422,
+      "menuTop": 351,
+      "menuBottom": 490.6499938964844,
+      "scrollTop": 0,
+      "scrollHeight": 145,
+      "clientHeight": 145,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Move to Center",
+    "attempt": 0,
+    "geometry": {
+      "top": 517.27978515625,
+      "bottom": 547.8599853515625,
+      "min": 352,
+      "max": 551.63818359375,
+      "x": 980.968994140625,
+      "y": 451.819091796875,
+      "menuTop": 351,
+      "menuBottom": 552.63818359375,
+      "scrollTop": 0,
+      "scrollHeight": 209,
+      "clientHeight": 209,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Close pane",
+    "attempt": 0,
+    "geometry": {
+      "top": 482.278564453125,
+      "bottom": 513.8643798828125,
+      "min": 352,
+      "max": 558.2689819335938,
+      "x": 531.2015533447266,
+      "y": 455.1344909667969,
+      "menuTop": 351,
+      "menuBottom": 559.2689819335938,
+      "scrollTop": 0,
+      "scrollHeight": 209,
+      "clientHeight": 209,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Move to Center",
+    "attempt": 0,
+    "geometry": {
+      "top": 456.1194152832031,
+      "bottom": 486.6996154785156,
+      "min": 352,
+      "max": 490.477783203125,
+      "x": 988.968994140625,
+      "y": 421.2388916015625,
+      "menuTop": 351,
+      "menuBottom": 491.477783203125,
+      "scrollTop": 0,
+      "scrollHeight": 145,
+      "clientHeight": 145,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "text": "Move to Right Side",
+    "attempt": 0,
+    "geometry": {
+      "top": 456.1194152832031,
+      "bottom": 486.6996154785156,
+      "min": 352,
+      "max": 490.477783203125,
+      "x": 767.4585571289062,
+      "y": 421.2388916015625,
+      "menuTop": 351,
+      "menuBottom": 491.477783203125,
+      "scrollTop": 0,
+      "scrollHeight": 145,
+      "clientHeight": 145,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  },
+  {
+    "text": "Move to Center",
+    "attempt": 0,
+    "geometry": {
+      "top": 517.27978515625,
+      "bottom": 547.8599853515625,
+      "min": 352,
+      "max": 551.63818359375,
+      "x": 980.968994140625,
+      "y": 451.819091796875,
+      "menuTop": 351,
+      "menuBottom": 552.63818359375,
+      "scrollTop": 0,
+      "scrollHeight": 209,
+      "clientHeight": 209,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  }
+]

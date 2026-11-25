@@ -1,0 +1,531 @@
+{
+  "source": "f0d6fb0a3",
+  "arch": "x64",
+  "platform": "linux",
+  "realInput": true,
+  "upstreamCodeEditorReadWrite": true,
+  "upstreamTerminalSearch": true,
+  "upstreamSidebarCollapse": true,
+  "upstreamPaneDrag": true,
+  "heartbeatPtyOnly": true,
+  "strictHeaderAuth": true,
+  "original": [
+    {
+      "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+      "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+      "state": "attached"
+    },
+    {
+      "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+      "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+      "state": "attached"
+    },
+    {
+      "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+      "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+      "state": "attached"
+    }
+  ],
+  "samples": [
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 170.5,
+      "authenticatedToAttachedUpperBoundMs": 402.087890625
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "forceQuit",
+      "skeletonMs": 191.1999999997206,
+      "authenticatedToAttachedUpperBoundMs": 442.502197265625
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 162.59999999962747,
+      "authenticatedToAttachedUpperBoundMs": 398.280029296875
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 187.60000000009313,
+      "authenticatedToAttachedUpperBoundMs": 413.33740234375
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 403.10000000009313,
+      "authenticatedToAttachedUpperBoundMs": 555.82275390625
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 177.5,
+      "authenticatedToAttachedUpperBoundMs": 420.50048828125
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 171.60000000009313,
+      "authenticatedToAttachedUpperBoundMs": 553.76416015625
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 172.1999999997206,
+      "authenticatedToAttachedUpperBoundMs": 412.560302734375
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 178.59999999962747,
+      "authenticatedToAttachedUpperBoundMs": 387.532958984375
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 174.5,
+      "authenticatedToAttachedUpperBoundMs": 443.19873046875
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 263.89999999990687,
+      "authenticatedToAttachedUpperBoundMs": 503.88134765625
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 179.1999999997206,
+      "authenticatedToAttachedUpperBoundMs": 434.02001953125
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 154.60000000009313,
+      "authenticatedToAttachedUpperBoundMs": 409.925048828125
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 179.39999999990687,
+      "authenticatedToAttachedUpperBoundMs": 509.612060546875
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 181.8000000002794,
+      "authenticatedToAttachedUpperBoundMs": 406.527099609375
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 202.1999999997206,
+      "authenticatedToAttachedUpperBoundMs": 431.995849609375
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 166.5,
+      "authenticatedToAttachedUpperBoundMs": 428.051025390625
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 169.10000000009313,
+      "authenticatedToAttachedUpperBoundMs": 441.758544921875
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 254.20000000018626,
+      "authenticatedToAttachedUpperBoundMs": 529.009033203125
+    },
+    {
+      "closedHeartbeat": [
+        {
+          "id": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+          "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+          "pid": 20847,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "436e9258-c562-4d89-8950-7f0a08998bcf",
+          "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+          "pid": 20859,
+          "newOutputBytes": 17
+        },
+        {
+          "id": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+          "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+          "pid": 20853,
+          "newOutputBytes": 17
+        }
+      ],
+      "lifecycle": "quit",
+      "skeletonMs": 178.70000000018626,
+      "authenticatedToAttachedUpperBoundMs": 455.43603515625
+    }
+  ]
+}

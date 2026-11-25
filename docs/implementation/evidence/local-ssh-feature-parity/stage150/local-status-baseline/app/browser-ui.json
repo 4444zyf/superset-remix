@@ -1,0 +1,233 @@
+{
+  "available": true,
+  "scope": {
+    "d": {
+      "connectionId": "00000000-0000-4000-8000-000000000001",
+      "generation": 1,
+      "backendId": "7b2dd1bb-c12b-4090-93bf-1b5bf2de5c47",
+      "namespaceId": "c3ec272f-387c-4807-ad6a-73e065eeba51",
+      "instanceId": "d4d78a4a-1de8-49a1-bda2-4484168a88ca",
+      "capabilities": {
+        "projects": true,
+        "sessions": true,
+        "terminals": true,
+        "chat": true,
+        "files": true,
+        "attachments": true,
+        "workstationChatAttachmentInputV1": true,
+        "workstationTerminalPresetsV1": true,
+        "workstationAgentSettingsV1": true,
+        "workstationAgentManagementV1": true,
+        "workstationAgentCatalogV2": true,
+        "workstationTerminalScriptsV1": true,
+        "workstationTerminalScriptExecutionV1": true,
+        "workstationAgentFeedbackV1": true,
+        "workstationAgentHooksV1": true,
+        "git": true,
+        "durableOperations": true,
+        "workspaceViewRestoreV1": true,
+        "workstationFilesV1": true,
+        "workstationFileEventsV1": true,
+        "workstationGitV1": true,
+        "workstationGitIdentityV1": true,
+        "workstationGitHistoryV1": true,
+        "workstationGitSyncV1": true,
+        "workstationManagedWorktreesV1": true,
+        "workstationProjectsV1": true,
+        "workstationProjectScriptsV1": true,
+        "workstationWorkspaceRunV1": true,
+        "workstationWorkspaceRunV2": true,
+        "workstationWorkspaceCleanupV1": true,
+        "workstationWorkspaceSetupV1": true,
+        "workstationPortsV1": true
+      },
+      "chatHarnesses": [
+        {
+          "id": "claude-code",
+          "available": false,
+          "reason": "Install claude on the remote machine and add it to the service user's login-shell PATH"
+        },
+        {
+          "id": "codex",
+          "available": true,
+          "reason": "CLI found on the remote machine; sign-in and version are checked when a chat starts. Sign in on B using CODEX_HOME=/workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/providers/codex"
+        }
+      ],
+      "kind": "local"
+    },
+    "w": {
+      "workspaceId": "5f0a22cb-9ad8-4b66-886e-161a2a81acba",
+      "panes": []
+    },
+    "root": "/workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1"
+  },
+  "marker": "OWNED-BROWSER-b8dd9c4c-388b-4858-b7a2-4d698aadc987",
+  "terminalBefore": {
+    "id": "9b059ee3-2d5e-48df-b794-223edbbcec29",
+    "executionId": "b3a963e5-6f6a-4d2e-bf55-8bce1c8e3b66",
+    "pid": 19048,
+    "cols": 110,
+    "rows": 30,
+    "cwd": "/workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-baseline/config/superset-remix-dev-15b155866a189153afc67347e3fc720e3fb6da06e317e61c041adc9a1bccc3c6/direct-workstation/local-backend/sessions/local-wheel-0203c238-6ea1\u001b[00m$ python3 -c 'import base64;exec(base64.b64decode(\"aW1wb3J0IGh0dHAuc2VydmVyLGpzb24sb3Msc2lnbmFsCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApzdGF0ZT17Im1hcmtlciI6Ik9XTkVELUJST1dTRVItYjhkZDljNGMtMzg4Yi00ODU4LWI3YTItNGQ2OThhYWRjOTg3IiwicmVxdWVzdHMiOltdLCJydW5uaW5nIjpUcnVlLCJwaWQiOm9zLmdldHBpZCgpfQpkZWYgc2F2ZSgpOiB0ZW1wPVBhdGgoJ2Jyb3dzZXItcHJvb2YudG1wJyk7dGVtcC53cml0ZV90ZXh0KGpzb24uZHVtcHMoc3RhdGUpKTt0ZW1wLnJlcGxhY2UoJ2Jyb3dzZXItcHJvb2YuanNvbicpCmNsYXNzIEhhbmRsZXIoaHR0cC5zZXJ2ZXIuQmFzZUhUVFBSZXF1ZXN0SGFuZGxlcik6CiBkZWYgZG9fR0VUKHNlbGYpOgogIHN0YXRlWydyZXF1ZXN0cyddLmFwcGVuZChzZWxmLnBhdGgpO3NhdmUoKQogIHRpdGxlPSdPd25lZCBicm93c2VyICcrKCduZXh0JyBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL25leHQnKSBlbHNlICdob21lJykrJyDkuK3mlocg8J+ZgicKICBib2R5PSgnPCFkb2N0eXBlIGh0bWw+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT4nK3RpdGxlKyc8L3RpdGxlPjxoMT4nK3N0YXRlWydtYXJrZXInXSsnPC9oMT48YSBpZD0ibmV4dCIgaHJlZj0iL25leHQ/dmFsdWU9JUU0JUI4JUFEJTIwaGVsbG8jc2VjdGlvbiI+TmV4dCBwYWdlPC9hPjxicj48YSBpZD0icG9wdXAiIHRhcmdldD0iX2JsYW5rIiBocmVmPSIvcG9wdXAiPk9wZW4gc2Vjb25kIHBhbmU8L2E+PHA+bmVlZGxlIG5lZWRsZSBuZWVkbGU8L3A+JykuZW5jb2RlKCkKICBib2R5PWJvZHkucmVwbGFjZShiJzx0aXRsZT4nLGInPGxpbmsgcmVsPSJpY29uIiBocmVmPSIvaWNvbi5zdmciPjx0aXRsZT4nKQogIHBhc3MKICBjb250ZW50X3R5cGU9J3RleHQvaHRtbDsgY2hhcnNldD11dGYtOCcKICBpZiBzZWxmLnBhdGguc3RhcnRzd2l0aCgnL2ljb24uc3ZnJyk6IGJvZHk9KCc8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZGF0YS1vd25lZD0iJytzdGF0ZVsnbWFya2VyJ10rJyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImdyZWVuIi8+PC9zdmc+JykuZW5jb2RlKCk7Y29udGVudF90eXBlPSdpbWFnZS9zdmcreG1sJwogIGNhY2hlX2NvbnRyb2w9J25vLXN0b3JlJwogIHNlbGYuc2VuZF9yZXNwb25zZSgyMDApO3NlbGYuc2VuZF9oZWFkZXIoJ0NvbnRlbnQtVHlwZScsY29udGVudF90eXBlKTtzZWxmLnNlbmRfaGVhZGVyKCdDYWNoZS1Db250cm9sJyxjYWNoZV9jb250cm9sKTtzZWxmLnNlbmRfaGVhZGVyKCdDb250ZW50LUxlbmd0aCcsc3RyKGxlbihib2R5KSkpO3NlbGYuZW5kX2hlYWRlcnMoKTtzZWxmLndmaWxlLndyaXRlKGJvZHkpCiBkZWYgbG9nX21lc3NhZ2Uoc2VsZiwqYXJncyk6IHBhc3MKc2VydmVyPWh0dHAuc2VydmVyLkhUVFBTZXJ2ZXIoKCcxMjcuMC4wLjEnLDApLEhhbmRsZXIpCnN0YXRlWydwb3J0J109c2VydmVyLnNlcnZlcl9wb3J0O3NhdmUoKQpwYXNzCnRyeTogc2VydmVyLnNlcnZlX2ZvcmV2ZXIoKQpleGNlcHQgS2V5Ym9hcmRJbnRlcnJ1cHQ6IHBhc3MKZmluYWxseTogc2VydmVyLnNlcnZlcl9jbG9zZSgpO3N0YXRlWydydW5uaW5nJ109RmFsc2U7c2F2ZSgp\"))'\r\n\u001b[?2004l\r"
+  },
+  "detectedPort": {
+    "port": 44655,
+    "pid": 19059,
+    "processName": "python3",
+    "terminalId": "9b059ee3-2d5e-48df-b794-223edbbcec29",
+    "workspaceId": "5f0a22cb-9ad8-4b66-886e-161a2a81acba",
+    "detectedAt": 1795589651682,
+    "address": "127.0.0.1",
+    "label": null
+  },
+  "loaded": {
+    "body": "OWNED-BROWSER-b8dd9c4c-388b-4858-b7a2-4d698aadc987\nNext page\nOpen second pane\n\nneedle needle needle",
+    "title": "Owned browser home 中文 🙂",
+    "url": "http://localhost:44655/preview?first=%E4%B8%AD#initial",
+    "node": "undefined",
+    "process": "undefined",
+    "head": "<meta charset=\"utf-8\"><link rel=\"icon\" href=\"/icon.svg\"><title>Owned browser home 中文 🙂</title>"
+  },
+  "guestEvents": [
+    {
+      "type": "did-navigate",
+      "url": "about:blank"
+    },
+    {
+      "type": "dom-ready"
+    },
+    {
+      "type": "did-stop-loading"
+    },
+    {
+      "type": "did-navigate",
+      "url": "about:blank"
+    },
+    {
+      "type": "dom-ready"
+    },
+    {
+      "type": "did-stop-loading"
+    },
+    {
+      "type": "did-navigate",
+      "url": "http://localhost:44655/preview?first=%E4%B8%AD#initial"
+    },
+    {
+      "type": "page-title-updated",
+      "title": "Owned browser home 中文 🙂"
+    },
+    {
+      "type": "dom-ready"
+    },
+    {
+      "type": "did-stop-loading"
+    },
+    {
+      "type": "page-favicon-updated",
+      "favicons": [
+        "http://localhost:44655/icon.svg"
+      ]
+    }
+  ],
+  "finalView": {
+    "tabId": "e0ad5465-18eb-407c-bf02-c3edf8b77a1c",
+    "workspaceId": "5f0a22cb-9ad8-4b66-886e-161a2a81acba",
+    "label": "Local wheel 0203c238-6ea1-4f78-bdc1-59e0854157c8",
+    "activeTool": "terminal",
+    "activePaneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35",
+    "panes": [
+      {
+        "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb",
+        "kind": "terminal",
+        "resourceId": "9b059ee3-2d5e-48df-b794-223edbbcec29",
+        "executionId": "b3a963e5-6f6a-4d2e-bf55-8bce1c8e3b66",
+        "label": "Terminal"
+      },
+      {
+        "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1",
+        "kind": "browser",
+        "resourceId": "27ba815e-d2b8-4b6a-86cf-73d47c5b8330",
+        "browser": {
+          "url": "http://localhost:44655/preview?first=%E4%B8%AD#initial",
+          "pageTitle": "Owned browser home 中文 🙂",
+          "faviconUrl": "http://localhost:44655/icon.svg"
+        }
+      },
+      {
+        "paneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35",
+        "kind": "terminal",
+        "resourceId": "1994810f-10ea-4351-b8af-522f88c1b59d",
+        "executionId": "1114000e-1902-4ef7-9beb-3982a54398fd",
+        "label": "Terminal"
+      }
+    ],
+    "layout": {
+      "type": "split",
+      "axis": "horizontal",
+      "ratio": 0.5,
+      "first": {
+        "type": "pane",
+        "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb"
+      },
+      "second": {
+        "type": "split",
+        "axis": "vertical",
+        "ratio": 0.5,
+        "first": {
+          "type": "pane",
+          "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1"
+        },
+        "second": {
+          "type": "pane",
+          "paneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35"
+        }
+      }
+    },
+    "paneTabs": [
+      {
+        "tabId": "ba4ff27b-604c-4b02-813b-36f9da5ce809",
+        "label": "Terminal",
+        "createdAt": 1795589649160,
+        "activePaneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb",
+        "layout": {
+          "type": "pane",
+          "paneId": "178a6dfd-84ec-49d7-bd39-9582eda426cb"
+        }
+      },
+      {
+        "tabId": "tab-895dd2e9-4e98-4e79-9f7b-8acb20641028",
+        "createdAt": 1795589652011,
+        "activePaneId": "8077b15c-a309-4a47-8af8-e23dff28dad1",
+        "layout": {
+          "type": "pane",
+          "paneId": "8077b15c-a309-4a47-8af8-e23dff28dad1"
+        }
+      },
+      {
+        "tabId": "928f12b5-4489-4989-bacc-9a02d439e8c7",
+        "label": "Terminal",
+        "createdAt": 1795589652333,
+        "activePaneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35",
+        "layout": {
+          "type": "pane",
+          "paneId": "88e89c5b-c8d1-4cf2-8d8b-086f339eec35"
+        }
+      }
+    ],
+    "activePaneTabId": "928f12b5-4489-4989-bacc-9a02d439e8c7"
+  },
+  "cleanup": {
+    "marker": "OWNED-BROWSER-b8dd9c4c-388b-4858-b7a2-4d698aadc987",
+    "requests": [
+      "/preview?first=%E4%B8%AD",
+      "/icon.svg"
+    ],
+    "running": false,
+    "pid": 19059,
+    "port": 44655
+  }
+}

@@ -1,0 +1,1533 @@
+{
+  "before": {
+    "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+    "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+    "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+    "activeTool": "terminal",
+    "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+    "panes": [
+      {
+        "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+        "kind": "terminal",
+        "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+        "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+        "label": "Terminal"
+      },
+      {
+        "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+        "kind": "browser",
+        "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+        "browser": {
+          "url": "about:blank",
+          "pageTitle": "",
+          "faviconUrl": null
+        }
+      }
+    ],
+    "layout": {
+      "type": "split",
+      "axis": "horizontal",
+      "ratio": 0.5,
+      "first": {
+        "type": "pane",
+        "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+      },
+      "second": {
+        "type": "pane",
+        "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+      }
+    },
+    "paneTabs": [
+      {
+        "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "label": "Terminal",
+        "createdAt": 1795590487126,
+        "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+        "layout": {
+          "type": "pane",
+          "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+        }
+      },
+      {
+        "tabId": "47aa5b27-62af-495f-8001-dd3a2eb2cffc",
+        "createdAt": 1795590489697,
+        "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+        "layout": {
+          "type": "pane",
+          "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+        }
+      }
+    ],
+    "activePaneTabId": "47aa5b27-62af-495f-8001-dd3a2eb2cffc",
+    "rightPaneLayout": {
+      "version": 1,
+      "tabs": [],
+      "activeTabId": null
+    },
+    "rightPaneOpen": false,
+    "activePaneArea": "center"
+  },
+  "vendorAgentVerified": false,
+  "actualBackendHooks": true,
+  "phases": [
+    {
+      "name": "working",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          }
+        ],
+        "activePaneTabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            },
+            {
+              "tabId": "bf77cf00-3790-41fd-9bda-26179547de17",
+              "label": "Terminal",
+              "createdAt": 1795590490341,
+              "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+              "layout": {
+                "type": "pane",
+                "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+              }
+            }
+          ],
+          "activeTabId": "bf77cf00-3790-41fd-9bda-26179547de17"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590490718,
+        "lastEventType": "Start",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 0,
+        "mark": null
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\n"
+      }
+    },
+    {
+      "name": "permission",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          }
+        ],
+        "activePaneTabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            },
+            {
+              "tabId": "bf77cf00-3790-41fd-9bda-26179547de17",
+              "label": "Terminal",
+              "createdAt": 1795590490341,
+              "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+              "layout": {
+                "type": "pane",
+                "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+              }
+            }
+          ],
+          "activeTabId": "bf77cf00-3790-41fd-9bda-26179547de17"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590492695,
+        "lastEventType": "PermissionRequest",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 0,
+        "mark": null
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\n"
+      }
+    },
+    {
+      "name": "unread",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          }
+        ],
+        "activePaneTabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            },
+            {
+              "tabId": "bf77cf00-3790-41fd-9bda-26179547de17",
+              "label": "Terminal",
+              "createdAt": 1795590490341,
+              "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+              "layout": {
+                "type": "pane",
+                "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+              }
+            }
+          ],
+          "activeTabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590495162,
+        "lastEventType": "Stop",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 0,
+        "mark": null
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\n"
+      }
+    },
+    {
+      "name": "unread-reopened",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          }
+        ],
+        "activePaneTabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            },
+            {
+              "tabId": "bf77cf00-3790-41fd-9bda-26179547de17",
+              "label": "Terminal",
+              "createdAt": 1795590490341,
+              "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+              "layout": {
+                "type": "pane",
+                "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+              }
+            }
+          ],
+          "activeTabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590495162,
+        "lastEventType": "Stop",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 0,
+        "mark": null
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\n"
+      }
+    },
+    {
+      "name": "seen",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          }
+        ],
+        "activePaneTabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            },
+            {
+              "tabId": "bf77cf00-3790-41fd-9bda-26179547de17",
+              "label": "Terminal",
+              "createdAt": 1795590490341,
+              "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+              "layout": {
+                "type": "pane",
+                "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+              }
+            }
+          ],
+          "activeTabId": "bf77cf00-3790-41fd-9bda-26179547de17"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590495162,
+        "lastEventType": "Stop",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 1,
+        "mark": {
+          "key": "6bc7acaea7de6e91cff926f72f9395244d2de7c88e0de77e16f30ead78faaaa2",
+          "at": 1795590495162
+        }
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\n"
+      }
+    },
+    {
+      "name": "seen-reopened",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          }
+        ],
+        "activePaneTabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            },
+            {
+              "tabId": "bf77cf00-3790-41fd-9bda-26179547de17",
+              "label": "Terminal",
+              "createdAt": 1795590490341,
+              "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+              "layout": {
+                "type": "pane",
+                "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+              }
+            }
+          ],
+          "activeTabId": "bf77cf00-3790-41fd-9bda-26179547de17"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590495162,
+        "lastEventType": "Stop",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 1,
+        "mark": {
+          "key": "6bc7acaea7de6e91cff926f72f9395244d2de7c88e0de77e16f30ead78faaaa2",
+          "at": 1795590495162
+        }
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\n"
+      }
+    },
+    {
+      "name": "failed",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          }
+        ],
+        "activePaneTabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            },
+            {
+              "tabId": "bf77cf00-3790-41fd-9bda-26179547de17",
+              "label": "Terminal",
+              "createdAt": 1795590490341,
+              "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+              "layout": {
+                "type": "pane",
+                "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+              }
+            }
+          ],
+          "activeTabId": "bf77cf00-3790-41fd-9bda-26179547de17"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590502189,
+        "lastEventType": "Failed",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 1,
+        "mark": {
+          "key": "6bc7acaea7de6e91cff926f72f9395244d2de7c88e0de77e16f30ead78faaaa2",
+          "at": 1795590495162
+        }
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop",
+          "Failed"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\nFailed\r\n"
+      }
+    },
+    {
+      "name": "failed-center",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          },
+          {
+            "tabId": "tab-55980b1f-4018-4332-a5d7-7579bfbf4cfd",
+            "createdAt": 1795590504076,
+            "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "layout": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        ],
+        "activePaneTabId": "tab-55980b1f-4018-4332-a5d7-7579bfbf4cfd",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            }
+          ],
+          "activeTabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "center"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590502189,
+        "lastEventType": "Failed",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 1,
+        "mark": {
+          "key": "6bc7acaea7de6e91cff926f72f9395244d2de7c88e0de77e16f30ead78faaaa2",
+          "at": 1795590495162
+        }
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop",
+          "Failed"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 52,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\nFailed\r\n"
+      }
+    },
+    {
+      "name": "second-unread",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          },
+          {
+            "tabId": "tab-55980b1f-4018-4332-a5d7-7579bfbf4cfd",
+            "createdAt": 1795590504076,
+            "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "layout": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        ],
+        "activePaneTabId": "tab-55980b1f-4018-4332-a5d7-7579bfbf4cfd",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            }
+          ],
+          "activeTabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590506107,
+        "lastEventType": "Stop",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 1,
+        "mark": {
+          "key": "6bc7acaea7de6e91cff926f72f9395244d2de7c88e0de77e16f30ead78faaaa2",
+          "at": 1795590495162
+        }
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop",
+          "Failed",
+          "Start",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 52,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\nFailed\r\nStart\r\nStop\r\n"
+      }
+    },
+    {
+      "name": "second-seen",
+      "view": {
+        "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+        "activeTool": "terminal",
+        "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+        "panes": [
+          {
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "kind": "terminal",
+            "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+            "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+            "kind": "browser",
+            "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+            "browser": {
+              "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:43065/icon.svg"
+            }
+          },
+          {
+            "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "kind": "terminal",
+            "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+            "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+            "label": "Terminal",
+            "createdAt": 1795590487126,
+            "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+            "layout": {
+              "type": "pane",
+              "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+            }
+          },
+          {
+            "tabId": "tab-55980b1f-4018-4332-a5d7-7579bfbf4cfd",
+            "createdAt": 1795590504076,
+            "activePaneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+            "layout": {
+              "type": "pane",
+              "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01"
+            }
+          }
+        ],
+        "activePaneTabId": "tab-55980b1f-4018-4332-a5d7-7579bfbf4cfd",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9",
+              "createdAt": 1795590490043,
+              "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+              "layout": {
+                "type": "pane",
+                "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+              }
+            }
+          ],
+          "activeTabId": "tab-5d882588-02e5-4eff-87fd-2690da7994f9"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "center"
+      },
+      "binding": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+        "agentId": "claude",
+        "agentSessionId": "owned-9f2a95ae-969d-42c9-8edb-fd9d5e9cb03b",
+        "startedAt": 1795590490713,
+        "lastEventAt": 1795590506107,
+        "lastEventType": "Stop",
+        "launchId": "owned-259ae50a-e713-4926-baa4-f6d6ef7821a0"
+      },
+      "seen": {
+        "revision": 2,
+        "mark": {
+          "key": "6bc7acaea7de6e91cff926f72f9395244d2de7c88e0de77e16f30ead78faaaa2",
+          "at": 1795590506107
+        }
+      },
+      "proof": {
+        "terminalId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "pid": 20209,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop",
+          "Failed",
+          "Start",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+        "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+        "pid": 20202,
+        "cols": 52,
+        "rows": 30,
+        "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'b4f371bf-5b55-47d7-adec-86913f3ee16b' '/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\nFailed\r\nStart\r\nStop\r\n"
+      }
+    }
+  ],
+  "agent": {
+    "paneId": "28a686e3-2deb-49ed-9745-bf693a7a8d01",
+    "kind": "terminal",
+    "resourceId": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+    "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+    "label": "Terminal"
+  },
+  "execution": {
+    "id": "9194cd79-f2f5-4bcc-9e92-b42ee42842c8",
+    "executionId": "eba5d83e-75f0-4a7e-b503-475f959c72eb",
+    "pid": 20202,
+    "cols": 54,
+    "rows": 30,
+    "cwd": "/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004h\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ \r\u001b[K\r\u001b[A\u001b[K\r\u001b]0;agent@7ede1cbf1387: /workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u0007\u001b[01;32magent@7ede1cbf1387\u001b[00m:\u001b[01;34m/workspace/scratch/parity-150/local-status-fixed/config/superset-remix-dev-d060d018cb2c530f04645aee40688344082c9026d963db8846a7fafd344e9fcc/direct-workstation/local-backend/sessions/local-wheel-4560d4eb-8c7b\u001b[00m$ "
+  },
+  "serviceUid": 1000,
+  "seenKey": "6bc7acaea7de6e91cff926f72f9395244d2de7c88e0de77e16f30ead78faaaa2",
+  "completed": true,
+  "final": {
+    "tabId": "161c775b-d8fb-4b85-ad9f-7874bb5fe3a3",
+    "workspaceId": "b4f371bf-5b55-47d7-adec-86913f3ee16b",
+    "label": "Local wheel 4560d4eb-8c7b-4939-9e81-9e1dffbaf7f9",
+    "activeTool": "terminal",
+    "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+    "panes": [
+      {
+        "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+        "kind": "terminal",
+        "resourceId": "c81bdc30-c5b2-464d-b7c3-fee32cd0b6d9",
+        "executionId": "d3e0c31b-a298-4e14-8f0d-4dd5ee1ad72e",
+        "label": "Terminal"
+      },
+      {
+        "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+        "kind": "browser",
+        "resourceId": "f137cd27-b4e9-4faa-92b8-11e28ef4fd66",
+        "browser": {
+          "url": "http://localhost:43065/preview?first=%E4%B8%AD#initial",
+          "pageTitle": "Owned browser home 中文 🙂",
+          "faviconUrl": "http://localhost:43065/icon.svg"
+        }
+      }
+    ],
+    "layout": {
+      "type": "split",
+      "axis": "horizontal",
+      "ratio": 0.5,
+      "first": {
+        "type": "pane",
+        "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+      },
+      "second": {
+        "type": "pane",
+        "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+      }
+    },
+    "paneTabs": [
+      {
+        "tabId": "a7f04431-3205-4249-8e46-e3093d83defc",
+        "label": "Terminal",
+        "createdAt": 1795590487126,
+        "activePaneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9",
+        "layout": {
+          "type": "pane",
+          "paneId": "61af7f60-dac6-40ee-ac3a-670b4343adc9"
+        }
+      },
+      {
+        "tabId": "tab-8625d943-d750-4255-aa82-bf78fbd37368",
+        "createdAt": 1795590508734,
+        "activePaneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a",
+        "layout": {
+          "type": "pane",
+          "paneId": "8f0a4b06-cc4e-433f-8e30-599e7b1c3a2a"
+        }
+      }
+    ],
+    "activePaneTabId": "tab-8625d943-d750-4255-aa82-bf78fbd37368",
+    "rightPaneLayout": {
+      "version": 1,
+      "tabs": [],
+      "activeTabId": null
+    },
+    "rightPaneOpen": false,
+    "activePaneArea": "center"
+  }
+}

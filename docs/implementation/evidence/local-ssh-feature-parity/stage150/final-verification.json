@@ -1,0 +1,90 @@
+{
+  "compiledSource": "f0d6fb0a394307de0906849a7c379fac95221102",
+  "compiledFiles": 2420,
+  "fixtureCount": 91,
+  "sourceCliFiles": 3639,
+  "native": [
+    {
+      "case": "local-status-focused",
+      "actualBackendHooks": true,
+      "tenPhases": true,
+      "sameShellAndPythonPid": true,
+      "sameExecutionAndCwd": true,
+      "twoRealReopens": true,
+      "seenUsesExactHostClock": true,
+      "serviceUidScopedKey": true,
+      "cleanup": {
+        "ownedXorgPid": 29571,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      }
+    },
+    {
+      "case": "ssh-status-focused",
+      "actualBackendHooks": true,
+      "tenPhases": true,
+      "sameShellAndPythonPid": true,
+      "sameExecutionAndCwd": true,
+      "twoRealReopens": true,
+      "seenUsesExactHostClock": true,
+      "serviceUidScopedKey": true,
+      "cleanup": {
+        "ownedXorgPid": 30191,
+        "ownedXorgExit": 0,
+        "appExit": 0
+      },
+      "windowRestoreSamples": 20
+    }
+  ],
+  "readOnlySqlite": [
+    {
+      "case": "local-status-focused",
+      "readOnly": true,
+      "preferenceSchemaVersion": 1,
+      "preferenceRevision": 2,
+      "seenCount": 1,
+      "seenKey": "173b4492f66ae351ad269184d0a17f7f421955461edf88a2b63de8f25d671d7d",
+      "seenAt": 1795591656939,
+      "viewSchemaVersion": 3,
+      "viewRevision": 33,
+      "mode": "0600"
+    },
+    {
+      "case": "ssh-status-focused",
+      "readOnly": true,
+      "preferenceSchemaVersion": 1,
+      "preferenceRevision": 2,
+      "seenCount": 1,
+      "seenKey": "b6d6ac5d691da40bdb7eb5865595841d838640ecf5bad9731351f5749af12aea",
+      "seenAt": 1795591922869,
+      "viewSchemaVersion": 3,
+      "viewRevision": 88,
+      "mode": "0600"
+    }
+  ],
+  "finalRunsPassed": true,
+  "unitTests": 63,
+  "unitAssertions": 381,
+  "typeCheckPassed": true,
+  "i18nCheckPassed": true,
+  "scopedLiveProcesses": [],
+  "overallParityComplete": false,
+  "screenshotStabilityUnresolved": true,
+  "workspaceWideAndOsNotificationsPending": true,
+  "physicalMacVerified": false,
+  "externalSshVerified": false,
+  "vendorAgentVerified": false,
+  "installer": false,
+  "githubActions": false,
+  "screenshotsActuallyViewed": [
+    "local-status-baseline/app/agent-management-failure.png",
+    "local-status-scoped-baseline/app/agent-management-failure.png",
+    "local-status-fixed/app/agent-status-permission.png",
+    "local-status-fixed/app/agent-status-unread-reopened.png",
+    "ssh-status-fixed/app/failure.png",
+    "ssh-status-ready/app/agent-status-second-unread.png",
+    "ssh-status-focused/app/agent-status-permission.png",
+    "ssh-status-focused/app/agent-status-second-seen.png",
+    "local-status-focused/app/agent-status-working.png"
+  ]
+}

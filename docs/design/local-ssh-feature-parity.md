@@ -4,6 +4,8 @@
 
 ## 2026-11-11 当前重点状态
 
+阶段一百五十接回当前工作区窗格/标签的原Agent状态与私有已读：复用StatusIndicator、原事件状态推导/优先级，经已有AgentFeedback能力查询真实host binding；旧host不查询。活动侧可见终端按host时间确认，backend/namespace/service UID/workspace/terminal的SHA256键与256条有界SQLite缓存隔离，沿原偏好CAS串行写入，无账号或新localStorage。旧版实窗已有Start但无指示；最终f0d6fb0a3本地/自有SSH各十阶段通过，SSH含20次恢复。63项/381断言、类型/17语言及源码编译通过；只读SQL两端恰好2次确认、重开无重复写、0600及PID/执行/cwd/冻结/清理通过。首轮证明读取、SSH恢复空状态及窄标签重复点击的夹具失败均保留。侧栏/系统通知/多窗口同步和其余原功能继续。[阶段一百五十证据](../implementation/evidence/local-ssh-feature-parity/stage150)。
+
 阶段一百四十九修复原窗格分屏落点遗漏整个标签的接收条件：同侧/关联侧现有标签可交给原transferTabToSplit，无关store及失效对象仍拒绝。旧1df实窗原生拖动不转移；1c7b73fa8本地与自有SSH通过整标签入分屏、菜单提取、单窗格跨侧往返和真实重开。42项/248断言、类型/针对性lint及源码编译通过，SSH含20次恢复，冻结校验/进程清理通过。脚本命中缩放把手、越界激活及旧标签清理问题已分别诊断修正，失败记录保留。其他原功能与阶段146截图拒绝继续，不宣称整体完成。[阶段一百四十九证据](../implementation/evidence/local-ssh-feature-parity/stage149)。
 
 阶段一百四十八补验原生标签组跨侧拖拽：本地与自有SSH通过中心→右侧→原位置返回、边界往返/停留/主线程干扰及实际关闭重开；资源、终端PID/执行/cwd保持。初轮SSH夹具落回第一位导致顺序断言失败，修正落点后同一完整断言通过，失败记录保留。2420编译文件/89脚本/3639源码CLI图冻结不变，SSH含20次恢复。单窗格和标签拖入分屏仍待核对，不把标签栏成功扩称完整拖拽验收。[阶段一百四十八证据](../implementation/evidence/local-ssh-feature-parity/stage148)。
@@ -43,7 +45,7 @@
 | 项目 setup/run/teardown 脚本 | config、runtime/setup | 已接主要流程 | 阶段十四至二十接回目标端版本配置、原Run/Setup输出、Teardown确认和完成状态；阶段四十三至四十九补关闭等待及原脚本触发规则 |
 | 终端渲染、搜索、图像、Unicode、剪贴板 | 原 terminal surface/Search | 已接入核心 | 接齐主题、字体、链接与全部设置 |
 | Agent 终端预设、自定义命令 | 原 presets/agent configs | 已接基础操作 | 阶段三十五至四十六复用原预设、Agent字段/目录/图标及终端脚本管理；目标配置与明确启动，供应商实际认证单独验证 |
-| 终端链接、文件定位、通知与退出行为 | 原 terminal helpers/notifications | 部分：文件/目录行列定位与URL策略已接 | 阶段五十五至六十七、八十接回文件/目录定位、外部URL手势和浏览器点击策略；通知、外部编辑器与其他退出周边继续核对 |
+| 终端链接、文件定位、通知与退出行为 | 原 terminal helpers/notifications | 部分：文件/目录行列定位与URL策略已接 | 阶段五十五至六十七、八十接回文件/目录定位、外部URL手势和浏览器点击策略；阶段一百五十接回窗格/标签Agent状态与私有已读；侧栏/系统通知、外部编辑器与其他退出周边继续核对 |
 | 文件树、展开、隐藏文件与多文件 | 原 FilesTab/FilesView | 部分 | 原交互，目标端目录数据 |
 | 文件新建、文件夹、移动、重命名、复制、删除 | filesystem | 已接基础操作 | 阶段一、四复用原文件服务和菜单，冲突不覆盖、永久删除确认；回收站与其他原文件操作继续核对 |
 | 文件/内容搜索、快速打开与跳转 | filesystem.searchFiles/searchContent | 部分：文件名/内容搜索与行列跳转已接 | 阶段一、五十五至五十六接回有界搜索、命中定位及重复定位；独立快速打开/命令面板等继续补齐 |
@@ -578,3 +580,19 @@ local-wheel-right和ssh-wheel-right也均退出0：普通历史在右侧实测sc
 最终local-split-bounded与ssh-split-bounded均退出0：整标签拖入右侧split→原菜单移回中心→单窗格拖到右侧标签栏→单窗格拖回中心→实际关闭重开。三个原生手势含中途往返、最终停留及120ms/400ms主线程干扰；六个阶段严格比较全部资源ID/执行ID，实际终端PID/cwd不变，重开前后的完整两侧布局一致，renderer console.errors为空。SSH原恢复流程20次通过。当前用例的源标签为独立HTTP终端，Claude/Codex/OMP标题仍为受控心跳任务，不冒称多窗格组或真实供应商。
 
 运行前后2420编译文件/90个顶层MJS/3639源码CLI图冻结不变，自有进程及X177清理通过。实际查看旧版失败、本地修复分屏/右侧单窗格及最终SSH分屏截图，具体列于final-verification.json；没有把所有截图称为已查看。证据仅收批准的顶层记录和选定截图，秘密模式扫描通过。没有随包CLI、安装包、Actions、Mac、外部SSH或真实供应商Agent验收；阶段146的原CLI截图拒绝仍未定位，其他窗格/通知等原功能继续。[本阶段证据](../implementation/evidence/local-ssh-feature-parity/stage149)。
+
+## 阶段一百五十：窗格/标签Agent状态与私有已读（2026-11-25）
+
+原V2窗格会按host binding显示工作、等待输入、待查看和失败。工作站原本没有这个入口；新增受控raw TUI通过实际终端环境中的127.0.0.1/agent-hook nonce入口上报，旧1c7b73fa8的host已记录Attached/Start且证明文件一致，但标题栏状态断言失败。初轮夹具忘记filesystem.readFile必需的workspaceId，被原归属守卫拒绝；补齐参数后重跑旧编译，才得到实际功能缺失的基线，没有放松守卫。
+
+新包装复用原StatusIndicator、deriveTerminalAgentStatus和highestAgentStatus。只在既有workstationAgentFeedbackV1明确为true时，经原terminalAgents.listByWorkspace查询；没有新host接口/最低版本。当前工作区2秒轮询与窗口焦点刷新，内存仅接收该工作区现有终端的binding，旧namespace/UID/连接代际迟到回复丢弃，失败清状态，不把旧数据显示为当前状态。窗格和原标签栏使用相同优先级；许可和失败不因查看而清除。
+
+已读只确认窗口可见且当前活动终端的Stop，采用binding.lastEventAt，不用renderer时钟。键由backendId/namespaceId/serviceUid/workspaceId/terminalId的规范JSON经SHA256生成；连接代际/实例和布局移动不改变逻辑资源键。UID隔离的单元红例也保留。最多256条按确认顺序淘汰，关闭资源的缓存条目由后续确认的LRU淘汰；不新增localStorage集合。数据保存在现有私有preferences.db，仍schema1/64KiB上限/原get/update CAS，旧行可以不带可选字段；重复key、非法时钟和超量输入原子拒绝。客户端等待其他设置保存、合并最新快照、合并在途新确认；未知回执不因状态轮询自动重试，卸载不派发排队工作。
+
+最终产品源f0d6fb0a3：63项/381断言通过，桌面类型、17语言检查及源码编译退出0，翻译目录无差异。新代码lint通过；原Workstation三处non-null告警及Grid既有exhaustive-deps按既有针对性检查范围记录，没有修改全局规则。5b初编译在UID补全前已成功，但没有用于最终原生验收，日志单独保留。
+
+首轮新版本本地十阶段通过，SSH在已读重开后把尚未加载的“没有未读灯”误当成完成，随后live binding读取报断连。夹具增加相同binding/真实终端附着的正向等待，未延长超时或重发事件。下一轮SSH已过九阶段，切回中心时又重复点击本来已选中但被裁切的第三个标签；最终按实际用户路径直接点击已经可见的终端。两类夹具失败和快照/截图均保留，不作为产品缺陷已修复的声明。
+
+最终local-status-focused与ssh-status-focused都退出0：Start工作→PermissionRequest→后台Stop未读→真实重开未读→选中确认→真实重开保持已读→Failed→原菜单移中保留失败→右浏览器活动时中心新Stop仍未读→点击中心终端确认。十阶段shell PID、Python PID、执行ID、cwd和同一hook session一致；所有输入来自实际终端键盘/原菜单，binding来自真实后端，不注入renderer状态。SSH原有20次恢复通过。只读SQLite两端均schema1/revision2、一个作用域键，时间精确等于第二个host Stop；首次确认重开后仍revision1，没有重复写入；文件权限0600，视图仍schema3。当前工作区之外的侧栏汇总、系统通知、Dock和多窗口已读同步尚未接齐。
+
+运行前后2420产物/91顶层MJS/3639源码CLI图与各自冻结版本一致；后两次只修夹具，产品与CLI未变。源为Linux Electron及自有loopback SSH，AgentId=claude只是受控hook身份，不是实际供应商认证。所有自有进程/记录的终端PID及X178清理通过。证据只收批准的顶层记录和选定截图，不含profile、DB、配置或密钥；扫描额外覆盖实际agent-hook nonce。已查看的图像逐项列在final-verification.json，不冒称看过全部截图。没有新安装包/随包CLI/Actions、Mac、外部SSH或真实Agent验收；阶段146原CLI截图拒绝仍未定位，整体对齐继续。[本阶段证据](../implementation/evidence/local-ssh-feature-parity/stage150)。

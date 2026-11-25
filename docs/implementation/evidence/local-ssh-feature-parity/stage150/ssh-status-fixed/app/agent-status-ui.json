@@ -1,0 +1,1229 @@
+{
+  "before": {
+    "tabId": "b5fd8711-49bc-4872-bae0-756b80014a91",
+    "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+    "label": "Restore lifecycle",
+    "activeTool": "terminal",
+    "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+    "panes": [
+      {
+        "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e",
+        "kind": "terminal",
+        "resourceId": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+        "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+        "label": "Claude"
+      },
+      {
+        "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6",
+        "kind": "terminal",
+        "resourceId": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+        "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+        "label": "Codex"
+      },
+      {
+        "paneId": "01280cd3-aeda-4619-baea-059439564c33",
+        "kind": "terminal",
+        "resourceId": "436e9258-c562-4d89-8950-7f0a08998bcf",
+        "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+        "label": "OMP"
+      },
+      {
+        "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+        "kind": "terminal",
+        "resourceId": "7258572c-3c60-44bf-9bca-931178a37404",
+        "executionId": "e7448adf-7138-4678-a776-162196b992d1",
+        "label": "Terminal"
+      },
+      {
+        "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+        "kind": "browser",
+        "resourceId": "d34d756c-0a82-40d3-aa04-e50bc5dda1c3",
+        "browser": {
+          "url": "about:blank",
+          "pageTitle": "",
+          "faviconUrl": null
+        }
+      }
+    ],
+    "layout": {
+      "type": "split",
+      "axis": "horizontal",
+      "ratio": 0.5,
+      "first": {
+        "type": "split",
+        "axis": "vertical",
+        "ratio": 0.5,
+        "first": {
+          "type": "pane",
+          "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+        },
+        "second": {
+          "type": "pane",
+          "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+        }
+      },
+      "second": {
+        "type": "split",
+        "axis": "vertical",
+        "ratio": 0.5,
+        "first": {
+          "type": "pane",
+          "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+        },
+        "second": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "pane",
+            "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+          },
+          "second": {
+            "type": "pane",
+            "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+          }
+        }
+      }
+    },
+    "paneTabs": [
+      {
+        "tabId": "11e3ba78-daed-4c04-b0c8-b7d2dd2731c0",
+        "label": "Terminal",
+        "createdAt": 1795590654287,
+        "activePaneId": "01280cd3-aeda-4619-baea-059439564c33",
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.37,
+          "first": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+            },
+            "second": {
+              "type": "pane",
+              "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+            }
+          },
+          "second": {
+            "type": "pane",
+            "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+          }
+        }
+      },
+      {
+        "tabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+        "label": "Terminal",
+        "createdAt": 1795590709873,
+        "activePaneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+        "layout": {
+          "type": "pane",
+          "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+        }
+      },
+      {
+        "tabId": "3e9f9508-1e47-40d2-9f6d-86d99668efef",
+        "createdAt": 1795590711896,
+        "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+        "layout": {
+          "type": "pane",
+          "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+        }
+      }
+    ],
+    "activePaneTabId": "3e9f9508-1e47-40d2-9f6d-86d99668efef",
+    "rightPaneLayout": {
+      "version": 1,
+      "tabs": [],
+      "activeTabId": null
+    },
+    "rightPaneOpen": false,
+    "activePaneArea": "center"
+  },
+  "vendorAgentVerified": false,
+  "actualBackendHooks": true,
+  "phases": [
+    {
+      "name": "working",
+      "view": {
+        "tabId": "b5fd8711-49bc-4872-bae0-756b80014a91",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "label": "Restore lifecycle",
+        "activeTool": "terminal",
+        "activePaneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+        "panes": [
+          {
+            "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e",
+            "kind": "terminal",
+            "resourceId": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+            "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+            "label": "Claude"
+          },
+          {
+            "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6",
+            "kind": "terminal",
+            "resourceId": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+            "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+            "label": "Codex"
+          },
+          {
+            "paneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "kind": "terminal",
+            "resourceId": "436e9258-c562-4d89-8950-7f0a08998bcf",
+            "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+            "label": "OMP"
+          },
+          {
+            "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "kind": "terminal",
+            "resourceId": "7258572c-3c60-44bf-9bca-931178a37404",
+            "executionId": "e7448adf-7138-4678-a776-162196b992d1",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+            "kind": "browser",
+            "resourceId": "d34d756c-0a82-40d3-aa04-e50bc5dda1c3",
+            "browser": {
+              "url": "http://localhost:44943/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:44943/icon.svg"
+            }
+          },
+          {
+            "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+            "kind": "terminal",
+            "resourceId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+            "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+              }
+            }
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "11e3ba78-daed-4c04-b0c8-b7d2dd2731c0",
+            "label": "Terminal",
+            "createdAt": 1795590654287,
+            "activePaneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "layout": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.37,
+              "first": {
+                "type": "split",
+                "axis": "vertical",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+                }
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              }
+            }
+          },
+          {
+            "tabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+            "label": "Terminal",
+            "createdAt": 1795590709873,
+            "activePaneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "layout": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            }
+          }
+        ],
+        "activePaneTabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-c94c337d-f2a4-4808-aad8-da9beda4569e",
+              "createdAt": 1795590712266,
+              "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+              "layout": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              }
+            },
+            {
+              "tabId": "78ac3808-41c5-4fe4-8865-aed297b582ff",
+              "label": "Terminal",
+              "createdAt": 1795590712535,
+              "activePaneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+              "layout": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          ],
+          "activeTabId": "78ac3808-41c5-4fe4-8865-aed297b582ff"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "agentId": "claude",
+        "agentSessionId": "owned-9849b7ab-db32-4244-96ba-e0ac76392e13",
+        "startedAt": 1795590712912,
+        "lastEventAt": 1795590712918,
+        "lastEventType": "Start",
+        "launchId": "owned-e6d5db8d-2572-40a2-8f83-894296c61557"
+      },
+      "seen": {
+        "revision": 0,
+        "mark": null
+      },
+      "proof": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "pid": 23975,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "events": [
+          "Attached",
+          "Start"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+        "pid": 23966,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004hagent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ \r\u001b[K\ragent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'f68ea1c6-64e2-473f-9b22-43af6b09388a' '/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\n"
+      }
+    },
+    {
+      "name": "permission",
+      "view": {
+        "tabId": "b5fd8711-49bc-4872-bae0-756b80014a91",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "label": "Restore lifecycle",
+        "activeTool": "terminal",
+        "activePaneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+        "panes": [
+          {
+            "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e",
+            "kind": "terminal",
+            "resourceId": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+            "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+            "label": "Claude"
+          },
+          {
+            "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6",
+            "kind": "terminal",
+            "resourceId": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+            "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+            "label": "Codex"
+          },
+          {
+            "paneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "kind": "terminal",
+            "resourceId": "436e9258-c562-4d89-8950-7f0a08998bcf",
+            "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+            "label": "OMP"
+          },
+          {
+            "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "kind": "terminal",
+            "resourceId": "7258572c-3c60-44bf-9bca-931178a37404",
+            "executionId": "e7448adf-7138-4678-a776-162196b992d1",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+            "kind": "browser",
+            "resourceId": "d34d756c-0a82-40d3-aa04-e50bc5dda1c3",
+            "browser": {
+              "url": "http://localhost:44943/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:44943/icon.svg"
+            }
+          },
+          {
+            "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+            "kind": "terminal",
+            "resourceId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+            "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+              }
+            }
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "11e3ba78-daed-4c04-b0c8-b7d2dd2731c0",
+            "label": "Terminal",
+            "createdAt": 1795590654287,
+            "activePaneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "layout": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.37,
+              "first": {
+                "type": "split",
+                "axis": "vertical",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+                }
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              }
+            }
+          },
+          {
+            "tabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+            "label": "Terminal",
+            "createdAt": 1795590709873,
+            "activePaneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "layout": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            }
+          }
+        ],
+        "activePaneTabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-c94c337d-f2a4-4808-aad8-da9beda4569e",
+              "createdAt": 1795590712266,
+              "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+              "layout": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              }
+            },
+            {
+              "tabId": "78ac3808-41c5-4fe4-8865-aed297b582ff",
+              "label": "Terminal",
+              "createdAt": 1795590712535,
+              "activePaneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+              "layout": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          ],
+          "activeTabId": "78ac3808-41c5-4fe4-8865-aed297b582ff"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "agentId": "claude",
+        "agentSessionId": "owned-9849b7ab-db32-4244-96ba-e0ac76392e13",
+        "startedAt": 1795590712912,
+        "lastEventAt": 1795590714882,
+        "lastEventType": "PermissionRequest",
+        "launchId": "owned-e6d5db8d-2572-40a2-8f83-894296c61557"
+      },
+      "seen": {
+        "revision": 0,
+        "mark": null
+      },
+      "proof": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "pid": 23975,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+        "pid": 23966,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004hagent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ \r\u001b[K\ragent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'f68ea1c6-64e2-473f-9b22-43af6b09388a' '/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\n"
+      }
+    },
+    {
+      "name": "unread",
+      "view": {
+        "tabId": "b5fd8711-49bc-4872-bae0-756b80014a91",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "label": "Restore lifecycle",
+        "activeTool": "terminal",
+        "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+        "panes": [
+          {
+            "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e",
+            "kind": "terminal",
+            "resourceId": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+            "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+            "label": "Claude"
+          },
+          {
+            "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6",
+            "kind": "terminal",
+            "resourceId": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+            "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+            "label": "Codex"
+          },
+          {
+            "paneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "kind": "terminal",
+            "resourceId": "436e9258-c562-4d89-8950-7f0a08998bcf",
+            "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+            "label": "OMP"
+          },
+          {
+            "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "kind": "terminal",
+            "resourceId": "7258572c-3c60-44bf-9bca-931178a37404",
+            "executionId": "e7448adf-7138-4678-a776-162196b992d1",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+            "kind": "browser",
+            "resourceId": "d34d756c-0a82-40d3-aa04-e50bc5dda1c3",
+            "browser": {
+              "url": "http://localhost:44943/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:44943/icon.svg"
+            }
+          },
+          {
+            "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+            "kind": "terminal",
+            "resourceId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+            "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+              }
+            }
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "11e3ba78-daed-4c04-b0c8-b7d2dd2731c0",
+            "label": "Terminal",
+            "createdAt": 1795590654287,
+            "activePaneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "layout": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.37,
+              "first": {
+                "type": "split",
+                "axis": "vertical",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+                }
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              }
+            }
+          },
+          {
+            "tabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+            "label": "Terminal",
+            "createdAt": 1795590709873,
+            "activePaneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "layout": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            }
+          }
+        ],
+        "activePaneTabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-c94c337d-f2a4-4808-aad8-da9beda4569e",
+              "createdAt": 1795590712266,
+              "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+              "layout": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              }
+            },
+            {
+              "tabId": "78ac3808-41c5-4fe4-8865-aed297b582ff",
+              "label": "Terminal",
+              "createdAt": 1795590712535,
+              "activePaneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+              "layout": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          ],
+          "activeTabId": "tab-c94c337d-f2a4-4808-aad8-da9beda4569e"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "agentId": "claude",
+        "agentSessionId": "owned-9849b7ab-db32-4244-96ba-e0ac76392e13",
+        "startedAt": 1795590712912,
+        "lastEventAt": 1795590717344,
+        "lastEventType": "Stop",
+        "launchId": "owned-e6d5db8d-2572-40a2-8f83-894296c61557"
+      },
+      "seen": {
+        "revision": 0,
+        "mark": null
+      },
+      "proof": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "pid": 23975,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+        "pid": 23966,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004hagent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ \r\u001b[K\ragent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'f68ea1c6-64e2-473f-9b22-43af6b09388a' '/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\n"
+      }
+    },
+    {
+      "name": "unread-reopened",
+      "view": {
+        "tabId": "b5fd8711-49bc-4872-bae0-756b80014a91",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "label": "Restore lifecycle",
+        "activeTool": "terminal",
+        "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+        "panes": [
+          {
+            "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e",
+            "kind": "terminal",
+            "resourceId": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+            "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+            "label": "Claude"
+          },
+          {
+            "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6",
+            "kind": "terminal",
+            "resourceId": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+            "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+            "label": "Codex"
+          },
+          {
+            "paneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "kind": "terminal",
+            "resourceId": "436e9258-c562-4d89-8950-7f0a08998bcf",
+            "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+            "label": "OMP"
+          },
+          {
+            "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "kind": "terminal",
+            "resourceId": "7258572c-3c60-44bf-9bca-931178a37404",
+            "executionId": "e7448adf-7138-4678-a776-162196b992d1",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+            "kind": "browser",
+            "resourceId": "d34d756c-0a82-40d3-aa04-e50bc5dda1c3",
+            "browser": {
+              "url": "http://localhost:44943/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:44943/icon.svg"
+            }
+          },
+          {
+            "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+            "kind": "terminal",
+            "resourceId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+            "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+              }
+            }
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "11e3ba78-daed-4c04-b0c8-b7d2dd2731c0",
+            "label": "Terminal",
+            "createdAt": 1795590654287,
+            "activePaneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "layout": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.37,
+              "first": {
+                "type": "split",
+                "axis": "vertical",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+                }
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              }
+            }
+          },
+          {
+            "tabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+            "label": "Terminal",
+            "createdAt": 1795590709873,
+            "activePaneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "layout": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            }
+          }
+        ],
+        "activePaneTabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-c94c337d-f2a4-4808-aad8-da9beda4569e",
+              "createdAt": 1795590712266,
+              "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+              "layout": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              }
+            },
+            {
+              "tabId": "78ac3808-41c5-4fe4-8865-aed297b582ff",
+              "label": "Terminal",
+              "createdAt": 1795590712535,
+              "activePaneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+              "layout": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          ],
+          "activeTabId": "tab-c94c337d-f2a4-4808-aad8-da9beda4569e"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "agentId": "claude",
+        "agentSessionId": "owned-9849b7ab-db32-4244-96ba-e0ac76392e13",
+        "startedAt": 1795590712912,
+        "lastEventAt": 1795590717344,
+        "lastEventType": "Stop",
+        "launchId": "owned-e6d5db8d-2572-40a2-8f83-894296c61557"
+      },
+      "seen": {
+        "revision": 0,
+        "mark": null
+      },
+      "proof": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "pid": 23975,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+        "pid": 23966,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004hagent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ \r\u001b[K\ragent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'f68ea1c6-64e2-473f-9b22-43af6b09388a' '/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\n"
+      }
+    },
+    {
+      "name": "seen",
+      "view": {
+        "tabId": "b5fd8711-49bc-4872-bae0-756b80014a91",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "label": "Restore lifecycle",
+        "activeTool": "terminal",
+        "activePaneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+        "panes": [
+          {
+            "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e",
+            "kind": "terminal",
+            "resourceId": "f04a91c8-b2f1-4068-8385-3e7d6f74ef96",
+            "executionId": "99461f1a-9f2a-45a8-b1f4-ff340107cf20",
+            "label": "Claude"
+          },
+          {
+            "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6",
+            "kind": "terminal",
+            "resourceId": "14ec652e-74c8-473d-9705-a0fed4da8e24",
+            "executionId": "dff4984a-afe5-43ee-93df-2d7ead5ae8bd",
+            "label": "Codex"
+          },
+          {
+            "paneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "kind": "terminal",
+            "resourceId": "436e9258-c562-4d89-8950-7f0a08998bcf",
+            "executionId": "65d161d1-70e8-4f9b-af87-e330c5ee7881",
+            "label": "OMP"
+          },
+          {
+            "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "kind": "terminal",
+            "resourceId": "7258572c-3c60-44bf-9bca-931178a37404",
+            "executionId": "e7448adf-7138-4678-a776-162196b992d1",
+            "label": "Terminal"
+          },
+          {
+            "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+            "kind": "browser",
+            "resourceId": "d34d756c-0a82-40d3-aa04-e50bc5dda1c3",
+            "browser": {
+              "url": "http://localhost:44943/preview?first=%E4%B8%AD#initial",
+              "pageTitle": "Owned browser home 中文 🙂",
+              "faviconUrl": "http://localhost:44943/icon.svg"
+            }
+          },
+          {
+            "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+            "kind": "terminal",
+            "resourceId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+            "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+            "label": "Terminal"
+          }
+        ],
+        "layout": {
+          "type": "split",
+          "axis": "horizontal",
+          "ratio": 0.5,
+          "first": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+              }
+            }
+          },
+          "second": {
+            "type": "split",
+            "axis": "vertical",
+            "ratio": 0.5,
+            "first": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            },
+            "second": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          }
+        },
+        "paneTabs": [
+          {
+            "tabId": "11e3ba78-daed-4c04-b0c8-b7d2dd2731c0",
+            "label": "Terminal",
+            "createdAt": 1795590654287,
+            "activePaneId": "01280cd3-aeda-4619-baea-059439564c33",
+            "layout": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.37,
+              "first": {
+                "type": "split",
+                "axis": "vertical",
+                "ratio": 0.5,
+                "first": {
+                  "type": "pane",
+                  "paneId": "fc50a21a-4cf2-41ac-965f-63a8db99681e"
+                },
+                "second": {
+                  "type": "pane",
+                  "paneId": "01280cd3-aeda-4619-baea-059439564c33"
+                }
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "ae589d3c-971d-4cef-9da5-39b0d6357ea6"
+              }
+            }
+          },
+          {
+            "tabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+            "label": "Terminal",
+            "createdAt": 1795590709873,
+            "activePaneId": "631d7e21-6a3a-450a-964a-28cc8802d95d",
+            "layout": {
+              "type": "pane",
+              "paneId": "631d7e21-6a3a-450a-964a-28cc8802d95d"
+            }
+          }
+        ],
+        "activePaneTabId": "7d6ac546-da3c-449f-a0f3-e75ad5086548",
+        "rightPaneLayout": {
+          "version": 1,
+          "tabs": [
+            {
+              "tabId": "tab-c94c337d-f2a4-4808-aad8-da9beda4569e",
+              "createdAt": 1795590712266,
+              "activePaneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2",
+              "layout": {
+                "type": "pane",
+                "paneId": "843eaf16-d486-4160-a6f8-b8b94163d3e2"
+              }
+            },
+            {
+              "tabId": "78ac3808-41c5-4fe4-8865-aed297b582ff",
+              "label": "Terminal",
+              "createdAt": 1795590712535,
+              "activePaneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+              "layout": {
+                "type": "pane",
+                "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0"
+              }
+            }
+          ],
+          "activeTabId": "78ac3808-41c5-4fe4-8865-aed297b582ff"
+        },
+        "rightPaneOpen": true,
+        "activePaneArea": "right"
+      },
+      "binding": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "workspaceId": "f68ea1c6-64e2-473f-9b22-43af6b09388a",
+        "agentId": "claude",
+        "agentSessionId": "owned-9849b7ab-db32-4244-96ba-e0ac76392e13",
+        "startedAt": 1795590712912,
+        "lastEventAt": 1795590717344,
+        "lastEventType": "Stop",
+        "launchId": "owned-e6d5db8d-2572-40a2-8f83-894296c61557"
+      },
+      "seen": {
+        "revision": 1,
+        "mark": {
+          "key": "d25290d5a15e604b6e3b7c319d113d7aa2eeb6c54d01c4528692739513ef8a28",
+          "at": 1795590717344
+        }
+      },
+      "proof": {
+        "terminalId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "pid": 23975,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "events": [
+          "Attached",
+          "Start",
+          "PermissionRequest",
+          "Stop"
+        ],
+        "running": true
+      },
+      "execution": {
+        "id": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+        "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+        "pid": 23966,
+        "cols": 54,
+        "rows": 30,
+        "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+        "alive": true,
+        "processExists": true,
+        "output": "\u001b[?2004hagent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ \r\u001b[K\ragent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ python3 -u -c \"exec(bytes.fromhex('696d706f7274206f732c7379732c6a736f6e2c72652c7474792c7465726d696f732c75726c6c69622e726571756573742c75726c6c69622e70617273652c757569642c74696d650a66726f6d20706174686c696220696d706f727420506174680a726f6f743d50617468287379732e617267765b325d292e7265736f6c766528293b61737365727420506174682e63776428292e7265736f6c766528293d3d726f6f7420616e64206f732e656e7669726f6e2e676574282753555045525345545f574f524b53504143455f494427293d3d7379732e617267765b315d0a7465726d696e616c3d6f732e656e7669726f6e5b2753555045525345545f5445524d494e414c5f4944275d3b686f6f6b3d6f732e656e7669726f6e5b2753555045525345545f484f53545f4147454e545f484f4f4b5f55524c275d3b75726c3d75726c6c69622e70617273652e75726c706172736528686f6f6b290a6173736572742075726c2e736368656d653d3d27687474702720616e642075726c2e686f73746e616d653d3d273132372e302e302e312720616e642072652e66756c6c6d617463682872272f6167656e742d686f6f6b2f5b612d66302d395d7b36347d272c75726c2e70617468290a6c61756e63683d276f776e65642d272b73747228757569642e75756964342829293b73657373696f6e3d276f776e65642d272b73747228757569642e75756964342829293b70726f6f663d726f6f742f272e73757065727365742f6f776e65642d6167656e742d7374617475732e6a736f6e273b70726f6f662e706172656e742e6d6b6469722865786973745f6f6b3d54727565290a73746174653d7b277465726d696e616c4964273a7465726d696e616c2c27706964273a6f732e67657470696428292c27637764273a73747228726f6f74292c276576656e7473273a5b5d2c2772756e6e696e67273a547275657d0a646566207361766528293a0a2074656d703d70726f6f662e776974685f73756666697828272e746d7027293b74656d702e77726974655f74657874286a736f6e2e64756d707328737461746529293b74656d702e7265706c6163652870726f6f66290a646566206e6f74696679286576656e74293a0a20626f64793d7b276a736f6e273a7b277465726d696e616c4964273a7465726d696e616c2c276576656e7454797065273a6576656e742c276c61756e63684964273a6c61756e63682c276167656e74273a7b276167656e744964273a27636c61756465272c2773657373696f6e4964273a73657373696f6e7d7d7d0a20726571756573743d75726c6c69622e726571756573742e5265717565737428686f6f6b2c646174613d6a736f6e2e64756d707328626f6479292e656e636f646528292c686561646572733d7b27436f6e74656e742d54797065273a276170706c69636174696f6e2f6a736f6e277d2c6d6574686f643d27504f535427290a20776974682075726c6c69622e726571756573742e75726c6f70656e28726571756573742c74696d656f75743d352920617320726573706f6e73653a0a2020726573756c743d6a736f6e2e6c6f616428726573706f6e7365295b27726573756c74275d5b2764617461275d5b276a736f6e275d3b61737365727420726573756c745b2773756363657373275d20616e64206e6f7420726573756c742e676574282769676e6f726564272c46616c7365290a2073746174655b276576656e7473275d2e617070656e64286576656e74293b7361766528290a66643d7379732e737464696e2e66696c656e6f28293b6f6c643d7465726d696f732e746367657461747472286664290a7472793a0a207474792e736574726177286664293b7379732e7374646f75742e777269746528275c7831625b3f31303439685c7831625b3f323030346c5c7831625b324a5c7831625b484f574e4544204147454e54205354415455535c725c6e436f6e74726f6c6c656420686f6f6b20666978747572653b206e6f2076656e646f7220736572766963652e5c725c6e27293b7379732e7374646f75742e666c75736828290a206e6f746966792827417474616368656427293b6e6f746966792827537461727427290a207768696c6520547275653a0a2020646174613d6f732e726561642866642c34303936290a20206966206e6f742064617461206f72206227712720696e2064617461206f722062275c7830332720696e20646174613a627265616b0a2020666f72206368617220696e20646174613a0a2020206576656e743d7b3131393a275374617274272c3131323a275065726d697373696f6e52657175657374272c3131353a2753746f70272c3130323a274661696c6564277d2e6765742863686172290a2020206966206576656e743a0a202020206966206576656e743d3d2753746f70273a74696d652e736c656570282e34290a202020206e6f74696679286576656e74293b7379732e7374646f75742e7772697465286576656e742b275c725c6e27293b7379732e7374646f75742e666c75736828290a66696e616c6c793a0a206e6f746966792827446574616368656427293b73746174655b2772756e6e696e67275d3d46616c73653b7361766528293b7379732e7374646f75742e777269746528275c7831625b3f313034396c27293b7379732e7374646f75742e666c75736828293b7465726d696f732e7463736574617474722866642c7465726d696f732e54435341445241494e2c6f6c64290a').decode())\" 'f68ea1c6-64e2-473f-9b22-43af6b09388a' '/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle'\r\n\u001b[?2004l\r\u001b[?1049h\u001b[?2004l\u001b[2J\u001b[HOWNED AGENT STATUS\r\nControlled hook fixture; no vendor service.\r\nPermissionRequest\r\nStop\r\n"
+      }
+    }
+  ],
+  "agent": {
+    "paneId": "bb0ebcdd-e71d-46fe-b748-d5903f74a5b0",
+    "kind": "terminal",
+    "resourceId": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+    "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+    "label": "Terminal"
+  },
+  "execution": {
+    "id": "f9b2b90d-fe93-4672-82bb-10cbd305cdb7",
+    "executionId": "6328aa1f-b948-4564-83e5-4afefb221518",
+    "pid": 23966,
+    "cols": 54,
+    "rows": 30,
+    "cwd": "/home/agent/.superset-ssh-test-9eOvMe/backend-home/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle",
+    "alive": true,
+    "processExists": true,
+    "output": "\u001b[?2004hagent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ \r\u001b[K\ragent@7ede1cbf1387:~/Superset Remix/worktrees/Unified Project-795ff415-c91e-46b2-9a30-759b30998feb/restore-lifecycle$ "
+  },
+  "serviceUid": 1000,
+  "seenKey": "d25290d5a15e604b6e3b7c319d113d7aa2eeb6c54d01c4528692739513ef8a28",
+  "error": {
+    "message": "Error: Error invoking remote method 'direct-workstation': Error: Connection is disconnected",
+    "stack": "Error: Error: Error invoking remote method 'direct-workstation': Error: Connection is disconnected\n    at Object.evaluate (/workspace/superset-remix-parity/apps/desktop/scripts/verify-brand-ui.mjs:201:10)\n    at async binding (file:///workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-agent-status-ui.mjs:59:37)\n    at async capture (file:///workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-agent-status-ui.mjs:62:245)\n    at async verifyWorkstationAgentStatusUi (file:///workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-agent-status-ui.mjs:76:230)\n    at async verifyWorkstationBrowserUi (/workspace/superset-remix-parity/apps/desktop/scripts/verify-workstation-browser-ui.mjs:236:10)\n    at async verifyWorkspaceRestoreUi (/workspace/superset-remix-parity/apps/desktop/scripts/verify-workspace-restore-ui.mjs:563:3)\n    at async <anonymous> (/workspace/superset-remix-parity/apps/desktop/scripts/verify-brand-ui.mjs:619:4)"
+  }
+}
