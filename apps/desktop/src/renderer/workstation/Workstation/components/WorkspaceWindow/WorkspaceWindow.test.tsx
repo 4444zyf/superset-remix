@@ -344,3 +344,124 @@ test("terminal navigation reaches the existing file viewer through the original 
 		input: { workspaceId: "workspace", absolutePath: "/remote/repo/note.txt" },
 	});
 });
+
+test("background workspace tabs aggregate original Agent priorities without acknowledging unread events", async () => {
+	const calls: string[] = [],
+		seen: unknown[] = [];
+	const props = {
+		api: {
+			rpc: async (request: {
+				path: string;
+				input: { workspaceId: string };
+			}) => {
+				expect(request.path).toBe("terminalAgents.listByWorkspace");
+				calls.push(request.input.workspaceId);
+				return [
+					{
+						workspaceId: "background",
+						terminalId: "review-terminal",
+						lastEventType: "Stop",
+						lastEventAt: 123,
+					},
+					{
+						workspaceId: "background",
+						terminalId: "failed-terminal",
+						lastEventType: "Failed",
+						lastEventAt: 124,
+					},
+					{
+						workspaceId: "other",
+						terminalId: "failed-terminal",
+						lastEventType: "PermissionRequest",
+						lastEventAt: 125,
+					},
+				];
+			},
+		},
+		connection: {
+			connectionId: "remote",
+			backendId: "backend",
+			namespaceId: "namespace",
+			instanceId: "instance",
+			generation: 1,
+			capabilities: { workstationAgentFeedbackV1: true },
+		},
+		target: {
+			connectionId: "remote",
+			targetRevision: 1,
+			backendId: "backend",
+			namespaceId: "namespace",
+			serviceUid: 1000,
+			autoConnect: true,
+			activeTabId: "selected",
+			workspaces: [
+				{
+					tabId: "selected",
+					workspaceId: "selected",
+					activeTool: "terminal",
+					activePaneId: null,
+					panes: [],
+					layout: null,
+				},
+				{
+					tabId: "background-tab",
+					workspaceId: "background",
+					activeTool: "terminal",
+					activePaneId: "review-pane",
+					panes: [
+						{
+							paneId: "review-pane",
+							kind: "terminal",
+							resourceId: "review-terminal",
+							executionId: "review-exec",
+						},
+						{
+							paneId: "failed-pane",
+							kind: "terminal",
+							resourceId: "failed-terminal",
+							executionId: "failed-exec",
+						},
+					],
+					layout: { type: "pane", paneId: "review-pane" },
+				},
+			],
+		},
+		checks: [],
+		resourceRevision: 0,
+		restore: null,
+		actions: { busy: false },
+		ports: { busy: false, forward: null, onOpen() {}, onClose() {} },
+		onAgentSeen(mark: unknown) {
+			seen.push(mark);
+		},
+		onNewSession() {},
+		onRefresh() {},
+		onPending() {},
+		onProjectSettings() {},
+		onBrowse() {},
+		onMachines() {},
+		onError() {},
+	} as unknown as ComponentProps<typeof WorkspaceWindow>;
+	const view = render(
+		<DndProvider backend={HTML5Backend}>
+			<TooltipProvider>
+				<WorkspaceWindow {...props} />
+			</TooltipProvider>
+		</DndProvider>,
+	);
+	await waitFor(() =>
+		expect(
+			view.container.querySelector(
+				'.ws-workspace-tabs [data-tab-id="background-tab"] [data-workstation-agent-status="failed"]',
+			),
+		).not.toBeNull(),
+	);
+	expect(calls).toEqual(["background"]);
+	expect(seen).toEqual([]);
+	expect(
+		view.container.querySelector(
+			'.ws-workspace-tabs [data-tab-id="selected"] [data-workstation-agent-status]',
+		),
+	).toBeNull();
+	view.unmount();
+});

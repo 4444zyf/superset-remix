@@ -33,6 +33,7 @@ import { WorkspacePortControls } from "../WorkspacePortControls";
 import { WorkstationDialog } from "../WorkstationDialog/WorkstationDialog";
 import { PaneGrid } from "./components/PaneGrid/PaneGrid";
 import { WorkspacePaneAreas } from "./components/WorkspacePaneAreas/WorkspacePaneAreas";
+import { WorkspaceTabAgentStatus } from "./components/WorkspaceTabAgentStatus";
 import { useWorkstationAgentStatuses } from "./hooks/useWorkstationAgentStatuses";
 
 export function WorkspaceWindow({
@@ -199,6 +200,21 @@ export function WorkspaceWindow({
 					}}
 					onMovePaneToNewTab={() => {}}
 					renderTabIcon={() => <Folder size={14} />}
+					renderTabAccessory={(tab) => {
+						const item = target.workspaces.find((w) => w.tabId === tab.id);
+						return item ? (
+							<WorkspaceTabAgentStatus
+								api={api}
+								connection={connection}
+								serviceUid={target.serviceUid}
+								workspace={item}
+								seenMarks={agentSeenMarks}
+								activeStatuses={
+									item.tabId === target.activeTabId ? agentStatuses : undefined
+								}
+							/>
+						) : null;
+					}}
 					renderAddTabMenu={() => (
 						<>
 							<DropdownMenuItem
