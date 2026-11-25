@@ -1862,3 +1862,22 @@ CLI 仍为控制机原源码 dev runner，针对本次拥有的同机 namespace�
 原shell/Python PID、执行ID和cwd保持；SSH还含原20次恢复。退出后只读SQLite两端偏好schema1/revision2、恰好1个已查看键与最后Stop时间一致，重开没有增加确认写入；V3布局版本保持3，文件0600。2420编译文件、91脚本及3639源码CLI图每轮运行后立即校验，最终scoped进程为空、自有X179清理。实际查看首轮菜单失败、本地working、SSH permission及second-seen截图，其余仅称捕获。证据85文件，秘密模式扫描和SHA256清单通过，不含配置/数据库/密钥。
 
 此为Linux源码Electron、自有loopback SSH和受控TUI的真实后端hook/事件验证，不是物理Mac、外部SSH或供应商Agent认证/识图。本轮未重跑终端图片粘贴和滚轮，不覆盖此前证据；原CLI截图偶发拒绝仍未定位。全部工作区/侧栏状态、系统通知、多窗口同步及其余原版功能继续，整体未完成；未使用GitHub Actions。[阶段一百五十一原始证据](evidence/local-ssh-feature-parity/stage151)。
+
+
+## 阶段一百五十二：顶部已打开工作区标签的Agent状态（2026-11-25）
+
+原版按permission、failed、working、review的优先级汇总Agent状态；工作站此前只有窗格和窗格标签指示，顶部工作区标签仍无状态。新增背景工作区回归在旧实现3通过/1失败，旧编译1a77a5cd8的真实Linux基线同样在original workspace tab aggregate working处失败：后端确有Attached/Start、窗格和窗格标签已有working，顶部标签没有。截图已实际查看，基线产物及夹具冻结清单保留。
+
+新增WorkspaceTabAgentStatus，复用原highestAgentStatus及WorkstationAgentStatus展示。活动工作区直接采用现有窗格状态，避免重复查询；其余已打开工作区通过原useWorkstationAgentStatuses读取自身资源的binding、共享阶段151鉴权/events，后台组件不接收onSeen回调。即使后台工作区保存的activePaneId仍指向Agent终端，也不会在后台确认已查看。原20个已打开工作区上限、原host能力判断、owner/UID/资源隔离及256条已查看偏好缓存保持，无新host接口、账号路径、SQL迁移、持久键或文案。
+
+相关6文件17项/127断言通过，包括顶部真实WorkspaceWindow组件的背景汇总、外部工作区binding拒绝、活动结果复用且不重复查询、背景review在偏好标记更新前保持，以及既有状态/事件池/文件编辑器回归。桌面类型、针对性Biome及完整源码编译工具均确认退出0。产品源码0f349196e，后续两次仅改验证脚本；没有重建CLI二进制或安装包。
+
+原生脚本增加可选--workspace-agent-status-ui：仍以实际输入驱动受控TUI和原后端鉴权hook，逐阶段核对顶部状态；经原新增标签菜单/新会话对话框建立自有第二工作区，在其真实终端写入握手文件后，原工作区TUI才发布第二个Stop。该Stop发生时，原工作区在后台，其保存的activePaneId仍是Agent。辅助终端写入后主动exit，背景重开截图中的Ended为该辅助终端正常退出。未通过固定延时猜测切换完成、未注入状态/事件或修改布局。
+
+首次新产品local-workspace已完成十二个状态阶段，但最后清理新标签时无法点击原关闭按钮：原组件只在hover/focus时开放pointer-events，脚本没有先悬停。失败截图与全部十二阶段回执保留，未称完整通过。脚本仅追加真实mouseMoved进入该标签，再点击原按钮；没有修改产品、期限、布局或状态断言。最终local-workspace-hover和ssh-workspace-hover使用相同0f349196e编译均退出0。
+
+每端十二阶段：working、permission、unread、unread-reopened、workspace-background-unread、seen、seen-reopened、failed、failed-center、second-unread、workspace-background-unread-reopened、second-seen。顶部指示每阶段与原优先级一致；后台未读在三次真实窗口重开中的相应阶段保持，实际返回可见Agent终端后才确认原host时间；失败不被已查看过滤。原shell/Python PID、执行ID及cwd始终保持，真实事件旁观中有Start/Stop，SSH另含原20次窗口恢复。仅关闭自有新增工作区标签及Agent窗格，原窗格ID集合恢复。
+
+退出后只读SQLite两端均schema1/revision2、一个已查看键等于第二个Stop，重开未重复写入，文件0600；V3布局仍schema3。2420编译文件、91脚本及3639源码CLI图每轮结束立即验证相应冻结版本，全部自有记录PID/cwd及scoped进程检查通过，X180释放。离线核验脚本更新上一阶段的right浏览器断言为本轮中心Agent保存状态，并修正阶段循环变量，未修改原始回执。证据125文件，批准白名单、秘密模式扫描和SHA256清单通过，不含配置、数据库或密钥。实际查看基线缺失、本地首轮清理失败、本地后台重开、SSH permission及后台重开截图，其余仅称捕获。
+
+这是Linux源码桌面、自有loopback SSH和受控TUI真实hook/事件验证，不宣称物理Mac、外部SSH或供应商Agent识图。本轮没有重跑剪贴板/滚轮；原CLI截图的一次未定位拒绝仍待跟进。顶部已打开工作区标签已补，项目侧栏/未打开工作区汇总、系统通知、多窗口同步及其余功能继续，整体对齐未完成；未使用GitHub Actions。[阶段一百五十二证据](evidence/local-ssh-feature-parity/stage152)。

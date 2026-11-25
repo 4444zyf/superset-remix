@@ -1,0 +1,91 @@
+{
+  "revision": 13,
+  "snapshot": {
+    "restoreOnLaunch": true,
+    "activeConnectionId": "00000000-0000-4000-8000-000000000001",
+    "targets": [
+      {
+        "connectionId": "00000000-0000-4000-8000-000000000001",
+        "targetRevision": 1,
+        "backendId": "41d249a6-ec04-41c6-a5d5-c0a94ef2e002",
+        "namespaceId": "3e042c7b-3acb-45e0-bad0-c9bf3c602a35",
+        "serviceUid": 1000,
+        "autoConnect": true,
+        "activeTabId": "b4ed28b3-c5d6-440f-a15a-c282c60165e9",
+        "workspaces": [
+          {
+            "tabId": "b4ed28b3-c5d6-440f-a15a-c282c60165e9",
+            "workspaceId": "5fbb7b35-7c5e-4db3-91b2-b0b403ea82d2",
+            "label": "Local wheel 87a10dbe-6518-4309-b6f0-7b43f3fda651",
+            "activeTool": "terminal",
+            "activePaneId": "17cbbafa-1438-40a8-ad75-53eb96336ce8",
+            "panes": [
+              {
+                "paneId": "17cbbafa-1438-40a8-ad75-53eb96336ce8",
+                "kind": "terminal",
+                "resourceId": "9fdcb0fc-7a91-4b60-a80d-88980afca0c1",
+                "executionId": "562050b1-6e92-4326-9495-1c230fcf3bb3",
+                "label": "Terminal"
+              },
+              {
+                "paneId": "dfe4f81a-3e45-456b-9681-1a0ce569e3cb",
+                "kind": "terminal",
+                "resourceId": "9aa61038-e914-4e51-8e32-bf38e283adcf",
+                "executionId": "0f169be6-eb6c-431a-8655-567895fad883",
+                "label": "Terminal"
+              }
+            ],
+            "layout": {
+              "type": "split",
+              "axis": "horizontal",
+              "ratio": 0.5,
+              "first": {
+                "type": "pane",
+                "paneId": "17cbbafa-1438-40a8-ad75-53eb96336ce8"
+              },
+              "second": {
+                "type": "pane",
+                "paneId": "dfe4f81a-3e45-456b-9681-1a0ce569e3cb"
+              }
+            },
+            "paneTabs": [
+              {
+                "tabId": "867ef858-ed8e-4cc1-90f4-5951bf627acc",
+                "label": "Terminal",
+                "createdAt": 1795594135899,
+                "activePaneId": "17cbbafa-1438-40a8-ad75-53eb96336ce8",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "17cbbafa-1438-40a8-ad75-53eb96336ce8"
+                }
+              },
+              {
+                "tabId": "baf7feb6-09f9-4118-bbc4-c2f36397d24f",
+                "label": "Terminal",
+                "createdAt": 1795594139596,
+                "activePaneId": "dfe4f81a-3e45-456b-9681-1a0ce569e3cb",
+                "layout": {
+                  "type": "pane",
+                  "paneId": "dfe4f81a-3e45-456b-9681-1a0ce569e3cb"
+                }
+              }
+            ],
+            "activePaneTabId": "867ef858-ed8e-4cc1-90f4-5951bf627acc"
+          }
+        ]
+      }
+    ],
+    "window": {
+      "x": 0,
+      "y": 87,
+      "width": 1200,
+      "height": 900,
+      "maximized": false
+    },
+    "schemaVersion": 1,
+    "revision": 13,
+    "updatedAt": 1795594151162
+  },
+  "invalid": false,
+  "navigationRevision": 1
+}

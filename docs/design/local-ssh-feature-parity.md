@@ -4,6 +4,8 @@
 
 ## 2026-11-11 当前重点状态
 
+阶段一百五十二将原Agent优先级汇总接到顶部已打开工作区标签：活动工作区复用窗格状态，后台工作区按既有能力订阅共享事件/读取自身binding，不传入已查看回调；已查看变化仍用同一有界偏好缓存。原最多20个已打开工作区的上限保持，无新账号/接口/存储。旧1a77a5cd8实窗有窗格working但无工作区标签指示；0f349196e本地/自有SSH各十二阶段通过，包含真实切工作区、由另一工作区终端触发后台完成及后台选中状态下重开，SSH含20次恢复。17项/127断言、类型/lint/源码编译、SQL/冻结/清理通过。首轮十二阶段后清理按钮缺少真实悬停的夹具失败保留。此处只覆盖已打开工作区标签，项目侧栏/未打开工作区汇总、系统通知与其余原功能继续。[阶段一百五十二证据](../implementation/evidence/local-ssh-feature-parity/stage152)。
+
 阶段一百五十一将当前工作区Agent状态接回既有鉴权/events：与文件监听共享按API实例、连接、backend/namespace、generation及instance隔离的传输，事件只触发binding快照刷新，不采用事件状态或时间。连接健康时停止两秒查询，断线/旧能力回退轮询，突发事件串行合并；原状态语义、已查看键和偏好CAS不变。旧实现新增两项红例，最终17项/136断言、桌面类型、针对性lint及源码编译通过。1a77a5cd8本地/自有SSH各十阶段通过并旁观到真实Start/Stop事件，SSH含20次恢复，SQL/冻结/进程清理通过。首轮菜单动画点击失败保留，只修正夹具就绪判断。全部工作区/侧栏、系统通知、多窗口同步与其他原功能继续，未宣称整体完成。[阶段一百五十一证据](../implementation/evidence/local-ssh-feature-parity/stage151)。
 
 阶段一百五十接回当前工作区窗格/标签的原Agent状态与私有已读：复用StatusIndicator、原事件状态推导/优先级，经已有AgentFeedback能力查询真实host binding；旧host不查询。活动侧可见终端按host时间确认，backend/namespace/service UID/workspace/terminal的SHA256键与256条有界SQLite缓存隔离，沿原偏好CAS串行写入，无账号或新localStorage。旧版实窗已有Start但无指示；最终f0d6fb0a3本地/自有SSH各十阶段通过，SSH含20次恢复。63项/381断言、类型/17语言及源码编译通过；只读SQL两端恰好2次确认、重开无重复写、0600及PID/执行/cwd/冻结/清理通过。首轮证明读取、SSH恢复空状态及窄标签重复点击的夹具失败均保留。侧栏/系统通知/多窗口同步和其余原功能继续。[阶段一百五十证据](../implementation/evidence/local-ssh-feature-parity/stage150)。

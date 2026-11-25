@@ -1,0 +1,13 @@
+{
+  "case": "ssh-workspace-hover",
+  "compiledSource": "0f349196eeaa31cf2479cbfea9fb24e6f412229b",
+  "compiledFiles": 2420,
+  "fixtureCount": 91,
+  "sourceCliFiles": 3639,
+  "allUnchanged": true,
+  "cleanup": {
+    "ownedXorgPid": 43256,
+    "ownedXorgExit": 0,
+    "appExit": 0
+  }
+}

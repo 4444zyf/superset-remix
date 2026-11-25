@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Move to Right Side",
+    "attempt": 0,
+    "geometry": {
+      "top": 461,
+      "bottom": 493,
+      "min": 352,
+      "max": 497,
+      "x": 778.390625,
+      "y": 424.5,
+      "menuTop": 351,
+      "menuBottom": 498,
+      "scrollTop": 0,
+      "scrollHeight": 145,
+      "clientHeight": 145,
+      "overflowY": "auto",
+      "hitMenu": true,
+      "hitTag": "DIV"
+    }
+  }
+]
