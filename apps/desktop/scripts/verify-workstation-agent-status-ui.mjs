@@ -61,7 +61,7 @@ export async function verifyWorkstationAgentStatusUi(options,{scope}) {
  const mark=async()=>{const p=await evaluate('window.directWorkstation.getPreferences()');assert.equal(p.invalid,false);return {revision:p.revision,mark:p.values.agentSeenMarks?.find(m=>m.key===seenKey)??null};};
  const badge=async(status,where='tab')=>{const w=await read(),id=tab(w,agent.paneId);return evaluate(where==='tab'?`Boolean(document.querySelector('[data-tab-id="${id}"] [data-workstation-agent-status="${status}"]'))`:`Boolean(document.querySelector('[data-pane-title-id="${agent.paneId}"]')?.closest('[draggable="true"]')?.querySelector('[data-workstation-agent-status="${status}"]'))`);};
  const capture=async name=>{const current=await controls.inspectPresetTerminal(agent.resourceId);for(const key of ['id','executionId','pid','cwd'])assert.equal(current[key],execution[key],key);report.phases.push({name,view:await read(),binding:await binding(),seen:await mark(),proof:await proof(),execution:current});await screenshot('agent-status-'+name);save();};
- const selectAgent=async()=>{const w=await read();await click(`[data-tab-id="${tab(w,agent.paneId)}"]`);await click(selector+' .xterm-screen');};
+ const selectAgent=async()=>{const w=await read(),id=tab(w,agent.paneId);if(w.activePaneTabId!==id&&w.rightPaneLayout?.activeTabId!==id)await click(`[data-tab-id="${id}"]`);await click(selector+' .xterm-screen');};
  const browserTab=async()=>{const w=await read();await click(`[data-tab-id="${tab(w,browser.paneId)}"]`);await until(async()=>(await read()).activePaneId===browser.paneId,'browser owns focus before background Stop');};
  const send=async text=>{await click(selector+' .xterm-screen');await getPage().call('Input.insertText',{text});};
  let running=false;
