@@ -234,6 +234,10 @@ export async function verifyWorkstationBrowserUi(options) {
         if (process.argv.includes("--pane-areas-ui")) {
             const {verifyWorkstationPaneAreasUi}=await import("./verify-workstation-pane-areas-ui.mjs");
             await verifyWorkstationPaneAreasUi(options,{scope,terminal,guestRead});await observeGuest();
+            if(process.argv.includes('--pane-area-split-drag')) {
+             const current=workspace(await readView()),pane=current.panes.find(p=>p.kind==='terminal'&&p.resourceId===terminal.id);
+             assert.ok(pane);terminalTab=current.paneTabs.find(t=>JSON.stringify(t.layout).includes(pane.paneId))?.tabId;assert.ok(terminalTab);
+            }
         }
 
 		if (process.argv.includes("--browser-read-cli")) {
