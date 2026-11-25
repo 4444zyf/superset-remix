@@ -1600,3 +1600,48 @@ test("existing-terminal scripts require a strict execution capability and durabl
 		db.close();
 	}
 });
+
+test("renderer descriptors expose only a verified service UID matching the live lease identity", () => {
+	const f = fixture();
+	let metadata: Record<string, unknown> = {
+		backendId: "backend",
+		namespaceId: "namespace",
+		instanceId: "instance",
+		serviceUid: 1000,
+		secret: "private",
+		url: "http://127.0.0.1:5678",
+	};
+	const controller = new WorkstationController({
+		...f.manager,
+		getVerifiedDescription: () => metadata,
+	});
+	expect(controller.describe("machine")).toEqual({
+		connectionId: "machine",
+		generation: 1,
+		backendId: "backend",
+		namespaceId: "namespace",
+		instanceId: "instance",
+		serviceUid: 1000,
+	});
+	for (const change of [
+		{ backendId: "other" },
+		{ namespaceId: "other" },
+		{ instanceId: "other" },
+		{ serviceUid: 0 },
+		{ serviceUid: -1 },
+		{ serviceUid: 1.5 },
+		{ serviceUid: Infinity },
+		{ serviceUid: "1000" },
+	]) {
+		metadata = {
+			backendId: "backend",
+			namespaceId: "namespace",
+			instanceId: "instance",
+			serviceUid: 1000,
+			...change,
+		};
+		expect(Object.hasOwn(controller.describe("machine"), "serviceUid")).toBe(
+			false,
+		);
+	}
+});

@@ -11,7 +11,7 @@ import {
 	type WorkstationAgentSeenMark,
 	workstationAgentSeenKey,
 } from "shared/workstation-agent-seen";
-import { getWorkstationEventBus } from "../../../../providers/WorkstationFileEvents/get-workstation-event-bus";
+import { getWorkstationEventBus } from "../../providers/WorkstationFileEvents/get-workstation-event-bus";
 
 interface Entry {
 	binding: TerminalAgentBinding;
@@ -29,6 +29,7 @@ export function useWorkstationAgentStatuses({
 	connection,
 	serviceUid,
 	workspace,
+	workspaceId: requestedWorkspaceId,
 	seenMarks,
 	onSeen,
 	schedule = schedulePoll,
@@ -37,13 +38,14 @@ export function useWorkstationAgentStatuses({
 	api: DirectWorkstationApi;
 	connection: DirectDescriptor | null;
 	serviceUid: number;
-	workspace: WorkspaceViewV3 | undefined;
+	workspace?: WorkspaceViewV3;
+	workspaceId?: string;
 	seenMarks: readonly WorkstationAgentSeenMark[];
 	onSeen?: (mark: WorkstationAgentSeenMark) => void;
 	schedule?: (callback: () => void) => () => void;
 	isVisible?: () => boolean;
 }): ReadonlyMap<string, ActivePaneStatus> {
-	const workspaceId = workspace?.workspaceId;
+	const workspaceId = workspace?.workspaceId ?? requestedWorkspaceId;
 	const owner = JSON.stringify([
 		connection?.connectionId,
 		connection?.generation,
@@ -51,13 +53,13 @@ export function useWorkstationAgentStatuses({
 		connection?.namespaceId,
 		serviceUid,
 		connection?.instanceId,
-		workspace?.workspaceId,
+		workspaceId,
 	]);
 	const terminalIds = JSON.stringify(
 		workspace?.panes
 			.filter((p) => p.kind === "terminal")
 			.map((p) => p.resourceId)
-			.sort() ?? [],
+			.sort() ?? null,
 	);
 	const [state, setState] = useState<{
 		owner: string;
@@ -70,8 +72,9 @@ export function useWorkstationAgentStatuses({
 			connection.capabilities?.workstationAgentFeedbackV1 !== true
 		)
 			return;
-		const resources = new Set<string>(JSON.parse(terminalIds));
-		if (!resources.size) return;
+		const ids = JSON.parse(terminalIds) as string[] | null;
+		const resources = ids ? new Set(ids) : null;
+		if (resources?.size === 0) return;
 		let alive = true,
 			busy = false,
 			requested = false,
@@ -92,12 +95,16 @@ export function useWorkstationAgentStatuses({
 					type: "query",
 					input: { workspaceId },
 				});
-				if (!Array.isArray(bindings)) throw Error("Invalid agent bindings");
+				if (!Array.isArray(bindings) || (!resources && bindings.length > 4096))
+					throw Error("Invalid agent bindings");
 				const current = new Map<string, TerminalAgentBinding>();
 				for (const binding of bindings) {
 					if (
 						binding.workspaceId !== workspaceId ||
-						!resources.has(binding.terminalId) ||
+						typeof binding.terminalId !== "string" ||
+						binding.terminalId.length === 0 ||
+						binding.terminalId.length > 256 ||
+						(resources !== null && !resources.has(binding.terminalId)) ||
 						typeof binding.lastEventType !== "string" ||
 						!Number.isSafeInteger(binding.lastEventAt) ||
 						binding.lastEventAt < 0
@@ -142,7 +149,10 @@ export function useWorkstationAgentStatuses({
 				: null;
 		const release = bus?.retain();
 		const offAgent = bus?.on("agent:lifecycle", workspaceId, (id, payload) => {
-			if (id === workspaceId && resources.has(payload.terminalId))
+			if (
+				id === workspaceId &&
+				(resources === null || resources.has(payload.terminalId))
+			)
 				void refresh();
 		});
 		const offBindings = bus?.on("agent:bindings-changed", workspaceId, (id) => {
@@ -152,7 +162,10 @@ export function useWorkstationAgentStatuses({
 			"terminal:lifecycle",
 			workspaceId,
 			(id, payload) => {
-				if (id === workspaceId && resources.has(payload.terminalId))
+				if (
+					id === workspaceId &&
+					(resources === null || resources.has(payload.terminalId))
+				)
 					void refresh();
 			},
 		);

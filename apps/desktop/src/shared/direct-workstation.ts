@@ -98,6 +98,7 @@ export interface DirectProfile {
 }
 
 export interface DirectDescriptor {
+	serviceUid?: number;
 	connectionId: string;
 	generation: number;
 	backendId: string;

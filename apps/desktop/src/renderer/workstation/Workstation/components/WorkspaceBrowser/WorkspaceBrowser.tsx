@@ -7,6 +7,7 @@ import {
 	RefreshCw,
 	Trash2,
 } from "lucide-react";
+import type { ReactNode } from "react";
 import type {
 	DirectProfile,
 	RemoteProject,
@@ -33,6 +34,7 @@ export function WorkspaceBrowser({
 	onDelete,
 	onRefresh,
 	onPending,
+	renderAgentStatus,
 }: {
 	profiles: DirectProfile[];
 	selectedId: string;
@@ -52,6 +54,7 @@ export function WorkspaceBrowser({
 	onDelete?(id: string): void;
 	onRefresh(): void;
 	onPending(): void;
+	renderAgentStatus?(workspaceId: string): ReactNode;
 }) {
 	const { t } = useLingui();
 	const selected = profiles.find((p) => p.id === selectedId),
@@ -171,7 +174,10 @@ export function WorkspaceBrowser({
 										{projects.find((p) => p.id === w.projectId)?.name ||
 											t({ message: "Session" })}
 									</span>
-									<h2>{w.name}</h2>
+									<h2 className="flex items-center gap-2">
+										{w.name}
+										{renderAgentStatus?.(w.id)}
+									</h2>
 									<code>{w.worktreePath}</code>
 									<div>
 										<span>

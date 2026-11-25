@@ -399,3 +399,78 @@ test("bursts during a pending query coalesce into one subsequent snapshot", asyn
 	view.unmount();
 	expect(f.listeners.size).toBe(0);
 });
+
+test("catalog reads validate unopened bindings and bounds without acknowledging them", async () => {
+	const timer = scheduler(),
+		seen: WorkstationAgentSeenMark[] = [];
+	let rows: unknown[] = [
+		binding("Stop", 123),
+		{ ...binding("PermissionRequest"), workspaceId: "other" },
+		{ ...binding("Failed"), terminalId: "" },
+		{ ...binding("Failed"), terminalId: "x".repeat(257) },
+	];
+	const api = { rpc: async () => rows } as unknown as DirectWorkstationApi;
+	const view = renderHook(() =>
+		useWorkstationAgentStatuses({
+			api,
+			connection,
+			serviceUid: 1000,
+			workspaceId: "workspace",
+			seenMarks: [],
+			onSeen: (mark) => {
+				seen.push(mark);
+			},
+			isVisible: visible,
+			schedule: timer.schedule,
+		}),
+	);
+	await waitFor(() =>
+		expect(view.result.current.get("terminal")).toBe("review"),
+	);
+	expect(view.result.current.size).toBe(1);
+	expect(seen).toEqual([]);
+	rows = Array.from({ length: 4097 }, () => binding());
+	act(() => timer.poll());
+	await waitFor(() => expect(view.result.current.size).toBe(0));
+	expect(seen).toEqual([]);
+});
+
+test("catalog events refresh newly bound terminals without a saved pane", async () => {
+	let rows = [binding("Stop", 123)];
+	const f = eventFixture(async () => rows),
+		timer = scheduler();
+	const view = renderHook(() =>
+		useWorkstationAgentStatuses({
+			api: f.api,
+			connection: f.target,
+			serviceUid: 1000,
+			workspaceId: "workspace",
+			seenMarks: [],
+			schedule: timer.schedule,
+		}),
+	);
+	await waitFor(() =>
+		expect(view.result.current.get("terminal")).toBe("review"),
+	);
+	act(() => f.emit("open"));
+	await waitFor(() => expect(f.calls()).toBe(2));
+	await act(async () => {
+		await Promise.resolve();
+	});
+	rows = [{ ...binding("Failed", 124), terminalId: "new-unopened-terminal" }];
+	act(() =>
+		f.emit("message", {
+			type: "agent:lifecycle",
+			workspaceId: "workspace",
+			terminalId: "new-unopened-terminal",
+			eventType: "Failed",
+			occurredAt: 124,
+		}),
+	);
+	await waitFor(() =>
+		expect(view.result.current.get("new-unopened-terminal")).toBe("failed"),
+	);
+	expect(view.result.current.has("terminal")).toBe(false);
+	view.unmount();
+	expect(f.listeners.size).toBe(0);
+});

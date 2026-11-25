@@ -23,6 +23,7 @@ import type {
 	WorkspacePaneV2 as WorkspacePane,
 } from "../../../../../shared/workspace-view-v2";
 import type { WorkspaceViewActions } from "../../hooks/useWorkspaceViews/useWorkspaceViews";
+import { useWorkstationAgentStatuses } from "../../hooks/useWorkstationAgentStatuses";
 import { RemoteChat } from "../RemoteChat/RemoteChat";
 import { type FileOpenRequest, RemoteFiles } from "../RemoteFiles/RemoteFiles";
 import type { TerminalEmulator } from "../RemoteTerminal/RemoteTerminal";
@@ -34,7 +35,6 @@ import { WorkstationDialog } from "../WorkstationDialog/WorkstationDialog";
 import { PaneGrid } from "./components/PaneGrid/PaneGrid";
 import { WorkspacePaneAreas } from "./components/WorkspacePaneAreas/WorkspacePaneAreas";
 import { WorkspaceTabAgentStatus } from "./components/WorkspaceTabAgentStatus";
-import { useWorkstationAgentStatuses } from "./hooks/useWorkstationAgentStatuses";
 
 export function WorkspaceWindow({
 	api,

@@ -86,7 +86,25 @@ export class WorkstationController {
 		if (!lease) throw new Error("Connection is disconnected");
 		const { connectionId, generation, backendId, namespaceId, instanceId } =
 			lease;
-		return { connectionId, generation, backendId, namespaceId, instanceId };
+		const verified = this.manager.getVerifiedDescription?.(id);
+		const uid = verified?.serviceUid;
+		const serviceUid =
+			verified?.backendId === backendId &&
+			verified.namespaceId === namespaceId &&
+			verified.instanceId === instanceId &&
+			typeof uid === "number" &&
+			Number.isSafeInteger(uid) &&
+			uid >= 1
+				? uid
+				: undefined;
+		return {
+			connectionId,
+			generation,
+			backendId,
+			namespaceId,
+			instanceId,
+			...(serviceUid === undefined ? {} : { serviceUid }),
+		};
 	}
 
 	async features(

@@ -996,3 +996,60 @@ test("a local workspace opens in the original shared workspace window when resto
 	expect(snapshot.targets[0]?.workspaces[0]?.workspaceId).toBe("workspace");
 	expect(mutations).toEqual([]);
 });
+
+test.each([
+	true,
+	false,
+])("workspace catalog shows unread Agent bindings without an open pane only with a verified UID (%s)", async (verified) => {
+	let bindings = 0;
+	const descriptor = {
+		connectionId: "machine",
+		generation: 1,
+		backendId: "backend",
+		namespaceId: "namespace",
+		instanceId: "instance",
+		...(verified ? { serviceUid: 1000 } : {}),
+		capabilities: { workstationAgentFeedbackV1: true },
+	};
+	const api = {
+		list: async () => [
+			{ id: "machine", kind: "ssh", name: "Remote", host: "test.invalid" },
+		],
+		connect: async () => descriptor,
+		listPending: async () => [],
+		rpc: async (request: { path: string; input: { workspaceId: string } }) => {
+			if (request.path === "workspace.list")
+				return [
+					{
+						id: "closed-workspace",
+						name: "Background task",
+						worktreePath: "/owned/background",
+					},
+				];
+			if (request.path === "terminalAgents.listByWorkspace") {
+				bindings++;
+				expect(request.input).toEqual({ workspaceId: "closed-workspace" });
+				return [
+					{
+						workspaceId: "closed-workspace",
+						terminalId: "unopened-terminal",
+						lastEventType: "Stop",
+						lastEventAt: 123,
+					},
+				];
+			}
+			return [];
+		},
+	} as unknown as DirectWorkstationApi;
+	render(<Workstation api={api} />);
+	fireEvent.click(await screen.findByRole("button", { name: "Connect" }));
+	const card = await screen.findByRole("button", { name: "Background task" });
+	if (verified)
+		await waitFor(() =>
+			expect(
+				card.querySelector('[data-workstation-agent-status="review"]'),
+			).not.toBeNull(),
+		);
+	else expect(card.querySelector("[data-workstation-agent-status]")).toBeNull();
+	expect(bindings).toBe(verified ? 1 : 0);
+});

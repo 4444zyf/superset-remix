@@ -33,6 +33,7 @@ import { WorkstationChatDraftManager } from "./components/WorkstationChatDraftMa
 import { WorkstationCloseGuard } from "./components/WorkstationCloseGuard";
 import { WorkstationDialog } from "./components/WorkstationDialog/WorkstationDialog";
 import { WorkstationShell } from "./components/WorkstationShell/WorkstationShell";
+import { WorkstationWorkspaceAgentStatus } from "./components/WorkstationWorkspaceAgentStatus";
 import { useAgentSeenPreference } from "./hooks/useAgentSeenPreference";
 import { useBrowserPreferences } from "./hooks/useBrowserPreferences";
 import { usePaneAreaWidthPreference } from "./hooks/usePaneAreaWidthPreference/usePaneAreaWidthPreference";
@@ -955,6 +956,14 @@ export function Workstation({
 						/>
 					) : (
 						<WorkspaceBrowser
+							renderAgentStatus={(workspaceId) => (
+								<WorkstationWorkspaceAgentStatus
+									api={api}
+									connection={connected ? ui.connection : null}
+									workspaceId={workspaceId}
+									seenMarks={agentSeen.marks}
+								/>
+							)}
 							canAddProject={Boolean(
 								ui.connection?.capabilities?.projects &&
 									ui.connection?.capabilities?.durableOperations,
