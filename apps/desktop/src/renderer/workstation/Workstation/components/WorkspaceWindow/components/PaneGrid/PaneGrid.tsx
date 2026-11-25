@@ -43,6 +43,7 @@ import type {
 import type { TerminalFileTarget } from "../../../RemoteTerminal/utils/terminal-file-links/terminal-file-links";
 
 import { WorkspacePaneView } from "../WorkspacePaneView/WorkspacePaneView";
+import { canDropWorkspaceItem } from "./utils/canDropWorkspaceItem/canDropWorkspaceItem";
 import { isCompactPaneLayout } from "./utils/isCompactPaneLayout/isCompactPaneLayout";
 
 export interface ControlledPaneGrid {
@@ -476,12 +477,8 @@ export function PaneGrid({
 		source === store ||
 		!!controlled?.linkedStores.some((link) => link === source);
 	const definition: PaneRegistry<WorkspacePane>[string] = {
-		canDrop: (item) => {
-			const source = [store, ...(controlled?.linkedStores ?? [])].find(
-				(candidate) => candidate === item.store,
-			);
-			return !!item.paneId && !!source?.getState().getPane(item.paneId);
-		},
+		canDrop: (item) =>
+			canDropWorkspaceItem(item, [store, ...(controlled?.linkedStores ?? [])]),
 		getTitle: (pane) => pane.titleOverride ?? titleFor(pane.data),
 		getIcon: ({ pane }) =>
 			pane.kind === "browser" ? (
