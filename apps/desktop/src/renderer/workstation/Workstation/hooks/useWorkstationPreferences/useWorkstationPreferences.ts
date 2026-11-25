@@ -14,6 +14,7 @@ export function useWorkstationPreferences(api: DirectWorkstationApi) {
 	}, [client, api]);
 	return {
 		...state,
+		client,
 		update: client.update.bind(client),
 		reload: client.load.bind(client),
 	};

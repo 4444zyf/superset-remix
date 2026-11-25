@@ -1,13 +1,8 @@
-import { startWorkstationBrowserOpenRenderer } from "./hooks/useWorkstationBrowserOpen/workstation-browser-open-renderer";
-import { WorkstationBrowserImport } from "./providers/WorkstationBrowserImport";
-import { Toaster } from "@superset/ui/sonner";
-import { tierFor } from "renderer/lib/clickPolicy/tiers";
-import type { ModifierEvent } from "renderer/lib/clickPolicy/types";
-import type { BrowserLinkAction } from "shared/workstation-browser-preferences";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { I18nProvider } from "@superset/i18n/react";
 import { darkTheme, getBuiltInTheme } from "@superset/shared/themes";
 import { Alerter } from "@superset/ui/atoms/Alert";
+import { Toaster } from "@superset/ui/sonner";
 import {
 	lazy,
 	Suspense,
@@ -17,10 +12,13 @@ import {
 	useRef,
 	useState,
 } from "react";
+import { tierFor } from "renderer/lib/clickPolicy/tiers";
+import type { ModifierEvent } from "renderer/lib/clickPolicy/types";
 import {
 	applyUIColors,
 	updateThemeClass,
 } from "renderer/stores/theme/utils/css-variables";
+import type { BrowserLinkAction } from "shared/workstation-browser-preferences";
 import type { ChatDraftTarget } from "../../../shared/workstation-chat-drafts";
 import { LocalDataPanel } from "./components/LocalDataPanel";
 import { MachineForm } from "./components/MachineForm/MachineForm";
@@ -35,12 +33,15 @@ import { WorkstationChatDraftManager } from "./components/WorkstationChatDraftMa
 import { WorkstationCloseGuard } from "./components/WorkstationCloseGuard";
 import { WorkstationDialog } from "./components/WorkstationDialog/WorkstationDialog";
 import { WorkstationShell } from "./components/WorkstationShell/WorkstationShell";
-import { workstationBrowsers } from "./providers/WorkstationBrowsers/workstation-browsers";
-import { useWorkspaceViews } from "./hooks/useWorkspaceViews/useWorkspaceViews";
-import { useWorkstation } from "./hooks/useWorkstation/useWorkstation";
+import { useAgentSeenPreference } from "./hooks/useAgentSeenPreference/useAgentSeenPreference";
 import { useBrowserPreferences } from "./hooks/useBrowserPreferences";
 import { usePaneAreaWidthPreference } from "./hooks/usePaneAreaWidthPreference/usePaneAreaWidthPreference";
+import { useWorkspaceViews } from "./hooks/useWorkspaceViews/useWorkspaceViews";
+import { useWorkstation } from "./hooks/useWorkstation/useWorkstation";
+import { startWorkstationBrowserOpenRenderer } from "./hooks/useWorkstationBrowserOpen/workstation-browser-open-renderer";
 import { useWorkstationPreferences } from "./hooks/useWorkstationPreferences";
+import { WorkstationBrowserImport } from "./providers/WorkstationBrowserImport";
+import { workstationBrowsers } from "./providers/WorkstationBrowsers/workstation-browsers";
 import { WorkstationChatDraftsContext } from "./providers/WorkstationChatDrafts/WorkstationChatDraftsContext";
 import { WorkstationChatDraftStore } from "./providers/WorkstationChatDrafts/workstation-chat-drafts";
 import {
@@ -85,6 +86,11 @@ export function Workstation({
 	const ui = useWorkstation(api);
 	const preferences = useWorkstationPreferences(api);
 	const paneAreaWidth = usePaneAreaWidthPreference(
+		preferences,
+		Boolean(api.getPreferences && api.updatePreferences),
+		ui.setError,
+	);
+	const agentSeen = useAgentSeenPreference(
 		preferences,
 		Boolean(api.getPreferences && api.updatePreferences),
 		ui.setError,
@@ -199,7 +205,13 @@ export function Workstation({
 		if (!views.browserEnabled) return;
 		return startWorkstationBrowserOpenRenderer(api, () => ({
 			paneAreas: browserOpenDependencies.current.views.paneAreasEnabled,
-            acceptAreas: (snapshot, input, show) => browserOpenDependencies.current.views.acceptBrowserOpenAreas(snapshot, input.descriptor.connectionId, input.workspaceId, show),
+			acceptAreas: (snapshot, input, show) =>
+				browserOpenDependencies.current.views.acceptBrowserOpenAreas(
+					snapshot,
+					input.descriptor.connectionId,
+					input.workspaceId,
+					show,
+				),
 			flush: () => browserOpenDependencies.current.views.flush(),
 			enqueue: (action) =>
 				browserOpenDependencies.current.views.enqueueBrowserOpen(action),
@@ -797,6 +809,8 @@ export function Workstation({
 				>
 					{views.enabled && savedTarget?.activeTabId ? (
 						<WorkspaceWindow
+							agentSeenMarks={agentSeen.marks}
+							onAgentSeen={agentSeen.commit}
 							paneAreaWidth={paneAreaWidth.width}
 							onPaneAreaWidthChange={paneAreaWidth.commit}
 							onBrowserSettings={

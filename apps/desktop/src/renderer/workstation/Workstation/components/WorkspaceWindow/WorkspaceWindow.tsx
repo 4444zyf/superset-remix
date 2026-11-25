@@ -1,5 +1,3 @@
-import type { ModifierEvent } from "renderer/lib/clickPolicy/types";
-import type { BrowserLinkAction } from "shared/workstation-browser-preferences";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { createWorkspaceStore, WorkspaceTabBar } from "@superset/panes";
 import type { RestoreResourceCheck } from "@superset/shared/workspace-restore";
@@ -12,6 +10,9 @@ import {
 } from "@superset/ui/dropdown-menu";
 import { Columns2, Folder, Rows2 } from "lucide-react";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import type { ModifierEvent } from "renderer/lib/clickPolicy/types";
+import type { WorkstationAgentSeenMark } from "shared/workstation-agent-seen";
+import type { BrowserLinkAction } from "shared/workstation-browser-preferences";
 import type {
 	DirectDescriptor,
 	DirectWorkstationApi,
@@ -30,8 +31,9 @@ import { RemoteWorkspaceRun } from "../RemoteWorkspaceRun";
 import { RemoteWorkspaceSetup } from "../RemoteWorkspaceSetup/RemoteWorkspaceSetup";
 import { WorkspacePortControls } from "../WorkspacePortControls";
 import { WorkstationDialog } from "../WorkstationDialog/WorkstationDialog";
-import { WorkspacePaneAreas } from "./components/WorkspacePaneAreas/WorkspacePaneAreas";
 import { PaneGrid } from "./components/PaneGrid/PaneGrid";
+import { WorkspacePaneAreas } from "./components/WorkspacePaneAreas/WorkspacePaneAreas";
+import { useWorkstationAgentStatuses } from "./hooks/useWorkstationAgentStatuses/useWorkstationAgentStatuses";
 
 export function WorkspaceWindow({
 	api,
@@ -52,6 +54,8 @@ export function WorkspaceWindow({
 	createEmulator,
 	onBrowserSettings,
 	paneAreaWidth,
+	agentSeenMarks = [],
+	onAgentSeen,
 	onPaneAreaWidthChange,
 }: {
 	api: DirectWorkstationApi;
@@ -85,6 +89,8 @@ export function WorkspaceWindow({
 	onError(message: string): void;
 	onBrowserSettings?(): void;
 	paneAreaWidth?: number | null;
+	agentSeenMarks?: readonly WorkstationAgentSeenMark[];
+	onAgentSeen?(mark: WorkstationAgentSeenMark): void;
 	onPaneAreaWidthChange?(width: number): void;
 	createEmulator?(element: HTMLDivElement): TerminalEmulator;
 }) {
@@ -129,6 +135,13 @@ export function WorkspaceWindow({
 	const workspace = target.workspaces.find(
 		(w) => w.tabId === target.activeTabId,
 	);
+	const agentStatuses = useWorkstationAgentStatuses({
+		api,
+		connection,
+		workspace,
+		seenMarks: agentSeenMarks,
+		onSeen: onAgentSeen,
+	});
 	const scriptOwner = JSON.stringify([
 		connection?.connectionId,
 		connection?.backendId,
@@ -481,6 +494,7 @@ export function WorkspaceWindow({
 					)}
 					{actions.paneAreasEnabled ? (
 						<WorkspacePaneAreas
+							agentStatuses={agentStatuses}
 							paneAreaWidth={paneAreaWidth}
 							onPaneAreaWidthChange={onPaneAreaWidthChange}
 							onBrowserSettings={onBrowserSettings}
@@ -566,6 +580,7 @@ export function WorkspaceWindow({
 						/>
 					) : (
 						<PaneGrid
+							agentStatuses={agentStatuses}
 							onBrowserSettings={onBrowserSettings}
 							key={`${connection?.generation ?? "offline"}:${workspace.tabId}:${resourceRevision}`}
 							api={api}

@@ -18,6 +18,7 @@ import {
 	DEFAULT_TERMINAL_COPY_ON_SELECT,
 } from "shared/constants";
 import { z } from "zod";
+import { MAX_AGENT_SEEN_MARKS } from "../../../shared/workstation-agent-seen";
 import type { WorkstationPreferenceSnapshot } from "../../../shared/workstation-preferences";
 
 const MAX_PREFERENCES_BYTES = 64 * 1024;
@@ -31,6 +32,19 @@ const fields = {
 	confirmOnQuit: z.boolean(),
 	terminalCopyOnSelect: z.boolean(),
 	rightPaneAreaWidth: z.number().min(240).max(32768).nullable().optional(),
+	agentSeenMarks: z
+		.array(
+			z.strictObject({
+				key: z.string().regex(/^[a-f0-9]{64}$/),
+				at: z.number().int().nonnegative().max(Number.MAX_SAFE_INTEGER),
+			}),
+		)
+		.max(MAX_AGENT_SEEN_MARKS)
+		.refine(
+			(marks) => new Set(marks.map((mark) => mark.key)).size === marks.length,
+			"Duplicate agent seen keys",
+		)
+		.optional(),
 };
 const valuesSchema = z.strictObject(fields);
 const patchSchema = valuesSchema.partial();
@@ -48,6 +62,7 @@ function defaults(): WorkstationPreferenceValues {
 		confirmOnQuit: DEFAULT_CONFIRM_ON_QUIT,
 		terminalCopyOnSelect: DEFAULT_TERMINAL_COPY_ON_SELECT,
 		rightPaneAreaWidth: null,
+		agentSeenMarks: [],
 	};
 }
 

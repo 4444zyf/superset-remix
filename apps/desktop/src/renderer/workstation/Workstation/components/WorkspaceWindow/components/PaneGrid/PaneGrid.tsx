@@ -8,6 +8,7 @@ import {
 	type WorkspaceStore,
 	WorkspaceTab,
 } from "@superset/panes";
+import { highestAgentStatus } from "@superset/shared/agent-status";
 import type { RestoreResourceCheck } from "@superset/shared/workspace-restore";
 import { DropdownMenuItem } from "@superset/ui/dropdown-menu";
 import { Columns2, Globe, Rows2, X } from "lucide-react";
@@ -15,6 +16,7 @@ import type { ReactNode } from "react";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { ModifierEvent } from "renderer/lib/clickPolicy/types";
 import { usePaneAreaMoveActions } from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/hooks/usePaneAreaMoveActions/usePaneAreaMoveActions";
+import type { ActivePaneStatus } from "shared/tabs-types";
 import type { BrowserLinkAction } from "shared/workstation-browser-preferences";
 import { useStore } from "zustand";
 import type { StoreApi } from "zustand/vanilla";
@@ -41,8 +43,8 @@ import type {
 	TerminalEmulator,
 } from "../../../RemoteTerminal/RemoteTerminal";
 import type { TerminalFileTarget } from "../../../RemoteTerminal/utils/terminal-file-links/terminal-file-links";
-
 import { WorkspacePaneView } from "../WorkspacePaneView/WorkspacePaneView";
+import { WorkstationAgentStatus } from "../WorkstationAgentStatus/WorkstationAgentStatus";
 import { canDropWorkspaceItem } from "./utils/canDropWorkspaceItem/canDropWorkspaceItem";
 import { isCompactPaneLayout } from "./utils/isCompactPaneLayout/isCompactPaneLayout";
 
@@ -73,8 +75,10 @@ export function PaneGrid({
 	onOpenUrl,
 	resolveUrlAction,
 	controlled,
+	agentStatuses,
 }: {
 	controlled?: ControlledPaneGrid;
+	agentStatuses?: ReadonlyMap<string, ActivePaneStatus>;
 	api: DirectWorkstationApi;
 	connection: DirectDescriptor | null;
 	workspace: WorkspaceView;
@@ -507,14 +511,24 @@ export function PaneGrid({
 			/>
 		),
 		renderPane: ({ pane }) => renderPane(pane.id),
-		renderHeaderExtras: ({ pane }) =>
-			connection && attached.includes(pane.id) && !failed.includes(pane.id) ? (
-				<span
-					className="size-1.5 shrink-0 rounded-full bg-success"
-					role="img"
-					aria-label={t({ message: "Connected" })}
-				/>
-			) : null,
+		renderHeaderExtras: ({ pane }) => (
+			<>
+				{pane.data.kind === "terminal" && (
+					<WorkstationAgentStatus
+						status={agentStatuses?.get(pane.data.resourceId)}
+					/>
+				)}
+				{connection &&
+				attached.includes(pane.id) &&
+				!failed.includes(pane.id) ? (
+					<span
+						className="size-1.5 shrink-0 rounded-full bg-success"
+						role="img"
+						aria-label={t({ message: "Connected" })}
+					/>
+				) : null}
+			</>
+		),
 		onHeaderClick: ({ actions }) => actions.focus(),
 	};
 	const paneActions = [
@@ -621,6 +635,17 @@ export function PaneGrid({
 		store,
 		registry: { terminal: definition, chat: definition, browser: definition },
 		canDropItem: (item) => canDropStore(item.store),
+		renderTabAccessory: (tab) => (
+			<WorkstationAgentStatus
+				status={
+					highestAgentStatus(
+						Object.values(tab.panes)
+							.filter((p) => p.data.kind === "terminal")
+							.map((p) => agentStatuses?.get(p.data.resourceId)),
+					) ?? undefined
+				}
+			/>
+		),
 		transformDisplayedTab: (displayed) =>
 			isCompactPaneLayout({
 				viewportWidth: width,

@@ -5,6 +5,8 @@ import type {
 } from "@superset/shared/file-settings";
 import type { SetFontSettingsInput } from "lib/trpc/routers/settings/font-settings.utils";
 
+import type { WorkstationAgentSeenMark } from "./workstation-agent-seen";
+
 export interface WorkstationPreferenceValues {
 	agentNativeInputEnabled: boolean;
 	language: SupportedLocale | null;
@@ -15,6 +17,7 @@ export interface WorkstationPreferenceValues {
 	confirmOnQuit: boolean;
 	terminalCopyOnSelect: boolean;
 	rightPaneAreaWidth?: number | null;
+	agentSeenMarks?: WorkstationAgentSeenMark[];
 }
 export type WorkstationPreferencePatch = Partial<WorkstationPreferenceValues>;
 export interface WorkstationPreferenceSnapshot {

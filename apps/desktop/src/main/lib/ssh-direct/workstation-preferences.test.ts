@@ -183,3 +183,51 @@ test("pane width preference rejects invalid dimensions without changing its save
 		f.db.close();
 	}
 });
+
+test("agent seen marks survive reopen and unrelated preference updates", () => {
+	const f = fixture(),
+		marks = [{ key: "a".repeat(64), at: 123 }];
+	try {
+		f.store.update({ expectedRevision: 0, patch: { agentSeenMarks: marks } });
+		const second = new WorkstationPreferences(
+			f.db as unknown as SqliteDatabase,
+		);
+		const result = second.update({
+			expectedRevision: 1,
+			patch: { rightPaneAreaWidth: 550 },
+		});
+		expect(result.values.agentSeenMarks).toEqual(marks);
+		expect(result.values.rightPaneAreaWidth).toBe(550);
+		expect(second.read().values.agentSeenMarks).toEqual(marks);
+	} finally {
+		f.db.close();
+	}
+});
+
+test("agent seen mark validation rejects duplicates, invalid clocks and oversized collections atomically", () => {
+	const f = fixture();
+	try {
+		const valid = { key: "a".repeat(64), at: 123 };
+		for (const marks of [
+			[valid, valid],
+			[{ ...valid, key: "wrong" }],
+			[{ ...valid, at: -1 }],
+			[{ ...valid, at: 1.5 }],
+			[{ ...valid, at: Infinity }],
+			Array.from({ length: 257 }, (_, i) => ({
+				key: i.toString(16).padStart(64, "0"),
+				at: i,
+			})),
+		]) {
+			expect(() =>
+				f.store.update({
+					expectedRevision: 0,
+					patch: { agentSeenMarks: marks },
+				}),
+			).toThrow();
+			expect(f.store.read().revision).toBe(0);
+		}
+	} finally {
+		f.db.close();
+	}
+});
