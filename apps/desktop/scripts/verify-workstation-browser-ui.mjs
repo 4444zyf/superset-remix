@@ -724,6 +724,11 @@ export async function verifyWorkstationBrowserUi(options) {
 		report.guestEvents = await evaluate("window.__ownedBrowserEvents ?? []");
 		report.finalView = workspace(await readView());
 		save();
+        if(process.argv.includes('--pane-area-split-drag')&&started&&terminal?.id) {
+         const pane=report.finalView.panes.find(p=>p.kind==='terminal'&&p.resourceId===terminal.id);
+         const currentTab=pane&&report.finalView.paneTabs?.find(t=>JSON.stringify(t.layout).includes(pane.paneId));
+         if(currentTab)terminalTab=currentTab.tabId;
+        }
 		if (started && terminalTab) {
 			await click(
 				`[data-workstation-pane-tabs] [data-tab-id="${terminalTab}"]`,

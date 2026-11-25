@@ -16,7 +16,7 @@ export async function verifyWorkstationPaneAreaSplitDrag(options,{read,terminal,
   assert.ok(g?.sourceHit&&g.targetHit,'both native endpoints must own their visible pointer');
   const {start,end}=g,mid={x:(start.x+end.x)/2,y:(start.y+end.y)/2};
   await evaluate(`window.__ownedSplitDragStall=setInterval(()=>{const end=performance.now()+120;while(performance.now()<end){}},400);true`);
-  try {report.gestures.push({geometry:g,input:await nativeDrag([start,{x:start.x+12,y:start.y},mid,{x:mid.x+20,y:mid.y},{x:mid.x-20,y:mid.y},mid,end,end])});save();}
+  try {report.gestures.push({geometry:g,input:await nativeDrag([start,{x:start.x+Math.sign(end.x-start.x)*12,y:start.y},mid,{x:mid.x+20,y:mid.y},{x:mid.x-20,y:mid.y},mid,end,end])});save();}
   finally {await evaluate(`clearInterval(window.__ownedSplitDragStall);delete window.__ownedSplitDragStall;true`);}
  };
  const header=id=>`document.querySelector('[data-pane-title-id="${id}"]')?.closest('[draggable="true"]')`;
