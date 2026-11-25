@@ -12,6 +12,7 @@ export async function verifyWorkstationPaneAreaSplitDrag(options,{read,terminal,
  const check=async name=>{const view=await read();assert.deepEqual(ids(view.workspace),ids(before.workspace));const current=await controls.inspectPresetTerminal(terminal.id);for(const key of ['id','executionId','pid','cwd'])assert.equal(current[key],execution[key],key);report.phases.push({name,view});await screenshot('pane-area-split-drag-'+name);save();return view;};
  const drag=async(source,target)=>{
   const g=await evaluate(`(()=>{const s=${source},t=${target};if(!s||!t)return null;const a=s.getBoundingClientRect(),b=t.getBoundingClientRect(),start={x:a.x+(s.hasAttribute('data-tab-id')?Math.min(32,a.width/2):3),y:a.y+a.height/2},end={x:b.x+Math.min(40,b.width/2),y:b.y+b.height/2};return {start,end,source:{x:a.x,y:a.y,width:a.width,height:a.height},target:{x:b.x,y:b.y,width:b.width,height:b.height},sourceHit:s.contains(document.elementFromPoint(start.x,start.y)),targetHit:t.contains(document.elementFromPoint(end.x,end.y))};})()`);
+  report.geometryAttempt={source,target,geometry:g};save();
   assert.ok(g?.sourceHit&&g.targetHit,'both native endpoints must own their visible pointer');
   const {start,end}=g,mid={x:(start.x+end.x)/2,y:(start.y+end.y)/2};
   await evaluate(`window.__ownedSplitDragStall=setInterval(()=>{const end=performance.now()+120;while(performance.now()<end){}},400);true`);
@@ -21,6 +22,7 @@ export async function verifyWorkstationPaneAreaSplitDrag(options,{read,terminal,
  const header=id=>`document.querySelector('[data-pane-title-id="${id}"]')?.closest('[draggable="true"]')`;
  const bar=area=>`document.querySelector('[data-pane-area="${area}"] [class~="group/root-tabs"]')`;
  const tab=before.workspace.activePaneTabId;
+ try {
  await check('before');
  await drag(`document.querySelector('[data-pane-area="center"] [data-tab-id="${tab}"]')`,header(browser.paneId));
  await until(async()=>{const w=(await read()).workspace,t=w.rightPaneLayout?.tabs.find(t=>JSON.stringify(t.layout).includes(browser.paneId));return !w.paneTabs.some(t=>t.tabId===tab)&&t?.layout.type==='split'&&JSON.stringify(t.layout).includes(pane.paneId);},'whole tab accepted by original cross-area pane split target');
@@ -38,4 +40,5 @@ export async function verifyWorkstationPaneAreaSplitDrag(options,{read,terminal,
  await until(async()=>{const w=(await read()).workspace;return JSON.stringify(w.paneTabs)===JSON.stringify(saved.workspace.paneTabs)&&JSON.stringify(w.rightPaneLayout)===JSON.stringify(saved.workspace.rightPaneLayout);},'native split and extraction layouts survive real reopen');
  await check('reopened');await click(`[data-pane-area="right"] [data-tab-id="${saved.workspace.rightPaneLayout.activeTabId}"]`);
  assert.deepEqual(getPage().errors,[]);report.completed=true;save();
+ } catch(error) {report.error={message:error.message,stack:error.stack};save();throw error;}
 }
