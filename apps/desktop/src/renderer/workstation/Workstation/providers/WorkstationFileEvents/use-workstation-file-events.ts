@@ -1,11 +1,10 @@
-import { getEventBusForTransport } from "@superset/workspace-client/event-bus-core";
 import type { FsWatchEvent } from "@superset/workspace-fs/client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type {
 	DirectDescriptor,
 	DirectWorkstationApi,
 } from "../../../../../shared/direct-workstation";
-import { WorkstationEventSocket } from "./workstation-event-socket";
+import { getWorkstationEventBus } from "./get-workstation-event-bus";
 
 function inside(root: string, value: unknown): value is string {
 	return (
@@ -45,23 +44,10 @@ export function useWorkstationFileEvents({
 	onEvents(events: FsWatchEvent[]): void;
 	onRefresh(): void;
 }) {
-	const key = JSON.stringify([
-		"workstation",
-		connection.connectionId,
-		connection.backendId,
-		connection.namespaceId,
-		connection.generation,
-	]);
 	const enabled = connection.capabilities?.workstationFileEventsV1 === true;
 	const bus = useMemo(
-		() =>
-			enabled && root
-				? getEventBusForTransport(
-						key,
-						() => new WorkstationEventSocket(api, connection),
-					)
-				: null,
-		[api, key, enabled, root, connection],
+		() => (enabled && root ? getWorkstationEventBus(api, connection) : null),
+		[api, enabled, root, connection],
 	);
 	const callbacks = useRef({ onEvents, onRefresh });
 	callbacks.current = { onEvents, onRefresh };

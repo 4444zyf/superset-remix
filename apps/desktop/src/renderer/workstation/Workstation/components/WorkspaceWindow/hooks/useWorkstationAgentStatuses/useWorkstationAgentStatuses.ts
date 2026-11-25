@@ -11,6 +11,7 @@ import {
 	type WorkstationAgentSeenMark,
 	workstationAgentSeenKey,
 } from "shared/workstation-agent-seen";
+import { getWorkstationEventBus } from "../../../../providers/WorkstationFileEvents/get-workstation-event-bus";
 
 interface Entry {
 	binding: TerminalAgentBinding;
@@ -72,10 +73,17 @@ export function useWorkstationAgentStatuses({
 		const resources = new Set<string>(JSON.parse(terminalIds));
 		if (!resources.size) return;
 		let alive = true,
-			busy = false;
+			busy = false,
+			requested = false,
+			streamOpen = false;
 		const refresh = async () => {
-			if (!alive || busy) return;
+			if (!alive) return;
+			if (busy) {
+				requested = true;
+				return;
+			}
 			busy = true;
+			requested = false;
 			try {
 				const bindings = await api.rpc<TerminalAgentBinding[]>({
 					connectionId: connection.connectionId,
@@ -124,16 +132,52 @@ export function useWorkstationAgentStatuses({
 				if (alive) setState({ owner, entries: EMPTY });
 			} finally {
 				busy = false;
+				if (requested && alive) void refresh();
 			}
 		};
 		void refresh();
-		const stop = schedule(() => void refresh());
+		const bus =
+			connection.capabilities?.workstationFileEventsV1 === true
+				? getWorkstationEventBus(api, connection)
+				: null;
+		const release = bus?.retain();
+		const offAgent = bus?.on("agent:lifecycle", workspaceId, (id, payload) => {
+			if (id === workspaceId && resources.has(payload.terminalId))
+				void refresh();
+		});
+		const offBindings = bus?.on("agent:bindings-changed", workspaceId, (id) => {
+			if (id === workspaceId) void refresh();
+		});
+		const offTerminal = bus?.on(
+			"terminal:lifecycle",
+			workspaceId,
+			(id, payload) => {
+				if (id === workspaceId && resources.has(payload.terminalId))
+					void refresh();
+			},
+		);
+		const updateConnection = () => {
+			const open = bus?.getConnectionStatus().state === "open";
+			const opened = open && !streamOpen;
+			streamOpen = open;
+			if (opened) void refresh();
+		};
+		const offStatus = bus?.subscribeConnectionStatus(updateConnection);
+		if (bus) updateConnection();
+		const stop = schedule(() => {
+			if (!streamOpen) void refresh();
+		});
 		const focus = () => void refresh();
 		window.addEventListener("focus", focus);
 		document.addEventListener("visibilitychange", focus);
 		return () => {
 			alive = false;
 			stop();
+			offStatus?.();
+			offAgent?.();
+			offBindings?.();
+			offTerminal?.();
+			release?.();
 			window.removeEventListener("focus", focus);
 			document.removeEventListener("visibilitychange", focus);
 		};

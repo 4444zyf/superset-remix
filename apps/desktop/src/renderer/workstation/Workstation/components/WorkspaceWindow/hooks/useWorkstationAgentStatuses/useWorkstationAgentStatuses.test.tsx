@@ -3,6 +3,7 @@ import { act, cleanup, renderHook, waitFor } from "@testing-library/react";
 import { StrictMode } from "react";
 import type {
 	DirectDescriptor,
+	DirectSocketEvent,
 	DirectWorkstationApi,
 } from "shared/direct-workstation";
 import type { WorkspaceViewV3 } from "shared/workspace-view-v3";
@@ -237,4 +238,164 @@ test("only visible active terminal reviews acknowledge the host event clock", as
 		expect(view.result.current.get("terminal")).toBe("permission"),
 	);
 	expect(seen).toHaveLength(1);
+});
+
+function eventFixture(query: () => Promise<unknown[]>) {
+	const listeners = new Set<(event: DirectSocketEvent) => void>();
+	const opened: { path: string; id: string }[] = [],
+		closed: string[] = [];
+	let calls = 0;
+	const api = {
+		rpc: async () => {
+			calls++;
+			return query();
+		},
+		onSocket: (listener: (event: DirectSocketEvent) => void) => {
+			listeners.add(listener);
+			return () => {
+				listeners.delete(listener);
+			};
+		},
+		openSocket: async (_target: DirectDescriptor, path: string, id: string) => {
+			opened.push({ path, id });
+		},
+		closeSocket: async (id: string) => {
+			closed.push(id);
+		},
+		sendSocket: async () => {},
+	} as unknown as DirectWorkstationApi;
+	const target = {
+		...connection,
+		connectionId: crypto.randomUUID(),
+		capabilities: {
+			workstationAgentFeedbackV1: true,
+			workstationFileEventsV1: true,
+		},
+	};
+	const emit = (kind: DirectSocketEvent["kind"], message?: object) => {
+		const id = opened[0]?.id;
+		if (!id) throw Error("Expected authenticated event socket");
+		for (const listener of listeners)
+			listener({
+				socketId: id,
+				kind,
+				...(message ? { data: JSON.stringify(message) } : {}),
+			} as DirectSocketEvent);
+	};
+	return { api, target, opened, closed, listeners, emit, calls: () => calls };
+}
+test("authenticated events refresh current resources without polling or trusting event clocks", async () => {
+	let rows = [binding()];
+	const f = eventFixture(async () => rows),
+		timer = scheduler(),
+		seen: WorkstationAgentSeenMark[] = [];
+	const view = renderHook(() =>
+		useWorkstationAgentStatuses({
+			api: f.api,
+			connection: f.target,
+			serviceUid: 1000,
+			workspace,
+			seenMarks: [],
+			onSeen: (mark) => {
+				seen.push(mark);
+			},
+			schedule: timer.schedule,
+			isVisible: visible,
+		}),
+	);
+	await waitFor(() =>
+		expect(view.result.current.get("terminal")).toBe("working"),
+	);
+	expect(f.opened).toMatchObject([{ path: "/events" }]);
+	act(() => f.emit("open"));
+	await waitFor(() => expect(f.calls()).toBe(2));
+	await act(async () => {
+		await Promise.resolve();
+	});
+	const calls = f.calls();
+	act(() => {
+		timer.poll();
+		f.emit("message", {
+			type: "agent:lifecycle",
+			workspaceId: "other",
+			terminalId: "terminal",
+		});
+		f.emit("message", {
+			type: "agent:lifecycle",
+			workspaceId: "workspace",
+			terminalId: "other",
+		});
+		f.emit("message", { type: "agent:bindings-changed" });
+	});
+	expect(f.calls()).toBe(calls);
+	rows = [binding("Stop", 123)];
+	act(() =>
+		f.emit("message", {
+			type: "agent:lifecycle",
+			workspaceId: "workspace",
+			terminalId: "terminal",
+			occurredAt: 999999999,
+			eventType: "Failed",
+		}),
+	);
+	await waitFor(() =>
+		expect(view.result.current.get("terminal")).toBe("review"),
+	);
+	await waitFor(() => expect(seen.at(-1)?.at).toBe(123));
+	act(() => f.emit("close"));
+	rows = [binding("Failed", 124)];
+	act(() => timer.poll());
+	await waitFor(() =>
+		expect(view.result.current.get("terminal")).toBe("failed"),
+	);
+	view.unmount();
+	expect(f.listeners.size).toBe(0);
+	expect(f.closed).toContain(f.opened[0]?.id as string);
+	expect(timer.mounted()).toBe(0);
+});
+test("bursts during a pending query coalesce into one subsequent snapshot", async () => {
+	const initial = Promise.withResolvers<unknown[]>();
+	let first = true;
+	const f = eventFixture(() => {
+		if (first) {
+			first = false;
+			return initial.promise;
+		}
+		return Promise.resolve([binding("Stop", 456)]);
+	});
+	const timer = scheduler();
+	const view = renderHook(() =>
+		useWorkstationAgentStatuses({
+			api: f.api,
+			connection: f.target,
+			serviceUid: 1000,
+			workspace,
+			seenMarks: [],
+			schedule: timer.schedule,
+			isVisible: visible,
+		}),
+	);
+	await waitFor(() => expect(f.opened.length).toBe(1));
+	act(() => {
+		f.emit("open");
+		for (let i = 0; i < 8; i++)
+			f.emit("message", {
+				type: "agent:bindings-changed",
+				workspaceId: "workspace",
+			});
+		f.emit("message", {
+			type: "terminal:lifecycle",
+			workspaceId: "workspace",
+			terminalId: "terminal",
+			eventType: "exit",
+		});
+	});
+	expect(f.calls()).toBe(1);
+	await act(async () => initial.resolve([binding()]));
+	await waitFor(() =>
+		expect(view.result.current.get("terminal")).toBe("review"),
+	);
+	expect(f.calls()).toBe(2);
+	view.unmount();
+	expect(f.listeners.size).toBe(0);
 });
